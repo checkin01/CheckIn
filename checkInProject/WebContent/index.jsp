@@ -21,15 +21,6 @@
 <div id= "main" class="row main">
 	
 	<aside class="left col-sm-3" id="left">
-		
-		<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3;width:260px" id="mySidebar">
-  			<div class="w3-container w3-display-container w3-padding-16">
-
-
-  			</div>
-  		</nav>
-  		<!-- filter -->
-  		
 	</aside>
 	<div class="col-sm-7 center" id="center">
 
