@@ -6,7 +6,7 @@
 </head>
 <!--navigation bar-->
 	<nav class="navbar navbar-expand-sm bg-light dark navbar-light fixed-top font1-medium" style="border-bottom:#ddd solid 2px">
-	  <a class="navbar-brand" href="#"><img src="img/logo03_w.png" style="width:80px"></a>
+	  <a class="navbar-brand" href="#"><img src="<%=request.getContextPath() %>/img/logo03_w.png" style="width:80px"></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -17,7 +17,7 @@
 	        <a class="nav-link" href="#">로그인</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="#">회원가입</a>
+	        <a class="nav-link" href="member/registerForm.jsp">회원가입</a>
 	      </li>
 	       <li class="nav-item">
 	        	<a class="nav-link" href="#">예약확인</a>
