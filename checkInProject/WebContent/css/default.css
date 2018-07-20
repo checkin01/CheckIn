@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Song+Myung|Poor+Story');
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/* 폰트  */
+.font1-small{
+	font-size:14px;
+	font-family:'Nanum Gothic', serif;
+}
+
+.font1-medium{
+	font-size:18px;
+	font-family:'Nanum Gothic', serif;
+}
+
+.font1-large{
+	font-size:30px;
+	font-family:'Nanum Gothic', serif;
+}
+	
+/* 화면 정렬 조건*/
+body{
+	float:left;
+	height:110%;
+	width:100%;
+	position:absolute;
+}
+
+.main{
+	position:relative;
+	height:80%;
+	top:60px;
+	}
+	
+.center{}
+.right{}
+.left{}
+.footer{position:relative;height:20%;}
