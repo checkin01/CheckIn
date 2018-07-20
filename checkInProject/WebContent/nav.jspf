@@ -3,10 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/default.css">
 </head>
 <!--navigation bar-->
 	<nav class="navbar navbar-expand-sm bg-light dark navbar-light fixed-top font1-medium" style="border-bottom:#ddd solid 2px">
-	  <a class="navbar-brand" href="#"><img src="img/logo03_w.png" style="width:80px"></a>
+	  <a class="navbar-brand" href="#"><img src="<%=request.getContextPath() %>/img/logo03_w.png" style="width:80px"></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
