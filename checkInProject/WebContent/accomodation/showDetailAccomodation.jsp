@@ -19,9 +19,9 @@
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <link rel="stylesheet" href="../css/accomodation/showDetailStyle.css">
-<body 구성에 적용 되는 스타일시트 -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--  body 구성에 적용 되는 스타일시트 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <!-- 
 	daterangepicker
 	1. less 파일 적용
@@ -46,14 +46,16 @@
 	<%@ include file="../nav.jspf"%>
 
 	<div id="main" class="row main">
+	
 		<!-- 왼쪽 필터 부분 -->
 		<aside class="left col-lg-3 font1-medium" id="left">
-			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top"
-				style="z-index: 3; top: 50px; width: 260px" id="mySidebar">
+			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index: 3; top: 50px; width: 260px" id="mySidebar">
+				<!-- 정보 -->
 				<div class="w3-container w3-display-container w3-padding-16">
 					<i onclick="w3_close()"
 						class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
 					<hr>
+					
 					<form action="/action_page.php" target="_blank">
 						<p>
 							<i class="fa fa-calendar-check-o"> <label>일자</label></i>
@@ -74,41 +76,90 @@
 					</form>
 				</div>
 				<div class="w3-bar-block">
-					<a href="#apartment" class="w3-bar-item w3-button w3-padding-16"><i
-						class="fa fa-building"></i> Apartment</a> <a href="javascript:void(0)"
-						class="w3-bar-item w3-button w3-padding-16"
-						onclick="document.getElementById('subscribe').style.display='block'"><i
-						class="fa fa-rss"></i> Subscribe</a> <a href="#contact"
-						class="w3-bar-item w3-button w3-padding-16"><i
-						class="fa fa-envelope"></i> Contact</a>
+					<!-- 본 상품 -->
+					<div class="w3-container">
+						<a href=#><img src="../img/accomodation/hotel01.PNG" alt="hotel1" style="width: 230px; height: 200px" /></a>
+					</div>
 				</div>
 			</nav>
 		</aside>
 
-		<!-- 센터 부분 -->
+	<!-- 센터 부분 -->
 	<div class="col-lg-8 center w3-container" id="center">
 			<!-- Push down content on small screens -->
 			<div class="w3-hide-large" style="margin-top: 80px"></div>
-
-			<!-- Slideshow Header -->
-			<div id="apartment">
-				<h2 class="w3-text-green">The Apartment</h2>
-				<div class="w3-display-container mySlides">
-					<img src="../img/accomodation/hotel01.JPG" style="width: 100%;">
-					<div class="w3-display-bottomleft w3-container w3-black">
-						<p>Living Room</p>
+			<!-- 기본 정보 -->			
+			<div class="input-group border">
+					<div class="col-sm-8 w3-container" style="margin:0px; padding: 10px">
+						<div class="w3-row w3-large" style="width: 100%; margin-left: 5px"
+							id="space">
+							<label class="w3-col"><strong>호텔 이름</strong></label>
+							<div class="w3-col s6">
+								<p>
+									<i class="fa fa-fw fa-wifi"></i>
+									<i class="fa-fw fa fa-support"></i>
+									<i class="fa fa-automobile fa-fw"></i> 
+									<i class="material-icons">local_dining</i>
+								</p>
+								<p><i class="material-icons">call</i><span id=tel>02-6585-7144</span></p>
+								<p></p>
+							</div>
+							<div class="w3-col s6">
+								<p><i class="fa fa-fw fa-clock-o"></i> Check In: After 3PM</p>
+								<p><i class="fa fa-fw fa-clock-o"></i> Check Out: 12PM</p>
+							</div>
+						</div>
+						
+						<div class="w3-row w3-large" style="width: 100%;">
+							<div class="w3-col s6">
+								<p><i class="fa fa-fw fa-thumbs-o-up"></i>평점 <span id="grade"></span></p>
+								<p><i class="fa fa-fw fa-won"></i><span id="price"></span></p>
+							</div>
+							<div class="w3-col s6">
+								
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-
-			<div class="list-group">
-				<div class="row list-group-item">
-					<div class="input-group w3-container w3-red">
+					<div class="w3-container col-sm-4" style="padding: 10px">
 						<img src="../img/accomodation/hotel01.JPG" alt="Norway"
 							style="width: 230px; height: 200px" />
 					</div>
-					<div class="input-group col-sm-8 w3-container w3-red"
-						style="margin: 0; padding: 0">
+			</div>
+			
+			<div class="input-group border">
+					<!-- carousel -->
+					<div class="col-sm-4 carousel slide" data-ride="carousel" id="myCarousel1" style="padding: 10px">
+					 <!-- Indicators -->
+						  <ol class="carousel-indicators">
+						    <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+						    <li data-target="#myCarousel1" data-slide-to="1"></li>
+						    <li data-target="#myCarousel1" data-slide-to="2"></li>
+						  </ol>
+						  <!-- Wrapper for slides -->
+						  <div class="carousel-inner">
+						   <div class="item active">
+							<img src="../img/accomodation/hotel01.PNG" alt="hotel1" style="width: 230px; height: 200px" />
+						   </div>
+						   <div class="item">
+							<img src="../img/accomodation/hotel02.PNG" alt="hotel2" style="width: 230px; height: 200px" />
+						   </div>
+						   <div class="item">
+							<img src="../img/accomodation/hotel03.PNG" alt="hotel3" style="width: 230px; height: 200px" />
+						   </div>
+						</div>
+						 <!-- Left and right controls -->
+						 <a class="left carousel-control" href="#myCarousel1" data-slide="prev">
+						    <span class="glyphicon glyphicon-chevron-left"></span>
+						    <span class="sr-only">Previous</span>
+						  </a>
+						  <a class="right carousel-control" href="#myCarousel1" data-slide="next">
+						    <span class="glyphicon glyphicon-chevron-right"></span>
+						    <span class="sr-only">Next</span>
+						  </a>
+					</div>
+					
+					
+					<div class="col-sm-8 w3-container" style="margin:0px; padding: 10px">
 						<div class="w3-row w3-large" style="width: 100%; margin-left: 5px"
 							id="space">
 							<label class="w3-col"><strong>The space</strong></label>
@@ -132,8 +183,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="w3-row w3-large"
-							style="width: 100%; margin-left: 10px">
+						<div class="w3-row w3-large" style="width: 100%; margin-left: 10px">
 							<div class="w3-col s6">
 								<p>
 									<i class="fa fa-fw fa-thumbs-o-up"></i>평점 <span id="grade"></span>
@@ -142,7 +192,7 @@
 									<i class="fa fa-fw fa-won"></i><span id="price"></span>
 								</p>
 							</div>
-							<div class="w3-col s6">
+							<div class="w3-col s6" >
 								<input type="button" value="예약하기" class="btn btn-success" /> <input
 									type="button" value="리뷰보기" class="btn btn-success" />
 							</div>
@@ -150,9 +200,7 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
-	</div>
 	<aside class="col-sm-1">
 	
 	</aside>
