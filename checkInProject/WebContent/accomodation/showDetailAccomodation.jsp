@@ -36,7 +36,7 @@
 </style>
 <script>
 	$(function() {
-		$('input[name="daterange"]').daterangepicker({
+		$('input[name="checkinout"]').daterangepicker({
 			opens : 'left'
 			},
 			function(start, end, label) {
@@ -55,9 +55,8 @@
 	<div id="main" class="row main">
 
 		<!-- 왼쪽 필터 부분 -->
-		<aside class="left col-lg-4 font1-medium" id="left">
-			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top"
-				style="z-index: 3; top: 50px; width: 260px" id="mySidebar">
+		<aside class="left col-lg-4 font1-medium w3-container" id="left">
+			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3; width:260px; top:50px;" id="mySidebar">
 				<!-- 정보 -->
 				<div class="w3-container w3-display-container w3-padding-16">
 					<i onclick="w3_close()"
@@ -68,7 +67,7 @@
 						<p>
 							<i class="fa fa-calendar-check-o"> <label>일자</label></i>
 						</p>
-						<input type="text" class="w3-input w3-border" name="reservtime" />
+						<input type="text" class="w3-input w3-border" name="checkinout" />
 						<br />
 						<p>
 							<i class="fa fa-male"> <label>인원수</label></i>
@@ -103,8 +102,7 @@
 			<div class="input-group">
 				<div class="col-sm-8 container"
 					style="margin: 0px; padding: 10px">
-					<div class="w3-row w3-large" style="width: 100%; margin-left: 5px"
-						id="space">
+					<div class="w3-row w3-large" style="width: 100%; margin-left:5px" id="space">
 						<label class="w3-col"><strong>호텔 이름</strong></label>
 						<div class="w3-col s6">
 							<p>
