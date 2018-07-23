@@ -10,36 +10,36 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <link rel="stylesheet" href="../css/accomodation/showDetailStyle.css">
 <!--  body 구성에 적용 되는 스타일시트 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<!-- 
-	daterangepicker
-	1. less 파일 적용
--->
+<!-- daterangepicker-->
 <script src="../js/daterangepicker.js"></script>
 <link rel="stylesheet" href="../css/daterangepicker.css">
+<style>
+	.roomsImg {
+		margin:10px;
+		width:250px;
+		height:250px;
+	}
+</style>
 <script>
 	$(function() {
-		$('input[name="daterange"]').daterangepicker(
-				{
-					opens : 'left'
-				},
-				function(start, end, label) {
-					console.log("A new date selection was made: "
-							+ start.format('YYYY-MM-DD') + ' to '
-							+ end.format('YYYY-MM-DD'));
-				});
+		$('input[name="daterange"]').daterangepicker({
+			opens : 'left'
+			},
+			function(start, end, label) {
+				console.log("A new date selection was made: "
+						+ start.format('YYYY-MM-DD') + ' to '
+						+ end.format('YYYY-MM-DD'));
+		});
 	});
+	
 </script>
 
 </head><body>
@@ -57,13 +57,9 @@
 					<hr>
 					
 					<form action="/action_page.php" target="_blank">
-						<p>
-							<i class="fa fa-calendar-check-o"> <label>일자</label></i>
-						</p>
-						<input type="text" class="w3-input w3-border" name="daterange"
-							name="reservtime" /> <br />
-						<p>
-							<i class="fa fa-male"> <label>인원수</label></i>
+						<p><i class="fa fa-calendar-check-o"> <label>일자</label></i></p>
+						<input type="text" class="w3-input w3-border" name="reservtime" /> <br />
+						<p><i class="fa fa-male"> <label>인원수</label></i>
 						</p>
 						<input class="w3-input w3-border" type="number" value="1"
 							name="Adults" min="1" max="6"> <br />
@@ -75,8 +71,9 @@
 						</p>
 					</form>
 				</div>
+				
+				<!-- 본 상품 -->
 				<div class="w3-bar-block">
-					<!-- 본 상품 -->
 					<div class="w3-container">
 						<a href=#><img src="../img/accomodation/hotel01.PNG" alt="hotel1" style="width: 230px; height: 200px" /></a>
 					</div>
@@ -125,41 +122,42 @@
 							style="width: 230px; height: 200px" />
 					</div>
 			</div>
-			
+
 			<div class="input-group border">
-					<!-- carousel -->
-					<div class="col-sm-4 carousel slide" data-ride="carousel" id="myCarousel1" style="padding: 10px">
-					 <!-- Indicators -->
-						  <ol class="carousel-indicators">
-						    <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
-						    <li data-target="#myCarousel1" data-slide-to="1"></li>
-						    <li data-target="#myCarousel1" data-slide-to="2"></li>
-						  </ol>
-						  <!-- Wrapper for slides -->
-						  <div class="carousel-inner">
-						   <div class="item active">
-							<img src="../img/accomodation/hotel01.PNG" alt="hotel1" style="width: 230px; height: 200px" />
-						   </div>
-						   <div class="item">
-							<img src="../img/accomodation/hotel02.PNG" alt="hotel2" style="width: 230px; height: 200px" />
-						   </div>
-						   <div class="item">
-							<img src="../img/accomodation/hotel03.PNG" alt="hotel3" style="width: 230px; height: 200px" />
-						   </div>
-						</div>
-						 <!-- Left and right controls -->
-						 <a class="left carousel-control" href="#myCarousel1" data-slide="prev">
-						    <span class="glyphicon glyphicon-chevron-left"></span>
-						    <span class="sr-only">Previous</span>
-						  </a>
-						  <a class="right carousel-control" href="#myCarousel1" data-slide="next">
-						    <span class="glyphicon glyphicon-chevron-right"></span>
-						    <span class="sr-only">Next</span>
-						  </a>
+			<!-- carousel -->
+			<div>
+				<div id="room1" class="carousel slide" data-ride="carousel">
+					  <!-- Indicators -->
+					  <ul class="carousel-indicators">
+					    <li data-target="#room1" data-slide-to="0" class="active"></li>
+					    <li data-target="#room1" data-slide-to="1"></li>
+					    <li data-target="#room1" data-slide-to="2"></li>
+					  </ul>
+					
+					  <!-- The slideshow -->
+					  <div class="carousel-inner">
+					    <div class="carousel-item active">
+					      <img src="../img/accomodation/hotel01.PNG" class="roomsImg">
+					    </div>
+					    <div class="carousel-item">
+					      <img src="../img/accomodation/hotel02.PNG" class="roomsImg">
+					    </div>
+					    <div class="carousel-item">
+					      <img src="../img/accomodation/hotel03.PNG" class="roomsImg">
+					    </div>
+					  </div>
+					
+					  <!-- Left and right controls -->
+					  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+					    <span class="carousel-control-prev-icon"></span>
+					  </a>
+					  <a class="carousel-control-next" href="#demo" data-slide="next">
+					    <span class="carousel-control-next-icon"></span>
+					  </a>
 					</div>
+			</div>
 					
-					
-					<div class="col-sm-8 w3-container" style="margin:0px; padding: 10px">
+					<div class="col-sm-7 w3-container" style="margin:0px; padding: 10px">
 						<div class="w3-row w3-large" style="width: 100%; margin-left: 5px"
 							id="space">
 							<label class="w3-col"><strong>The space</strong></label>
@@ -200,6 +198,7 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	<aside class="col-sm-1">
 	
