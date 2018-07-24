@@ -12,7 +12,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <style>
-body{background-color:#92cc65;}
+body{}
  #mainDiv{width:1060px;margin:0px auto;background:#fff}
 #content {
 	position: relative;
@@ -90,7 +90,6 @@ body{background-color:#92cc65;}
 	clear: left;
 	padding-top: 50px;
 }
-#center{margin-top:300px}
 </style>
 <script>
    function logChk(){
@@ -111,20 +110,20 @@ body{background-color:#92cc65;}
 </script>
 
 </head>
-<body>
+<body >
 	<%@ include file="../nav.jspf"%>
 	<!-- 
 	본문은 left center right으로 나뉜다.
 -->
 	<div id="main" class="row main" >
-		<aside class="left col-sm-4" id="left" ></aside>
-		<div class="col-sm-6 center" id="center" >
-		
+		<aside class="left col-sm-2" id="left" ></aside>
+		<div class="col-sm-8 center" id="center" class="font1-small" style="top:80px">
 				<!-- 현재 위치 -->
-				<div id="loc"class= "font1-small">홈>로그인</div>
+				<div id="loc" style="top:20px" class="font1-small">홈>로그인</div>
 				<!-- 로그인 메인 -->
 				<div id="mainDiv">
 					<!-- 로그인 폼 --> 
+					<h1><strong>로그인</strong></h1>
 					<div id="logFrm" style="margin:0 auto" >
 						<input type="radio" name="memChange">회원 <input type="radio" name="memChange">가맹점
 						<!-- 회원로그인폼 -->
@@ -152,7 +151,6 @@ body{background-color:#92cc65;}
 		<footer class="row footer" id="footer">
 			<div class="col-sm-12"></div>
 		</footer>
-	<hr />
 
 </body>
 </html>
