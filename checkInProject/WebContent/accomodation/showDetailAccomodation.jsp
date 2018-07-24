@@ -29,8 +29,9 @@
 <link rel="stylesheet" href="../css/daterangepicker.css">
 <style>
 .roomsImg {
-	margin: 10px;
-	width: 250px;
+	margin-top:20px;
+	padding:0px;
+	width: 240px;
 	height: 250px;
 }
 </style>
@@ -55,7 +56,7 @@
 	<div id="main" class="row main">
 
 		<!-- 왼쪽 필터 부분 -->
-		<aside class="left col-lg-4 font1-medium w3-container" id="left">
+		<aside class="left col-lg-3 font1-medium w3-container" id="left">
 			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3; width:260px; top:50px;" id="mySidebar">
 				<!-- 정보 -->
 				<div class="w3-container w3-display-container w3-padding-16">
@@ -83,25 +84,49 @@
 					</form>
 				</div>
 
-				<!-- 본 상품 -->
-				<div class="w3-bar-block">
-					<div class="w3-container">
-						<a href=#><img src="../img/accomodation/hotel01.PNG"
-							alt="hotel1" style="width: 230px; height: 200px" /></a>
+				<!-- 내가 본 상품 -->
+				<div class="w3-bar-block container">
+					<div id="history" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ul class="carousel-indicators">
+						<li data-target="#history" data-slide-to="0" class="active"></li>
+						<li data-target="#history" data-slide-to="1"></li>
+						<li data-target="#history" data-slide-to="2"></li>
+					</ul>
+
+					<!-- The slide show -->
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="../img/accomodation/hotel01.PNG" class="roomsImg rounded">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/accomodation/hotel02.PNG" class="roomsImg rounded">
+						</div>
+						<div class="carousel-item">
+							<img src="../img/accomodation/hotel03.PNG" class="roomsImg rounded">
+						</div>
 					</div>
+
+					<!-- Left and right controls -->
+					<a class="carousel-control-prev" href="#history" data-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+					</a> <a class="carousel-control-next" href="#history" data-slide="next">
+						<span class="carousel-control-next-icon"></span>
+					</a>
+				</div>
 				</div>
 			</nav>
 		</aside>
 
 		<!-- 센터 부분 -->
-		<div class="col-lg-7 center w3-container" id="center">
+		<div class="col-lg-8 center w3-container" id="center">
 			<!-- 호텔 정보 -->
 			<!-- Push down content on small screens -->
 			<div style="margin-top:30px"></div>
 			<!-- 기본 정보 -->
 			<div class="input-group">
-				<div class="col-sm-8 container"
-					style="margin: 0px; padding: 10px">
+				<div class="col-sm-8"
+					style="margin:0px; padding: 10px">
 					<div class="w3-row w3-large" style="width: 100%; margin-left:5px" id="space">
 						<label class="w3-col"><strong>호텔 이름</strong></label>
 						<div class="w3-col s6">
@@ -124,17 +149,17 @@
 						</div>
 					</div>
 				</div>
-				<div class="w3-container col-sm-4" style="padding: 10px">
+				<div class="w3-container col-sm-4 rounded" style="padding: 10px">
 					<img src="../img/accomodation/hotel01.JPG" alt="Norway"
-						style="width: 230px; height: 200px" />
+						style="width: 230px; height: 200px"  />
 				</div>
 			</div>
 			<!-- 호텔 정보  끝-->
 
 			<!-- 룸 리스트 정보 시작 -->
-			<div class="input-group">
+			<div class="input-group border">
 				<!-- 이미지 DIV 시작 -->
-				<div id="room1" class="carousel slide" data-ride="carousel">
+				<div id="room1" class="carousel slide col-lg-4" data-ride="carousel">
 					<!-- Indicators -->
 					<ul class="carousel-indicators">
 						<li data-target="#room1" data-slide-to="0" class="active"></li>
@@ -142,16 +167,16 @@
 						<li data-target="#room1" data-slide-to="2"></li>
 					</ul>
 
-					<!-- The slideshow -->
+					<!-- The slide show -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="../img/accomodation/hotel01.PNG" class="roomsImg">
+							<img src="../img/accomodation/hotel01.PNG" class="roomsImg rounded">
 						</div>
 						<div class="carousel-item">
-							<img src="../img/accomodation/hotel02.PNG" class="roomsImg">
+							<img src="../img/accomodation/hotel02.PNG" class="roomsImg rounded">
 						</div>
 						<div class="carousel-item">
-							<img src="../img/accomodation/hotel03.PNG" class="roomsImg">
+							<img src="../img/accomodation/hotel03.PNG" class="roomsImg rounded">
 						</div>
 					</div>
 
@@ -166,8 +191,8 @@
 
 				<!-- 정보 DIV 시작 -->
 				<div class="col-lg-7 container font1-medium" style="margin: 0px; padding:20px">
-						<h3 class="row w3-yellow">
-							<strong>Standard</strong>
+						<h3 class="row">
+							<span id="rname"><strong>Standard</strong></span>
 						</h3>
 						<h6 class="row">
 							기준 <span id="min">2</span>명 (최대 <span id="max">2</span>명)
@@ -186,15 +211,8 @@
 						</div>
 						<hr/>
 						<div class="row">
-							<div class="col-lg-8"></div>
-							<h4 class="col-lg-4"><i class="fa fa-fw fa-won"></i><span id="price">20000</span></h4>
-							
-						</div>
-						<br/>
 						<!-- 평점 정보 시작 -->
-						<div id="grade" class="row">
-							<div class="col-sm-6"></div>
-							<p class="col-sm-6">
+							<p class="col-lg-6">
 							<label>평점</label>
 							<i class="fa fa-fw fa-star"></i>
 							<i class="fa fa-fw fa-star"></i>
@@ -202,8 +220,14 @@
 							<i class="fa fa-fw fa-star"></i>
 							<i class="fa fa-fw fa-star"></i>
 							</p>
-						</div>
+						
 						<!-- 평점 정보 끝 -->
+							<div class="col-lg-2"></div>
+							<h4 class="col-lg-4"><i class="fa fa-fw fa-won"></i><span id="price">20000</span></h4>
+							
+						</div>
+						<br/>
+						
 						<!-- 버튼 폼 시작 -->
 						<div class="row">
 							<div class="col-sm-5"></div>
@@ -221,9 +245,8 @@
 			
 		</div>
 		<!-- center 끝 -->
-
-	</div>
-	<aside class="col-sm-1"></aside>
+		
+	<aside class="col-sm-2"></aside>
 	<!-- footer -->
 	<footer class="row footer" id="footer">
 		<div class="col-sm-12"></div>
