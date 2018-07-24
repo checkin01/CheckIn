@@ -29,24 +29,24 @@
 <link rel="stylesheet" href="../css/daterangepicker.css">
 <style>
 .roomsImg {
-	margin-top:20px;
-	padding:0px;
+	margin-top: 20px; padding : 0px;
 	width: 240px;
 	height: 250px;
+	padding: 0px;
 }
 </style>
 <script>
 	$(function() {
-		$('input[name="checkinout"]').daterangepicker({
-			opens : 'left'
-			},
-			function(start, end, label) {
-				console.log("A new date selection was made: "
-						+ start.format('YYYY-MM-DD') + ' to '
-						+ end.format('YYYY-MM-DD'));
-		});
+		$('input[name="checkinout"]').daterangepicker(
+				{
+					opens : 'left'
+				},
+				function(start, end, label) {
+					console.log("A new date selection was made: "
+							+ start.format('YYYY-MM-DD') + ' to '
+							+ end.format('YYYY-MM-DD'));
+				});
 	});
-	
 </script>
 
 </head>
@@ -57,13 +57,30 @@
 
 		<!-- 왼쪽 필터 부분 -->
 		<aside class="left col-lg-3 font1-medium w3-container" id="left">
-			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3; width:260px; top:50px;" id="mySidebar">
+			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top"
+				style="z-index: 3; width: 260px; top: 50px;" id="mySidebar">
 				<!-- 정보 -->
 				<div class="w3-container w3-display-container w3-padding-16">
-					<i onclick="w3_close()"
-						class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
+					<i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
+					
+					<!-- 호텔 정보 -->
+					<div style="position:relative; top:20px">
+						<p class="w3-col font1-large"><strong>호텔 이름</strong></p>
+						
+						<p>
+							<i class="fa fa-fw fa-clock-o"></i> Check In: After 3PM
+							</p>
+							<p>
+								<i class="fa fa-fw fa-clock-o"></i> Check Out: 12PM
+							</p>
+							<p>
+								<i class="fa fa-fw fa-wifi"></i> <i class="fa-fw fa fa-support"></i>
+								<i class="fa fa-automobile fa-fw"></i> <i class="material-icons">local_dining</i>
+							</p>
+							<p>
+								<i class="material-icons">call</i><span id=tel>02-6585-7144</span>
+							</p>
 					<hr />
-
 					<form action="/action_page.php" target="_blank">
 						<p>
 							<i class="fa fa-calendar-check-o"> <label>일자</label></i>
@@ -83,51 +100,56 @@
 						</p>
 					</form>
 				</div>
-
+				</div>
+				
 				<!-- 내가 본 상품 -->
+				
 				<div class="w3-bar-block container">
 					<div id="history" class="carousel slide" data-ride="carousel">
-					<!-- Indicators -->
-					<ul class="carousel-indicators">
-						<li data-target="#history" data-slide-to="0" class="active"></li>
-						<li data-target="#history" data-slide-to="1"></li>
-						<li data-target="#history" data-slide-to="2"></li>
-					</ul>
+						<!-- Indicators -->
+						<ul class="carousel-indicators">
+							<li data-target="#history" data-slide-to="0" class="active"></li>
+							<li data-target="#history" data-slide-to="1"></li>
+							<li data-target="#history" data-slide-to="2"></li>
+						</ul>
 
-					<!-- The slide show -->
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img src="../img/accomodation/hotel01.PNG" class="roomsImg rounded">
+						<!-- The slide show -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../img/accomodation/hotel01.PNG"
+									class="roomsImg rounded">
+							</div>
+							<div class="carousel-item">
+								<img src="../img/accomodation/hotel02.PNG"
+									class="roomsImg rounded">
+							</div>
+							<div class="carousel-item">
+								<img src="../img/accomodation/hotel03.PNG"
+									class="roomsImg rounded">
+							</div>
 						</div>
-						<div class="carousel-item">
-							<img src="../img/accomodation/hotel02.PNG" class="roomsImg rounded">
-						</div>
-						<div class="carousel-item">
-							<img src="../img/accomodation/hotel03.PNG" class="roomsImg rounded">
-						</div>
+
+						<!-- Left and right controls -->
+						<a class="carousel-control-prev" href="#history" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a> <a class="carousel-control-next" href="#history"
+							data-slide="next"> <span class="carousel-control-next-icon"></span>
+						</a>
 					</div>
-
-					<!-- Left and right controls -->
-					<a class="carousel-control-prev" href="#history" data-slide="prev">
-						<span class="carousel-control-prev-icon"></span>
-					</a> <a class="carousel-control-next" href="#history" data-slide="next">
-						<span class="carousel-control-next-icon"></span>
-					</a>
-				</div>
 				</div>
 			</nav>
 		</aside>
-
-		<!-- 센터 부분 -->
+		
+		<!------------------------------ 센터 부분 ---------------------------------------------->
 		<div class="col-lg-8 center w3-container" id="center">
-			<!-- 호텔 정보 -->
+			<!-- 호텔 정보 
 			<!-- Push down content on small screens -->
-			<div style="margin-top:30px"></div>
+			<!--<div style="margin-top: 30px"></div>
 			<!-- 기본 정보 -->
-			<div class="input-group">
-				<div class="col-sm-8"
-					style="margin:0px; padding: 10px">
-					<div class="w3-row w3-large" style="width: 100%; margin-left:5px" id="space">
+			<!--<div class="input-group">
+				<div class="col-sm-8" style="margin: 0px; padding: 10px">
+					<div class="w3-row w3-large" style="width: 100%; margin-left: 5px"
+						id="space">
 						<label class="w3-col"><strong>호텔 이름</strong></label>
 						<div class="w3-col s6">
 							<p>
@@ -149,15 +171,16 @@
 						</div>
 					</div>
 				</div>
-				<div class="w3-container col-sm-4 rounded" style="padding: 10px">
+			
+				<!-- div class="w3-container col-sm-4 rounded" style="padding: 10px">
 					<img src="../img/accomodation/hotel01.JPG" alt="Norway"
-						style="width: 230px; height: 200px"  />
-				</div>
-			</div>
+						style="width: 230px; height: 200px" />
+				</div-->
+			<!--</div-->
 			<!-- 호텔 정보  끝-->
 
 			<!-- 룸 리스트 정보 시작 -->
-			<div class="input-group border">
+			<div class="input-group border" style="top:20px">
 				<!-- 이미지 DIV 시작 -->
 				<div id="room1" class="carousel slide col-lg-4" data-ride="carousel">
 					<!-- Indicators -->
@@ -170,13 +193,16 @@
 					<!-- The slide show -->
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="../img/accomodation/hotel01.PNG" class="roomsImg rounded">
+							<img src="../img/accomodation/hotel01.PNG"
+								class="roomsImg rounded">
 						</div>
 						<div class="carousel-item">
-							<img src="../img/accomodation/hotel02.PNG" class="roomsImg rounded">
+							<img src="../img/accomodation/hotel02.PNG"
+								class="roomsImg rounded">
 						</div>
 						<div class="carousel-item">
-							<img src="../img/accomodation/hotel03.PNG" class="roomsImg rounded">
+							<img src="../img/accomodation/hotel03.PNG"
+								class="roomsImg rounded">
 						</div>
 					</div>
 
@@ -190,62 +216,82 @@
 				<!-- 이미지 DIV 끝 -->
 
 				<!-- 정보 DIV 시작 -->
-				<div class="col-lg-7 container font1-medium" style="margin: 0px; padding:20px">
-						<h3 class="row">
-							<span id="rname"><strong>Standard</strong></span>
-						</h3>
-						<h6 class="row">
-							기준 <span id="min">2</span>명 (최대 <span id="max">2</span>명)
-						</h6>
-						<br/>
-						<div class="row">
-							<p class="col-sm-1">
-								<i class="fa fa-fw fa-bed"></i><span id="bedroom">2</span>
-							</p>
-							<p class="col-sm-1">
-								<i class="fa fa-fw fa-bath"></i><span id="bathroom">1</span>
-							</p>
-							<p class="col-sm-1">
-								<i class="fa fa-fw fa-bath"></i><span id="bathroom">1</span>
-							</p>
-						</div>
-						<hr/>
-						<div class="row">
-						<!-- 평점 정보 시작 -->
-							<p class="col-lg-6">
-							<label>평점</label>
-							<i class="fa fa-fw fa-star"></i>
-							<i class="fa fa-fw fa-star"></i>
-							<i class="fa fa-fw fa-star"></i>
-							<i class="fa fa-fw fa-star"></i>
-							<i class="fa fa-fw fa-star"></i>
-							</p>
-						
-						<!-- 평점 정보 끝 -->
-							<div class="col-lg-2"></div>
-							<h4 class="col-lg-4"><i class="fa fa-fw fa-won"></i><span id="price">20000</span></h4>
-							
-						</div>
-						<br/>
-						
-						<!-- 버튼 폼 시작 -->
-						<div class="row">
-							<div class="col-sm-5"></div>
-							<input type="button" value="예약하기" class="btn form-control btn-success col-sm-3" />
-							<div class="col-sm-1"></div>
-							<input type="button" value="리뷰보기" class="btn form-control btn-success col-sm-3" /> 
-						</div>
-						<!-- 버튼 폼 끝 -->
+				<div class="col-lg-7 container font1-medium"
+					style="margin: 0px; padding: 20px">
+					<h3 class="row">
+						<span id="rname"><strong>Standard</strong></span>
+					</h3>
+					<h6 class="row">
+						기준 <span id="min">2</span>명 (최대 <span id="max">2</span>명)
+					</h6>
+					<br />
+					<div class="row">
+						<p class="col-sm-1">
+							<i class="fa fa-fw fa-bed"></i><span id="bedroom">2</span>
+						</p>
+						<p class="col-sm-1">
+							<i class="fa fa-fw fa-bath"></i><span id="bathroom">1</span>
+						</p>
+						<p class="col-sm-1">
+							<i class="fa fa-fw fa-bath"></i><span id="bathroom">1</span>
+						</p>
 					</div>
+					<hr />
+					<div class="row">
+						<!-- 평점 정보 시작 -->
+						<p class="col-lg-6">
+							<label>평점</label> <i class="fa fa-fw fa-star"></i> <i
+								class="fa fa-fw fa-star"></i> <i class="fa fa-fw fa-star"></i> <i
+								class="fa fa-fw fa-star"></i> <i class="fa fa-fw fa-star"></i>
+						</p>
+
+						<!-- 평점 정보 끝 -->
+						<div class="col-lg-2"></div>
+						<h4 class="col-lg-4">
+							<i class="fa fa-fw fa-won"></i><span id="price">20000</span>
+						</h4>
+
+					</div>
+					<br />
+
+					<!-- 버튼 폼 시작 -->
+					<div class="row">
+						<div class="col-sm-5"></div>
+						
+						<div class="col-sm-4"></div>
+						<input type="button" value="예약하기"
+							class="btn form-control btn-success col-sm-3" />
+					</div>
+					<!-- 버튼 폼 끝 -->
 				</div>
 				<!-- 정보 DIV 끝 -->
 				
+				<!-- 리뷰 DIV 시작 -->
+				<div class="container">
+				<!-- 클릭시 이미지 fa fa-caret-up 이걸로 바뀜 -->
+				<strong class="font1-medium"><i class="fa fa-caret-down" style="font-size:20px"></i> 리뷰</strong>
+					<div class="container input-group" style="background:#ddd; border-top:solid 1px #ccc">
+						<div class="col-sm-8">
+							<p>평점 : <span id="grade">★ ★ ★ ★ ★</span></p>
+							<p><label>내용 :</label>
+							<span id="content font1-small">여기 짱 좋아요 ~</span></p>
+							<!-- 쓰기는 예약 내역에서 가능 있음. -->
+							<p><img src="../img/accomodation/hotel03.PNG" style="width:100px; height:100px"class="rounded"></p>
+						</div>
+						<div class="col-sm-4 font1-small" style="color:grey">
+							<p>아이디 : <span id="uid">아이디아이디</span></p><hr />
+							<p>작성일 : <span id="grade">2018-07-24</span></p><hr />
+						</div>
+						
+					</div>
+				</div>
+				<!-- 리뷰 DIV 끝 -->
 			</div>
-			<!-- 룸 한개 정보 끝 -->
-			
+			<!--  -->
 		</div>
 		<!-- center 끝 -->
-		
+	</div>
+
 	<aside class="col-sm-2"></aside>
 	<!-- footer -->
 	<footer class="row footer" id="footer">
