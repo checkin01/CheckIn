@@ -130,11 +130,11 @@
 			<!--  check box 추가 -->
 			<hr/>
 			<div class="custom-control custom-radio custom-control-inline">
-      			<input type="radio" class="custom-control-input" id="customRadio1" name="example1">
+      			<input type="radio" class="custom-control-input" id="customRadio1" name="customRadio">
       			<label class="custom-control-label" for="customRadio1">일반회원</label>
    			 </div>
     		<div class="custom-control custom-radio custom-control-inline">
-     			 <input type="radio" class="custom-control-input" id="customRadio2" name="example2">
+     			 <input type="radio" class="custom-control-input" id="customRadio2" name="customRadio">
      			 <label class="custom-control-label" for="customRadio2">가맹점회원</label>
     		</div>		
 			<div class="container"  id="memberReg" style="display:hidden">
