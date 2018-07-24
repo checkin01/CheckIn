@@ -20,7 +20,7 @@
       %>
       <script>
          alert("로그인 성공하였습니다...");
-         location.href="../index.jsp";
+      
       </script>
       <%
       //response.sendRedirect("../index.jsp");//index.jsp
@@ -28,7 +28,7 @@
       %>
       <script>
          alert("아이디 또는 비밀번호가 잘못입력되었습니다...");
-         location.href="loginFrm.html";
+        
       </script>
       <%
       //response.sendRedirect("loginFrm.html");//loginform.html      

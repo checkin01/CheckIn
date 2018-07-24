@@ -12,7 +12,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <style>
-
+body{background-color:#92cc65;}
+ #mainDiv{width:1060px;margin:0px auto;background:#fff}
 #content {
 	position: relative;
 	width: 900px;
@@ -20,7 +21,7 @@
 }
 /*상단로고 */
 #logo {
-	border-bottom: 2px blue solid
+	border-bottom: 3px blue solid
 }
 /*현재위치 */
 #loc {
@@ -37,6 +38,7 @@
 #mainDiv {
 	position: relative;
 	height: 260px
+	
 }
 /*로그인 폼 */
 #logFrm {
@@ -115,8 +117,9 @@
 	본문은 left center right으로 나뉜다.
 -->
 	<div id="main" class="row main" >
-		<aside class="left col-sm-4" id="left"></aside>
-		<div class="col-sm-6 center" id="center">
+		<aside class="left col-sm-4" id="left" ></aside>
+		<div class="col-sm-6 center" id="center" >
+		
 				<!-- 현재 위치 -->
 				<div id="loc"class= "font1-small">홈>로그인</div>
 				<!-- 로그인 메인 -->
