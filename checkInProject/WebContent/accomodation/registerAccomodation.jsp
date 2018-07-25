@@ -109,19 +109,14 @@
 					<i class="fa fa-clock-o"> <label>손님 체크인/체크아웃 시간</label></i>
 					<div>
 						<span class="input-group"> 
-						<span class="form-control col-sm-6">check in</span> <input
-							class="form-control col-sm-6" id="checkin" name="timepicker"
-							type="text" /> 
-						<span class="error-text-box" id="checkinMsg"></span>	
-						<input type="hidden" id="wasclickin" />
+						<span class="form-control col-sm-5">check in</span> 
+						<input class="form-control col-sm-6 timepicki-input " id="checkin" name="checkin"
+							type="text" value="03:00 PM"/> <span class="error-text-box" id="checkinMsg"></span>
 						</span> <span class="input-group"> <span
-							class="form-control col-sm-6">check out</span> <input
-							class="form-control col-sm-6" id="checkout"
-							name="timepicker" type="text" /> 
-						<span class="error-text-box" id="checkoutMsg"></span>
-						<input type="hidden" id="wasclickout" />
+							class="form-control col-sm-5">check out</span> <input
+							class="form-control col-sm-6 timepicki-input" id="checkout" name="checkout"
+							type="text" value="12:00 AM"/> <span class="error-text-box" id="checkoutMsg"></span>
 						</span>
-
 					</div>
 				</div>
 
