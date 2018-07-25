@@ -105,8 +105,6 @@
 			</div>
 
 			<aside class="col-sm-2 right" id="right"></aside>
-		</div>
-	</div>
 
 
 	<!-- footer -->
