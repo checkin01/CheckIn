@@ -51,7 +51,7 @@
 	<div id="main" class="row main" style="margin-top: 80px">
 		<aside class="left col-sm-2" id="left"></aside>
 		<div class="col-sm-8 center" id="center">
-			<!--  check box 추가 -->
+			<!--  check box 추가 
 			<div class="row">
 				<div class="col-sm-3"></div>
 				<div class="custom-control custom-radio col-sm-3">
@@ -68,17 +68,19 @@
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
+			-->
 
-
-			<div id="register1" class="collapse" style="margin-top:30px">
+			<div id="register" style="margin-top:30px">
 				<div class="container" id="memberReg" style="display: hidden">
 					<!-- 홈 > 회원가입 -->
 					<form method="post" id="regFrm" class="form-horizontal"
 						action="registerFormOk.jsp">
-						<div class="form-group row">
-							<label class="col-sm-2">아이디</label> <input type="text"
+						<div class="input-group form-group row">
+							<label class="col-sm-2">아이디</label>
+							<input type="text"
 								name="userid" id="uid" class="form-control col-sm-7"
-								placeholder="아이디를 입력하세요"> <input type="button"
+								placeholder="아이디를 입력하세요"> 
+							<input type="button"
 								value="아이디 중복확인" id="idChk"
 								class="form-control col-sm-3 btn-primary" /> <input
 								type="hidden" name="idCheckResult" id="idCheckResult" value="N" />
@@ -100,8 +102,8 @@
 						</div>
 						<div class="form-group row">
 							<label class="col-sm-2">생년월일</label> <input type="date"
-								name="birthday" id="birth" class="form-control col-sm-8">
-							<div class="dropdown">
+								name="birthday" id="birth" class="form-control col-sm-5">
+							<div class="dropdown col-sm-2">
 								<button type="button" class="btn btn-primary dropdown-toggle"
 									data-toggle="dropdown">성별선택</button>
 								<div class="dropdown-menu">
@@ -152,55 +154,6 @@
 					</form>
 				</div>
 			</div>
-
-			<!-- 가맹점 회원 -->
-			<div id="register2" class="collapse" style="margin-top:30px">
-				<div class="container" id="masterReg">
-					<span class="badge badge-secondary"></span>
-					<form method="post" id="regFrm" class="form-horizontal"
-						action="registerFormOk.jsp">
-						<div class="form-group row">
-							<label class="col-sm-2">아이디</label> <input type="text"
-								name="userid" id="uid" class="form-control col-sm-7"
-								placeholder="아이디를 입력하세요"> <input type="button"
-								value="아이디 중복확인" id="idChk"
-								class="form-control col-sm-3 btn-primary" /> <input
-								type="hidden" name="idCheckResult" id="idCheckResult" value="N" />
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-2">비밀번호</label> <input type="password"
-								name="userpwd" id="upwd" class="form-control col-sm-10"
-								placeholder="비밀번호를 입력하세요">
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-2">비밀번호확인</label> <input type="password"
-								name="userpwd2" id="upwd2" class="form-control col-sm-10"
-								placeholder="비밀번호확인">
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-2">이름</label> <input type="text"
-								name="username" id="uname" class="form-control col-sm-10"
-								placeholder="이름을 입력하세요">
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-2">연락처</label> <input type="text"
-								name="phone" id="tel" class="form-control col-sm-10"
-								placeholder="연락처입력(예:010-1234-5678)">
-						</div>
-
-						<div class="form-group row">
-							<label class="col-sm-2">이메일</label> <input type="text"
-								name="email" id="email" class="form-control col-sm-10"
-								placeholder="이메일입력(예:abcde@.com)">
-						</div>
-						<input type="submit" value="회원가입하기"
-							class="btn btn-success form-control" />
-					</form>
-				</div>
-			</div>
-
-
-
 			<aside class="col-sm-2 right" id="right"></aside>
 		</div>
 	</div>
