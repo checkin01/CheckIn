@@ -19,7 +19,7 @@
 <!-- body 구성에 적용 되는 스타일 시트 -->
 <link rel="stylesheet" type='text/css'
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- script fi -->
+<!-- script file -->
 <script src="../js/accomodationForm.js"></script>
 
 <!-- bootstrap-timepicki -->
@@ -37,6 +37,7 @@
 <body>
 	<%@ include file="../nav.jspf"%>
 	<!-- 본문은 left center right으로 나뉜다.-->
+	
 	<div id="main" class="row main">
 		<aside class="left col-sm-3" id="left"></aside>
 		<div class="col-sm-7 center" id="center" style="top: 50px">
@@ -112,11 +113,13 @@
 							class="form-control col-sm-6" id="checkin" name="timepicker"
 							type="text" /> 
 						<span class="error-text-box" id="checkinMsg"></span>	
+						<input type="hidden" id="wasclickin" />
 						</span> <span class="input-group"> <span
 							class="form-control col-sm-6">check out</span> <input
 							class="form-control col-sm-6" id="checkout"
 							name="timepicker" type="text" /> 
 						<span class="error-text-box" id="checkoutMsg"></span>
+						<input type="hidden" id="wasclickout" />
 						</span>
 
 					</div>

@@ -12,8 +12,8 @@
 var blankMsg = "필수 정보입니다.";
 var wrongMsg = "잘못 입력하셨습니다.";
 $(function(){
-	$('#checkin').timepicki();
-	$('#checkout').timepicki();
+	$('#checkin').timepicki({start_time:["03", "00", "PM"]});
+	$('#checkout').timepicki({start_time:["12", "00", "AM"]});
 	
 	$("#dataform").submit(function(){
 		var result = true;
@@ -33,14 +33,6 @@ $(function(){
 	});
 	$("#tel").focusout(function(){
 		checkTel();
-	});
-	$("#checkin").focusout(function(){
-		if($("#checkinMsg")!="")
-			checkCheckIn();
-	});
-	$("#checkout").focusout(function(){
-		if($("#checkoutMsg")!="")
-			checkCheckOut();
 	});
 	
 	$("#maxsleepdate").focusout(function(){
