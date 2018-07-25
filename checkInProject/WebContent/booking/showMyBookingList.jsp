@@ -10,7 +10,8 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
@@ -30,120 +31,69 @@ div>center {
 	showMyBookingList - 예약 보 리스트로 보기 - 용세
 	예약한 현황, 예약 취소한 현황, 리뷰 쓰기 버튼, 예약취소정	
 -->
-	<div id="main" class="row main">
+	<div id="main" class="row main"
+		style="position: relative; margin-top: 80px">
 
-		<aside class="left col-sm-3" id="left">
+		<aside class="left col-sm-2" id="left">
 
-			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top"
-				style="z-index: 3; width: 260px" id="mySidebar">
-				<div class="w3-container w3-display-container w3-padding-16">
-				</div>
-			</nav>
+
 			<!-- filter -->
 		</aside>
-		<div class="col-sm-7 center" id="center" data-spy="scroll"	data-target=".navbar" data-offset="50">
+		<!-- 예약 현황 리스트 시작 -->
+		<div class="col-sm-8 center" id="center">
+			<h1>예약현황</h1>
+			<hr />
+			<!-- 예약 현황 1 시작 -->
+			<div class="input-group border">
+				<div class="input-group-item col-lg-3">
+					<img src="../img/h01.PNG" style="width: 100%; height: 100%" />
+				</div>
+				<div class="container input-group-item col-lg-9">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>예약날짜</th>
+								<th>체크인</th>
+								<th>체크아웃</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2018-07-22</td>
+								<td>2018-07-21</td>
+								<td>2018-07-22</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>숙박업소</th>
+								<th>룸번호(이름)</th>
+								<th>연락처</th>
+								<th>인원수</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>고추잠자리</td>
+								<td>302호</td>
+								<td>032-531-7549</td>
+								<td>2</td>
+							</tr>
+						</tbody>
 
-			<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="#section1">예약현황</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#section2">예약취소현황</a>
-					</li>
-				</ul>
-			</nav>
-			<div id="section1" class="container-fluid bg-success"
-				style="padding-top: 70px; padding-bottom: 70px">
-				<h1>예약현황</h1><hr/>
-				<p></p>
-				<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					
+					</table>
+					<div>
+						<button type="button" class="btn btn-danger" style="width:100%">예약취소</button>
+					</div>
+				</div>
 			</div>
-			<div id="section2" class="container-fluid bg-warning"
-				style="padding-top: 70px; padding-bottom: 70px">
-				<h1>예약취소현황</h1><hr/>
-				<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-				<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					<p>Try to scroll this section and look at the navigation bar
-					while scrolling! Try to scroll this section and look at the
-					navigation bar while scrolling!</p>
-					
-			</div>
+			<!-- 예약 현황 1 끝 -->
 		</div>
-		<aside class="col-sm-2 right" id="right"></aside>
+		<!-- 예약 현황 리스트 끝 -->
+		<aside class="col-s-2 right" id="right"></aside>		
 	</div>
-
 	<!-- footer -->
 	<footer class="row footer" id="footer">
 		<div class="col-sm-12"></div>
