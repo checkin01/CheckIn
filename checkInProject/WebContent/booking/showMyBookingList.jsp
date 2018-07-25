@@ -18,6 +18,8 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="../css/default.css" />
 <style>
 div>center {
 	position: relative;
@@ -32,21 +34,19 @@ div>center {
 	예약한 현황, 예약 취소한 현황, 리뷰 쓰기 버튼, 예약취소정	
 -->
 	<div id="main" class="row main"
-		style="position: relative; margin-top: 80px">
+		style="position: relative; margin-top:80px">
 
 		<aside class="left col-sm-2" id="left">
-
-
-			<!-- filter -->
 		</aside>
+		
 		<!-- 예약 현황 리스트 시작 -->
 		<div class="col-sm-8 center" id="center">
-			<h1>예약현황</h1>
-			<hr />
+			<div class="font1-small">홈 > 마이페이지 > 예약현황 </div>
+			
 			<!-- 예약 현황 1 시작 -->
-			<div class="input-group border">
-				<div class="input-group-item col-lg-3">
-					<img src="../img/h01.PNG" style="width: 100%; height: 100%" />
+			<div class="input-group" style="padding:10px">
+				<div class="input-group-item col-lg-3 border" style="padding:10px">
+					<img src="../img/h01.PNG" style="width:100%;height:100%" />
 				</div>
 				<div class="container input-group-item col-lg-9">
 					<table class="table">
@@ -84,8 +84,9 @@ div>center {
 						</tbody>
 
 					</table>
-					<div>
-						<button type="button" class="btn btn-danger" style="width:100%">예약취소</button>
+					<div class="row">
+						<div class="col-sm-8"></div>
+						<button type="button" class="btn btn-danger col-sm-3">예약취소</button>
 					</div>
 				</div>
 			</div>
