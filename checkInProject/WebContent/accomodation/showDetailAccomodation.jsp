@@ -37,16 +37,37 @@
 </style>
 <script>
 	$(function() {
+		//datetimepicker
 		$('input[name="checkinout"]').daterangepicker(
-				{
-					opens : 'left'
-				},
-				function(start, end, label) {
-					console.log("A new date selection was made: "
-							+ start.format('YYYY-MM-DD') + ' to '
-							+ end.format('YYYY-MM-DD'));
-				});
+			{
+				opens : 'left'
+			},
+			function(start, end, label) {
+				console.log("A new date selection was made: "
+						+ start.format('YYYY-MM-DD') + ' to '
+						+ end.format('YYYY-MM-DD'));
+		});
+
 	});
+	//<!-- 클릭시 이미지 fa fa-caret-up 이걸로 바뀜 -->
+	function whenClickReview(){
+		var upScroll = "<strong><i class='fa fa-caret-down' style='font-size:20px'></i> 리뷰</strong>";
+		var downScroll = "<strong><i class='fa fa-caret-up' style='font-size:20px'></i> 리뷰</strong>";
+		
+		alert($("#reviewStatus").val());
+		if($("#reviewStatus").val()=='up'){
+			$("#showReview").html(downScroll);
+			$("#reviewStatus").val('down');
+			$("#review").css("display","block");
+		
+		}else if($("#reviewStatus").val()=="down"){
+			$("#showReview").html(upScroll);
+			$("#reviewStatus").val("up");
+			$("#review").css("display","none");
+			
+		}
+	}
+	
 </script>
 
 </head>
@@ -267,22 +288,26 @@
 				<!-- 정보 DIV 끝 -->
 				
 				<!-- 리뷰 DIV 시작 -->
-				<div class="container">
-				<!-- 클릭시 이미지 fa fa-caret-up 이걸로 바뀜 -->
-				<strong class="font1-medium"><i class="fa fa-caret-down" style="font-size:20px"></i> 리뷰</strong>
-					<div class="container input-group" style="background:#ddd; border-top:solid 1px #ccc">
-						<div class="col-sm-8">
-							<p>평점 : <span id="grade">★ ★ ★ ★ ★</span></p>
-							<p><label>내용 :</label>
-							<span id="content font1-small">여기 짱 좋아요 ~</span></p>
+				<div class="container" >
+					<!-- 클릭시 이미지 fa fa-caret-up 이걸로 바뀜 -->
+					<div id ="showReview" class="font1-medium btn btn-success" style="width:100% ;height:30px" onclick="whenClickReview()">
+						<strong><i class='fa fa-caret-down' style='font-size:20px'></i> 리뷰</strong>
+					</div>
+					<input type="hidden" id="reviewStatus" value="up"/>
+				<div class="container input-group" id="review" style="display:none;background:#ddd; border-top:solid 1px #ccc">
+						<div class="row">
+							<p class="col-sm-4">평점 : <span id="grade">★ ★ ★ ★ ★</span></p>
+							<p class="col-sm-4">아이디 : <span id="uid">123456</span></p><hr />
+							<p class="col-sm-4"><span id="grade">2018-07-24</span></p><hr />
+						</div>
+						<div class="row">
 							<!-- 쓰기는 예약 내역에서 가능 있음. -->
-							<p><img src="../img/accomodation/hotel03.PNG" style="width:100px; height:100px"class="rounded"></p>
+							<p class="col-sm-8">
+							<label>내용 :</label>
+							<span id="content font1-small" >여기 짱 좋아요 ~</span>
+							</p>
+							<p  class="col-sm-4"><img src="../img/accomodation/hotel03.PNG" style="width:80%; height:150px"class="rounded"></p>
 						</div>
-						<div class="col-sm-4 font1-small" style="color:grey">
-							<p>아이디 : <span id="uid">아이디아이디</span></p><hr />
-							<p>작성일 : <span id="grade">2018-07-24</span></p><hr />
-						</div>
-						
 					</div>
 				</div>
 				<!-- 리뷰 DIV 끝 -->
