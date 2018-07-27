@@ -102,6 +102,7 @@
 		#sideBar{position:relative;top:20px;left:10px;width:80%}	
 			#navImg{width:100%}
 			#sideNavCnt{background-color:#f8f8f8;position:relative;padding:10px 15px}
+				#sideNavCnt ul,li {margin:0; padding:0;} 
 				#sideNavCnt>ul>li{line-height:200%;list-style-type:none;color:black;}
 				#sideNavCnt>ul>li:hover{font-weight:bold}
 	/* 라디오 버튼 숨기기 */
@@ -137,8 +138,7 @@
 					<li><label for="point">포인트</label></li>
 					<li><label for="AttentionList">관심내역</label></li>
 					<li><label for="infoModify">회원정보수정</label></li>
-				</ul>
-						
+				</ul>						
 			</div>
 		</div>
 	</aside>
@@ -147,80 +147,97 @@
     <div class="col-sm-5 center" id="center">   	
     	<!--  check box 추가 -->
     	<!-- 홈 > 회원가입 -->
-    	<br/>
-	    <h4 class= "font1-small">홈>마이페이지</h4>
-	    <h4 class= "font1-small">>포인트</h4>
-	    <hr>
+    	
 	    <input type="radio" name="tab" id="bookList"/>
 		<input type="radio" name="tab" id="point" checked/>
 		<input type="radio" name="tab" id="AttentionList"/>
 		<input type="radio" name="tab" id="infoModify"/>
 		
-	    <div><img src="../img/1541.png"/></div>
-		<div><img src="../img/1542.png"/></div>
-		<div><img src="../img/home.png"/></div>
-		<div><img src="../img/logo_black.png"/></div>
-	    <!-- <form method="post" id="regFrm" class="form-horizontal" action="registerFormOk.jsp">
-	        <div class="form-group row">
-	            <label class="col-sm-2" >아이디</label> 
-	            <input type="text" name="userid" id="uid" class="form-control col-sm-10" disabled/>
-	        </div>
-	        <div class="form-group row">
-	            <label class="col-sm-2">비밀번호</label> 
-	            <input type="password"name="userpwd" id="upwd" class="form-control col-sm-10" placeholder="비밀번호를 입력하세요"/>
-	        </div>
-	        <div class="form-group row">
-	            <label class="col-sm-2">비밀번호확인</label> 
-	            <input type="password" name="userpwd2" id="upwd2" class="form-control col-sm-10"placeholder="비밀번호확인"/>
-	        </div>
-	        <div class="form-group row">
-	            <label class="col-sm-2">이름</label> 
-	            <input type="text" name="username" id="uname" class="form-control col-sm-10"disabled/>
-	        </div>
-	        <div class="form-group row">
-	            <label class="col-sm-2">생년월일</label> 
-	            <input type="date"name="birthday" id="birth" class="form-control col-sm-7" disabled/>
-	            <div class="dropdown">
-	                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">성별선택</button>
-	                <div class="dropdown-menu" >
-	                    <a class="dropdown-item" href="#">남성</a>
-	                    <a class="dropdown-item" href="#">여성</a>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="form-group row">
-	            <label class="col-sm-2">연락처</label> 
-	            <input type="text" name="phone" id="tel" class="form-control col-sm-10" placeholder="연락처입력(예:010-1234-5678)"/>
-	        </div>
-	        <div class="form-group row">
-	            <label class="col-sm-2">이메일</label> 
-	            <input type="text" name="email" id="email" class="form-control col-sm-10" placeholder="이메일입력(예:abcde@.com)"/>
-	        </div>
-	        <div class="form-group row">
-	            <label class="col-sm-2">지역</label>
-	            <select class="form-control col-sm-3"  id="typeSelector" name = "">
-	                <option>서울</option>
-	                <option>경기</option>
-	                <option>인천</option>
-	                <option>강원</option>
-	                <option>부산</option>
-	                <option>경남</option>
-	                <option>대구</option>
-	                <option>경북</option>
-	                <option>울산</option>
-	                <option>대전</option>
-	                <option>광주</option>
-	                <option>전남</option>
-	                <option>전북</option>
-	                <option>제주</option>
-	            </select>
-	        </div>
-	        <div class="form-group row">
-	            <label class="col-sm-2">포인트</label> 
-	            <input type="text" name="username" id="uname" class="form-control col-sm-10" disabled/>
-	        </div>
-	        <input type="submit" value="수정하기" class="btn btn-success form-control"/>
-	    </form> -->
+	    <div>
+	    	<br/>
+	    		<h4 class= "font1-small">홈>마이페이지>예약내역</h4>
+	    	<hr>
+	    	
+	    </div>
+		<div>
+			<br/>
+	    		<h4 class= "font1-small">홈>마이페이지>포인트</h4>
+	    	<hr>
+			<img src="../img/1542.png"/>
+		</div>
+		<div>
+			<br/>
+	    		<h4 class= "font1-small">홈>마이페이지>관심내역</h4>
+	    	<hr>
+			<img src="../img/home.png"/>
+		</div>
+		<div>
+			<br/>
+	    		<h4 class= "font1-small">홈>마이페이지>회원정보수정</h4>
+	    	<hr>
+	    	<form method="post" action="changeInfo.jsp">
+		    	회원님의 소중한 개인 정보 보호를 위해 비밀번호를 한 번 더 입력해주세요.<br/>
+		    	<input type="password" id="pwd"><br/>
+		    	<input type="submit" name="확인">
+	    	</form>
+	    	<!-- <form method="post" id="regFrm" class="form-horizontal" action="registerFormOk.jsp">
+		        <div class="form-group row">
+		            <label class="col-sm-2" >아이디</label> 
+		            <input type="text" name="userid" id="uid" class="form-control col-sm-10" disabled/>
+		        </div>
+		        <div class="form-group row">
+		            <label class="col-sm-2">비밀번호</label> 
+		            <input type="password"name="userpwd" id="upwd" class="form-control col-sm-10" placeholder="비밀번호를 입력하세요"/>
+		        </div>
+		        <div class="form-group row">
+		            <label class="col-sm-2">비밀번호확인</label> 
+		            <input type="password" name="userpwd2" id="upwd2" class="form-control col-sm-10"placeholder="비밀번호확인"/>
+		        </div>
+		        <div class="form-group row">
+		            <label class="col-sm-2">이름</label> 
+		            <input type="text" name="username" id="uname" class="form-control col-sm-10"disabled/>
+		        </div>
+		        <div class="form-group row">
+		            <label class="col-sm-2">생년월일</label> 
+		            <input type="date"name="birthday" id="birth" class="form-control col-sm-7" disabled/>
+		            <div class="dropdown">
+		                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">성별선택</button>
+		                <div class="dropdown-menu" >
+		                    <a class="dropdown-item" href="#">남성</a>
+		                    <a class="dropdown-item" href="#">여성</a>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="form-group row">
+		            <label class="col-sm-2">연락처</label> 
+		            <input type="text" name="phone" id="tel" class="form-control col-sm-10" placeholder="연락처입력(예:010-1234-5678)"/>
+		        </div>
+		        <div class="form-group row">
+		            <label class="col-sm-2">이메일</label> 
+		            <input type="text" name="email" id="email" class="form-control col-sm-10" placeholder="이메일입력(예:abcde@.com)"/>
+		        </div>
+		        <div class="form-group row">
+		            <label class="col-sm-2">지역</label>
+		            <select class="form-control col-sm-3"  id="typeSelector" name = "">
+		                <option>서울</option>
+		                <option>경기</option>
+		                <option>인천</option>
+		                <option>강원</option>
+		                <option>부산</option>
+		                <option>경남</option>
+		                <option>대구</option>
+		                <option>경북</option>
+		                <option>울산</option>
+		                <option>대전</option>
+		                <option>광주</option>
+		                <option>전남</option>
+		                <option>전북</option>
+		                <option>제주</option>
+		            </select>
+		        </div>
+		        <input type="submit" value="수정하기" class="btn btn-success form-control"/>
+		    </form> -->
+		</div>
     </div>
     <aside class="left" id="left" ></aside>
 </div>
