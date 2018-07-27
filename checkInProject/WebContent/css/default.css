@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Song+Myung|Poor+Story');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Song+Myung|Poor+Story|Do+Hyeon');
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-/* ÆùÆ®  */
+/* ï¿½ï¿½Æ®  */
 .font1-small{
 	font-size:14px;
 	font-family:'Nanum Gothic', serif;
@@ -16,8 +16,13 @@
 	font-size:30px;
 	font-family:'Nanum Gothic', serif;
 }
+
+.font2-large{
+	font-size:16px;
+	font-family:'Do Hyeon', serif;
+}
 	
-/* È­¸é Á¤·Ä Á¶°Ç*/
+/* È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
 body{
 	float:left;
 	height:110%;
