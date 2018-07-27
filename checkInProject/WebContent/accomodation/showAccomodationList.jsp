@@ -15,6 +15,8 @@
 <!-- daterangepicker-->
 <script src="../js/daterangepicker.js"></script>
 <link rel="stylesheet" href="../css/daterangepicker.css">
+<!-- navermap api -->
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=Ve4ILimYsUbRNnlZeSVm&submodules=geocoder"></script>
 
 <style>
 	#main{margin:80px}
@@ -29,6 +31,7 @@
 	#info2{line-height:40px; height:40px; font-size:16px}
 	#manageFrm{margin-top:30px; padding:10px 10px}
 	#manage{text-align:center}
+	#searchLabel div{text-align:center; font-size:0.9em}
 </style>
 <script>
 	$(function() {
@@ -43,6 +46,13 @@
                 + end.format('YYYY-MM-DD'));
     });
     });
+	
+	$('[data-toggle="popover"]').popover({
+         trigger: 'click',
+         template: popoverTemplate,
+         content : aaaa,
+         html: true
+	});
 </script>
 </head>
 <body>
@@ -53,7 +63,7 @@
 -->
 <div id= "main" class="row main">
 	
-	<aside class="left col-sm-3" id="left">
+	<aside class="left col-sm-1" id="left">
 		
 		<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3;width:260px" id="mySidebar">
   			<div class="w3-container w3-display-container w3-padding-16">
@@ -64,54 +74,127 @@
   		<!-- filter -->
   		
 	</aside>
-	<div class="col-sm-7 center" id="center">
+	<div class="col-sm-8 center" id="center">
 		<!-- 필터 -->
-		<div class="row" id="filter" style="border:1px solid black">						
+		<!-- 검색 라벨 -->
+		<div class="row border"  id="searchLabel" style="border:1px solid black">						
 			<div class="col-md-10">
-				<div class="row">
+				<div class="row" style="margin:5px">
 					<div class="col-md-2">
-						<label>숙박유형</label>
+						숙박유형
 					</div>
 					<div class="col-md-3">	
-						<label>지역(시)</label>
+						지역(시)
 					</div>
 					<div class="col-md-3">	
-						<label>지역(구)</label>
+						지역(구)
 					</div>
 					<div class="col-md-4">	
-						<label>체크인 체크아웃</label>
+						체크인 체크아웃
 					</div>
 				</div>
-				<div class="row">
-				
-				</div>		
+				<!-- 검색 필터 -->
+				<form action="showAccomodationList.jsp" method="get" id="searchFilter">
+					<div class="row" style="margin:5px">
+						<div class="col-md-2 dropdown">
+							<button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">숙박유형</button>
+						</div>
+						<div class="dropdown-menu border">
+							<a class="dropdown-item" href="#">모텔</a>
+							<a class="dropdown-item" href="#">호텔</a>
+							<a class="dropdown-item" href="#">게스트하우스</a>
+							<a class="dropdown-item" href="#">펜션</a>
+						</div>
+						<div class="col-md-3 btn-group">
+							<div class="btn-group" style="margin:auto; width:150px">
+								<button type="button" class="btn btn-light dropown-toggle" data-toggle="dropdown" style="width:150px;">시도선택</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">서울특별시</a>
+									<a class="dropdown-item" href="#">인천광역시</a>
+									<a class="dropdown-item" href="#">부산광역시</a>
+									<a class="dropdown-item" href="#">대구광역시</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 btn-group">
+							<div class="btn-group" style="margin:auto; width:150px">
+								<button type="button" class="btn btn-light dropown-toggle" data-toggle="dropdown"style="width:150px">구선택</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">강남구</a>
+									<a class="dropdown-item" href="#">강서구</a>
+									<a class="dropdown-item" href="#">강동구</a>
+									<a class="dropdown-item" href="#">강북구</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4" style="float:left">
+	                		<input type="text" class="w3-input w3-border" name="checkinout"  style="margin:5px;width:190px; font-size:1.3em; text-align:center;"/>
+						</div>
+					</div>
+				</form>		
 			</div>
 			<div class="col-md-2">
-				<input type="submit" value="숙소검색" class="btn btn-warning form-control">				
+				<input type="submit" value="숙소검색" class="btn btn-warning form-control"  style="margin:3px; height:68px">				
 			</div>				
 		</div>
-			<!-- <div class="btn-group-sm row" style="margin:0; padding:0; background:blue">									
-				<button class="btn btn-light col-sm-2">숙박유형</button>														
-				<button class="btn btn-light col-sm-2">서울시</button>																	
-				<button class="btn btn-light col-sm-2">구로구</button>									
-				<button class="btn btn-light col-sm-2">체크인</button>
-				<p>
-                <i class="fa fa-calendar-check-o"> <label>일자</label></i>
-                </p>
-                <input type="text" class="w3-input w3-border" name="checkinout" />
-				<button class="btn btn-light col-sm-2">검색</button>					
-			</div>		 -->					 
-						
 		
+		<!-- 정렬 ----------------------------------------------------------->
+		<div class="row border" id="searchSort" style="margin-top:10px; border:1px solid black">
+			<div class="col-md-12">
+				<div class="btn-group btn-group-md">
+					<div class="btn-group">
+						<button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">기본순</button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">최저가격순</a>
+							<a class="dropdown-item" href="#">별점순</a>
+							<a class="dropdown-item" href="#">방문자순</a>
+						</div>
+					</div>
+					<button type="button" class="btn btn-light" style="margin-left:10px">테마</button>
+				</div>
+			</div>
+		</div>		
 		
 		<!-- 지도 -->
-		<div class="row" id="map" style="margin-top:30px;height:250px;border:1px solid black">
-		지도	
+		<div class="row border" id="map" style="margin-top:30px;height:300px;border:1px solid black">
+		<div id="map" style="width:100%;height:400px;"></div>
+		    <script>
+		      var map = new naver.maps.Map('map');
+		      var myaddress = '불정로 6';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
+		      naver.maps.Service.geocode({address: myaddress}, function(status, response) {
+		          if (status !== naver.maps.Service.Status.OK) {
+		              return alert(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
+		          }
+		          var result = response.result;
+		          // 검색 결과 갯수: result.total
+		          // 첫번째 결과 결과 주소: result.items[0].address
+		          // 첫번째 검색 결과 좌표: result.items[0].point.y, result.items[0].point.x
+		          var myaddr = new naver.maps.Point(result.items[0].point.x, result.items[0].point.y);
+		          map.setCenter(myaddr); // 검색된 좌표로 지도 이동
+		          // 마커 표시
+		          var marker = new naver.maps.Marker({
+		            position: myaddr,
+		            map: map
+		          });
+		          // 마커 클릭 이벤트 처리
+		          naver.maps.Event.addListener(marker, "click", function(e) {
+		            if (infowindow.getMap()) {
+		                infowindow.close();
+		            } else {
+		                infowindow.open(map, marker);
+		            }
+		          });
+		          // 마크 클릭시 인포윈도우 오픈
+		          var infowindow = new naver.maps.InfoWindow({
+		              content: '<h4> [업소이름]</h4>[평점 : ★★★★★]<br/>[전화번호 : 02-1111-1111]<br/> <img src="../img/accomodation/home1.jpg"></a>'
+		          });
+		      });
+		      </script>	
 		</div>
 		
 						
 		<!-- 리스트 -->
-		<div class="row" id="list" style="margin-top:30px;height:280px;border:1px solid black">					
+		<div class="row border" id="list" style="margin-top:30px;height:280px;border:1px solid black">					
 			<!-- carousel : 업소 사진-->
          	<div class="col-lg-5" style="background-color:gray">
 	        	<div id="room1" class="carousel slide" data-ride="carousel">
@@ -164,7 +247,7 @@
 			</div>		
 		</div>					
 	</div>
-	<aside class="col-sm-2 right" id="right">
+	<aside class="col-sm-3 right" id="right">
 	
 	</aside>
 </div>

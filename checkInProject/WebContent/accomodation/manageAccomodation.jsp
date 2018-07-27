@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="../css/default.css"> <!-- body 구성에 적용 되는 스타일 시트 -->
 <style>
  	.regtop{padding-top:50px; float:right}
- 	.reginfoFrm{margin-top:130px; height:500px; border:2px solid black}
+ 	.reginfoFrm{margin-top:130px; height:500px;}
  	.reginfo{margin:10px 10px}
     .roomsImg {
       margin:10px 10px;
@@ -91,7 +91,7 @@
 			         	</div>			            
 		        	</div>
 		        	<!-- 업소 정보 -->
-					<div class="col-lg-7">
+					<div class="col-lg-7 border">
 						<div class="row" id="info">								
 							<div class="col-sm-12" id="info1">업소이름</div>
 						</div>
