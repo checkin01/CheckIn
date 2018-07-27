@@ -13,7 +13,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <style>
 body{}
- #mainDiv{width:1060px;margin:0px auto;background:#fff}
+#mainDiv{width:1060px;margin:0px auto;background:#fff}
 #content {
 	position: relative;
 	width: 900px;
