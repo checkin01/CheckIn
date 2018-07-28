@@ -161,18 +161,18 @@ label {
 		<!------------------------------ 필터 끝 ---------------------------------------------->
 
 		<!------------------------------ 센터 부분 ---------------------------------------------->
-		<div class="col-lg-8 center w3-container" id="center">
+		<div class="col-lg-8 center w3-container" id="center" style="padding-top:30px">
 <!--========================== info ==================================-->
 			<button onclick="whenClickAccor('ainfo')"
-				class="w3-button w3-block w3-left-align w3-green  font1-medium">
+				class="w3-button w3-block w3-left-align w3-deep-orange  font1-medium">
 				<strong>숙소 주의 사항</strong>
 			</button>
-			<div id="ainfo" class="border container w3-show" data-ride="carousel">
+			<div id="ainfo" class="border w3-show" data-ride="carousel" style="padding:20px">
 				<!-- 아이콘들 -->
-				<div class="row"></div>
+				<div></div>
 
 				<!-- 주의사항 -->
-				<div class="row">
+				<div>
 					<p id="notice">가평에 위치한 테라스 펜션은 무료 Wi-Fi 등 시설이 완비된 객실을 제공하며,
 						남이섬에서 7km 떨어져 있습니다. 모든 객실에는 발코니가 마련되어 있으며, 샤워 시설을 갖춘 전용 욕실이 있습니다.
 						주방에는 전자레인지, 냉장고와 주전자가 구비되어 있습니다. 펜션에서 쁘띠 프랑스는 11km, 아침고요수목원은 12km
@@ -183,22 +183,22 @@ label {
 
 <!--=================================== 지도 보기  =========================================-->
 			<button onclick="whenClickAccor('googleMap')"
-				class="w3-button w3-block w3-left-align w3-light-blue  font1-medium">
+				class="w3-button w3-block w3-left-align w3-light-blue font1-medium">
 				<strong>숙소 위치 보기</strong>
 			</button>
 			
-			<div id="googleMap" class="w3-grayscale-max border container w3-show" style="width:100%;height:300px;">
+			<div id="googleMap" class="w3-grayscale-max border w3-show" style="width:100%;height:300px;">
 			</div>
 			
 <!--  ========================== 룸들 정보 보기 시작 ========================== -->
 			<button onclick="whenClickAccor('rooms')"
-				class="w3-button w3-block w3-left-align w3-deep-orange  font1-medium">
+				class="w3-button w3-block w3-left-align w3-green font1-medium">
 			
 				<strong>방 정보 보기</strong>
 			</button>
-			<div class="border w3-show container" id="rooms" >
+			<div class="border w3-show" id="rooms" style="padding:20px">
 				<!-- 룸 리스트 정보 시작 -->
-				<div class="border row">
+				<div class="border row rounded">
 					<!-- 이미지 DIV 시작 -->
 					<div id="ImgDiv1" class="container carousel slide col-lg-4"
 						data-ride="carousel">
