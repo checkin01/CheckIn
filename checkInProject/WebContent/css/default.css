@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Song+Myung|Poor+Story|Do+Hyeon');
-=======
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower|Song+Myung|Do+Hyeon&amp;subset=korean|Libre+Barcode+128+Text|Ceviche+One|Faster+One|Knewave|Libre+Barcode+128+Text|Rammetto+One|VT323|Jua');
->>>>>>> registerUI
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 /* ��Ʈ  */
@@ -24,30 +20,21 @@
 	font-size:14px;
 	font-family:'Nanum Gothic', sans-serif
 }
-
-<<<<<<< HEAD
-.font2-large{
-	font-size:16px;
-	font-family:'Do Hyeon', serif;
-}
-=======
 .font2-medium{
 	font-size:22px;
 	font-family:'Jua', sans-serif
 }
 
 .font2-large{
-	font-size:30px;
-	font-family: 'Faster One', cursive;
+	font-size:22px;
+	font-family:'Jua', sans-serif
 }
+
 .logo-font{
 	font-size:30px;
 	font-family:'Faster One', cursive
 }
 	
->>>>>>> registerUI
-	
-/* ȭ�� ���� ����*/
 body{
 	float:left;
 	height:110%;
