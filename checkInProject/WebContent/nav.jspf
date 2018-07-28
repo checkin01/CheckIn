@@ -3,18 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Ceviche+One|Faster+One|Knewave|Rammetto+One|VT323|Jua" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Ceviche+One|Faster+One|Knewave|Rammetto+One|VT323|Jua|Nanum+Pen+Script" rel="stylesheet">
 <style>
 	#logo{
 		 position: relative;
   		 display: inline-block;
 		 left:30px;
-		 font-size:32px;
-		 font-family:'Jua';
+		 font-size:35px;
+		 font-family:'Nanum Pen Script';
 		}	
 	#collapsibleNavbar{
 		position: relative;
 		left:70px;
+		font-size:25px;
+		font-family:'Nanum Pen Script';
 		
 	}
 	#mainNav{
@@ -22,32 +24,32 @@
 		padding:0;
 	}
 	a{
-		color:#000;
+		color:#fff;
 	}
 	a:hover{
-		color:#000;
+		color:#fff;
 		border-bottom:none;
 	}
-	nav{
-		
-	}
+
 </style>
 </head>
 <!--navigation bar-->
-	<nav class="navbar navbar-expand-sm fixed-top font2-medium" id="mainNav" style="border-bottom:#ddd solid 1px;background:#fff ">
+	
+	<nav class="navbar navbar-expand-lg fixed-top bg-success" id="mainNav" style="border-bottom:#ddd solid 1px; ">
+	
 	<div id="logo">
 		<a href="#">Check In</a>
 	  <!--  <a class="navbar-brand" href="#" class="centered"><img src="<%=request.getContextPath() %>/img/logo/5.PNG" style="width:120px;" ></a>-->
 	</div>
 
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-	    <span class="navbar-toggler-icon"></span>
+	    <span class="navbar-toggler-icon"><i class="fa fa-align-justify" style="font-size:30px; color:#fff"></i></span>
 	  </button>
 	  
 	  <div class="collapse navbar-collapse" id="collapsibleNavbar">
 	    <ul class="navbar-nav" >
 	      <li class="nav-item bold">
-	        <a class="nav-link font2-medium" href="#">로그인</a>
+	        <a class="nav-link " href="#">로그인</a>
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="member/registerForm.jsp">회원가입</a>
