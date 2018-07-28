@@ -165,18 +165,19 @@
 			<input type="submit" value="파일 등록" class="btn btn-success form-control col-sm-3"/>
 		</div>
 	</form>
+	<footer class="row footer" id="footer">
+		<div>
+		</div>
+</footer>
 </div>
 <aside class="col-sm-2 right" id="right">
 	
 </aside>
+<!-- footer -->
+
+
 </div>
 
-<!-- footer -->
-<footer class="row footer" id="footer">
-		<div class="col-sm-12">
-
-		</div>
-</footer>
 
 </body>
 </html>
