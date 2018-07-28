@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Song+Myung|Poor+Story');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Song+Myung|Do+Hyeon&amp;subset=korean|Libre+Barcode+128+Text|Ceviche+One|Faster+One|Knewave|Libre+Barcode+128+Text|Rammetto+One|VT323|Jua');
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 /* 폰트  */
@@ -14,8 +14,27 @@
 
 .font1-large{
 	font-size:30px;
-	font-family:'Nanum Gothic', serif;
+	font-family:'Nanum Gothic', sans-serif
 }
+.font2-small{
+	font-size:14px;
+	font-family:'Nanum Gothic', sans-serif
+}
+
+.font2-medium{
+	font-size:22px;
+	font-family:'Jua', sans-serif
+}
+
+.font2-large{
+	font-size:30px;
+	font-family: 'Faster One', cursive;
+}
+.logo-font{
+	font-size:30px;
+	font-family:'Faster One', cursive
+}
+	
 	
 /* 화면 정렬 조건*/
 body{
