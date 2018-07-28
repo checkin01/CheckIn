@@ -1,12 +1,40 @@
 $(function() {
 	// 회원가입 일반 회원 유효성 검사
-	$("#regFrm1").submit(function() {
-			
-	});
+	$("#regFrmMember").submit(function() {
+		alert("in");
+		var result = true;
+		result &=wasCheckid();
+		result &=checkUid();
+		result &=checkUname();
+
+		result &=checkUpwd();
+
+		result &=checkUpwd2();
 	
-	// 회원가입 가맹점 회원 유효성 검사
-	$("#regFrm2").submit(function() {
+		result &=checkEmail();
+
+		result &=checkTel();
+
+		result &=checkBirth();
+
+		result &=checkLocation();
+
 		
+		if(result == 0) return false;
+		else return true;
+	});
+	$("#regFrmMaster").submit(function() {
+		var result = true;
+		result &=wasCheckid();
+		result &=checkUid();
+		result &=checkUname();
+		result &=checkUpwd();
+		result &=checkUpwd2();
+		result &=checkEmail();
+		result &=checkTel();
+		alert(result);
+		if(result == 0) return false;
+		else return true;
 	});
 	
 	$("#uid").focusout(function(){
@@ -37,7 +65,6 @@ function whenClickRadioBtn(){
 
 function whenClickIdChk(){
 	// 파일명,창이름,옵션(width,height,scrolling, )
-	alert("아이디 중복 체크");
 	window.open("../member/idChkWin.jsp?userid=" + $("#userid").val(), "win", "width=400,height=300");
 }
 
@@ -50,10 +77,12 @@ function whenFocusId(){
 
 function wasCheckid(){
 	// 중복검사
+	alert("wasCheckid");
 	if ($("#idCheckResult").val() != "Y") {
 		
-		return false;
+		return true;
 	}
+	return false;
 }
 
 //----------------------------정규식 체크---------------------------//
@@ -145,6 +174,7 @@ function checkLocation(){
 	if ($("#location").val() == "") {
 		return false;
 	}
+	return true;
 }
 
 function checkUpwd(){
@@ -171,7 +201,7 @@ function checkUpwd2(){
 	var upwd = $("#upwd").val();
 	var upwd2 = $("#upwd2").val();
 	
-	if (upwd!=upwd2) {
+	if (upwd!=upwd2 || upwd == "") {
 		$("#upwd2Msg").html("비밀번호가 일치 하지 않습니다.");
 		return false;
 	}

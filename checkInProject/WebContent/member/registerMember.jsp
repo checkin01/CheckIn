@@ -15,7 +15,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<script src="../js/registerMember.js"></script>
+<script src="../js/register.js"></script>
 
 <link rel="stylesheet" href="../css/default.css">
 <!-- body 구성에 적용 되는 스타일 시트 -->
@@ -61,8 +61,8 @@ label {
 			<div class="font1-small" style="padding: 20px 0">
 				<span> 홈 > 회원가입 </span>
 			</div>
-			<form method="post" id="regFrm" style="margin-top: 30px"
-				action="registerFormOk.jsp" class="container form-horizontal">
+			<form method="post" id="regFrmMember" style="margin-top: 30px"
+				action="../index.jsp" class="container form-horizontal">
 
 				<!-- 아이디 -->
 				<div class="row form-group">
@@ -117,7 +117,7 @@ label {
 						class="form-control col-sm-4">
 						<option value="1">남성</option>
 						<option value="2">여성</option>
-					</select> <span id="birthMsg" class="error-text"></span>
+					</select>
 				</div>
 				<div class="row"><div class="col-sm-3"></div><span id="birthMsg"
 						class="error-text"></span></div>
