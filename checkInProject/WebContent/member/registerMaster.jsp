@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <!DOCTYPE html>
 <html>
@@ -18,17 +17,6 @@
 <script src="../js/register.js"></script>
 
 <link rel="stylesheet" href="../css/default.css">
-<!-- body 구성에 적용 되는 스타일 시트 -->
-<!-- 
-	uid 아이디
-	upwd 
-	uname 
-	tel 
-	email 
-	birth 앞자리 뒷자리한개 
-	location 앞에만 
-	info(체크박스) -->
-
 <style>
 #headerIng {
 	width: 100%;
@@ -48,10 +36,9 @@ label {
 	color:red;
 }
 </style>
-<script>
-	
-</script>
 </head>
+<body>
+<%@ include file="../nav.jspf"%>
 <body class="font1-medium">
 	<%@ include file="../nav.jspf"%>
 	<!-- 본문은 left center right으로 나뉜다. -->
@@ -61,8 +48,8 @@ label {
 			<div class="font1-small" style="padding: 20px 0">
 				<span> 홈 > 회원가입 </span>
 			</div>
-			<form method="post" id="regFrmMember" style="margin-top: 30px"
-				action="../index.jsp" class="container form-horizontal">
+			<form method="post" id="regFrmMaster" style="margin-top: 30px"
+				action="registerFormOk.jsp" class="container form-horizontal">
 
 				<!-- 아이디 -->
 				<div class="row form-group">
@@ -108,20 +95,6 @@ label {
 				</div>
 				<div class="row"><div class="col-sm-3"></div><span id="unameMsg"
 						class="error-text"></span></div>
-
-				<!-- 생년월일 -->
-				<div class="form-group row">
-					<input type="hidden" id="birth" /> <label class="col-sm-3">생년월일</label>
-					<input type="date" name="birthdate" id="birthdate"
-						class="form-control col-sm-4" value="1999-01-01"> <select
-						class="form-control col-sm-4">
-						<option value="1">남성</option>
-						<option value="2">여성</option>
-					</select>
-				</div>
-				<div class="row"><div class="col-sm-3"></div><span id="birthMsg"
-						class="error-text"></span></div>
-				
 				
 				<!-- tel -->
 				<div class="form-group row">
@@ -142,26 +115,7 @@ label {
 				<div class="row"><div class="col-sm-3"></div><span id="emailMsg"
 						class="error-text"></span></div>
 
-				<!-- addr -->
-				<div class="form-group row">
-					<input type="hidden" id="location" /> <label class="col-sm-3">지역</label>
-					<select class="form-control col-sm-5" id="locationSelector">
-						<option value="서울">서울</option>
-						<option value="경기">경기</option>
-						<option value="인천">인천</option>
-						<option value="강원">강원</option>
-						<option value="부산">부산</option>
-						<option value="경남">경남</option>
-						<option value="대구">대구</option>
-						<option value="경북">경북</option>
-						<option value="울산">울산</option>
-						<option value="대전">대전</option>
-						<option value="광주">광주</option>
-						<option value="전남">전남</option>
-						<option value="전북">전북</option>
-						<option value="제주">제주</option>
-					</select>
-				</div>
+
 				<div style="height:100px"></div>
 				<div class="container row">
 					<div class="col-sm-7"></div>
@@ -178,6 +132,12 @@ label {
 
 
 	<!-- footer -->
+	<footer class="row footer" id="footer">
+		<div class="col-sm-12"></div>
+	</footer>
+
+</body>
+<!-- footer -->
 	<footer class="row footer" id="footer">
 		<div class="col-sm-12"></div>
 	</footer>

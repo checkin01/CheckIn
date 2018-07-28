@@ -18,6 +18,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<link  rel="stylesheet" href="../css/default.css"/>
 <link rel="stylesheet" href="../css/accomodation/showDetailStyle.css">
 <!--  body 구성에 적용 되는 스타일시트 -->
 <link rel="stylesheet"
