@@ -22,7 +22,11 @@
 	<aside class="left col-sm-3" id="left">
 	</aside>
 	<div class="col-sm-7 center" id="center">
-
+                
+                
+                
+                
+               
 	</div>
 	<aside class="col-sm-2 right" id="right">
 	
