@@ -3,19 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-<style>
- 	nav{
- 		color:black;
- 	}
-
-</style>
-
-</head>
-<!--navigation bar-->
-	<nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top font2-large" style="border-bottom:# solid 1px">
-	  <a class="navbar-brand" href="#"><img src="<%=request.getContextPath() %>/img/logo02.png" style="width:80px"></a>
-=======
 <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Ceviche+One|Faster+One|Knewave|Rammetto+One|VT323|Jua" rel="stylesheet">
 <style>
 	#logo{
@@ -52,17 +39,13 @@
 		<a href="#">Check In</a>
 	  <!--  <a class="navbar-brand" href="#" class="centered"><img src="<%=request.getContextPath() %>/img/logo/5.PNG" style="width:120px;" ></a>-->
 	</div>
->>>>>>> registerUI
+
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
 	  
 	  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-<<<<<<< HEAD
-	    <ul class="navbar-nav">
-=======
 	    <ul class="navbar-nav" >
->>>>>>> registerUI
 	      <li class="nav-item bold">
 	        <a class="nav-link font2-medium" href="#">로그인</a>
 	      </li>
