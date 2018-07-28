@@ -60,9 +60,12 @@
 		
 		<!------------------------------ 센터 부분 ---------------------------------------------->
 		<div class="col-lg-9 center w3-container" id="center">
-
+			<div class="font1-small" style="padding: 20px 0;top:20px">
+				<span> 홈 > 관리 페이지 > 룸 관리 </span>
+			</div>
+			
 			<!-- 룸 리스트 정보 시작 -->
-			<div class="input-group border" style="top:20px">
+			<div class="input-group border">
 				<!-- 이미지 DIV 시작 -->
 				<div id="room1" class="carousel slide col-lg-4" data-ride="carousel">
 					<!-- Indicators -->
