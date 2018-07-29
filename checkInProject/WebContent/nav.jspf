@@ -4,7 +4,7 @@
 <html>
 <head>
 
-<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Ceviche+One|Faster+One|Knewave|Rammetto+One|VT323|Jua|Nanum+Pen+Script" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Ceviche+One|Faster+One|Knewave|Rammetto+One|VT323|Jua|Nanum+Pen+Script|Gothic+A1&amp;subset=korean" rel="stylesheet">
 
 </head>
 <style>
@@ -13,13 +13,13 @@
   		 display: inline-block;
 		 left:30px;
 		 font-size:35px;
-		 font-family:'Nanum Pen Script';
+		 font-family:'Gothic A1';
 		}	
 	#collapsibleNavbar{
 		position: relative;
 		left:70px;
-		font-size:25px;
-		font-family:'Nanum Pen Script';
+		font-size:20px;
+		font-family:'Gothic A1';
 		
 	}
 	#mainNav{
