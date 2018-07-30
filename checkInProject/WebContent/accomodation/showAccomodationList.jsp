@@ -102,7 +102,10 @@
 								<a class="dropdown-item" href="#">게스트하우스</a>
 								<a class="dropdown-item" href="#">펜션</a>
 							</div>
-						</div>										
+						</div>
+						<script>
+						
+						</script>										
 						
 						<!-- 시도 선택 ---------------------------------------->
 						<div class="col-md-3 btn-group">
