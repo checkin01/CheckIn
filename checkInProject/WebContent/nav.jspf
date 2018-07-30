@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/default.css">
+
 </head>
 <!--navigation bar-->
 	<nav class="navbar navbar-expand-sm bg-light dark navbar-light fixed-top font1-medium" style="border-bottom:#ddd solid 2px">

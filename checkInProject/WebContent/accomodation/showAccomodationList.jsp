@@ -34,24 +34,18 @@
 	#searchLabel div{text-align:center; font-size:0.9em}
 </style>
 <script>
+
 	$(function() {
-    //datetimepicker
-    $('input[name="checkinout"]').daterangepicker(
-       {
-          opens : 'left'
-       },
-       function(start, end, label) {
-          console.log("A new date selection was made: "
-                + start.format('YYYY-MM-DD') + ' to '
-                + end.format('YYYY-MM-DD'));
-    });
-    });
-	
-	$('[data-toggle="popover"]').popover({
-         trigger: 'click',
-         template: popoverTemplate,
-         content : 
-         html: true
+		//datetimepicker
+		$('input[name="checkinout"]').daterangepicker(
+				{
+					opens : 'left'
+				},
+				function(start, end, label) {
+					console.log("A new date selection was made: "
+							+ start.format('YYYY-MM-DD') + ' to '
+							+ end.format('YYYY-MM-DD'));
+				});
 	});
 </script>
 </head>
@@ -76,6 +70,7 @@
 	</aside>
 	<div class="col-sm-8 center" id="center">
 		<!-- 필터 -->
+		
 		<!-- 검색 라벨 -->
 		<div class="row border"  id="searchLabel" style="border:1px solid black">						
 			<div class="col-md-10">
@@ -93,40 +88,85 @@
 						체크인 체크아웃
 					</div>
 				</div>
-				<!-- 검색 필터 -->
+				
+				<!-- 검색 필터 ------------------------------->
 				<form action="showAccomodationList.jsp" method="get" id="searchFilter">
+					<!-- 숙박유형 -->
 					<div class="row" style="margin:5px">
 						<div class="col-md-2 dropdown">
 							<button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">숙박유형</button>
-						</div>
-						<div class="dropdown-menu border">
-							<a class="dropdown-item" href="#">모텔</a>
-							<a class="dropdown-item" href="#">호텔</a>
-							<a class="dropdown-item" href="#">게스트하우스</a>
-							<a class="dropdown-item" href="#">펜션</a>
-						</div>
+						
+							<div class="dropdown-menu border">
+								<a class="dropdown-item" href="#">모텔</a>
+								<a class="dropdown-item" href="#">호텔</a>
+								<a class="dropdown-item" href="#">게스트하우스</a>
+								<a class="dropdown-item" href="#">펜션</a>
+							</div>
+						</div>										
+						
+						<!-- 시도 선택 ---------------------------------------->
 						<div class="col-md-3 btn-group">
 							<div class="btn-group" style="margin:auto; width:150px">
-								<button type="button" class="btn btn-light dropown-toggle" data-toggle="dropdown" style="width:150px;">시도선택</button>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#">서울특별시</a>
-									<a class="dropdown-item" href="#">인천광역시</a>
-									<a class="dropdown-item" href="#">부산광역시</a>
-									<a class="dropdown-item" href="#">대구광역시</a>
-								</div>
+								<button type="button" class="btn btn-light " style="width:150px;"  id="location">
+									시도선택
+								</button>
 							</div>
 						</div>
+						<script>
+						  var locs = ['서울','경기','인천','강원','제주','대전','충북','충남','부산','울산','경남','대구','경북','광주','전남','전북'];
+							//popover 적용
+							$(document).ready(function(){
+                        
+	                        	var locHtml = "<div class='pop-main'>";
+	                       		for(var i = 0 ; i < locs.length  ; i++ ){
+	                           	locHtml += "<button class='btn pop-item' id='"+locs[i]+"' onclick='whenSelectedLoc("+i+")'>"+locs[i]+"</button>";
+	                        	}
+	                        	locHtml+="</div>";
+	                        	$("#location").popover({
+	                                titile:"지역",
+	                                html:true,
+	                                trigger:"focus",
+	                                placement: "bottom",
+	                                content:locHtml
+	                             });
+							 });
+                        	 function whenSelectedLoc(i){
+                                   $("#location").html(locs[i]);                                
+                             }						
+						</script>
+						
+						<!-- 구 선택 ----------------------------->
 						<div class="col-md-3 btn-group">
 							<div class="btn-group" style="margin:auto; width:150px">
-								<button type="button" class="btn btn-light dropown-toggle" data-toggle="dropdown"style="width:150px">구선택</button>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#">강남구</a>
-									<a class="dropdown-item" href="#">강서구</a>
-									<a class="dropdown-item" href="#">강동구</a>
-									<a class="dropdown-item" href="#">강북구</a>
-								</div>
+								<button type="button" class="btn btn-light " style="width:150px;"  id="location2">
+									구선택
+								</button>
 							</div>
 						</div>
+						<script>
+						  var locs2 = ['강남구','강동구','강북구','강서구','관악구','광진구','구로구','금청구','노원구','도봉구','동대문구','동작구','마포구','서대문구','서초구','성동구','성북구','송파구','양천구','영등포구','용산구','은평구','종로구','중구','중랑구'];
+							//popover 적용
+							$(document).ready(function(){
+                        
+	                        	var locHtml2 = "<div class='pop-main'>";
+	                       		for(var j = 0 ; j < locs2.length  ; j++ ){
+	                           		locHtml2 += "<button class='btn pop-item' id='"+locs2[j]+"' onclick='whenSelectedLoc2("+j+")'>"+locs2[j]+"</button>";
+	                        	}
+	                        	locHtml2 +="</div>";
+	                        	$("#location2").popover({
+	                                titile:"지역2",
+	                                html:true,
+	                                trigger:"focus",
+	                                placement: "bottom",
+	                                content:locHtml2
+	                             });
+							 });
+                        	 function whenSelectedLoc2(j){
+                                   $("#location2").html(locs2[j]);
+                                   
+                             }						
+						</script>
+												
 						<div class="col-md-4" style="float:left">
 	                		<input type="text" class="w3-input w3-border" name="checkinout"  style="margin:5px;width:190px; font-size:1.3em; text-align:center;"/>
 						</div>
@@ -150,17 +190,19 @@
 							<a class="dropdown-item" href="#">방문자순</a>
 						</div>
 					</div>
-					<button type="button" class="btn btn-light" style="margin-left:10px">테마</button>
+					<div>
+						<button type="button" class="btn btn-light" data-toggle="collapse" data-target="#acco" style="margin-left:10px">테마</button>					
+					</div>
 				</div>
 			</div>
 		</div>		
 		
-		<!-- 지도 -->
+		<!-- 지도 --------------------------------------------------------->
 		<div class="row border" id="map" style="margin-top:30px;height:300px;border:1px solid black">
 		<div id="map" style="width:100%;height:400px;"></div>
 		    <script>
 		      var map = new naver.maps.Map('map');
-		      var myaddress = '불정로 6';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
+		      var myaddress = '광양9길';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
 		      naver.maps.Service.geocode({address: myaddress}, function(status, response) {
 		          if (status !== naver.maps.Service.Status.OK) {
 		              return alert(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
