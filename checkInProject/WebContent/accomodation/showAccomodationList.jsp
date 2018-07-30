@@ -50,7 +50,7 @@
 	$('[data-toggle="popover"]').popover({
          trigger: 'click',
          template: popoverTemplate,
-         content : aaaa,
+         content : 
          html: true
 	});
 </script>
