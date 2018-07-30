@@ -13,13 +13,13 @@
   		 display: inline-block;
 		 left:30px;
 		 font-size:35px;
-		 font-family:'Gothic A1';
+		 font-family:'Gothic A1',sans-serif;
 		}	
 	#collapsibleNavbar{
 		position: relative;
 		left:70px;
 		font-size:20px;
-		font-family:'Gothic A1';
+		font-family:'Gothic A1',sans-serif;
 		
 	}
 	#mainNav{
@@ -27,10 +27,10 @@
 		padding:0;
 	}
 	a{
-		color:#fff;
+		color:#35c657;
 	}
 	a:hover{
-		color:#fff;
+		color:#35c657;
 		border-bottom:none;
 	}
 
@@ -38,7 +38,7 @@
 </head>
 <!--navigation bar-->
 	
-	<nav class="navbar navbar-expand-lg fixed-top bg-success" id="mainNav" style="border-bottom:#ddd solid 1px; ">
+	<nav class="navbar navbar-expand-lg fixed-top" id="mainNav" style="border-bottom:#ddd solid 1px; ">
 	
 	<div id="logo">
 		<a href="#">Check In</a>
@@ -46,7 +46,7 @@
 	</div>
 
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-	    <span class="navbar-toggler-icon"><i class="fa fa-align-justify" style="font-size:30px; color:#fff"></i></span>
+	    <span class="navbar-toggler-icon"><i class="fa fa-align-justify" style="font-size:30px; color:#35c657"></i></span>
 	  </button>
 	  
 	  <div class="collapse navbar-collapse" id="collapsibleNavbar">
