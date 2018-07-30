@@ -10,7 +10,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/default.css"> <!-- body 구성에 적용 되는 스타일 시트 -->
 
 </head>
 <body>
@@ -21,15 +20,6 @@
 <div id= "main" class="row main">
 	
 	<aside class="left col-sm-3" id="left">
-		
-		<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3;width:260px" id="mySidebar">
-  			<div class="w3-container w3-display-container w3-padding-16">
-
-
-  			</div>
-  		</nav>
-  		<!-- filter -->
-  		
 	</aside>
 	<div class="col-sm-7 center" id="center">
                 
