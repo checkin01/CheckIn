@@ -24,7 +24,7 @@
 	<!-- 
 	본문은 left center right으로 나뉜다.
 -->
-	<div id="main" class="row main">
+	<div id="main" class="row main" style="top-padding:30px">
 
 		<aside class="left col-sm-3" id="left">
 
@@ -38,9 +38,9 @@
 			<!-- filter -->
 
 		</aside>
-		<div class="col-sm-7 center" id="center">
+		<div class="col-sm-6 center" id="center" style="padding:50px">
 
-			<h1>자료실 리스트</h1>
+			<h1>리뷰 리스트</h1>
 			<div class="list-group">
 				<div class="list-group-item list-group-item-action">
 					<!-- 글 태그 영역 -->
@@ -53,29 +53,99 @@
 					</div>
 
 				</div>
-
-
-
-				<div class="list-group-item list-group-item-action">
-					<div class="row">
-
-
-
-
-
-						<div class="col-sm-1 ct"></div>
-
-
+				<div class="list-group">
+					<div class="list-group-item list-group-item-action">
+						<div class="row">
+							<div class="col-sm-1 ct">24</div>
+							<div class="col-sm-5 ct">1+1=?</div>
+							<div class="col-sm-2 ct">홍길동</div>
+							<div class="col-sm-3 ct">2018/07/31</div>
+							<div class="col-sm-1 ct">첨부파일1</div>
+						</div>
 					</div>
 				</div>
 
+				<div class="list-group">
+					<div class="list-group-item list-group-item-action">
+						<div class="row">
+							<div class="col-sm-1 ct">24</div>
+							<div class="col-sm-5 ct">가나다라마바사</div>
+							<div class="col-sm-2 ct">세종대왕</div>
+							<div class="col-sm-3 ct">2018/07/31</div>
+							<div class="col-sm-1 ct">첨부파일1</div>
+						</div>
+					</div>
+				</div>
+				<div class="list-group">
+					<div class="list-group-item list-group-item-action">
+						<div class="row">
+							<div class="col-sm-1 ct">24</div>
+							<div class="col-sm-5 ct">아자차가타파하</div>
+							<div class="col-sm-2 ct">김길동</div>
+							<div class="col-sm-3 ct">2018/07/31</div>
+							<div class="col-sm-1 ct">첨부파일1</div>
+						</div>
+					</div>
+				</div>
+					<div class="list-group">
+					<div class="list-group-item list-group-item-action">
+						<div class="row">
+							<div class="col-sm-1 ct">24</div>
+							<div class="col-sm-5 ct">아자차가타파하</div>
+							<div class="col-sm-2 ct">김길동</div>
+							<div class="col-sm-3 ct">2018/07/31</div>
+							<div class="col-sm-1 ct">첨부파일1</div>
+						</div>
+					</div>
+				</div>
+					<div class="list-group">
+					<div class="list-group-item list-group-item-action">
+						<div class="row">
+							<div class="col-sm-1 ct">24</div>
+							<div class="col-sm-5 ct">아자차가타파하</div>
+							<div class="col-sm-2 ct">김길동</div>
+							<div class="col-sm-3 ct">2018/07/31</div>
+							<div class="col-sm-1 ct">첨부파일1</div>
+						</div>
+					</div>
+				</div>
+				<!-- 검색 start -->
 
+				<form action="list.jsp" id="searchFrm" class="form-inline">
+					<div class="list-group-item list-group-item-action"
+						style="text-align: center">
+						<select name="searchKey" class="form-control">
+							<option value="subject">제목</option>
+							<option value="content">글내용</option>
+							<option value="writer">작성자</option>
+						</select> <input type="text" id="searchWord" name="searchWord"
+							class="form-control" /> <input type="submit" value="Search"
+							class="form-control" />
+					</div>
+
+				</form>
+				<!-- 검색 end -->
 			</div>
-		</div>
 
-		<div class="list-group-item list-group-item-action">
-	
+
+			<div class="list-group-item list-group-item-action">
+				<div class="row">
+
+
+
+
+
+					<div class="col-sm-1 ct"></div>
+
+
+				</div>
+			</div>
+
+
 		</div>
+	</div>
+
+
 	</div>
 
 
