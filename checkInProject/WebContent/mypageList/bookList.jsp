@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>체크인 예약내역</title>
+<title>check in! 예약내역</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <script   src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -22,6 +22,11 @@
    birth 앞자리 뒷자리한개 
    location 앞에만 
    info(체크박스) -->
+<script>
+	$(document).ready(function(){
+		$("#center").load("<%=request.getContextPath()%>/booking/showMyBookingList.jsp");
+	});
+</script>
 <style>
 	#headerIng {width: 100%;height: 90px;margin-bottom: 10px}
 	.row {margin-right: 2px}
@@ -33,7 +38,7 @@
 			#sideNavCnt{background-color:#f8f8f8;position:relative;padding:10px 15px}
 				#sideNavCnt>a{line-height:2.3em;color:black}
 				#sideNavCnt>a:hover{font-weight:bold;text-decoration:none}
-	#center{padding:20px 0px;margin:0px}
+	#center{padding:20px 0px;margin:0px;weight:400px}
 </style>
 </head>
 <body>
@@ -54,7 +59,7 @@
 				</a>
 			</div>
 			<div id="sideNavCnt">
-				<a href="<%=request.getContextPath() %>/mypageList/bookList.jsp">예약내역</a><br/>
+				<a href="<%=request.getContextPath() %>/mypageList/bookList.jsp"><b>예약내역</b></a><br/>
 				<a href="<%=request.getContextPath() %>/mypageList/point.jsp">포인트</a><br/>
 				<a href="<%=request.getContextPath() %>/mypageList/checkInfo.jsp">회원정보확인/수정</a>				
 			</div>
@@ -67,10 +72,7 @@
     	<!-- 홈 > 회원가입 -->
 		<span class="font1-small">홈>마이페이지>예약내역</span>
 		<hr/>
-		<h3>예약내역</h3>
-		aaaa<br/>
-		aaaa<br/>
-		
+		<h3>예약내역</h3>		
     </div>
     <aside class="left" id="left" ></aside>
 </div>

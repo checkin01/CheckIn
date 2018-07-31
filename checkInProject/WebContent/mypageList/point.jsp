@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>체크인 포인트</title>
+<title>check in! 포인트</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <script   src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -33,7 +33,8 @@
 			#sideNavCnt{background-color:#f8f8f8;position:relative;padding:10px 15px}
 				#sideNavCnt>a{line-height:2.3em;color:black}
 				#sideNavCnt>a:hover{font-weight:bold;text-decoration:none}
-	#center{padding:20px 0px;margin:0px}
+	#center{padding:20px 0px;margin:0px;weight:400px}
+		#pointTable{text-align:center;border-top:1px solid #ccc;border-bottom:1px solid lightgray}
 </style>
 </head>
 <body>
@@ -55,7 +56,7 @@
 			</div>
 			<div id="sideNavCnt">
 				<a href="<%=request.getContextPath() %>/mypageList/bookList.jsp">예약내역</a><br/>
-				<a href="<%=request.getContextPath() %>/mypageList/point.jsp">포인트</a><br/>
+				<a href="<%=request.getContextPath() %>/mypageList/point.jsp"><b>포인트</b></a><br/>
 				<a href="<%=request.getContextPath() %>/mypageList/checkInfo.jsp">회원정보확인/수정</a>				
 			</div>
 		</div>
@@ -66,11 +67,22 @@
     	<!--  check box 추가 -->
     	<!-- 홈 > 회원가입 -->
 		<span class="font1-small">홈>마이페이지>포인트</span>
-		<hr/>
+		<hr/>		
 		<h3>포인트</h3>
-		aaaa<br/>
-		aaaa<br/>
-		
+		<span class="font1-small">포인트를 클릭하면 상세 내역을 확인하실 수 있습니다.</span>
+		<br/><br/>
+		<table id="pointTable" class="table">
+		    <thead class="thead-light">
+		        <tr>
+		            <th>예약 포인트</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr>
+		            <td>0</td>
+		        </tr>
+		    </tbody>
+	  	</table>		
     </div>
     <aside class="left" id="left" ></aside>
 </div>
