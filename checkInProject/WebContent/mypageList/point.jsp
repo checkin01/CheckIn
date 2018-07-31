@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>체크인 마이페이지</title>
+<title>체크인 포인트</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <script   src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -65,9 +65,9 @@
     <div class="col-sm-5 center container" id="center">   	
     	<!--  check box 추가 -->
     	<!-- 홈 > 회원가입 -->
-		<span class="font1-small">홈>마이페이지</span>
+		<span class="font1-small">홈>마이페이지>포인트</span>
 		<hr/>
-		aaaa<br/>
+		<h3>포인트</h3>
 		aaaa<br/>
 		aaaa<br/>
 		
