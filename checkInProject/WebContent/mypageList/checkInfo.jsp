@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>체크인 회원정보확인/수정</title>
+<title>check in! 회원정보확인/수정</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <script   src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -27,12 +27,6 @@
 	.row {margin-right: 2px}
 	/*=========================================================  */
 	body{background-color:#F5F5F5}
-	#sideNav{width:12%}	
-		#sideBar{position:relative;top:20px;left:10px;width:80%}	
-			#navImg{width:100%}
-			#sideNavCnt{background-color:#f8f8f8;position:relative;padding:10px 15px}
-				#sideNavCnt>a{line-height:2.3em;color:black}
-				#sideNavCnt>a:hover{font-weight:bold;text-decoration:none}
 	#center{padding:50px 40px;margin:20px auto;background-color:#fff}
 		#pwdChk{position:relative;left:40%}
 		#reset{position:relative;left:41%}
