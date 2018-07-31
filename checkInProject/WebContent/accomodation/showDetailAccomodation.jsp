@@ -338,10 +338,7 @@ label {
 	</div>
 	<aside class="col-sm-2"></aside>
 
-	<!-- footer -->
-	<footer class="row footer" id="footer">
-		<div class="col-sm-12"></div>
-	</footer>
+
 	<script src="../js/showDetailAccomodation.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=map"></script>
 	</body>
