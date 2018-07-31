@@ -94,18 +94,22 @@
 					<!-- 숙박유형 -->
 					<div class="row" style="margin:5px">
 						<div class="col-md-2 dropdown">
-							<button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">숙박유형</button>
+							<button type="button" id="Atype" class="btn btn-light dropdown-toggle" data-toggle="dropdown">숙박유형</button>
 						
-							<div class="dropdown-menu border">
+							<div class="dropdown-menu border" id="Aitem">
+								<script>
+									var accomodationType = ['모텔','호텔','펜션','게스트하우스'];
+									$(document).ready(function(){
+										accomodationTypeHtml = "<a class='dropdown-item' href='#'>";
+										
+									})
+								</script>
 								<a class="dropdown-item" href="#">모텔</a>
 								<a class="dropdown-item" href="#">호텔</a>
 								<a class="dropdown-item" href="#">게스트하우스</a>
 								<a class="dropdown-item" href="#">펜션</a>
 							</div>
-						</div>
-						<script>
-						
-						</script>										
+						</div>								
 						
 						<!-- 시도 선택 ---------------------------------------->
 						<div class="col-md-3 btn-group">
