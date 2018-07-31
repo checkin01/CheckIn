@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>check in! 숙박 업소 정보 수정</title>
+<title>Check in! 숙박 업소 정보 수정</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -106,14 +106,16 @@
 				<div class="form-group row list-group-item">
 					<i class="fa fa-clock-o"> <label>손님 체크인/체크아웃 시간</label></i>
 					<div>
-						<span class="input-group"> 
-						<span class="form-control col-sm-5">check in</span> 
-						<input class="form-control col-sm-6 timepicki-input " id="checkin" name="checkin"
-							type="text" value="03:00 PM"/> <span class="error-text-box" id="checkinMsg"></span>
+						<span class="input-group"> <span
+							class="form-control col-sm-5">check in</span> <input
+							class="form-control col-sm-6 timepicki-input " id="checkin"
+							name="checkin" type="text" value="03:00 PM" /> <span
+							class="error-text-box" id="checkinMsg"></span>
 						</span> <span class="input-group"> <span
 							class="form-control col-sm-5">check out</span> <input
-							class="form-control col-sm-6 timepicki-input" id="checkout" name="checkout"
-							type="text" value="12:00 AM"/> <span class="error-text-box" id="checkoutMsg"></span>
+							class="form-control col-sm-6 timepicki-input" id="checkout"
+							name="checkout" type="text" value="12:00 AM" /> <span
+							class="error-text-box" id="checkoutMsg"></span>
 						</span>
 
 					</div>
@@ -212,12 +214,13 @@
 						class="btn btn-success form-control col-sm-3" />
 				</div>
 			</form>
+			<!-- footer -->
+			<footer class="row footer" id="footer">
+				<div class="col-sm-12"></div>
+			</footer>
 		</div>
 		<aside class="col-sm-2 right" id="right"></aside>
 	</div>
-	<!-- footer -->
-	<footer class="row footer" id="footer">
-		<div class="col-sm-12"></div>
-	</footer>
+
 </body>
 </html>
