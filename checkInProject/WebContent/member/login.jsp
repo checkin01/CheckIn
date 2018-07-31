@@ -43,11 +43,11 @@
 -->
 	<div id="main" class="row main">
 		<aside class="left col-sm-2" id="left"></aside>
-		<div class="col-sm-8 center" id="center" class="font1-small" style="top: 80px">
+		<div class="col-sm-8 center" id="center" class="font1-small container" style="top: 80px">
 			
 			<!-- 로그인 메인 -->
 			<div id="id01">
-				<div class="w3-card-4 w3-animate-zoom" style="max-width: 600px">
+				<div class="w3-card-4 w3-animate-zoom container" style="max-width: 600px">
 					<div class="w3-center">
 						<br> <img src="../img/img_avatar4.png" alt="Avatar"
 							style="width: 30%" class="w3-circle w3-margin-top">
