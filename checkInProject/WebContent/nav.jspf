@@ -4,10 +4,9 @@
 <html>
 <head>
 
-<<<<<<< HEAD
 <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Ceviche+One|Faster+One|Knewave|Rammetto+One|VT323|Jua|Nanum+Pen+Script" rel="stylesheet">
 
-</head>
+
 <style>
 	#logo{
 		 position: relative;
@@ -40,18 +39,9 @@
 <!--navigation bar-->
 	
 	<nav class="navbar navbar-expand-lg fixed-top bg-success" id="mainNav" style="border-bottom:#ddd solid 1px; ">
-	
 	<div id="logo">
 		<a href="#">Check In</a>
-	  <!--  <a class="navbar-brand" href="#" class="centered"><img src="<%=request.getContextPath() %>/img/logo/5.PNG" style="width:120px;" ></a>-->
 	</div>
-
-=======
-</head>
-<!--navigation bar-->
-	<nav class="navbar navbar-expand-sm bg-light dark navbar-light fixed-top font1-medium" style="border-bottom:#ddd solid 2px">
-	  <a class="navbar-brand" href="#"><img src="<%=request.getContextPath() %>/img/logo03_w.png" style="width:80px"></a>
->>>>>>> jiwoong
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 	    <span class="navbar-toggler-icon"><i class="fa fa-align-justify" style="font-size:30px; color:#fff"></i></span>
 	  </button>
@@ -71,8 +61,6 @@
 	   </div> 
 	</nav>
 <!--navigation bar-->
-
-
 <body>
 </body>
 </html>
