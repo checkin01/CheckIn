@@ -16,17 +16,24 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <style>
-button {
-	width: 70px;
+.gu ,.subway {
 	hieght: 10px;
 	margin: 5px;
 	border: none;
 	background: #fff;
-	border-radius: 5px;
+	
 	font-size: 12px;
 	font-family: 'Gothic A1', sans-serif;
 }
-
+.searchOption{
+	border: none;
+	margin: 5px;
+	height:30px;
+	background: #fff;
+	font-size: 15px;
+	font-family: 'Gothic A1', sans-serif;
+	border-radius: 5px;
+}
 .panel-body {
 	padding: 10px;
 	width: 490px;
@@ -34,13 +41,15 @@ button {
 }
 </style>
 </head>
-<body class="container">
+<body>
 	<div class="panel-group">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a data-toggle="collapse" href="#location_pannel"> <span
-						id="sido" name="sido">서울</span> <span id="dong" name="dong">강남구</span>
+					<a data-toggle="collapse" href="#location_pannel"> 
+					<span id="sido">서울</span> 
+					<span id="gu">강남구</span>
+					<span id ="subway"></span>
 					</a>
 
 				</h4>
@@ -49,56 +58,67 @@ button {
 				<!--------- panel body ------------>
 				<div class="panel-body">
 					<div class="row container" id="sido_panel">
-						<button class=''>서울</button>
+						<button style="font-size:15px; border:none">서울</button>
 					</div>
 
 					<hr />
-					<input type="button" class="btn-success" id="searchMethod1"
-						value="주소로 검색하기" onClick="whenClickSearchOption(1)"> <input
-						type="button" class="btn-success" id="searchMethod2"
+					<input type="button" class="searchOption" id="searchMethod1" style="background:green;"
+						value="주소로 검색하기" onClick="whenClickSearchOption(1)"> 
+					<input
+						type="button" id="searchMethod2" class="searchOption" style="background:#ddd"
 						value="인근 지하철로 검색하기" onClick="whenClickSearchOption(2)">
 					<div class="row" id="gu_panel1" style="width: 500px; padding: 10px; display:block" >
-						<button class="">강남구</button><button class="">강동구</button> <button class="">강북구</button> <button class="">강서구</button> <button class="">관악구</button>
-	           			<button class="">광진구</button><button class="">구로구</button> <button class="">금천구</button> <button class="">노원구</button> <button class="">도봉구</button>
-	           			<button class="">동대문구</button><button class="">동작구</button> <button class="">마포구</button> <button class="">서대문구</button> <button class="">서초구</button>
-	           			<button class="">성동구</button><button class="">성북구</button> <button class="">송파구</button> <button class="">양천구</button> <button class="">영등포구</button>
-	           			<button class="">용산구</button><button class="">은평구</button> <button class="">종로구</button> <button class="">중구</button> <button class="">중랑구</button>
+						<button class="gu">강남구</button><button class="gu">강동구</button> <button class="gu">강북구</button> <button class="gu">강서구</button> <button class="gu">관악구</button>
+	           			<button class="gu">광진구</button><button class="gu">구로구</button> <button class="gu">금천구</button> <button class="gu">노원구</button> <button class="gu">도봉구</button>
+	           			<button class="gu">동대문구</button><button class="gu">동작구</button> <button class="gu">마포구</button> <button class="gu">서대문구</button> <button class="gu">서초구</button>
+	           			<button class="gu">성동구</button><button class="gu">성북구</button> <button class="gu">송파구</button> <button class="gu">양천구</button> <button class="gu">영등포구</button>
+	           			<button class="gu">용산구</button><button class="gu">은평구</button> <button class="gu">종로구</button> <button class="gu">중구</button> <button class="gu">중랑구</button>
            
 					</div>
 					<div class="row" id="gu_panel2" style="width: 500px; padding: 10px; display:none">
-						 <button class="">강남역/역삼역/삼성역/논현역</button><button class="">서초역/신사역/방배역</button> <button class="">논현역</button> <button class="">강서구</button> <button class="">관악구</button>
-	           			<button class="">역삼역</button><button class="">구로구</button> <button class="">금천구</button> <button class="">노원구</button> <button class="">도봉구</button>
-	           			<button class="">동대문구</button><button class="">동작구</button> <button class="">마포구</button> <button class="">서대문구</button> <button class="">서초구</button>
-	           			<button class="">성동구</button><button class="">성북구</button> <button class="">송파구</button> <button class="">양천구</button> <button class="">영등포구</button>
-	           			<button class="">용산구</button><button class="">은평구</button> <button class="">종로구</button> <button class="">중구</button> <button class="">중랑구</button>
-           
+							 <button class="subway">강남/역삼/삼성/논현</button><button class="subway">서초/신사/방배역</button> <button class="subway">동묘/신설동/청량리/회기</button> <button class="subway">장안동/답십리</button> <button class="subway">신림/서울대/사당/금천/동작</button>
+	          				<button class="subway">신촌/홍대/합정</button><button class="subway">강서/화곡/까치산/양천</button> <button class="subway">수유/미아</button> <button class="subway">잠실/신천</button> <button class="subway">신촌/홍대/합정</button>
+							<button class="subway">동묘/신설동/청량리/회기</button><button class="subway">연신내/불광/응암</button> <button class="subway">상봉/중랑/면목</button> <button class="subway">태릉/노원/도봉/창동</button> <button class="subway">종로(3,5가)/혜화</button>
+	           				<button class="subway">동대문/충무로/신당/약수/금호</button><button class="subway">성신여대/성북/월곡</button> <button class="subway">왕십리/성수/강변</button> <button class="subway">건대/군자/구의</button> <button class="subway">이태원/삼각지/용산/서울/명동/회현</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--  -->
+	
 	<script>
-		var locs2 = [ '강남구', '강동구', '강북구', '강서구', '관악구', '광진구', '구로구', '금청구',
-				'노원구', '도봉구', '동대문구', '동작구', '마포구', '서대문구', '서초구', '성동구',
-				'성북구', '송파구', '양천구', '영등포구', '용산구', '은평구', '종로구', '중구', '중랑구' ];
-
+		
+		$(function(){
+			$(".subway").click(function(){
+				var addr2 = $(this).text();
+				$("#gu").text('');
+				$("#subway").text(addr2);
+			});
+			$(".gu").click(function(){
+				var addr2 = $(this).text();
+				$("#gu").text(addr2);
+				$("#subway").text("");
+			});
+		});
+		
 		function whenClickSearchOption(i) {
 			var searchMethod1 = $("#searchMethod1");
 			var searchMethod2 = $("#searchMethod2");
 			if (i == 1) {
 				$("#gu_panel1").css("display", "block");
+				$("#searchMethod1").css("background", "green");
+				$("#searchMethod2").css("background", "#ddd");
 				$("#gu_panel2").css("display", "none");
 			} else if (i == 2) {
 				$("#gu_panel1").css("display", "none");
 				$("#gu_panel2").css("display", "block");
-
+				$("#searchMethod2").css("background", "green");
+				$("#searchMethod1").css("background", "#ddd");
 			}
 		}
 		function whenSelectedSido(i) {
 			$("#sido").val(locs[i] + " ");
 		}
 	</script>
-
 </body>
 </html>
