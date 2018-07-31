@@ -21,7 +21,6 @@
 	margin: 5px;
 	border: none;
 	background: #fff;
-	
 	font-size: 12px;
 	font-family: 'Gothic A1', sans-serif;
 }
