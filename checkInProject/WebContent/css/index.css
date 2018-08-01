@@ -39,7 +39,7 @@ div, span{
 	padding: 0px;
 	text-align:center;
 	height: 116px;
-	width: 1000px;
+	width:1000px;
 	background-color:#fff;
     opacity: 0.8;
 }
@@ -51,7 +51,7 @@ div, span{
 	padding: 0px auto;
 	height: 110px;
 	display: inline-block;
-	width: 22.8%;
+	width: 250px;
 }
 
 label {

@@ -5,42 +5,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<<<<<<< HEAD
+
 <title>Check in !</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" >
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-=======
-<title>Check in!</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
->>>>>>> index
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-
 <link rel="stylesheet" href="./css/index.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <!-- daterangepicker-->
-<script type="text/javascript"
-	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script src="./js/daterangepicker.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="./js/daterangepicker.js"></script>
 <link rel="stylesheet" href="./css/daterangepicker.css" />
-
+<!--  
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-
-<script src="./js/filter.js"></script>
+-->
+<script type="text/javascript" src="./js/filter.js"></script>
 <script>
 	$(function(){
 		$('input[name="daterange"]').daterangepicker({
@@ -64,32 +48,10 @@
 	<!-- 
 	본문은 left center right으로 나뉜다.
 -->
-<<<<<<< HEAD
-<div id= "main" class="row main">
-	
-	<aside class="left col-sm-3" id="left">
-	</aside>
-	<div class="col-sm-7 center" id="center">
-<<<<<<< HEAD
-                
-                
-                
-                
-               
-=======
-		
->>>>>>> jiwoong
-	</div>
-	<aside class="col-sm-2 right" id="right">
-	
-	</aside>
-</div>
-=======
 	<div class="header">
 		<div class="paragrapgh container text w3-animate-left">
-			<strong><span style="color: orange"> <i
-					class="fa fa-check-square-o" style="font-size: 48px; color: orange"></i>Check
-					In
+			<strong><span style="color: orange">
+			 <i class="fa fa-check-square-o" style="font-size: 48px; color: orange"></i>Check In
 			</span></strong> <span style="font-size: 0.7em;">에서 빠르고 쉽게 예약하세요 !</span>
 		</div>
 		<div class="filters container rounded w3-animate-left ">
@@ -108,8 +70,6 @@
 							<i class="material-icons">keyboard_arrow_down</i>
 						</div>
 					</div>
->>>>>>> index
-
 					<div class="w3-dropdown-content w3-bar-block border"
 						style="width: 100%">
 						<div class="w3-bar-item w3-button filter-item type-item"
