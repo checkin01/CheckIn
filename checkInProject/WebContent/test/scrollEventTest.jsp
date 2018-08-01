@@ -26,12 +26,11 @@ body{
 	transition:top 0.2s ease-in-out; 
 }
 #top-nav{
-	position:fixed; 
+	position:fixed;
 	top:0;
 	left:0; 
 	width:100%;
 	height:40px; 
-	background:blue;
 	transition:top 0.2s ease-in-out; 
 }
 
@@ -65,7 +64,7 @@ top:0px
 	 !!!!!!!!!!!!
 	</nav>
  -->
-<%@ include file="../nav.jspf"%>
+<%@ include file="nav.jspf"%>
 <img src="../img/accomodation/hotel01.PNG" width='100px' height='5000px' />
 <!--
 <nav id="footer-nav">
