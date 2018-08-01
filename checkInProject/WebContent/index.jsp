@@ -15,28 +15,19 @@
 <link rel="stylesheet" href="./css/index.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<!-- daterangepicker-->
+<!-- daterangepicker -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="./js/daterangepicker.js"></script>
 <link rel="stylesheet" href="./css/daterangepicker.css" />
-<!--  
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
--->
+
 <script type="text/javascript" src="./js/filter.js"></script>
 <script>
 	$(function(){
-		$('input[name="daterange"]').daterangepicker({
+		$("input[name='daterange']").daterangepicker({
 			opens : 'left'
 			,locale: {
 			      format: 'YYYY-MM-DD'
-		    },
-			function(start, end, label) {
-				console.log("A new date selection was made: "
-					+ start.format('YYYY-MM-DD') + ' to '
-					+ end.format('YYYY-MM-DD'));
-			}
+		    }
 		});
 	});
 
@@ -104,6 +95,7 @@
 				});
 			</script>
 			<!-- 유형 filter 끝 -->
+			
 			<!-- 지역 filter -->
 			<div class="filter-child rounded">
 				<div>
@@ -113,7 +105,7 @@
 				<div class="filter-main showLocModal">
 					<div>
 						<div class="filter-item" id='selectedLocation'>
-							<i class="material-icons"> location_on </i><span
+							<i class="material-icons"> location_on</i><span
 								class="selectedSido">서울</span> <span class="selectedGu"
 								style="font-size: 0.7em">강남구</span> <span class="selectedSubway"
 								style="font-size: 0.7em"></span>
@@ -126,8 +118,7 @@
 
 			</div>
 			<!-- 지역 filter 끝 -->
-
-
+			
 			<!-- 체크인/체크아웃 filter -->
 			<div class="filter-child rounded" style="width: 30%">
 				<div>
