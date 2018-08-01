@@ -15,7 +15,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<!-- <link rel="stylesheet" href="../css/default.css"> body 구성에 적용 되는 스타일 시트 -->
+<link rel="stylesheet" href="../css/default.css">
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <!-- daterangepicker-->
@@ -25,10 +25,14 @@
 <script type="text/javascript"
 	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=Ve4ILimYsUbRNnlZeSVm&submodules=geocoder"></script>
 <script type="text/javascript" src="../js/filter.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
 #main {
-	margin: 80px
+
+}
+.list{
+font-family: 'Gothic A1', sans-serif;
 }
 
 .roomsImg {
@@ -40,33 +44,41 @@
 #info1 {
 	line-height: 60px;
 	height: 60px;
-	font-size: 30px
+	font-size: 30px;
+	font-family: 'Gothic A1', sans-serif;
 }
 
 #info2 {
 	line-height: 40px;
 	height: 40px;
-	font-size: 16px
+	font-size: 16px;
+	font-family: 'Gothic A1', sans-serif;
 }
 
 #manageFrm {
 	margin-top: 30px;
-	padding: 10px 10px
+	padding: 10px 10px;
+	font-family: 'Gothic A1', sans-serif;
 }
 
 #manage {
-	text-align: center
+	text-align: center;
+	font-family: 'Gothic A1', sans-serif;
 }
-
+#searchLabel {
+	background:green;
+	opacity: 0.7;
+	color:white;
+}
 #searchLabel div {
 	text-align: center;
-	font-size: 0.9em
-}
-.showLocModal:hover{
-	cursor:pointer;
+	font-size: 0.9em;
+	font-family: 'Gothic A1', sans-serif;
 }
 
-
+.showLocModal:hover {
+	cursor: pointer;
+}
 </style>
 <script>
 	$(function() {
@@ -92,24 +104,14 @@
 -->
 	<div id="main" class="row main">
 
-		<aside class="left col-sm-1" id="left">
-
-			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top"
-				style="z-index: 3; width: 260px" id="mySidebar">
-				<div class="w3-container w3-display-container w3-padding-16">
-
-
-				</div>
-			</nav>
+		<aside class="left col-sm-2" id="left">
 			<!-- filter -->
 
 		</aside>
-		<div class="col-sm-8 center" id="center">
+		<div class="col-sm-8 center">
 			<!-- 필터 -->
-
 			<!-- 검색 라벨 -->
-			<div class="row border" id="searchLabel"
-				style="border: 1px solid black">
+			<div class="row border" id="searchLabel" style="border: 1px solid black">
 				<div class="col-md-10">
 					<div class="row" style="margin: 5px">
 						<div class="col-md-2">숙박유형</div>
@@ -121,14 +123,15 @@
 					<form action="showAccomodationList.jsp" method="get"
 						id="searchFilter">
 						<!-- 숙박유형 -->
-						<div class="row" style="margin: 5px">
+						<div class="row" style="margin:5px">
 							<div class="col-md-2 dropdown">
 								<button type="button" id="Atype"
 									class="btn btn-light dropdown-toggle" data-toggle="dropdown">숙박유형</button>
 
 								<div class="dropdown-menu border" id="Aitem">
 									<script>
-										var accomodationType = [ '모텔', '호텔', '펜션', '게스트하우스' ];
+										var accomodationType = [ '모텔', '호텔',
+												'펜션', '게스트하우스' ];
 										$(document)
 												.ready(
 														function() {
@@ -183,7 +186,7 @@
 						</div>
 						<script>
 						  var locs2 = ['강남구','강동구','강북구','강서구','관악구','광진구','구로구','금청구','노원구','도봉구','동대문구','동작구','마포구','서대문구','서초구','성동구','성북구','송파구','양천구','영등포구','용산구','은평구','종로구','중구','중랑구'];
-							//popover 적용
+							//popover 
 							$(document).ready(function(){
                         
 	                        	var locHtml2 = "<div class='pop-main'>";
@@ -204,18 +207,17 @@
                                    
                              }						
 						</script> -->
-								
+
 							<!-- 지역 filter -->
 							<div class="rounded col-md-6 btn-group">
 								<!-- filter_item 부분 변경 -->
-								<div class="showLocModal" style="margin:0 auto; width:300px">
-									<div>										
-									<div class="filter-item" id='selectedLocation' name='location' style="width:300px; font-size:15px">
-											<span
-												class="selectedSido">서울</span> 
-												<span class="selectedGu">강남구</span> <span
-												class="selectedSubway"></span>
-												<i class="material-icons">keyboard_arrow_down</i>
+								<div class="showLocModal" style="margin: 0 auto; width: 300px">
+									<div>
+										<div class="filter-item" id='selectedLocation' name='location'
+											style="width: 300px; font-size: 15px">
+											<span class="selectedSido">서울</span> <span class="selectedGu">강남구</span>
+											<span class="selectedSubway"></span> <i
+												class="material-icons">keyboard_arrow_down</i>
 										</div>
 									</div>
 								</div>
@@ -261,9 +263,9 @@
 			</div>
 
 			<!-- 지도 --------------------------------------------------------->
-			<div class="row border" id="map"
-				style="margin-top: 30px; height: 300px; border: 1px solid black">
-				<div id="map" style="width: 100%; height: 400px;"></div>
+			<div class="row border" id="map" style="margin-top:30px; height:300px; border:1px solid black">
+				<div id="map" class="container" style="width: 100%; height:280px;">
+				</div>
 				<script>
 					var map = new naver.maps.Map('map');
 					var myaddress = '광양9길';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
@@ -296,22 +298,21 @@
 													if (infowindow.getMap()) {
 														infowindow.close();
 													} else {
-														infowindow.open(map,
-																marker);
+														infowindow.open(map,marker);
 													}
 												});
 										// 마크 클릭시 인포윈도우 오픈
 										var infowindow = new naver.maps.InfoWindow(
-												{
+										{
 													content : '<h4> [업소이름]</h4>[평점 : ★★★★★]<br/>[전화번호 : 02-1111-1111]<br/> <img src="../img/accomodation/home1.jpg"></a>'
-												});
+										});
 									});
 				</script>
 			</div>
-
+	
 
 			<!-- 리스트 -->
-			<div class="row border" id="list"
+			<div class="row border list"
 				style="margin-top: 30px; height: 280px; border: 1px solid black">
 				<!-- carousel : 업소 사진-->
 				<div class="col-lg-5" style="background-color: gray">
@@ -362,15 +363,132 @@
 						<div class="col-sm-12" id="info2">조건</div>
 					</div>
 				</div>
+				
 			</div>
+			<!-- 리스트 -->
+			<div class="row border list"
+				style="margin-top: 30px; height: 280px; border: 1px solid black">
+				<!-- carousel : 업소 사진-->
+				<div class="col-lg-5" style="background-color: gray">
+					<div id="room1" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ul class="carousel-indicators">
+							<li data-target="#room1" data-slide-to="0" class="active"></li>
+							<li data-target="#room1" data-slide-to="1"></li>
+							<li data-target="#room1" data-slide-to="2"></li>
+						</ul>
+
+						<!-- The slideshow -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../img/accomodation/home1.jpg" class="roomsImg">
+							</div>
+							<div class="carousel-item">
+								<img src="../img/accomodation/home2.jpg" class="roomsImg">
+							</div>
+							<div class="carousel-item">
+								<img src="../img/accomodation/home3.jpg" class="roomsImg">
+							</div>
+						</div>
+
+						<!-- Left and right controls -->
+						<a class="carousel-control-prev" href="#room1" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a> <a class="carousel-control-next" href="#room1" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+					</div>
+				</div>
+				<!-- 업소 정보 -->
+				<div class="col-lg-7">
+					<div class="row" id="info">
+						<div class="col-sm-12" id="info1">업소이름</div>
+					</div>
+					<div class="row" id="info">
+						<div class="col-sm-12" id="info2">평점</div>
+					</div>
+					<div class="row" id="info">
+						<div class="col-sm-12" id="info2">최소인원~최대인원</div>
+					</div>
+					<div class="row" id="info">
+						<div class="col-sm-12" id="info2">입실시간 퇴실시간</div>
+					</div>
+					<div class="row" id="info">
+						<div class="col-sm-12" id="info2">조건</div>
+					</div>
+				</div>
+				
+			</div>
+			<!-- 리스트 -->
+			<div class="row border list"
+				style="margin-top: 30px; height: 280px; border: 1px solid black">
+				<!-- carousel : 업소 사진-->
+				<div class="col-lg-5" style="background-color: gray">
+					<div id="room1" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ul class="carousel-indicators">
+							<li data-target="#room1" data-slide-to="0" class="active"></li>
+							<li data-target="#room1" data-slide-to="1"></li>
+							<li data-target="#room1" data-slide-to="2"></li>
+						</ul>
+
+						<!-- The slideshow -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../img/accomodation/home1.jpg" class="roomsImg">
+							</div>
+							<div class="carousel-item">
+								<img src="../img/accomodation/home2.jpg" class="roomsImg">
+							</div>
+							<div class="carousel-item">
+								<img src="../img/accomodation/home3.jpg" class="roomsImg">
+							</div>
+						</div>
+
+						<!-- Left and right controls -->
+						<a class="carousel-control-prev" href="#room1" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a> <a class="carousel-control-next" href="#room1" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+					</div>
+				</div>
+				<!-- 업소 정보 -->
+				<div class="col-lg-7">
+					<div class="row" id="info">
+						<div class="col-sm-12" id="info1">업소이름</div>
+					</div>
+					<div class="row" id="info">
+						<div class="col-sm-12" id="info2">평점</div>
+					</div>
+					<div class="row" id="info">
+						<div class="col-sm-12" id="info2">최소인원~최대인원</div>
+					</div>
+					<div class="row" id="info">
+						<div class="col-sm-12" id="info2">입실시간 퇴실시간</div>
+					</div>
+					<div class="row" id="info">
+						<div class="col-sm-12" id="info2">조건</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			
+
+
+
+		<!-- footer -->
+		<footer class="row footer" id="footer">
+			<div class="col-sm-12"></div>
+		</footer>
+			
 		</div>
-		<aside class="col-sm-3 right" id="right"></aside>
+
+		
+		<aside class="col-sm-2 right" id="right" style="text-align:right">
+			<%@ include file="sidenav.jspf"%>
+		</aside>
 	</div>
-
-	<!-- footer -->
-	<footer class="row footer" id="footer">
-		<div class="col-sm-12"></div>
-	</footer>
-
 </body>
 </html>
