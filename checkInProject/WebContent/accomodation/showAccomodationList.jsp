@@ -34,11 +34,14 @@
 .list{
 font-family: 'Gothic A1', sans-serif;
 }
-
+img{
+	border-radius:5px;
+}
 .roomsImg {
 	margin: 10px 10px;
 	width: 300px;
 	height: 250px;
+	
 }
 
 #info1 {
@@ -67,7 +70,7 @@ font-family: 'Gothic A1', sans-serif;
 }
 #searchLabel {
 	background:green;
-	opacity: 0.7;
+ 	border: 1px solid black;
 	color:white;
 }
 #searchLabel div {
@@ -75,10 +78,19 @@ font-family: 'Gothic A1', sans-serif;
 	font-size: 0.9em;
 	font-family: 'Gothic A1', sans-serif;
 }
+.dropdown-item{
+	font-size:1.5em;
+}
 
 .showLocModal:hover {
 	cursor: pointer;
 }
+
+#searchSort{
+	margin-top: 10px; 
+	border: 1px solid black";
+}
+
 </style>
 <script>
 	$(function() {
@@ -111,11 +123,11 @@ font-family: 'Gothic A1', sans-serif;
 		<div class="col-sm-8 center">
 			<!-- 필터 -->
 			<!-- 검색 라벨 -->
-			<div class="row border" id="searchLabel" style="border: 1px solid black">
+			<div class="row border rounded" id="searchLabel">
 				<div class="col-md-10">
-					<div class="row" style="margin: 5px">
-						<div class="col-md-2">숙박유형</div>
-						<div class="col-md-6">지역(시)</div>
+					<div class="row rounded" style="margin: 5px">
+						<div class="col-md-3">숙박유형</div>
+						<div class="col-md-5">지역(시)</div>
 						<div class="col-md-4">체크인 체크아웃</div>
 					</div>
 
@@ -123,98 +135,35 @@ font-family: 'Gothic A1', sans-serif;
 					<form action="showAccomodationList.jsp" method="get"
 						id="searchFilter">
 						<!-- 숙박유형 -->
-						<div class="row" style="margin:5px">
-							<div class="col-md-2 dropdown">
-								<button type="button" id="Atype"
-									class="btn btn-light dropdown-toggle" data-toggle="dropdown">숙박유형</button>
+						<div class="row" style="margin-top:5px">
+							<div class="col-md-3 dropdown">
+								<button type="button" id="Atype" class="btn btn-light dropdown-toggle" data-toggle="dropdown">숙박유형</button>
 
 								<div class="dropdown-menu border" id="Aitem">
 									<script>
-										var accomodationType = [ '모텔', '호텔',
-												'펜션', '게스트하우스' ];
-										$(document)
-												.ready(
-														function() {
-															accomodationTypeHtml = "<a class='dropdown-item' href='#'>";
-
-														})
+										$(function(){
+										
+											$(".dropdown-item").click(function(){
+												var Atype = $("#Atype").html();
+												$("#Atype").html($(this).html());
+												
+											});
+										});
 									</script>
-									<a class="dropdown-item" href="#">모텔</a> <a
-										class="dropdown-item" href="#">호텔</a> <a class="dropdown-item"
-										href="#">게스트하우스</a> <a class="dropdown-item" href="#">펜션</a>
+									<a class="dropdown-item" href="#">모텔</a> 
+									<a class="dropdown-item" href="#">호텔</a> 
+									<a class="dropdown-item" href="#">게스트하우스</a> 
+									<a class="dropdown-item" href="#">펜션</a>
 								</div>
 							</div>
 
-							<!-- 시도 선택 ---------------------------------
-						<div class="col-md-3 btn-group">
-							<div class="btn-group" style="margin:auto; width:150px">
-								<button type="button" class="btn btn-light " style="width:150px;"  id="location">
-									시도선택
-								</button>
-							</div>
-						</div>
-						<script>
-						  var locs = ['서울','경기','인천','강원','제주','대전','충북','충남','부산','울산','경남','대구','경북','광주','전남','전북'];
-							//popover 적용
-							$(document).ready(function(){
-                        
-	                        	var locHtml = "<div class='pop-main'>";
-	                       		for(var i = 0 ; i < locs.length  ; i++ ){
-	                           	locHtml += "<button class='btn pop-item' id='"+locs[i]+"' onclick='whenSelectedLoc("+i+")'>"+locs[i]+"</button>";
-	                        	}
-	                        	locHtml+="</div>";
-	                        	$("#location").popover({
-	                                titile:"지역",
-	                                html:true,
-	                                trigger:"focus",
-	                                placement: "bottom",
-	                                content:locHtml
-	                             });
-							 });
-                        	 function whenSelectedLoc(i){
-                                   $("#location").html(locs[i]);                                
-                             }						
-						</script>
-						
-						<!-- 구 선택 ----------------------
-						<div class="col-md-3 btn-group">
-							<div class="btn-group" style="margin:auto; width:150px">
-								<button type="button" class="btn btn-light " style="width:150px;"  id="location2">
-									구선택
-								</button>
-							</div>
-						</div>
-						<script>
-						  var locs2 = ['강남구','강동구','강북구','강서구','관악구','광진구','구로구','금청구','노원구','도봉구','동대문구','동작구','마포구','서대문구','서초구','성동구','성북구','송파구','양천구','영등포구','용산구','은평구','종로구','중구','중랑구'];
-							//popover 
-							$(document).ready(function(){
-                        
-	                        	var locHtml2 = "<div class='pop-main'>";
-	                       		for(var j = 0 ; j < locs2.length  ; j++ ){
-	                           		locHtml2 += "<button class='btn pop-item' id='"+locs2[j]+"' onclick='whenSelectedLoc2("+j+")'>"+locs2[j]+"</button>";
-	                        	}
-	                        	locHtml2 +="</div>";
-	                        	$("#location2").popover({
-	                                titile:"지역2",
-	                                html:true,
-	                                trigger:"focus",
-	                                placement: "bottom",
-	                                content:locHtml2
-	                             });
-							 });
-                        	 function whenSelectedLoc2(j){
-                                   $("#location2").html(locs2[j]);
-                                   
-                             }						
-						</script> -->
-
 							<!-- 지역 filter -->
-							<div class="rounded col-md-6 btn-group">
+							<div class="rounded col-md-5 btn-group">
 								<!-- filter_item 부분 변경 -->
-								<div class="showLocModal" style="margin: 0 auto; width: 300px">
+								<div class="showLocModal" style="margin:0 auto; width: 300px">
 									<div>
 										<div class="filter-item" id='selectedLocation' name='location'
-											style="width: 300px; font-size: 15px">
+											style="width: 300px; font-size:15px">
 											<span class="selectedSido">서울</span> <span class="selectedGu">강남구</span>
 											<span class="selectedSubway"></span> <i
 												class="material-icons">keyboard_arrow_down</i>
@@ -224,9 +173,9 @@ font-family: 'Gothic A1', sans-serif;
 							</div>
 							<!-- 지역 filter 끝 -->
 
-
+							<!-- 체크인 체크아웃 -->
 							<div class="col-md-4" style="float: left">
-								<input type="text" class="w3-input w3-border" name="checkinout"
+								<input type="text" class="w3-input w3-border rounded" name="checkinout"
 									style="margin: 5px; width: 190px; font-size: 1.3em; text-align: center;" />
 							</div>
 						</div>
@@ -240,8 +189,8 @@ font-family: 'Gothic A1', sans-serif;
 			</div>
 
 			<!-- 정렬 ----------------------------------------------------------->
-			<div class="row border" id="searchSort"
-				style="margin-top: 10px; border: 1px solid black">
+			<div class="row border rounded" id="searchSort"
+			>
 				<div class="col-md-12">
 					<div class="btn-group btn-group-md">
 						<div class="btn-group">
@@ -263,7 +212,7 @@ font-family: 'Gothic A1', sans-serif;
 			</div>
 
 			<!-- 지도 --------------------------------------------------------->
-			<div class="row border" id="map" style="margin-top:30px; height:300px; border:1px solid black">
+			<div class="row border rounded" id="map" style="margin-top:30px; height:300px; border:1px solid black">
 				<div id="map" class="container" style="width: 100%; height:280px;">
 				</div>
 				<script>
@@ -312,10 +261,10 @@ font-family: 'Gothic A1', sans-serif;
 	
 
 			<!-- 리스트 -->
-			<div class="row border list"
+			<div class="row border list rounded"
 				style="margin-top: 30px; height: 280px; border: 1px solid black">
 				<!-- carousel : 업소 사진-->
-				<div class="col-lg-5" style="background-color: gray">
+				<div class="col-lg-5">
 					<div id="room1" class="carousel slide" data-ride="carousel">
 						<!-- Indicators -->
 						<ul class="carousel-indicators">
@@ -366,10 +315,10 @@ font-family: 'Gothic A1', sans-serif;
 				
 			</div>
 			<!-- 리스트 -->
-			<div class="row border list"
+			<div class="row border list rounded"
 				style="margin-top: 30px; height: 280px; border: 1px solid black">
 				<!-- carousel : 업소 사진-->
-				<div class="col-lg-5" style="background-color: gray">
+				<div class="col-lg-5">
 					<div id="room1" class="carousel slide" data-ride="carousel">
 						<!-- Indicators -->
 						<ul class="carousel-indicators">
@@ -420,10 +369,10 @@ font-family: 'Gothic A1', sans-serif;
 				
 			</div>
 			<!-- 리스트 -->
-			<div class="row border list"
+			<div class="row border list rounded"
 				style="margin-top: 30px; height: 280px; border: 1px solid black">
 				<!-- carousel : 업소 사진-->
-				<div class="col-lg-5" style="background-color: gray">
+				<div class="col-lg-5" >
 					<div id="room1" class="carousel slide" data-ride="carousel">
 						<!-- Indicators -->
 						<ul class="carousel-indicators">

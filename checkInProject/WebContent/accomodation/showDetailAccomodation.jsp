@@ -310,9 +310,7 @@ label {
 									<label><i class="fa fa-calendar"></i> 날짜 : </label> <span
 										id="grade">2018-07-24</span>
 								</p>
-
 							</div>
-
 							<label><i class="fa fa-comments"></i> 내용 </label>
 							<div class="row">
 								<!-- 쓰기는 예약 내역에서 가능 있음. -->
