@@ -28,15 +28,9 @@
 <script src="../js/daterangepicker.js"></script>
 <link rel="stylesheet" href="../css/daterangepicker.css">
 <style>
-#page>div{margin-top:10px;border:1px solid black}
-#bookListTop{border:1px solid red; height:50px; margin-top:20px; font-size:1.5em;}
-#bookListTop>div{border:1px solid black; text-align:center}
-#bookList{border:1px solid red; height:50px; font-size:1.3em}
-#bookList>div{border:1px solid black; text-align:center;}
-.page-link{color:black}
-
-#paging{margin:10px auto}
-
+	.pagination{margin:10px auto}
+	.page-link{}
+	#bookListTop>div>div{font-size:1.2em}
 </style>
 <script>
 	$(function() {
@@ -60,16 +54,20 @@
 -->
 	<div id="main" class="row main" style="position: relative; top: 80px">
 
-		<aside class="left col-sm-2" id="left">
+		<aside class="left col-sm-1" id="left">
 
 			<!-- filter -->
 		</aside>
-		<div class="col-sm-8 center " id="center">
-			<div class="w3-container w3-center" id="team">
-				<h2>CHECKIN</h2>
-				<p>홈>예약현황</p>
-
-				<!--  <div class="w3-row">
+		
+		<!-- center -->		
+		<div class="col-sm-10 center" id="center">		
+			<div class="row" style="margin-left:1px">
+				<h2>[업소이름] 실시간 예약 현황</h2>
+			</div>
+			<div class="row" style="margin-left:1px">	
+				<p>홈>업소이름>예약현황</p>
+			</div>
+			<!--  <div class="w3-row">
 					<br>
 					<div class="w3-quarter">
 						<img src="../img/home.png" alt="Boss" style="width: 45%"
@@ -95,163 +93,187 @@
 						<img src="../img/logout1.png" alt="Boss" style="width: 45%"
 							class="w3-circle w3-hover-opacity">
 						<h3>로그아웃</h3> -->
-						
-			</div>
-		</div>
-	</div>
-	<!-- Team 끝 -->
-	<!-- style ="속성:속성값 ; 속성:속성값 " -->
-	<!-- Room 시작 -->
-	<div class="w3-container w3-center w3-black"
-		style="positon: relative; margin-top: 80px" id="rooms">
-		<h3>실시간 예약현황</h3>
-				
-
-		<div class="row">
-			<div class="col-sm-5 ">
-				<label><i class="fa fa-calendar-o"></i> 날짜</label> 
-				<input class="w3-input w3-border" type="text" name ="checkinout" placeholder="DD MM YYYY"/>
-			</div>
-
-			<div class="col-sm-5">
-				<div class="custom-control custom-radio custom-control-inline">
-					<input type="radio" class="custom-control-input"
-						id="customRadio1" name="customRadio"> 
+	
+					<!-- Team 끝 -->
+					<!-- style ="속성:속성값 ; 속성:속성값 " -->
+					<!-- Room 시작 -->
+			<div class="row" style="margin-left:1px">
+				<div class="col-md-2 w3-panel w3-pale-red w3-border-red" style="margin:0px; padding:0px; text-align:center">																		
+						<label><i class="fa fa-calendar-o"></i> 날짜</label> 
+						<input class="w3-input w3-border" type="text" name ="checkinout" placeholder="DD MM YYYY" style="text-align:center"/>
+				</div>	
+				<div class="col-md-1" style="padding:10px 0px 10px 15px">							
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" class="custom-control-input"
+								id="customRadio1" name="customRadio"> 
 						<label class="custom-control-label" for="customRadio1">Check-In</label>
-				</div>
-				<div class="custom-control custom-radio custom-control-inline">
-					<input type="radio" class="custom-control-input"
-						id="customRadio2" name="customRadio"> 
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" class="custom-control-input"
+								id="customRadio2" name="customRadio"> 
 						<label class="custom-control-label" for="customRadio2">Check-Out</label>
+					</div>										
 				</div>
-			</div>
-			<div class="col-sm-2">
-
-				<button class="fa fa-search w3-button w3-block w3-white">Search</button>
-			</div>
-					
-	</div>
-	</div>
-	<!-- BookingList ------------------------------------ -->	
-	<div class="list-group" style="margin:10px 50px">
-		<div class="list-group-item">
-			<div class="row border" id="bookListTop">				
-				<div class="col-md-1">호실</div>
-				<div class="col-md-1">예약자이름</div>
-				<div class="col-md-1">인원수</div>
-				<div class="col-md-2">연락처</div>
-				<div class="col-md-2">체크인</div>
-				<div class="col-md-2">체크아웃</div>
-				<div class="col-md-2">예약날짜</div>
-				<div class="col-md-1">입실여부</div>							
-			</div>
-		</div>
-		<div class="list-group-item">						
-			<div class="row border" id="bookList">
-				<div class="col-md-1">201</div>
-				<div class="col-md-1">김길동</div>
-				<div class="col-md-1">2명</div>
-				<div class="col-md-2">010-1111-1111</div>
-				<div class="col-md-2">2018-07-21</div>
-				<div class="col-md-2">2018-07-23</div>
-				<div class="col-md-2">2018-07-15</div>
-				<div class="col-md-1">X</div>
-			</div>
-			<div class="row border" id="bookList">
-				<div class="col-md-1">201</div>
-				<div class="col-md-1">김길동</div>
-				<div class="col-md-1">2명</div>
-				<div class="col-md-2">010-1111-1111</div>
-				<div class="col-md-2">2018-07-21</div>
-				<div class="col-md-2">2018-07-23</div>
-				<div class="col-md-2">2018-07-15</div>
-				<div class="col-md-1">X</div>
-			</div>
-			<div class="row border" id="bookList">
-				<div class="col-md-1">201</div>
-				<div class="col-md-1">김길동</div>
-				<div class="col-md-1">2명</div>
-				<div class="col-md-2">010-1111-1111</div>
-				<div class="col-md-2">2018-07-21</div>
-				<div class="col-md-2">2018-07-23</div>
-				<div class="col-md-2">2018-07-15</div>
-				<div class="col-md-1">X</div>
-			</div>
-			<div class="row border" id="bookList">
-				<div class="col-md-1">201</div>
-				<div class="col-md-1">김길동</div>
-				<div class="col-md-1">2명</div>
-				<div class="col-md-2">010-1111-1111</div>
-				<div class="col-md-2">2018-07-21</div>
-				<div class="col-md-2">2018-07-23</div>
-				<div class="col-md-2">2018-07-15</div>
-				<div class="col-md-1">X</div>
-			</div>
-						
-			<div class="row border" id="bookList">
-				<div class="col-md-1">201</div>
-				<div class="col-md-1">김길동</div>
-				<div class="col-md-1">2명</div>
-				<div class="col-md-2">010-1111-1111</div>
-				<div class="col-md-2">2018-07-21</div>
-				<div class="col-md-2">2018-07-23</div>
-				<div class="col-md-2">2018-07-15</div>
-				<div class="col-md-1">X</div>
-			</div>
-			<div class="row border" id="bookList">
-				<div class="col-md-1">201</div>
-				<div class="col-md-1">김길동</div>
-				<div class="col-md-1">2명</div>
-				<div class="col-md-2">010-1111-1111</div>
-				<div class="col-md-2">2018-07-21</div>
-				<div class="col-md-2">2018-07-23</div>
-				<div class="col-md-2">2018-07-15</div>
-				<div class="col-md-1">X</div>
-			</div>
-			<div class="row border" id="bookList">
-				<div class="col-md-1">201</div>
-				<div class="col-md-1">김길동</div>
-				<div class="col-md-1">2명</div>
-				<div class="col-md-2">010-1111-1111</div>
-				<div class="col-md-2">2018-07-21</div>
-				<div class="col-md-2">2018-07-23</div>
-				<div class="col-md-2">2018-07-15</div>
-				<div class="col-md-1">X</div>
-			</div>
-			<div class="row border" id="bookList">
-				<div class="col-md-1">201</div>
-				<div class="col-md-1">김길동</div>
-				<div class="col-md-1">2명</div>
-				<div class="col-md-2">010-1111-1111</div>
-				<div class="col-md-2">2018-07-21</div>
-				<div class="col-md-2">2018-07-23</div>
-				<div class="col-md-2">2018-07-15</div>
-				<div class="col-md-1">X</div>
-			</div>
-			<div class="row border" id="bookList">
-				<div class="col-md-1">201</div>
-				<div class="col-md-1">김길동</div>
-				<div class="col-md-1">2명</div>
-				<div class="col-md-2">010-1111-1111</div>
-				<div class="col-md-2">2018-07-21</div>
-				<div class="col-md-2">2018-07-23</div>
-				<div class="col-md-2">2018-07-15</div>
-				<div class="col-md-1">X</div>
-			</div>
-			<div class="row border" id="bookList">
-				<div class="col-md-1">201</div>
-				<div class="col-md-1">김길동</div>
-				<div class="col-md-1">2명</div>
-				<div class="col-md-2">010-1111-1111</div>
-				<div class="col-md-2">2018-07-21</div>
-				<div class="col-md-2">2018-07-23</div>
-				<div class="col-md-2">2018-07-15</div>
-				<div class="col-md-1">X</div>
-			</div>
-		</div>
-		<!-- 페이징 ----------------------------------------------------------->
-		<div class="list-group-item" id="paging">
-			<ul class="pagination pagination-md">
+				<div class="col-md-1">
+					<button class="fa fa-search w3-button w3-block w3-green" style="margin:0px; width:100%; height:100%; font-size:1.2em"> Search</button>
+				</div>		
+			</div>										
+			<div class="list-group" style="margin-top:20px">				
+				<div class="list-group-item w3-pale-red" id="bookListTop" style="text-align:center">
+					<div class="row">
+						<div class="col-md-1">호실</div>
+						<div class="col-md-1">예약자이름</div>
+						<div class="col-md-1">인원수</div>
+						<div class="col-md-2">연락처</div>
+						<div class="col-md-2">체크인</div>
+						<div class="col-md-2">체크아웃</div>
+						<div class="col-md-2">예약날짜</div>
+						<div class="col-md-1">입실여부</div>
+					</div>
+				</div>							
+				<div class="list-group-item" style="text-align:center">	
+					<div class="row" id="bookList">
+						<div class="col-md-1">201</div>
+						<div class="col-md-1">김길동</div>
+						<div class="col-md-1">2명</div>
+						<div class="col-md-2">010-1111-1111</div>
+						<div class="col-md-2">2018-07-21</div>
+						<div class="col-md-2">2018-07-23</div>
+						<div class="col-md-2">2018-07-15</div>
+						<div class="col-md-1">
+							<div class="dropdown">
+    							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">미입실</button>
+    							<ul class="dropdown-menu">
+      								<li><a href="#">입실</a></li>
+						    	</ul>
+							</div>
+						</div>
+					</div>
+				</div><!-- 예약내역 한개 -->
+				<div class="list-group-item"  style="text-align:center">	
+					<div class="row" id="bookList">
+						<div class="col-md-1">201</div>
+						<div class="col-md-1">김길동</div>
+						<div class="col-md-1">2명</div>
+						<div class="col-md-2">010-1111-1111</div>
+						<div class="col-md-2">2018-07-21</div>
+						<div class="col-md-2">2018-07-23</div>
+						<div class="col-md-2">2018-07-15</div>
+						<div class="col-md-1">X</div>
+					</div>
+				</div>
+				<div class="list-group-item"  style="text-align:center">	
+					<div class="row" id="bookList">
+						<div class="col-md-1">201</div>
+						<div class="col-md-1">김길동</div>
+						<div class="col-md-1">2명</div>
+						<div class="col-md-2">010-1111-1111</div>
+						<div class="col-md-2">2018-07-21</div>
+						<div class="col-md-2">2018-07-23</div>
+						<div class="col-md-2">2018-07-15</div>
+						<div class="col-md-1">X</div>
+					</div>
+				</div>
+				<div class="list-group-item"  style="text-align:center">	
+					<div class="row" id="bookList">
+						<div class="col-md-1">201</div>
+						<div class="col-md-1">김길동</div>
+						<div class="col-md-1">2명</div>
+						<div class="col-md-2">010-1111-1111</div>
+						<div class="col-md-2">2018-07-21</div>
+						<div class="col-md-2">2018-07-23</div>
+						<div class="col-md-2">2018-07-15</div>
+						<div class="col-md-1">X</div>
+					</div>
+				</div>
+				<div class="list-group-item"  style="text-align:center">	
+					<div class="row" id="bookList">
+						<div class="col-md-1">201</div>
+						<div class="col-md-1">김길동</div>
+						<div class="col-md-1">2명</div>
+						<div class="col-md-2">010-1111-1111</div>
+						<div class="col-md-2">2018-07-21</div>
+						<div class="col-md-2">2018-07-23</div>
+						<div class="col-md-2">2018-07-15</div>
+						<div class="col-md-1">X</div>
+					</div>
+				</div>
+				<div class="list-group-item"  style="text-align:center">	
+					<div class="row" id="bookList">
+						<div class="col-md-1">201</div>
+						<div class="col-md-1">김길동</div>
+						<div class="col-md-1">2명</div>
+						<div class="col-md-2">010-1111-1111</div>
+						<div class="col-md-2">2018-07-21</div>
+						<div class="col-md-2">2018-07-23</div>
+						<div class="col-md-2">2018-07-15</div>
+						<div class="col-md-1">X</div>
+					</div>
+				</div>
+				<div class="list-group-item"  style="text-align:center">	
+					<div class="row" id="bookList">
+						<div class="col-md-1">201</div>
+						<div class="col-md-1">김길동</div>
+						<div class="col-md-1">2명</div>
+						<div class="col-md-2">010-1111-1111</div>
+						<div class="col-md-2">2018-07-21</div>
+						<div class="col-md-2">2018-07-23</div>
+						<div class="col-md-2">2018-07-15</div>
+						<div class="col-md-1">X</div>
+					</div>
+				</div>
+				<div class="list-group-item"  style="text-align:center">	
+					<div class="row" id="bookList">
+						<div class="col-md-1">201</div>
+						<div class="col-md-1">김길동</div>
+						<div class="col-md-1">2명</div>
+						<div class="col-md-2">010-1111-1111</div>
+						<div class="col-md-2">2018-07-21</div>
+						<div class="col-md-2">2018-07-23</div>
+						<div class="col-md-2">2018-07-15</div>
+						<div class="col-md-1">X</div>
+					</div>
+				</div>
+				<div class="list-group-item"  style="text-align:center">	
+					<div class="row" id="bookList">
+						<div class="col-md-1">201</div>
+						<div class="col-md-1">김길동</div>
+						<div class="col-md-1">2명</div>
+						<div class="col-md-2">010-1111-1111</div>
+						<div class="col-md-2">2018-07-21</div>
+						<div class="col-md-2">2018-07-23</div>
+						<div class="col-md-2">2018-07-15</div>
+						<div class="col-md-1">X</div>
+					</div>
+				</div>
+				<div class="list-group-item"  style="text-align:center">	
+					<div class="row" id="bookList">
+						<div class="col-md-1">201</div>
+						<div class="col-md-1">김길동</div>
+						<div class="col-md-1">2명</div>
+						<div class="col-md-2">010-1111-1111</div>
+						<div class="col-md-2">2018-07-21</div>
+						<div class="col-md-2">2018-07-23</div>
+						<div class="col-md-2">2018-07-15</div>
+						<div class="col-md-1">X</div>
+					</div>
+				</div>
+				<div class="list-group-item"  style="text-align:center">	
+					<div class="row" id="bookList">
+						<div class="col-md-1">201</div>
+						<div class="col-md-1">김길동</div>
+						<div class="col-md-1">2명</div>
+						<div class="col-md-2">010-1111-1111</div>
+						<div class="col-md-2">2018-07-21</div>
+						<div class="col-md-2">2018-07-23</div>
+						<div class="col-md-2">2018-07-15</div>
+						<div class="col-md-1">X</div>
+					</div>
+				</div>				
+			</div><!-- listGroup -->	
+			<!-- paging -->
+				
+			<ul class="pagination pagination-md" style="padding-left: 650px">
 				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">Prev</a></li>
 				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">1</a></li>
 				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">2</a></li>
@@ -259,11 +281,13 @@
 				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">4</a></li>
 				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">5</a></li>
 				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">Next</a></li>
-			</ul>			
-		</div>
+			</ul>							
+		</div><!-- 여기 안에 모두 담자 -->		
 	</div>	
 
-	<aside class="col-sm-2 right" id="right"></aside>
+	
+	<!-- right -->
+	<aside class="col-sm-1 right" id="right"></aside>
 	
 
 	<!-- footer -->

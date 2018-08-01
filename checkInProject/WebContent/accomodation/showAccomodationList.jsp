@@ -238,7 +238,7 @@
 		              content: '<h4> [업소이름]</h4>[평점 : ★★★★★]<br/>[전화번호 : 02-1111-1111]<br/> <img src="../img/accomodation/home1.jpg"></a>'
 		          });
 		      });
-		      </script>	
+			</script>	
 		</div>
 		
 						
