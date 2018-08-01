@@ -28,7 +28,7 @@
 		<h3>예약내역</h3>
 		<!-- 예약 현황 1 시작 -->
 		<div class="input-group">
-			<div class="input-group-item col-lg-3 border"">
+			<div class="input-group-item col-lg-3 border">
 				<img src="../img/h01.PNG"/>
 			</div>
 			<div class="container input-group-item col-lg-9">
