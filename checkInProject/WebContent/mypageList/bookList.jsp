@@ -13,15 +13,7 @@
 <script   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="../css/default.css"> <!-- body 구성에 적용 되는 스타일 시트 -->
-   <!-- 
-   uid 아이디
-   upwd 
-   uname 
-   tel 
-   email 
-   birth 앞자리 뒷자리한개 
-   location 앞에만 
-   info(체크박스) -->
+
 <script>
 	$(document).ready(function(){
 		$("#center").load("<%=request.getContextPath()%>/booking/showMyBookingList.jsp");
@@ -31,7 +23,7 @@
 	#headerIng {width: 100%;height: 90px;margin-bottom: 10px}
 	.row {margin-right: 2px}
 	/*=========================================================  */
-	#left{width:20%}
+	#left{width:15%}
 	#sideNav{width:12%}	
 		#sideBar{position:relative;top:20px;left:10px;width:80%}	
 			#navImg{width:100%}
@@ -67,7 +59,7 @@
 	</aside>
 	
 	<!-- main -->
-    <div class="col-sm-5 center container" id="center">   	
+    <div class="col-sm-7 center container" id="center">   	
     	<!--  check box 추가 -->
     	<!-- 홈 > 회원가입 -->
 		<span class="font1-small">홈>마이페이지>예약내역</span>

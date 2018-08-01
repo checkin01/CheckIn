@@ -26,7 +26,7 @@
 	#headerIng {width: 100%;height: 90px;margin-bottom: 10px}
 	.row {margin-right: 2px}
 	/*=========================================================  */
-	#left{width:20%}
+	#left{width:15%}
 	#sideNav{width:12%}	
 		#sideBar{position:relative;top:20px;left:10px;width:80%}	
 			#navImg{width:100%}

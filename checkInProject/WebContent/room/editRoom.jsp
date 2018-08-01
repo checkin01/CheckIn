@@ -30,7 +30,7 @@
 		
 		<!-- 숙박 업소 유형 -->		
 		<div class="form-group row list-group-item">
-    		<i class="fa fa-fort-awesome" > <label for="typeSelector">숙박 업소 유형</label></i>
+    		<i class="fa fa-fort-awesome" > <label for="typeSelector" >숙박 업소 유형</label></i>
     			<select class="form-control col-sm-5"  id="typeSelector" name = "">
 			      <option>호텔</option>
 			      <option>모텔</option>

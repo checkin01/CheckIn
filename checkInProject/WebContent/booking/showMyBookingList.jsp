@@ -28,8 +28,8 @@
 		<h3>예약내역</h3>
 		<!-- 예약 현황 1 시작 -->
 		<div class="input-group">
-			<div class="input-group-item col-lg-3 border"">
-				<img src="../img/h01.PNG"/>
+			<div class="input-group-item col-lg-3 border">
+				<img src="<%=request.getContextPath() %>/img/accomodation/hotel01.PNG" style="width:100%;height:100%"/>
 			</div>
 			<div class="container input-group-item col-lg-9">
 				<table class="table">
