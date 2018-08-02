@@ -4,9 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Check in ! 로그인</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<<<<<<< HEAD
+=======
+
+>>>>>>> navigation
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <script
@@ -16,7 +19,49 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<<<<<<< HEAD
 
+=======
+<style>
+
+#mainDiv{width:1060px;margin:0px auto;background:#fff}
+#content {
+	position: relative;
+	width: 900px;
+	margin: 0 auto;
+}
+/*상단로고 */
+#logo {
+	border-bottom: 3px blue solid
+}
+/*현재위치 */
+#loc {
+ margin:0px;
+}
+/*로그인 제목  */
+#logTitle {
+	height:30px;
+	/*background-image:url(tit_login.gif);
+           background-repeat:no-repeat;*/
+	background: url(tit_login.gif) no-repeat;
+}
+/*로그인 메인 */
+#mainDiv {
+	position: relative;
+	height: 260px
+	
+}
+/*로그인 폼 */
+#logFrm {
+	width: 445px;
+	margin: 0px 15px;
+	height: 220px;
+	float: left;
+	padding-top: 40px;
+	text-align: center
+}
+</style>
+>>>>>>> navigation
 
 <script>
 	function logChk() {

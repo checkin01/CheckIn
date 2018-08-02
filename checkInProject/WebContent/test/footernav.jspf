@@ -1,0 +1,62 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+body{
+	position:relative;
+	padding-top:80px;
+	padding-bottom:40px;
+}
+
+
+#footer-nav{
+	position:fixed;
+	left:0;
+	width:100%;
+	bottom:-160px;
+	height:200px;
+	transition:top 0.2s ease-in-out; 
+	rgba:0.7;
+}
+
+
+</style>
+
+</head>
+
+<body>
+	<nav id="footer-nav" class="border">
+		<div class="row">
+			<i class="fa fa-angle-double-up"></i>
+		</div>
+		<div class="row">
+			<div class="col-lg-6"> A</div>
+			<div class="col-lg-6"> B </div>
+		</div>
+	</nav>
+
+</body>
+<script>
+
+	
+	$('#footer-nav').click(function(){
+	
+		if($('#footer-nav').css("bottom")=='-160px'){
+			$('#footer-nav').css("bottom","0px");
+		}else{
+			$('#footer-nav').css("bottom","-160px");
+		}
+			
+	});
+
+</script>
+</html>

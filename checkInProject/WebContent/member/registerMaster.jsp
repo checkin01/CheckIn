@@ -24,11 +24,11 @@
 	margin-bottom: 10px
 }
 
-.row {
+#main .row {
 	margin-right: 2px
 }
 
-label {
+#main label {
 	font-size: 16px;
 }
 .error-text{
@@ -39,8 +39,8 @@ label {
 </head>
 <body>
 <%@ include file="../nav.jspf"%>
+
 <body class="font1-medium">
-	<%@ include file="../nav.jspf"%>
 	<!-- 본문은 left center right으로 나뉜다. -->
 	<div id="main" class="row main" >
 		<aside class="left col-sm-2" id="left"></aside>
@@ -128,8 +128,6 @@ label {
 		
 		<aside class="col-sm-2 right" id="right"></aside>
 	</div>
-
-
 
 	<!-- footer -->
 	<footer class="row footer" id="footer">
