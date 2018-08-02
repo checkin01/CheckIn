@@ -25,6 +25,14 @@
 <!-- bootstrap-timepicki -->
 <script type="text/javascript" src="../js/timepicki.js"></script>
 <link rel="stylesheet" href="../css/timepicki.css">
+<script>
+$(function(){
+	$("#searchAddr").click(function(){
+		$('#searchAddr-modal').modal('show');
+	});
+});
+
+</script>
 <style>
 .error-text-box {
 	color: red;
@@ -35,6 +43,7 @@
 </head>
 <body>
 	<%@ include file="../nav.jspf"%>
+
 	<!-- 본문은 left center right으로 나뉜다.-->
 
 	<div id="main" class="row main">
@@ -222,6 +231,6 @@
 		<aside class="col-sm-2 right" id="right"></aside>
 	</div>
 
-
+	<%@ include file="searchAddr.jspf"%>
 </body>
 </html>
