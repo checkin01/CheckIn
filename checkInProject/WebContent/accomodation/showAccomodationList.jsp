@@ -115,7 +115,6 @@ img {
 	본문은 left center right으로 나뉜다.
 -->
 	<div id="main" class="row main">
-
 		<aside class="left col-sm-2" id="left"></aside>
 		<div class="col-sm-8 center">
 			<!-- 필터 -->
@@ -265,8 +264,16 @@ img {
 									});
 				</script>
 			</div>
-
-
+			<script>
+				// 보여주기식 이동 처리함. 이미지 클릭하면 룸 보는 페이지로 이동
+				$(function(){
+					$("#room1").click(function(){
+						location.href="<%=request.getContextPath()%>/accomodation/showDetailAccomodation.jsp";
+					})
+					
+				});
+			
+			</script>
 			<!-- 리스트 -->
 			<div class="row border list rounded"
 				style="margin-top: 30px; height: 280px; border: 1px solid black">

@@ -138,7 +138,7 @@
 			<!-- 체크인 filter 끝 -->
 
 			<!-- 검색 필터 -->
-			<div class="filter-child  w3-green rounded">
+			<div class="filter-child  w3-green rounded" id="ok">
 				<div>
 					<label for="type"> 검색 </label>
 				</div>
@@ -156,7 +156,14 @@
 
 		</div>
 	</div>
-
+	<script>
+		$(function(){
+			$("#ok").click(function(){
+				location.href="<%=request.getContextPath()%>/accomodation/showAccomodationList.jsp";
+			});
+		});
+	
+	</script>
 	<div id="main" class="main"></div>
 </body>
 </html>

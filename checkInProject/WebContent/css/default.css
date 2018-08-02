@@ -33,6 +33,36 @@
 	font-size:30px;
 	font-family:'Faster One', cursive
 }
+
+.main-font-1{
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+	font-size:1em;
+}
+
+.main-font-1.2{
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+	font-size:1.2em;
+}
+
+.main-font-0.8{
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+	font-size:0.8em;
+}
+
+.main-font-1.5{
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+	font-size:1.5em;
+}
+
+.main-font-1.7{
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+	font-size:1.7em;
+}
+
+.main-font-2{
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+	font-size:2em;
+}	
 	
 body{
 	float:left;
