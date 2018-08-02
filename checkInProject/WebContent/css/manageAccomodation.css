@@ -1,0 +1,53 @@
+@charset "UTF-8";
+.border {
+	border-radius: 10px
+}
+
+#center {
+
+}
+
+
+.roomsImg {
+	margin:0 auto;
+	padding:0 auto;
+	width:250px;
+	height250px;
+	text-align:center;
+}
+
+
+.carousel-item{
+	position:relative;
+	width:250px;
+	height250px;
+}
+#main-info{
+	margin-top: 30px;
+	background: #d5f4e6;
+	padding:20px;
+}
+#manageFrm {
+	float: right;
+	margin-top:50px;
+}
+.btn-group{
+	position:relative;
+	text-align: center;
+	width:100%;
+}
+#manageFrm>.btn {
+	position:relative;
+	text-align: center;
+
+	width:100%;
+}
+
+label{
+	font-size:0.7em;
+}
+
+#img-info{
+	padding:20px;
+	text-align:center;
+}

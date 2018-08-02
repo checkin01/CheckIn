@@ -42,7 +42,7 @@ $(function(){
 
 </head>
 <body>
-	<%@ include file="../nav.jspf"%>
+	<%@ include file="../nav_master.jspf"%>
 
 	<!-- 본문은 left center right으로 나뉜다.-->
 

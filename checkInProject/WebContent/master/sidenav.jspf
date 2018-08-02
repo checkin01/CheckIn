@@ -65,37 +65,7 @@
 	<!-- up down scroll spy -->
 	<a href="#" class="w3-bar-item w3-button w3-hover-none"> <i
 		class="fa fa-angle-up w3-large"></i>
-	</a> <a href="#footer" class="w3-bar-item w3-button w3-hover-none"> <i
+	</a> <a href="#pagination" class="w3-bar-item w3-button w3-hover-none"> <i
 		class="	fa fa-angle-down w3-large"></i>
 	</a>
 </nav>
-
-<nav id="hot"
-	class="w3-sidebar w3-bar-block w3-small w3-hide-small side-nav border"
-	style="width: 120px; height: 300px; margin-top: 300px;">
-	<!-- up down scroll spy -->
-	<div class="w3-bar-item w3-button w3-hover-none hit-divs">
-		<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG"
-			class="hit-imgs" alt="hot">
-	</div>
-	<div class="w3-bar-item w3-button w3-hover-none hit-divs">
-		<img src="<%=request.getContextPath()%>/img/accomodation/hotel02.PNG"
-			class="hit-imgs" alt="hot">
-	</div>
-
-	<div class="w3-bar-item w3-button w3-hover-none hit-divs">
-		<img src="<%=request.getContextPath()%>/img/accomodation/hotel03.PNG"
-			class="hit-imgs" alt="hot">
-	</div>
-
-	<div class="w3-bar-item w3-button w3-hover-none hit-divs">
-		<img src="<%=request.getContextPath()%>/img/accomodation/hotel04.PNG"
-			class="hit-imgs" alt="hot">
-	</div>
-
-	<div class="w3-bar-item w3-button w3-hover-none hit-divs">
-		<img src="<%=request.getContextPath()%>/img/accomodation/hotel05.PNG"
-			class="hit-imgs" alt="hot">
-	</div>
-</nav>
-

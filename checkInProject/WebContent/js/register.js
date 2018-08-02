@@ -1,7 +1,7 @@
 $(function() {
 	// 회원가입 일반 회원 유효성 검사
 	$("#regFrmMember").submit(function() {
-		alert("in");
+
 		var result = true;
 		result &=wasCheckid();
 		result &=checkUid();
@@ -32,7 +32,7 @@ $(function() {
 		result &=checkUpwd2();
 		result &=checkEmail();
 		result &=checkTel();
-		alert(result);
+	
 		if(result == 0) return false;
 		else return true;
 	});
@@ -77,7 +77,7 @@ function whenFocusId(){
 
 function wasCheckid(){
 	// 중복검사
-	alert("wasCheckid");
+
 	if ($("#idCheckResult").val() != "Y") {
 		
 		return true;

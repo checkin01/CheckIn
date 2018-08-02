@@ -6,10 +6,6 @@
 <head>
 <title>Check in ! 로그인</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<<<<<<< HEAD
-=======
-
->>>>>>> navigation
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <script
@@ -19,12 +15,13 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<<<<<<< HEAD
-
-=======
 <style>
+#mainDiv {
+	width: 1060px;
+	margin: 0px auto;
+	background: #fff
+}
 
-#mainDiv{width:1060px;margin:0px auto;background:#fff}
 #content {
 	position: relative;
 	width: 900px;
@@ -36,11 +33,11 @@
 }
 /*현재위치 */
 #loc {
- margin:0px;
+	margin: 0px;
 }
 /*로그인 제목  */
 #logTitle {
-	height:30px;
+	height: 30px;
 	/*background-image:url(tit_login.gif);
            background-repeat:no-repeat;*/
 	background: url(tit_login.gif) no-repeat;
@@ -49,7 +46,6 @@
 #mainDiv {
 	position: relative;
 	height: 260px
-	
 }
 /*로그인 폼 */
 #logFrm {
@@ -61,8 +57,6 @@
 	text-align: center
 }
 </style>
->>>>>>> navigation
-
 <script>
 	function logChk() {
 		//아이디, 비밀번호 확인
@@ -87,13 +81,15 @@
 	<!-- 
 	본문은 left center right으로 나뉜다.
 -->
-	<div id="main" class="row main">
+	<div id="main" class="row main" style="padding-top:80px">
 		<aside class="left col-sm-2" id="left"></aside>
-		<div class="col-sm-8 center" id="center" class="font1-small container" style="top: 80px">
+		<div class="col-sm-8 center" id="center" class="font1-small container"
+			style="top: 80px">
 
 			<!-- 로그인 메인 -->
 			<div id="id01">
-				<div class="w3-card-4 w3-animate-zoom container" style="max-width: 600px">
+				<div class="w3-card-4 w3-animate-zoom container"
+					style="max-width: 600px">
 					<div class="w3-center">
 						<br> <img src="../img/img_avatar4.png" alt="Avatar"
 							style="width: 30%" class="w3-circle w3-margin-top">
@@ -102,13 +98,13 @@
 					<form class="w3-container" action="/action_page.php">
 
 						<div class="w3-section">
-							<label><b>Username</b></label> 
-							<input
+							<label><b>Username</b></label> <input
 								class="w3-input w3-border w3-margin-bottom" type="text"
-								placeholder="Enter Username" name="uid" id="uid" required> <label><b>Password</b></label>
-							<input class="w3-input w3-border" type="text"
-								placeholder="Enter Password" name="upwd" id="upwd" required>
-							
+								placeholder="Enter Username" name="uid" id="uid" required>
+							<label><b>Password</b></label> <input class="w3-input w3-border"
+								type="text" placeholder="Enter Password" name="upwd" id="upwd"
+								required>
+
 							<div class="w3-section row">
 								<button id="memberLoginBtn"
 									class="w3-button w3-block w3-green border w3-padding col-sm-6 rounded"

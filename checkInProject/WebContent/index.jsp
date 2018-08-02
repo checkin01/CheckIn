@@ -14,6 +14,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="./css/index.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./css/nav.css">
 
 <!-- daterangepicker -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -33,13 +34,13 @@
 
 </script>
 </head>
-<body>
+<body >
 	<%@ include file="nav.jspf"%>
 	<%@ include file="locationModal.jspf"%>
 	<!-- 
 	본문은 left center right으로 나뉜다.
 -->
-	<div class="header fade">
+	<div class="header" >
 		<div class="paragrapgh container text w3-animate-left">
 			<strong><span style="color: orange">
 			 <i class="fa fa-check-square-o" style="font-size: 48px; color: orange"></i>Check In

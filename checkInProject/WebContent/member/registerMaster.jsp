@@ -18,23 +18,42 @@
 
 <link rel="stylesheet" href="../css/default.css">
 <style>
-#headerIng {
-	width: 100%;
-	height: 90px;
-	margin-bottom: 10px
-}
 
 #main .row {
-	margin-right: 2px
+	margin-right: 2px;
+	font-family: 'Jua', 'Gothic A1', sans-serif;
 }
 
 #main label {
-	font-size: 16px;
+	font-size:1em;
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+	text-align:center;
+	padding-right:20px;
 }
+
 .error-text{
 	font-size:12px;
 	color:red;
 }
+
+#regFrmMaster .btns{
+position:relative;
+	padding:20px;
+	margin:0 20px;
+	text-align:center;
+	font-family:'Jua', 'Gothic A1', sans-serif;
+}
+
+body{
+	background:url('../img/b_r.png') 100% 100%;
+	height:800px;
+}
+
+.center{
+	background-color: rgba( 255, 255, 255, 0.9);
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+}
+
 </style>
 </head>
 <body>
@@ -43,13 +62,16 @@
 <body class="font1-medium">
 	<!-- 본문은 left center right으로 나뉜다. -->
 	<div id="main" class="row main" >
-		<aside class="left col-sm-2" id="left"></aside>
-		<div class="col-sm-8 center" id="center" style="margin-top:80px; padding-left:20px">
-			<div class="font1-small" style="padding: 20px 0">
+		<aside class="left col-sm-3" id="left"></aside>
+		<div class="col-sm-6 center" id="center" style="padding-top:80px; padding-left:20px;">
+		<!-- Background 꾸미기 -->
+		<div class="back">
+			<div style="padding:30px">
 				<span> 홈 > 회원가입 </span>
 			</div>
-			<form method="post" id="regFrmMaster" style="margin-top: 30px"
-				action="registerFormOk.jsp" class="container form-horizontal">
+
+			<form method="post" id="regFrmMaster" style="padding:30px;"
+				action="registerFormOk.jsp" class="container form-horizontal rounded">
 
 				<!-- 아이디 -->
 				<div class="row form-group">
@@ -60,7 +82,7 @@
 
 					<!-- 중복확인 -->
 					<input type="button" value="아이디 중복체크" id="idChk"
-						class="form-control btn-primary col-sm-3 input-group-item" style="font-size:14px;" onclick="whenClickIdChk()"/>
+						class="form-control btn-success col-sm-3 input-group-item" style="font-size:0.9em;" onclick="whenClickIdChk()"/>
 					<input
 						type="hidden" name="idCheckResult" id="idCheckResult" value="N" />
 				</div>
@@ -114,31 +136,19 @@
 				</div>
 				<div class="row"><div class="col-sm-3"></div><span id="emailMsg"
 						class="error-text"></span></div>
-
-
-				<div style="height:100px"></div>
-				<div class="container row">
-					<div class="col-sm-7"></div>
-					<input class="col-sm-2 btn btn-success" type="button" value="취소하기" />
-					<div class="col-sm-1"></div>
-					<input class="col-sm-2 btn btn-success" type="submit" value="가입하기" />
+		
+				<div class="container form-group btns">
+					<input class="btn btn-primary col-sm-3" type="submit" value="가입하기" />
+					<input class="btn col-sm-3" type="button" value="취소하기" />
 				</div>
 			</form>
+			</div>
+			<!-- Background 꾸미기 -->
 		</div>
-		
-		<aside class="col-sm-2 right" id="right"></aside>
+		<aside class="col-sm-3 right" id="right"></aside>
 	</div>
-
-	<!-- footer -->
-	<footer class="row footer" id="footer">
-		<div class="col-sm-12"></div>
-	</footer>
-
 </body>
 <!-- footer -->
-	<footer class="row footer" id="footer">
-		<div class="col-sm-12"></div>
-	</footer>
 
 </body>
 </html>

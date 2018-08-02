@@ -18,38 +18,8 @@
 
 <style>
 
-#top-nav{
-	background:#fff;
-	z-index:10;
-	position:fixed;
-	top:0;
-	left:0; 
-	width:100%;
-	height:40px; 
-	transition:top 0.2s ease-in-out; 
-}
-#top-nav .logo {
-	position: relative;
-	display: inline-block;
-	left: 30px;
-	width:200px;
-	font-size: 1.9em;
-	font-family: 'Faster One', sans-serif;
-}
-#top-nav a{
-	color:black;
-	border-bottom:none;
-}
-#top-nav a:hover{
-	color:black;
-	border-bottom:none;
-}
-
 /*main-nav*/
 
-#top-logo {
-	text-decoration:none;
-}
 
 #main-nav .logo>a {
 	color: #fff;
@@ -61,12 +31,12 @@
 
 #main-nav{
 	position:fixed; 
-	top:40px;
+	top:0px;
 	left:0; 
 	width:100%;
-	height:60px;
+	height:50px;
 	transition:top 0.2s ease-in-out; 
-	background-color:#35c657;
+	background-color:#ff8c44;
 	z-index:10;
 }
 
@@ -90,12 +60,12 @@
 	text-align:center;
 	width:150px;
 	height:100%;
-	background:#35c657;
+	background:#ff8c44;
 }
 #main-nav .nav-item a {
 	color: #fff;
 	height:100%;
-	background:#35c657;
+	background:#ff8c44;
 }
 
 /*main-nav*/
@@ -113,6 +83,14 @@
 	font-family: 'Jua', 'Gothic A1', sans-serif;
 	display:inline-box;
 }
+#top-logo{
+	position: relative;
+	display: inline-block;
+	left:10px;
+	width:200px;
+	font-size: 1em;
+	font-family: 'Faster One', sans-serif;
+}
 
 <!-- myspage에서 적용할 nav-->
 #sideNav a , #sideNav div, #sideNav b{
@@ -122,44 +100,14 @@
 
 
 </style>
-<script>
-	var didScroll;
-	var lastScrollTop=0;
-	var delta = 5;
-	var navbarHeight = $('#main-nav').outerHeight();
-	var wasShow
-	
-	$(window).scroll(function(){
-		hasScrolled2();
-	});
-	//scroll에 따라서 움직이는 효과
-	function hasScrolled2(){
-		if($(this).scrollTop() > ($('#main-nav').outerHeight() + $('#top-nav').outerHeight())){
-			$('#main-nav').css("top","0");
-			$('#top-nav').css("top","-40px");
-			$('#footer-nav').css("visibility","visible");
-			$('#footer-nav').css("bottom","-70px");
-		}else{
-			$('#main-nav').css("top","40px");
-			$('#top-nav').css("top","0");
-			$('#footer-nav').css("bottom","-120px");
-		}
-	}
-</script>
+
 </head>
 
 <body>
-	<!---------------------------------------top navigation bar--------------------------------------->
-	<nav id="top-nav">
-		<div class="logo">
-			<a href="<%=request.getContextPath()%>/index.jsp" id="top-logo">Check In</a>
-		</div>
-	</nav>
-	
 	<!---------------------------------------- main navigation bar ----------------------------------->
 	<nav class="navbar navbar-expand-lg" id="main-nav">
 		<div class="logo">
-			<a href="<%=request.getContextPath()%>/index.jsp"><i class="material-icons"> home </i></a>
+			<a href="<%=request.getContextPath()%>/index.jsp" id="top-logo">Check In</a>
 		</div>
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -172,22 +120,12 @@
 				<li class="nav-item bold">
 				<a class="nav-link" href="<%=request.getContextPath()%>/member/login.jsp">로그인</a></li>
 				<li class="nav-item bold">
-				<a class="nav-link" href="<%=request.getContextPath()%>/member/registerMaster.jsp">회원가입_숙박</a>
-				</li>
-				<li class="nav-item bold"><a class="nav-link"
-					href="<%=request.getContextPath()%>/member/registerMember.jsp">회원가입_일반</a>
-				</li>
-				<li class="nav-item bold"><a class="nav-link"
-					href="<%=request.getContextPath()%>/accomodation/showAccomodationList.jsp">숙박 업소 리스트</a>
-				</li>
-				<li class="nav-item"><a class="nav-link"
-					href="<%=request.getContextPath()%>/mypage/point.jsp">마이 페이지</a>
-				</li>
-				<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath() %>/mypage/bookList.jsp">예약 확인</a>
-				</li>
-				<li class="nav-item bold">
 				<a class="nav-link" href="<%=request.getContextPath()%>/master/manageAccomodation.jsp">숙소 관리 페이지</a>
 				</li>
+				<li class="nav-item bold"><a class="nav-link"
+					href="<%=request.getContextPath()%>/master/manageBookingInfo.jsp">예약 현황 페이지</a>
+				</li>
+
 			</ul>
 		</div>
 	</nav>

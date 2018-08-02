@@ -38,7 +38,7 @@
 </style>
 </head>
 <body>
-	<%@ include file="../nav.jspf"%>
+	<%@ include file="../nav_master.jspf"%>
 
 	<div id="main" class="row main">
 		<!-- 왼쪽 필터 부분 -->

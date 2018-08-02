@@ -30,23 +30,44 @@
 	info(체크박스) -->
 
 <style>
-#headerIng {
-	width: 100%;
-	height: 90px;
-	margin-bottom: 10px
+
+#main .row {
+	margin-right: 2px;
+	font-family: 'Jua', 'Gothic A1', sans-serif;
 }
 
-.row {
-	margin-right: 2px
+#main label {
+	font-size:1em;
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+	text-align:center;
+	padding-right:20px;
 }
 
-label {
-	font-size: 16px;
-}
 .error-text{
 	font-size:12px;
 	color:red;
 }
+
+body{
+	background:url('../img/h_r2.png')100% 100%;
+	height:800px;
+}
+
+#regFrmMaster .btns{
+	border:solid black 1px;
+	position:relative;
+	width:100%;
+	text-align:center;
+	font-family:'Jua', 'Gothic A1', sans-serif;
+}
+
+
+.center{
+	background-color: rgba( 255, 255, 255, 0.9);
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+}
+
+
 </style>
 <script>
 	
@@ -56,12 +77,12 @@ label {
 	<%@ include file="../nav.jspf"%>
 	<!-- 본문은 left center right으로 나뉜다. -->
 	<div id="main" class="row main" >
-		<aside class="left col-sm-2" id="left"></aside>
-		<div class="col-sm-8 center" id="center" style="margin-top:80px; padding-left:20px">
-			<div class="font1-small" style="padding: 20px 0">
-				<span> 홈 > 회원가입 </span>
+		<aside class="left col-sm-3" id="left"></aside>
+		<div class="col-sm-6 center" id="center" style="padding-top:80px; padding-left:20px">
+			<div style="padding:20px 0">
+				<span style="padding:30px"> 홈 > 회원가입 </span>
 			</div>
-			<form method="post" id="regFrmMember" style="margin-top: 30px"
+			<form method="post" id="regFrmMember" style="margin-top: 30px;"
 				action="../index.jsp" class="container form-horizontal">
 
 				<!-- 아이디 -->
@@ -162,25 +183,13 @@ label {
 						<option value="제주">제주</option>
 					</select>
 				</div>
-				<div style="height:100px"></div>
-				<div class="container row">
-					<div class="col-sm-7"></div>
-					<input class="col-sm-2 btn btn-success" type="button" value="취소하기" />
-					<div class="col-sm-1"></div>
-					<input class="col-sm-2 btn btn-success" type="submit" value="가입하기" />
+				<div class="container btns form-group">
+					<input class="col-sm-3 btn btn-primary" type="submit" value="가입하기" />
+					<input class="col-sm-3 btn" type="button" value="취소하기" />
 				</div>
 			</form>
 		</div>
-		
-		<aside class="col-sm-2 right" id="right"></aside>
+		<aside class="col-sm-3 right" id="right"></aside>
 	</div>
-
-
-
-	<!-- footer -->
-	<footer class="row footer" id="footer">
-		<div class="col-sm-12"></div>
-	</footer>
-
 </body>
 </html>

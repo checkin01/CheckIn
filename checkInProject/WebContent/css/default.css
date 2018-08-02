@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Jua');
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 .font1-small{
@@ -21,7 +20,7 @@
 }
 .font2-medium{
 	font-size:22px;
-	font-family:'Jua', sans-serif
+	font-family:'Jua', sans-serif;
 }
 
 .font2-large{
@@ -34,48 +33,20 @@
 	font-family:'Faster One', cursive;
 }
 
-.main-font-1{
-	font-size:1em;
-	font-family: 'Jua', 'Gothic A1', sans-serif;
-}
-
-.main-font-1.2{
-	font-family: 'Jua', 'Gothic A1', sans-serif;
-	font-size:1.2em;
-}
-
-.main-font-0.8{
-	font-family: 'Jua', 'Gothic A1', sans-serif;
-	font-size:0.8em;
-}
-
-.main-font-1.5{
-	font-family: 'Jua', 'Gothic A1', sans-serif;
-	font-size:1.5em;
-}
-
-.main-font-1.7{
-	font-family: 'Jua', 'Gothic A1', sans-serif;
-	font-size:1.7em;
-}
-
-.main-font-2{
-	font-family: 'Jua', 'Gothic A1', sans-serif;
-	font-size:2em;
-}	
+	
 	
 body{
 	float:left;
-	height:110%;
+	height:100%;
 	width:100%;
 	position:absolute;
 }
 
 .main{
 	position:relative;
-	height:80%;
-	top:60px;
-	}
+	height:100%;
+	top:80px;
+}
 	
 .center{}
 .right{}
