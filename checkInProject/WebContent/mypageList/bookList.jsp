@@ -16,7 +16,7 @@
 
 <script>
 	$(document).ready(function(){
-		$("#center").load("<%=request.getContextPath()%>/booking/showMyBookingList.jsp");
+		$("#center").load("<%=request.getContextPath()%>/mypageList/showMyBookingList.jspf");
 	});
 </script>
 <style>
@@ -64,7 +64,7 @@
     	<!-- 홈 > 회원가입 -->
 		<span class="font1-small">홈>마이페이지>예약내역</span>
 		<hr/>
-		<h3>예약내역</h3>		
+	
     </div>
     <aside class="left" id="left" ></aside>
 </div>
@@ -73,6 +73,7 @@
 <footer class="row footer" id="footer">
     <div class="col-sm-12"></div>
 </footer>
-
+			<%@ include file="../review/writeReviewModal.jspf"%>
+			<%@ include file="../review/editReviewModal.jspf"%>
 </body>
 </html>

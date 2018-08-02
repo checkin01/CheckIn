@@ -37,7 +37,12 @@
 	}
 	
 	#changeMain form div label{font-weight:bold}
-
+	#regFrm label, #regFrm input, #regFrm span{
+		font-family:'Jua';
+		font-size:1em;
+		font-weigth:lighter;
+		color:#111;
+	}
 </style>
 </head>
 <body>
@@ -58,15 +63,15 @@
 			<form method="post" id="regFrm" class="form-horizontal" action="registerFormOk.jsp">
 				<div class="form-group row list-group-item">
 					<label class="col-sm-2 ">아이디</label>
-					<span class="col-sm-10">==현재 사용중인 아이디==</span>					
+					<span class="col-sm-10">springZZang</span>					
 				</div>
 				<div class="form-group row list-group-item">
 					<label class="col-sm-2">이름</label>
-					<span class="col-sm-10">==가입시 기입한 이름==</span>				
+					<span class="col-sm-10">박지수</span>				
 				</div>
 				<div class="form-group row list-group-item">
 					<label class="col-sm-2">연락처</label>
-					<span class="col-sm-4">==가입시 기입한 폰넘버==</span>	
+					<span class="col-sm-4">010-8888-2228</span>	
 					<input type="button" class="btn col-sm-2" value="연락처 변경" style="font-size:0.9em"/> 
 					<!-- <input type="text" name="phone" id="phone" class="form-control col-sm-10" placeholder="연락처입력(010-1234-5678)"/>	 -->			
 				</div>
