@@ -12,20 +12,19 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="../css/default.css"> <!-- body 구성에 적용 되는 스타일 시트 -->
 <style>
- 	.regtop{padding-top:50px; float:right}
- 	.reginfoFrm{margin-top:130px; height:500px;}
- 	.reginfo{margin:10px 10px}
+	.border{border-radius:10px}
+ 	#center{margin-top:30px; background:#d5f4e6}	
+ 	.info{border-bottom-style:none; background:white}
+ 	.info>div{font-size:1.5em; height:50px}
     .roomsImg {
-      margin:10px 10px;
-      width:300px;
-      height:250px;
+      margin:20px auto;
+      width:100%;
+      height:350px;
       
     }
-    
-    #info1{line-height:60px; height:60px; font-size:30px}
-	#info2{line-height:40px; height:40px; font-size:16px}
-	#manageFrm{margin-top:30px; padding:10px 10px}
-	#manage{text-align:center}
+    #aname{folat:right; margin-top:40px; float:left; font-size:40px}
+	#manageFrm{float:right; margin-top:50px}
+	#manageFrm>.btn{text-align:center;}
 </style>
 <script>
 	
@@ -49,18 +48,20 @@
   		<!-- filter -->
   		
 	</aside>
-	<div class="col-sm-8 center" id="center">
-		<div class="btn-group-lg regtop">
-			<a href="#" class="btn btn-secondary" role="button">숙박업소등록</a>
-			<a href="#" class="btn btn-secondary" role="button">숙박업소수정</a>		
-			<a href="#" class="btn btn-secondary" role="button">숙박업소삭제</a>		
-		</div>
-		<div class="list-group reginfoFrm">
-			<div class="list-group-item">
+	<div class="col-sm-8 center border" id="center">
+		<div class="font2-large" id="aname">[업소이름] </div>
+		<!-- 업소 관리 링크 -->	
+		<div class="btn-group" id="manageFrm">
+			<div class="btn btn-success btn-lg" id="roomManageBtn">객실관리</div>							
+			<div class="btn btn-success btn-lg" id="bookingBtn">예약현황</div>
+			<div class="btn btn-success btn-lg" id="infoEditBtn">정보수정</div>
+		</div>	
+		<div class="list-group reginfoFrm" style="margin-top:100px;">
+			<div class="list-group-item" style="border-style:none; margin:0px; background:#d5f4e6">
 				<div class="row">					
 					         <!-- carousel : 업소 사진-->
-         			<div class="col-lg-5" style="background-color:gray">
-	         			<div id="room1" class="carousel slide" data-ride="carousel">
+         			<div class="col-lg-5 border" style="background:white">
+	         			<div id="room1" class="carousel slide" data-ride="carousel" style="margin-top:15px; margin-left:0px; height:100%">
 				                 <!-- Indicators -->
 				                 <ul class="carousel-indicators">
 				                 	<li data-target="#room1" data-slide-to="0" class="active"></li>
@@ -69,7 +70,7 @@
 				                 </ul>
 				               
 				                 <!-- The slideshow -->
-				                 <div class="carousel-inner">
+				                 <div class="carousel-inner" style="width:100%">
 				                 	<div class="carousel-item active">
 				                    	<img src="../img/accomodation/home1.jpg" class="roomsImg">
 				                    </div>
@@ -91,36 +92,34 @@
 			         	</div>			            
 		        	</div>
 		        	<!-- 업소 정보 -->
-					<div class="col-lg-7 border">
-						<div class="row" id="info">								
-							<div class="col-sm-12" id="info1">업소이름</div>
+					<div class="col-lg-7">
+						<div class="row border info">
+							<div class="col-lg-7" id="condition">업소유형 : </div>
+							<div class="col-lg-5" id="aggrade">별점: ★★★★★</div>
 						</div>
-						<div class="row" id="info">
-							<div class="col-sm-12" id="info2">평점</div>			
-						</div>	
-						<div class="row" id="info">	
-							<div class="col-sm-12" id="info2">최소인원~최대인원</div>								
-						</div>	
-						<div class="row" id="info">	
-							<div class="col-sm-12" id="info2">입실시간 퇴실시간</div>							
-						</div>	
-						<div class="row" id="info">	
-							<div class="col-sm-12" id="info2">조건</div>
+						<div class="row border info">
+							<div class="col-lg-12" id="aggrade">주소 : </div>			
 						</div>
-						<!-- 업소 관리 링크 -->	
-						<div class="row" id="manageFrm">
-							<div class="col-sm-3 btn btn-light" id="manage">객실관리</div>							
-							<div class="col-sm-3 btn btn-light" id="manage">예약현황</div>
-							<div class="col-sm-3 btn btn-light" id="manage">정보수정</div>
-							<div class="col-sm-3 btn btn-light" id="manage">삭제</div>
-						</div>														
+						<div class="row border info">
+							<div class="col-lg-12" id="aggrade">연락처 : 02-1111-1111</div>			
+						</div>	
+						<div class="row border info">	
+							<div class="col-lg-12" id="enterTime1">입실시간 : </div>							
+						</div>
+						<div class="row border info">	
+							<div class="col-lg-12" id="enterTime2">퇴실시간 : </div>							
+						</div>	
+						<div class="row border info">	
+							<div class="col-sm-12" id="info2">기타(테마) : </div>
+						</div>
+						<div class="row border info" style="height:110px" >	
+							<div class="col-sm-12" id="info2">주차, 스파, 풀, 복층</div>
+						</div>													
 					</div>
-				</div>
-				<div class="row">
-					<div></div>
 				</div>
 			</div>	
 		</div>
+		<div class="btn btn-danger" id="deleteBtn" style="float:right; width:150px; margin:10px auto">삭제</div>
 	</div>
 	<aside class="col-sm-2 right" id="right">
 	
