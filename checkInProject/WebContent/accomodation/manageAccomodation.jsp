@@ -46,7 +46,21 @@
   			</div>
   		</nav>
   		<!-- filter -->
+  		<script>
+  			//버튼 누르면 페이지 이동 효과
+  			$(function(){
+  				$("#roomManageBtn").click(function(){
+  					location.href = "<%=request.getContextPath()%>/room/manageDetailRoom.jsp";
+  				});
+  				$("#bookingBtn").click(function(){
+  					location.href = "<%=request.getContextPath()%>/booking/manageBookingInfo.jsp";
+  				});
+  				$("#infoEditBtn").click(function(){
+  					location.href = "<%=request.getContextPath()%>/room/editAccomodation.jsp";
+  				});
+  			});
   		
+  		</script>
 	</aside>
 	<div class="col-sm-8 center border" id="center">
 		<div class="font2-large" id="aname">[업소이름] </div>

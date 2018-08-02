@@ -53,8 +53,14 @@
 			
 <!--  ========================== 룸들 정보 보기 시작 ========================== -->
 			
+		
+			
 			<div class="border w3-show container" id="rooms" >
 				<!-- 룸 리스트 정보 시작 -->
+				<div class="row">
+						<div style="width:80%"> </div>
+						<input type="button" value="등록하기" class="btn form-control btn-success col-sm-3" id="registerBtn"/>
+				</div>
 				<div class="border row">
 					<!-- 이미지 DIV 시작 -->
 					<div id="ImgDiv1" class="container carousel slide col-lg-4"
@@ -130,14 +136,19 @@
 						</div>
 						<br />
 
-
+					<script>
+						$("#editBtn").click(function(){
+	  						location.href = "<%=request.getContextPath()%>/room/editRoom.jsp";
+	  					});
+					
+					</script>
 					<!-- 버튼 폼 시작 -->
 					<div class="row">
-						<input type="button" value="삭제하기" class="btn form-control btn-success col-sm-3" />
+						<input type="button" value="삭제하기" class="btn form-control btn-success col-sm-3" id="delBtn" />
 						<div class="col-sm-1"></div>
-						<input type="button" value="수정하기" class="btn form-control btn-success col-sm-3" />
+						<input type="button" value="수정하기" class="btn form-control btn-success col-sm-3" id="editBtn"/>
 						<div class="col-sm-1"></div>
-						<input type="button" value="예약하기" class="btn form-control btn-success col-sm-3" />
+				
 					</div>
 					<!-- 버튼 폼 끝 -->
 
