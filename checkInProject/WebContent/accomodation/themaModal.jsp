@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <style>
-#themaModal .thema-btn {
+#themaModal .thema-btn{
 	background-color: white;
 	border: none;
 	margin: 5px;
@@ -24,36 +24,24 @@
 #themaModal .thema-select{
 	width:80%;
 }
+#thema .cur-selected-thema .thema-btn{
+	background-color: white;
+	border: none;
+	font-size: 0.5em;
+	color:#ddd;
+}
+
 </style>
-<script>
-	$(function(){
-		$('#themaModal .selected-btn').mouseover(function(){
-			$(this).children().eq(1).css("visibility","visible");
-		});
-		$('#themaModal .selected-btn').mouseout (function(){
-			$(this).children().eq(1).css("visibility","hidden");
-		});
-		
-		$('#themaModal .selected-btn').click(function(){
-			$(this).remove();
-			
-		});
-		
-		$('#themaModal .unselected-btn').click(function(){
-			var html = "<button class='thema-btn selected-btn'>";
-			html += $(this).html();
-			html += "</button>";
-			$(".thema-select").append(html);
-			
-		});
-	});
-</script>
+
 <body>
 	<!-- Button to Open the Modal -->
-	<button type="button" class="btn btn-primary" data-toggle="modal"
-		data-target="#themaModal">테마</button>
-	
-
+	<div id= "thema">
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#themaModal">테마</button>
+		<div class = "thema-select cur-selected-thema">
+			<!-- 클릭된 버튼 같이 추가 -->
+		
+		</div>
+	</div>
 	<!-- The Modal -->
 	<div class="modal" id="themaModal">
 		<div class="modal-dialog">
@@ -61,27 +49,9 @@
 
 				<!-- Modal Header -->
 				<div class="modal-header">
+				<h3 class="font1-medium">테마 선택</h3>
 				<!-- 테마선택하면 들어가는곳 -->
-						<div class="thema-select">
-								<p>선택한테마</p>
-									<button class="thema-btn selected-btn">
-										<i class="material-icons">movie</i>movie
-										<span style="font-size:4px; visibility:hidden" class="">x</span>
-									</button>
-									<button class="thema-btn selected-btn">
-										<i class="material-icons"> pause_circle_outline</i>vod
-										<span style="font-size:4px; visibility:hidden" class="x">x</span>
-									</button>
-									<button class="thema-btn selected-btn">
-										<i class="material-icons"> speaker_phone</i>와이파이
-										<span style="font-size:4px; visibility:hidden" class="x">x</span>
-									</button>
-									<button class="thema-btn selected-btn">	
-										<i class="material-icons">hotel</i>돌침대
-										<span style="font-size:4px; visibility:hidden" class="x">x</span>
-									</button>
-						</div>
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 
 				<!-- Modal body -->
@@ -157,6 +127,74 @@
 				</div>
 			</div>
 		</div>
-	</div>
+		<div id="hiddenOption" style="display:block"/></div>
+	<script>
+	$(function(){
+
+		/////////////////////////thema btn
+		
+		$('.thema-btn').click(function(){
+			var html = $(this).html();
+			var index = html.indexOf('</i>');
+			html = html.substring(index).trim();
+			index = html.indexOf('>');
+			html = html.substring(index+1).trim();
+			if($(this).hasClass('clicked-btn')==false){
+				
+					hiddenOption= $("#hiddenOption").text();
+					hiddenOption = hiddenOption.concat(html);
+					
+					$("#hiddenOption").text(hiddenOption);
+					$(this).css("color","#ddd");
+					
+					$(this).addClass('clicked-btn');
+					
+				}else{
+					$(this).css("color","#000");
+					$(this).removeClass('clicked-btn');
+					var str = $("#hiddenOption").text();
+					var str1 = html;
+					str = str.replace(html,"");
+					$("#hiddenOption").text(str);
+			
+				}
+			
+		});
+		
+		$('.thema-select').click(function(){
+			var index = $('.thema-select> option:checked');
+			
+			alert(index);
+			
+			
+		});
+		
+		function whenSaveThema(){
+			
+			var str = "숙박:네비게이션:호텔:스파";
+			var str1 = "숙박";
+			alert(str.indexOf(str1));
+			alert(str.replace(str.substring(str.indexOf(str1),str1.length),""));
+			alert(str);
+			
+		}
+		
+		/*
+		$('#themaModal .unselected-btn').click(function(){
+			var html = "<button class='thema-btn selected-btn' onmouseover='whenHover(this)' onmouseout='whenOut(this)'>";
+			
+			html += $(this).html();
+			html +="<span style='font-size:4px; visibility:hidden'>x</span>";
+			html += "</button>";
+			
+			$(this).removeClass('unselected-btn').addClass('selected-btn');
+			$(".thema-select").append($(this));
+			
+			alert(html);
+			
+		});
+		*/
+	});
+</script>
 </body>
 </html>
