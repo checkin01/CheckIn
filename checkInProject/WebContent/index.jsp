@@ -39,7 +39,7 @@
 	<!-- 
 	본문은 left center right으로 나뉜다.
 -->
-	<div class="header">
+	<div class="header fade">
 		<div class="paragrapgh container text w3-animate-left">
 			<strong><span style="color: orange">
 			 <i class="fa fa-check-square-o" style="font-size: 48px; color: orange"></i>Check In

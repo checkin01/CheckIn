@@ -35,6 +35,9 @@
 				#sideNavCnt>a:hover{font-weight:bold;text-decoration:none}
 	#center{padding:20px 0px;margin:0px;weight:400px}
 		#pointTable{text-align:center;border-top:1px solid #ccc;border-bottom:1px solid lightgray}
+	#center h3, #pointTable th{
+		font-family:'Jua';
+	}
 </style>
 </head>
 <body>
