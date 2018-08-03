@@ -24,6 +24,7 @@
 	#center h3{
 		font-family:'Jua';
 	}
+	#pwd{border-radius:5px; border:1px solid lightgray}
 </style>
 <script>
 	$(function(){

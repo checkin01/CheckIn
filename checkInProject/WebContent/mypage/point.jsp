@@ -27,12 +27,6 @@
 	.row {margin-right: 2px}
 	/*=========================================================  */
 	#left{width:15%}
-	#sideNav{width:12%}	
-		#sideBar{position:relative;top:20px;left:10px;width:80%}	
-			#navImg{width:100%}
-			#sideNavCnt{background-color:#f8f8f8;position:relative;padding:10px 15px}
-				#sideNavCnt>a{line-height:2.3em;color:black}
-				#sideNavCnt>a:hover{font-weight:bold;text-decoration:none}
 	#center{padding:20px 0px;margin:0px;weight:400px}
 		#pointTable{text-align:center;border-top:1px solid #ccc;border-bottom:1px solid lightgray}
 	#center h3, #pointTable th{
@@ -51,18 +45,7 @@
 	
 	<!-- side Nav -->
 	<aside class="left" id="sideNav">
-		<div id="sideBar">
-			<div>
-				<a href="<%=request.getContextPath() %>/member/mypage.jsp">
-					<img src="../img/mypageNavTop.PNG" id="navImg"/>
-				</a>
-			</div>
-			<div id="sideNavCnt">
-				<a href="<%=request.getContextPath() %>/mypageList/bookList.jsp">예약내역</a><br/>
-				<a href="<%=request.getContextPath() %>/mypageList/point.jsp"><b>포인트</b></a><br/>
-				<a href="<%=request.getContextPath() %>/mypageList/checkInfo.jsp">회원정보확인/수정</a>				
-			</div>
-		</div>
+		<%@ include file="../sideNav.jspf"%>
 	</aside>
 	
 	<!-- main -->
