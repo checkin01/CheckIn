@@ -57,12 +57,14 @@ body {
 				<div class="col-lg-4" id="white2"></div>
 		</div>
 		<div class="row border">
-			<div class="col-lg-6 center" id="search-out">
+			<div class="col-lg-8 center" id="search-out">
 				<div class="row border rounded">
 					<div class="col-md-12">
 						<form class="list-group">
 							<div class="row rounded">
-								<div class="form-control col-lg-3">숙박유형
+								<div class=" col-md-2">숙박유형</div>
+								<!--                    숙박유형                                               -->
+								<div class=" col-md-2">
 									<div class="dropdown">
 									    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">숙박유형</button>
 									    <div class="dropdown-menu">
@@ -72,7 +74,8 @@ body {
 									    </div>
 									</div>
 								</div>
-								<div class="form-control col-lg-5">지역(시)/인근지하철<br/>
+								<div class=" col-lg-2">지역<br/></div>
+								<div class=" col-lg-2">
 									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
 									    검색
 									</button>
