@@ -448,7 +448,7 @@ img {
 
 		<!-- footer -->
 		<footer class="row footer" id="footer">
-			<div class="col-sm-12"> </div>
+			<%@ include file="footernav.jspf"%>
 		</footer>
 
 	</div>
