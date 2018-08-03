@@ -137,11 +137,13 @@
 		if($(this).scrollTop() > ($('#main-nav').outerHeight() + $('#top-nav').outerHeight())){
 			$('#main-nav').css("top","0");
 			$('#top-nav').css("top","-40px");
+			$('#footer-nav').css("bottom","0px");
 			
 		}else{
 			$('#main-nav').css("top","40px");
 			$('#top-nav').css("top","0");
-		
+			$('#footer-nav').css("bottom","-100px");
+			
 		}
 	}
 </script>
