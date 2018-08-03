@@ -44,18 +44,7 @@
 	
 	<!-- side Nav -->
 	<aside class="left" id="sideNav">
-		<div id="sideBar">
-			<div>
-				<a href="<%=request.getContextPath() %>/member/mypage.jsp">
-					<img src="../img/mypageNavTop.PNG" id="navImg"/>
-				</a>
-			</div>
-			<div id="sideNavCnt">
-				<a href="<%=request.getContextPath() %>/mypageList/bookList.jsp"><b>예약내역</b></a><br/>
-				<a href="<%=request.getContextPath() %>/mypageList/point.jsp">포인트</a><br/>
-				<a href="<%=request.getContextPath() %>/mypageList/checkInfo.jsp">회원정보확인/수정</a>				
-			</div>
-		</div>
+		<%@ include file="sideNav.jspf"%>
 	</aside>
 	
 	<!-- main -->
