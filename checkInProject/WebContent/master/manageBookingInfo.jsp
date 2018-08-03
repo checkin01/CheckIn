@@ -69,7 +69,7 @@ body{
 							+ start.format('YYYY-MM-DD') + ' to '
 							+ end.format('YYYY-MM-DD'));
 				});
-		$('button').click(function(){
+		$('.enter').click(function(){
 			var html = $(this).html().trim();
 			if(html == '미입실'){
 				$(this).removeClass('w3-light-blue').addClass('w3-grey');
@@ -190,7 +190,7 @@ body{
 						<div class="col-md-2">2018-07-21</div>
 						<div class="col-md-2">2018-07-23</div>
 						<div class="col-md-2">2018-07-15</div>
-						<div class="col-md-1"><button class="btn w3-light-blue">미입실</button></div>
+						<div class="col-md-1"><button class="btn w3-light-blue enter">미입실</button></div>
 					</div>
 				</div>
 				<div class="list-group-item" style="text-align: center">
@@ -202,7 +202,7 @@ body{
 						<div class="col-md-2">2018-07-21</div>
 						<div class="col-md-2">2018-07-23</div>
 						<div class="col-md-2">2018-07-15</div>
-						<div class="col-md-1"><button class="btn w3-light-blue">미입실</button></div>
+						<div class="col-md-1"><button class="btn w3-light-blue enter">미입실</button></div>
 					</div>
 				</div>
 				<div class="list-group-item" style="text-align: center">
@@ -214,7 +214,7 @@ body{
 						<div class="col-md-2">2018-07-21</div>
 						<div class="col-md-2">2018-07-23</div>
 						<div class="col-md-2">2018-07-15</div>
-						<div class="col-md-1"><button class="btn w3-grey">입실완료</button></div>
+						<div class="col-md-1"><button class="btn w3-grey enter">입실완료</button></div>
 					</div>
 				</div>
 				<div class="list-group-item" style="text-align: center">
