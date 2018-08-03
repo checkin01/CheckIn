@@ -69,12 +69,12 @@ label {
 <body>
 	<%@ include file="../nav.jspf"%>
 
-	<div id="main" class="row main">
-
+	<div id="main" class="row main" style="top:80px">
+ 
 		<!-- 왼쪽 필터 부분 -->
 		<aside class="left col-lg-3 font1-medium w3-container" id="left">
 			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top"
-				style="z-index: 3; width: 290px; margin-top: 20px; padding: 10px;"
+				style="z-index: 3; width: 290px; margin-top: 80px; padding: 10px;"
 				id="mySidebar">
 				<!-- 정보 -->
 				<div class="w3-container w3-display-container w3-padding-16">
