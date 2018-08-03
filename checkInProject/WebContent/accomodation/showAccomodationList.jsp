@@ -70,7 +70,7 @@ img {
 }
 
 #searchLabel {
-	background: green;
+	background:orange;
 	border: 1px solid black;
 	color: white;
 }
@@ -135,10 +135,9 @@ img {
 								<button type="button" id="Atype"
 									class="btn btn-light dropdown-toggle" data-toggle="dropdown">숙박유형</button>
 								<div class="dropdown-menu border" id="Aitem">
-									
-									<a class="dropdown-item" href="#">모텔</a> <a
-										class="dropdown-item" href="#">호텔</a> <a class="dropdown-item"
-										href="#">게스트하우스</a> <a class="dropdown-item" href="#">펜션</a>
+									<a class="dropdown-item droptype-item" href="#">모텔</a> <a
+										class="dropdown-item droptype-item" href="#">호텔</a> <a class="dropdown-item"
+										href="#">게스트하우스</a> <a class="dropdown-item droptype-item" href="#">펜션</a>
 								</div>
 							</div>
 
@@ -170,7 +169,7 @@ img {
 				</div>
 				<div class="col-md-2">
 					<input type="submit" value="숙소검색"
-						class="btn btn-warning form-control"
+						class="btn btn-default form-control"
 						style="margin: 3px; height: 68px">
 				</div>
 			</div>

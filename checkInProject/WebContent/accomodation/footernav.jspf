@@ -101,9 +101,9 @@ body {
 						<i class="fa fa-building"> </i> <button class="btn btn-light dropdown-toggle border"
 							data-toggle="dropdown" id="Bottom-type">숙박유형</button>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">모텔</a> <a
-								class="dropdown-item active" href="#">호텔</a> <a
-								class="dropdown-item disabled" href="#">팬션</a>
+							<a class="dropdown-item droptype-item" href="#">모텔</a> <a
+								class="dropdown-item active droptype-item" href="#">호텔</a> <a
+								class="dropdown-item disabled droptype-item" href="#">펜션</a>
 						</div>
 					</div>
 				</li>
