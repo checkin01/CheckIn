@@ -209,7 +209,7 @@ img {
 						<div  id= "thema">	
 						<button type="button" class="btn btn-primary" data-toggle="modal"data-target="#themaModal">테마</button>
 							<!-- 테마에 대한 정보를 이곳에 hidden 속성으로 숨겨 둔다 -->
-							<div id="hiddenOption" style="display:block"/></div>
+							<div id="hiddenOption" style="display:block;font-family:'Jua'; font-size:0.7em; color:aaa; padding-top:10px"/></div>
 						</div>
 					</div>
 				</div>
