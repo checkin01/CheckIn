@@ -93,9 +93,5 @@
 			class="hit-imgs" alt="hot">
 	</div>
 
-	<div class="w3-bar-item w3-button w3-hover-none hit-divs">
-		<img src="<%=request.getContextPath()%>/img/accomodation/hotel05.PNG"
-			class="hit-imgs" alt="hot">
-	</div>
 </nav>
 
