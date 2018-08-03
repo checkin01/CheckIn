@@ -1,18 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-<%@ page trimDirectiveWhitespaces="true"%>
-<!DOCTYPE html>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <style>
 #themaModal .thema-btn{
 	background-color: white;
@@ -30,18 +19,11 @@
 	font-size: 0.5em;
 	color:#ddd;
 }
-
+.theme-item{
+	margin-left:10px;
+}
 </style>
-
-<body>
-	<!-- Button to Open the Modal -->
-	<div id= "thema">
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#themaModal">테마</button>
-		<div class = "thema-select cur-selected-thema">
-			<!-- 클릭된 버튼 같이 추가 -->
-		
-		</div>
-	</div>
+</head>
 	<!-- The Modal -->
 	<div class="modal" id="themaModal">
 		<div class="modal-dialog">
@@ -127,11 +109,9 @@
 				</div>
 			</div>
 		</div>
-		<div id="hiddenOption" style="display:block"/></div>
+		
 	<script>
 	$(function(){
-
-		/////////////////////////thema btn
 		
 		$('.thema-btn').click(function(){
 			var html = $(this).html();
@@ -140,61 +120,28 @@
 			index = html.indexOf('>');
 			html = html.substring(index+1).trim();
 			if($(this).hasClass('clicked-btn')==false){
-				
+					
 					hiddenOption= $("#hiddenOption").text();
-					hiddenOption = hiddenOption.concat(html);
+					hiddenOption = hiddenOption.concat("<div class='theme-item'>"+html+'</div>');
 					
-					$("#hiddenOption").text(hiddenOption);
+					$("#hiddenOption").html(hiddenOption);
+					
+					alert($("#hiddenOption").html());
 					$(this).css("color","#ddd");
-					
 					$(this).addClass('clicked-btn');
 					
 				}else{
 					$(this).css("color","#000");
 					$(this).removeClass('clicked-btn');
-					var str = $("#hiddenOption").text();
-					var str1 = html;
-					str = str.replace(html,"");
+					var str = $("#hiddenOption").html();
+					alert($("#hiddenOption").html());
+					var str1 = "<div class='theme-item btn'>"+html +'</div>';
+					str.html() = str.replace(str1,"");
 					$("#hiddenOption").text(str);
 			
 				}
 			
 		});
-		
-		$('.thema-select').click(function(){
-			var index = $('.thema-select> option:checked');
-			
-			alert(index);
-			
-			
-		});
-		
-		function whenSaveThema(){
-			
-			var str = "숙박:네비게이션:호텔:스파";
-			var str1 = "숙박";
-			alert(str.indexOf(str1));
-			alert(str.replace(str.substring(str.indexOf(str1),str1.length),""));
-			alert(str);
-			
-		}
-		
-		/*
-		$('#themaModal .unselected-btn').click(function(){
-			var html = "<button class='thema-btn selected-btn' onmouseover='whenHover(this)' onmouseout='whenOut(this)'>";
-			
-			html += $(this).html();
-			html +="<span style='font-size:4px; visibility:hidden'>x</span>";
-			html += "</button>";
-			
-			$(this).removeClass('unselected-btn').addClass('selected-btn');
-			$(".thema-select").append($(this));
-			
-			alert(html);
-			
-		});
-		*/
+	
 	});
 </script>
-</body>
-</html>

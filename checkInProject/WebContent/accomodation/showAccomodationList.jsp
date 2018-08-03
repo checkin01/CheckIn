@@ -206,10 +206,10 @@ img {
 									href="#">방문자순</a>
 							</div>
 						</div>
-						<div>
-							<button type="button" class="btn btn-light"
-								data-toggle="collapse" data-target="#acco"
-								style="margin-left: 10px">테마</button>
+						<div  id= "thema">	
+						<button type="button" class="btn btn-primary" data-toggle="modal"data-target="#themaModal">테마</button>
+							<!-- 테마에 대한 정보를 이곳에 hidden 속성으로 숨겨 둔다 -->
+							<div id="hiddenOption" style="display:block"/></div>
 						</div>
 					</div>
 				</div>
@@ -270,9 +270,8 @@ img {
 					$("#room1").click(function(){
 						location.href="<%=request.getContextPath()%>/accomodation/showDetailAccomodation.jsp";
 					})
-					
+
 				});
-			
 			</script>
 			<!-- 리스트 -->
 			<div class="row border list rounded"
@@ -437,9 +436,9 @@ img {
 
 			</div>
 			<!-- footer -->
-		<footer class="row footer" id="footer">
-			<div class="col-sm-12"> </div>
-		</footer>
+			<footer class="row footer" id="footer">
+				<div class="col-sm-12"></div>
+			</footer>
 		</div>
 
 		<aside class="col-sm-2 right" id="right" style="text-align: right">
@@ -448,10 +447,10 @@ img {
 
 		<!-- footer -->
 		<footer class="row footer" id="footer">
-			<div class="col-sm-12"> </div>
+			<div class="col-sm-12"></div>
 		</footer>
 
 	</div>
-
+	<%@ include file="themeModal.jspf"%>
 </body>
 </html>
