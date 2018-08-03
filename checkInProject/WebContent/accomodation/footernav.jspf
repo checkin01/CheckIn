@@ -16,89 +16,125 @@ body {
 }
 
 #footer-nav {
+	z-index:15;
 	position: fixed;
-	left: 0;
+	left:0;
 	width: 100%;
-	bottom: -170px;
-	height: 200px;
+	bottom: -60px;
+	height: 90px;
 	transition: top 0.2s ease-in-out;
 	rgba: 0.7;
 	background-color: white;
+	padding:0;
+	margin:0;
 }
 
 #footer-updown {
-	background:rgba(0,0,0,0.7);
-	position:relative;
+	background: rgba(0, 0, 0, 0.7);
+	position: relative;
 	/*width:200px;*/
 	text-align: center;
-	margin:auto;		
+	margin: 0;
+}
+#search-out .label{
+	background:
+	text-align: center;
+	font-size:1em;
+	color:#aaa;
 }
 #search-out {
 	width: 100%;
 	height: 100%;
-	left: 40px; text-align : center;
-	margin-top:30px;
+	text-align: center;
+}
+
+#search-out ul{
+	position:relative;
+	text-align:center;
+	width:100%;
+	height:100%;
+	list-style-type:none;
+	padding-left:20%;
+	
+}
+#search-out li{
+	width: 20%;
+	height:80%;
+	padding:10px;
+	float:left;
+	font-size:1em;
 	text-align:center;
 }
-#white1{    
-    background:rgba(0,0,0,0)
+#search-out a{
+	color:black;
 }
-#white2{    
-	background:rgba(0,0,0,0)
+#search-out a:hover{
+	color:black;
+	text-decoration:none;
 }
+
+#type-list:hover{
+	cursor:pointer;
+	
+
+}
+
 </style>
 </head>
 <body>
 	<nav id="footer-nav">
 		<!-- footer 올리고 내리는거 아이콘있는곳 -->
 		<div class="row" id="footer-updown">
-				<div class="col-lg-4" id="white1"></div>
-				<div class="col-lg-4"><i class="material-icons">menu</i></div>
-				<div class="col-lg-4" id="white2"></div>
-		</div>
-		<div class="row border">
-			<div class="col-lg-8 center" id="search-out">
-				<div class="row border rounded">
-					<div class="col-md-12">
-						<form class="list-group">
-							<div class="row rounded">
-								<div class=" col-md-2">숙박유형</div>
-								<!--                    숙박유형                                               -->
-								<div class=" col-md-2">
-									<div class="dropdown">
-									    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">숙박유형</button>
-									    <div class="dropdown-menu">
-											<a class="dropdown-item" href="#">모텔</a>
-											<a class="dropdown-item active" href="#">호텔</a>
-											<a class="dropdown-item disabled" href="#">팬션</a>
-									    </div>
-									</div>
-								</div>
-								<div class=" col-lg-2">지역<br/></div>
-								<div class=" col-lg-2">
-									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-									    검색
-									</button>
-								</div>
-								<div class="form-control col-lg-4">체크인 체크아웃
-									<input type="text" class="w3-input w3-border rounded" name="" placeholder="체크인날과 체크아웃날을 선택해주세요"/>
-								</div>
-								<button type="submit" class="btn btn-warning form-control"
-										style="font-size: 0.8em; text-align: center">숙소검색</button>
-							</div>
-						</form>
-					</div>
-				</div>
+			<div class="col-lg-4" id="white1"></div>
+			<div class="col-lg-4">
+				<i class="material-icons">menu</i>
 			</div>
-		</div>		
+			<div class="col-lg-4" id="white2"></div>
+		</div>
+		<!-- ==================== footer 올리고 내리는거 아이콘있는곳======================================= -->
+
+		<form class="border rounded" id="search-out">
+			<ul class="container">
+		
+				<!--     =========================== 숙박유형=========================== -->
+				<li class="type-list">
+					<div class="dropdown">
+						<i class="fa fa-building"> </i> <button class="btn btn-light dropdown-toggle border"
+							data-toggle="dropdown" id="Bottom-type">숙박유형</button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">모텔</a> <a
+								class="dropdown-item active" href="#">호텔</a> <a
+								class="dropdown-item disabled" href="#">팬션</a>
+						</div>
+					</div>
+				</li>
+
+				<!--     =========================== 지역 =========================== -->
+				
+				<li class="showLocModal" style="margin:auto; text-align:center">
+					<i class="material-icons">place</i> <button class="btn btn-light dropdown-toggle border" id='selectedLocation' style="font-size: 1em">
+						<span class="selectedSido">서울</span> <span class="selectedGu">강남구</span>
+						<span class="selectedSubway"></span>
+					</button>
+				</li>
+				<!--     =========================== 지역 =========================== -->
+	
+					
+				<li>
+					<i class="fa fa-calendar"> <input type="text" class="rounded" name="bottom-checkinout" style="font-size:0.8em;height:30px"/></i> 
+				</li>
+				<li><button type="submit" class="btn w3-deep-orange rounded" style="width:80%">검색</button></li>
+			</ul>
+		</form>
+
 	</nav>
 </body>
 <script>
 	$('#footer-updown').click(function() {
-		if ($('#footer-nav').css("bottom") == '-170px') {
+		if ($('#footer-nav').css("bottom") == '-60px') {
 			$('#footer-nav').css("bottom", "0px");
 		} else {
-			$('#footer-nav').css("bottom", "-170px");
+			$('#footer-nav').css("bottom", "-60px");
 		}
 	});
 </script>
