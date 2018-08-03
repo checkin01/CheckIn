@@ -37,6 +37,17 @@
 	});
 	});
 </script>
+<style>
+	.reginfoFrm{margin-top:5px}
+	
+	#manageBtn>div{margin-left:10px; float:right}
+	.roomsImg {
+    	margin:20px auto;
+      	width:100%;
+      	height:350px;      
+    }
+	
+</style>
 </head>
 <body>
 	<%@ include file="../nav_master.jspf"%>
@@ -45,83 +56,94 @@
 
 		<aside class="left col-sm-2" id="left"></aside>
 		<div class="col-sm-8 center" id="center">
+			
+			
 			<!-- 관리 현황 페이지 google chart -->
 			<div class="gchart">
 				<div id="columnchart_material" style="width: 800px; height: 400px;"></div>
 			</div>
-
-			<div id="main-info" class="list-group border">
-				<div class=" row">
-					<div class="col-lg-5" id="img-info">
-						<div class="btn-group list-group-horizontal row">
-							<div class="btn btn-success btn-sm col-lg-3" id="roomManageBtn">객실관리</div>
-							<div class="btn btn-primary  btn-sm col-lg-3" id="bookingBtn">예약현황</div>
-							<div class="btn btn-primary btn-sm col-lg-3" id="infoEditBtn">정보수정</div>
-							<div class="btn btn-danger btn-sm col-lg-3" id="deleteBtn">삭제</div>
-						</div>
-					
-						<!-- carousel : 업소 사진-->
-						<div class="border list-group row" style="background: white">
-							<div id="room1" class="carousel slide" data-ride="carousel">
-								<!-- Indicators -->
-								<ul class="carousel-indicators">
-									<li data-target="#room1" data-slide-to="0" class="active"></li>
-									<li data-target="#room1" data-slide-to="1"></li>
-									<li data-target="#room1" data-slide-to="2"></li>
-								</ul>
-
-								<!-- The slideshow -->
-								<div class="carousel-inner" >
-									<div class="carousel-item active">
-										<img src="../img/accomodation/home1.jpg" class="roomsImg">
-									</div>
-									<div class="carousel-item">
-										<img src="../img/accomodation/home2.jpg" class="roomsImg">
-									</div>
-									<div class="carousel-item">
-										<img src="../img/accomodation/home3.jpg" class="roomsImg">
-									</div>
-								</div>
-
-								<!-- Left and right controls -->
-								<a class="carousel-control-prev" href="#room1" data-slide="prev">
-									<span class="carousel-control-prev-icon"></span>
-								</a> <a class="carousel-control-next" href="#room1"
-									data-slide="next"> <span class="carousel-control-next-icon"></span>
-								</a>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="thema">테마</label>
-							<div id="thema">주차, 풀, 복층</div>
-						</div>
-			
-					</div>
-					<div class="col-lg-1"> </div>
-					<div class="col-lg-6" id="text-info">
-						<div class="form-group">
-							<label for="aname">업소 이름</label>
-							<div id="aname">금강 호텔</div>
-						</div>
-						<div class="form-group">
-							<label for="type">업소 유형</label>
-							<div id="type">호텔</div>
-						</div>
-						<div class="form-group">
-							<label for="tel">전화번호</label>
-							<div id="tel">031-9999-8888</div>
-						</div>
-						<div class="form-group">
-							<label for="in">입실시간 :</label>
-							<div id="in">13:00~</div>
-						</div>
-						<div class="form-group">
-							<label for="out">퇴실시간 :</label>
-							<div id="out">12:00~</div>
-						</div>
-					</div>
+      	
+  
+	      	<!-- 업소 이름 -->   
+      		<div class="row" style="margin-top:10px">
+      			<div class="font2-large col-md-6" id="aname">[업소이름] </div>
+      			
+      			<!-- 업소 관리 버튼 -->
+      			<div class="col-md-6" id="manageBtn" >         		
+	         		<div class="btn btn-success btn-lg" id="roomManageBtn">객실관리</div>                     
+	         		<div class="btn btn-success btn-lg" id="bookingBtn">예약현황</div>
+	         		<div class="btn btn-success btn-lg" id="infoEditBtn">정보수정</div>
+      			</div>
+      		</div>  
+	      	
+	      	<!-- 업소 간략 정보 -->
+	      	<div class="list-group reginfoFrm font2-medium">
+	        	<div class="list-group-item" style="border-style:none; margin:0px; background:#d5f4e6">
+	            	<div class="row">               
+	                	
+	                	<!-- carousel : 업소 사진-->
+	                  	<div class="col-lg-5 border" style="background:white">
+	                     	<div id="room1" class="carousel slide" data-ride="carousel" style="margin-top:15px; margin-left:0px; height:100%">
+	                            <!-- Indicators -->
+	                            <ul class="carousel-indicators">
+	                             	<li data-target="#room1" data-slide-to="0" class="active"></li>
+	                                <li data-target="#room1" data-slide-to="1"></li>
+	                            	<li data-target="#room1" data-slide-to="2"></li>
+	                            </ul>
+	                           
+	                            <!-- The slideshow -->
+	                            <div class="carousel-inner" style="width:100%">
+	                            <div class="carousel-item active">
+	                                <img src="../img/accomodation/home1.jpg" class="roomsImg">
+	                            </div>
+	                            <div class="carousel-item">
+	                                <img src="../img/accomodation/home2.jpg" class="roomsImg">
+	                            </div>
+	                            <div class="carousel-item">
+	                            	<img src="../img/accomodation/home3.jpg" class="roomsImg">
+	                        	</div>
+	                        </div>
+	                           
+	                        <!-- Left and right controls -->
+	                        <a class="carousel-control-prev" href="#room1" data-slide="prev">
+	                            <span class="carousel-control-prev-icon"></span>
+	                        </a>
+	                        <a class="carousel-control-next" href="#room1" data-slide="next">
+	                        	<span class="carousel-control-next-icon"></span>
+	                    	</a>
+	                    </div>                     
+	                </div>
+	                
+	                <!-- 업소 정보 -->
+	               	<div class="col-lg-7">
+	                  	<div class="row border info">
+	                    <div class="col-lg-7" id="condition">업소유형 : </div>
+	                    <div class="col-lg-5" id="aggrade">별점: ★★★★★</div>
+	                </div>
+	                <div class="row border info">
+	                 	<div class="col-lg-12" id="aggrade">주소 : </div>         
+	                </div>
+	                <div class="row border info">
+	                    <div class="col-lg-12" id="aggrade">연락처 : 02-1111-1111</div>         
+	                </div>   
+	                <div class="row border info">   
+	                    <div class="col-lg-12" id="enterTime1">입실시간 : </div>                     
+	                </div>
+	                <div class="row border info">   
+	                    <div class="col-lg-12" id="enterTime2">퇴실시간 : </div>                     
+	                </div>   
+	                <div class="row border info">   
+	                    <div class="col-sm-12" id="info2">기타(테마) : </div>
+	                </div>
+	                <div class="row border info" style="height:110px" >   
+	                    <div class="col-sm-12" id="info2">주차, 스파, 풀, 복층</div>
+	                </div>                                       
+	            	</div>
 				</div>
+			</div>   
 			</div>
+	      	<div class="btn btn-danger font2-large" id="deleteBtn" style="float:right; width:150px; margin:10px auto;">삭제</div>		
+			
 					<!-- footer -->
 		<footer class="row footer" id="footer">
 		<div class="col-sm-12"></div>
