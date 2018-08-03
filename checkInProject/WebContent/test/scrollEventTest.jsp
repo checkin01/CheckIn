@@ -18,7 +18,7 @@
 <img src="../img/accomodation/hotel01.PNG" width='100px' height='5000px' />
 
 <footer>
-<%@ include file="footernav.jspf"%>
+
 </footer>
 </body>
 

@@ -1,0 +1,102 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+	position: relative;
+	padding-top: 80px;
+	padding-bottom: 40px;
+}
+
+#footer-nav {
+	position: fixed;
+	left: 0;
+	width: 100%;
+	bottom: -170px;
+	height: 200px;
+	transition: top 0.2s ease-in-out;
+	rgba: 0.7;
+	background-color: white;
+}
+
+#footer-updown {
+	background:rgba(0,0,0,0.7);
+	position:relative;
+	/*width:200px;*/
+	text-align: center;
+	margin:auto;		
+}
+#search-out {
+	width: 100%;
+	height: 100%;
+	left: 40px; text-align : center;
+	margin-top:30px;
+	text-align:center;
+}
+#white1{    
+    background:rgba(0,0,0,0)
+}
+#white2{    
+	background:rgba(0,0,0,0)
+}
+</style>
+</head>
+<body>
+	<nav id="footer-nav">
+		<!-- footer 올리고 내리는거 아이콘있는곳 -->
+		<div class="row" id="footer-updown">
+				<div class="col-lg-4" id="white1"></div>
+				<div class="col-lg-4"><i class="material-icons">menu</i></div>
+				<div class="col-lg-4" id="white2"></div>
+		</div>
+		<div class="row border">
+			<div class="col-lg-6 center" id="search-out">
+				<div class="row border rounded">
+					<div class="col-md-12">
+						<form class="list-group">
+							<div class="row rounded">
+								<div class="form-control col-lg-3">숙박유형
+									<div class="dropdown">
+									    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">숙박유형</button>
+									    <div class="dropdown-menu">
+											<a class="dropdown-item" href="#">모텔</a>
+											<a class="dropdown-item active" href="#">호텔</a>
+											<a class="dropdown-item disabled" href="#">팬션</a>
+									    </div>
+									</div>
+								</div>
+								<div class="form-control col-lg-5">지역(시)/인근지하철<br/>
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+									    검색
+									</button>
+								</div>
+								<div class="form-control col-lg-4">체크인 체크아웃
+									<input type="text" class="w3-input w3-border rounded" name="" placeholder="체크인날과 체크아웃날을 선택해주세요"/>
+								</div>
+								<button type="submit" class="btn btn-warning form-control"
+										style="font-size: 0.8em; text-align: center">숙소검색</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</nav>
+</body>
+<script>
+	$('#footer-updown').click(function() {
+		if ($('#footer-nav').css("bottom") == '-170px') {
+			$('#footer-nav').css("bottom", "0px");
+		} else {
+			$('#footer-nav').css("bottom", "-170px");
+		}
+	});
+</script>
+</html>
