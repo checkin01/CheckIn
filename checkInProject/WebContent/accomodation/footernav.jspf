@@ -30,7 +30,6 @@ body {
 }
 
 #footer-updown {
-	background: rgba(0, 0, 0, 0.7);
 	position: relative;
 	/*width:200px;*/
 	text-align: center;
@@ -84,7 +83,7 @@ body {
 <body>
 	<nav id="footer-nav">
 		<!-- footer 올리고 내리는거 아이콘있는곳 -->
-		<div class="row" id="footer-updown">
+		<div class="row w3-green" id="footer-updown">
 			<div class="col-lg-4" id="white1"></div>
 			<div class="col-lg-4">
 				<i class="material-icons">menu</i>
@@ -130,6 +129,7 @@ body {
 	</nav>
 </body>
 <script>
+
 	$('#footer-updown').click(function() {
 		if ($('#footer-nav').css("bottom") == '-60px') {
 			$('#footer-nav').css("bottom", "0px");
@@ -137,5 +137,6 @@ body {
 			$('#footer-nav').css("bottom", "-60px");
 		}
 	});
+
 </script>
 </html>
