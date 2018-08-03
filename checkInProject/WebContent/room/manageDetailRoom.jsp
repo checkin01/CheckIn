@@ -51,15 +51,13 @@
 				<span> 홈 > 관리 페이지 > 룸 관리 </span>
 			</div>
 			
-<!--  ========================== 룸들 정보 보기 시작 ========================== -->
-			
-		
+<!--  ========================== 룸들 정보 보기 시작 ========================== -->	
 			
 			<div class="border w3-show container" id="rooms" >
 				<!-- 룸 리스트 정보 시작 -->
 				<div class="row">
 						<div style="width:80%"> </div>
-						<input type="button" value="등록하기" class="btn form-control btn-success col-sm-3" id="registerBtn"/>
+						<a href="registerRoom.jsp"><input type="button" value="등록하기" class="btn form-control btn-success col-sm-3" id="registerBtn"/></a>
 				</div>
 				<div class="border row">
 					<!-- 이미지 DIV 시작 -->
@@ -146,7 +144,7 @@
 					<div class="row">
 						<input type="button" value="삭제하기" class="btn form-control btn-success col-sm-3" id="delBtn" />
 						<div class="col-sm-1"></div>
-						<input type="button" value="수정하기" class="btn form-control btn-success col-sm-3" id="editBtn"/>
+						<a href="editRoom.jsp"><input type="button" value="수정하기" class="btn form-control btn-success col-sm-3" id="editBtn"/></a>
 						<div class="col-sm-1"></div>
 				
 					</div>
