@@ -46,9 +46,9 @@
 			 <i class="fa fa-check-square-o" style="font-size: 48px; color: orange"></i>Check In
 			</span></strong> <span style="font-size: 0.7em;">에서 빠르고 쉽게 예약하세요 !</span>
 		</div>
-		<div class="filters container rounded w3-animate-left ">
+		<div class="filters container rounded w3-animate-left">
 			<!-- 유형 filter -->
-			<div class="filter-child ">
+			<div class="filter-child rounded">
 				<div>
 					<label>유형</label>
 				</div>
@@ -121,7 +121,7 @@
 			<!-- 지역 filter 끝 -->
 			
 			<!-- 체크인/체크아웃 filter -->
-			<div class="filter-child rounded" style="width: 30%">
+			<div class="filter-child rounded filter-checkinout">
 				<div>
 					<label> 날짜</label>
 				</div>

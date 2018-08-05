@@ -8,75 +8,9 @@
 	href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="../css/footernav.css">
 <style>
-body {
-	position: relative;
-	padding-top: 80px;
-	padding-bottom: 40px;
-}
-
-#footer-nav {
-	z-index:15;
-	position: fixed;
-	left:0;
-	width: 100%;
-	bottom: -60px;
-	height: 90px;
-	transition: top 0.2s ease-in-out;
-	rgba: 0.7;
-	background-color: white;
-	padding:0;
-	margin:0;
-}
-
-#footer-updown {
-	position: relative;
-	/*width:200px;*/
-	text-align: center;
-	margin: 0;
-}
-#search-out .label{
-	background:
-	text-align: center;
-	font-size:1em;
-	color:#aaa;
-}
-#search-out {
-	width: 100%;
-	height: 100%;
-	text-align: center;
-}
-
-#search-out ul{
-	position:relative;
-	text-align:center;
-	width:100%;
-	height:100%;
-	list-style-type:none;
-	padding-left:20%;
-	
-}
-#search-out li{
-	width: 20%;
-	height:80%;
-	padding:10px;
-	float:left;
-	font-size:1em;
-	text-align:center;
-}
-#search-out a{
-	color:black;
-}
-#search-out a:hover{
-	color:black;
-	text-decoration:none;
-}
-
-#type-list:hover{
-	cursor:pointer;
-	
-
-}
 
 </style>
 </head>
@@ -93,25 +27,22 @@ body {
 		<!-- ==================== footer 올리고 내리는거 아이콘있는곳======================================= -->
 
 		<form class="border rounded" id="search-out">
-			<ul class="container">
-		
+			<ul>
 				<!--     =========================== 숙박유형=========================== -->
-				<li class="type-list">
-					<div class="dropdown">
-						<i class="fa fa-building"> </i> <button class="btn btn-light dropdown-toggle border"
-							data-toggle="dropdown" id="Bottom-type">숙박유형</button>
+				<li class="type-list container dropdown">
+						<button class="btn btn-light dropdown-toggle border" data-toggle="dropdown" id="Bottom-type">숙박유형</button>
 						<div class="dropdown-menu">
 							<a class="dropdown-item droptype-item" href="#">모텔</a> <a
 								class="dropdown-item active droptype-item" href="#">호텔</a> <a
 								class="dropdown-item disabled droptype-item" href="#">펜션</a>
 						</div>
-					</div>
+	
 				</li>
 
 				<!--     =========================== 지역 =========================== -->
 				
-				<li class="showLocModal" style="margin:auto; text-align:center">
-					<i class="material-icons">place</i> <button class="btn btn-light dropdown-toggle border" id='selectedLocation' style="font-size: 1em">
+				<li class="showLocModal container" style="margin:auto; text-align:center">
+					<button class="btn btn-light dropdown-toggle border" id='selectedLocation' style="font-size: 1em">
 						<span class="selectedSido">서울</span> <span class="selectedGu">강남구</span>
 						<span class="selectedSubway"></span>
 					</button>
@@ -119,10 +50,10 @@ body {
 				<!--     =========================== 지역 =========================== -->
 	
 					
-				<li>
-					<i class="fa fa-calendar"> <input type="text" class="rounded" name="bottom-checkinout" style="font-size:0.8em;height:30px"/></i> 
+				<li class="container">
+					<input type="text" class="rounded btn btn-light border" name="bottom-checkinout" /> 
 				</li>
-				<li><button type="submit" class="btn w3-deep-orange rounded" style="width:80%">검색</button></li>
+				<li class="container"><button type="submit" class="btn w3-deep-orange rounded" style="width:80%">검색</button></li>
 			</ul>
 		</form>
 

@@ -19,7 +19,7 @@
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <link rel="stylesheet" href="../css/default.css" />
-<link rel="stylesheet" href="../css/accomodation/showDetailStyle.css">
+<link rel="stylesheet" href="../css/showDetailStyle.css">
 <!--  body 구성에 적용 되는 스타일시트 -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -41,11 +41,10 @@
 
 .review-p {
 	background: #fff;
-	
 }
 
 label {
-	font-size: 12px;
+	font-size: 0.7;
 }
 
 #rooms {

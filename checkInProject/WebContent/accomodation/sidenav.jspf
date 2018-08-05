@@ -5,7 +5,7 @@
 	text-align: center;
 	margin: 50px 0 0 0;
 	width: 50px;
-	height: 300px;
+	height: 180px;
 	font-size: 0.4em;
 	pading: 0;
 }
@@ -72,7 +72,7 @@
 
 <nav id="hot"
 	class="w3-sidebar w3-bar-block w3-small w3-hide-small side-nav border"
-	style="width: 120px; height: 300px; margin-top: 300px;">
+	style="width: 120px; height: 300px; margin-top: 250px;">
 	<!-- up down scroll spy -->
 	<div class="w3-bar-item w3-button w3-hover-none hit-divs">
 		<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG"
