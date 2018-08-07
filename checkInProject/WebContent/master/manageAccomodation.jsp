@@ -54,7 +54,9 @@
 	<!-- 본문은 left center right으로 나뉜다.-->
 	<div id="main" class="row main">
 
-		<aside class="left col-sm-2" id="left"></aside>
+		<aside class="left col-sm-2" id="left">
+			<%@ include file="../nav_manager.jspf"%>
+		</aside>
 		<div class="col-sm-8 center" id="center">
 			
 			

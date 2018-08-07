@@ -92,10 +92,12 @@ body{
 	본문은 left center right으로 나뉜다. -->
 	<div id="main" class="row main" style="position: relative; top: 80px; margin-bottom:100px">
 
-		<aside class="left col-sm-1" id="left"></aside>
+		<aside class="left col-sm-2" id="left">
+			<%@ include file="../nav_manager.jspf"%>
+		</aside>
 
 		<!-- center -->
-		<div class="col-sm-10 center" id="center">
+		<div class="col-sm-9 center" id="center">
 			<!------------------------------ google chart ---------------------------------------->
 			<div id="calendar_basic" style="width: 1000px; height: 350px;"></div>
 			<div id="chart_div" style="width: 900px; height: 500px;"></div>
