@@ -40,7 +40,6 @@
 </style>
 </head>
 <body>
-<%@ include file="../topnav_member.jspf"%>
 <!-- 
    본문은 left center right으로 나뉜다.
 -->

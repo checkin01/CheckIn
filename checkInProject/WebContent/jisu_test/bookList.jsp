@@ -34,7 +34,7 @@
 </style>
 </head>
 <body>
-<%@ include file="../topnav_member.jspf"%>
+
 <!-- 
    본문은 left center right으로 나뉜다.
 -->
@@ -62,7 +62,5 @@
 <footer class="row footer" id="footer">
     <div class="col-sm-12"></div>
 </footer>
-			<%@ include file="../review/writeReviewModal.jspf"%>
-			<%@ include file="../review/editReviewModal.jspf"%>
 </body>
 </html>

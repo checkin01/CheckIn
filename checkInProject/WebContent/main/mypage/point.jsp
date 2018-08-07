@@ -27,17 +27,15 @@
 	.row {margin-right: 2px}
 	/*=========================================================  */
 	#left{width:15%}
-	#sideNav{width:12%}	
-		#sideBar{position:relative;top:20px;left:10px;width:80%}	
-			#navImg{width:100%}
-			#sideNavCnt{background-color:#f8f8f8;position:relative;padding:10px 15px}
-				#sideNavCnt>a{line-height:2.3em;color:black}
-				#sideNavCnt>a:hover{font-weight:bold;text-decoration:none}
 	#center{padding:20px 0px;margin:0px;weight:400px}
 		#pointTable{text-align:center;border-top:1px solid #ccc;border-bottom:1px solid lightgray}
+	#center h3, #pointTable th{
+		font-family:'Jua';
+	}
 </style>
 </head>
 <body>
+<%@ include file="../topnav_member.jspf"%>
 <!-- 
    본문은 left center right으로 나뉜다.
 -->
@@ -47,7 +45,7 @@
 	
 	<!-- side Nav -->
 	<aside class="left" id="sideNav">
-		<%@ include file="sideNav.jspf"%>
+		<%@ include file="rightside_nav.jspf"%>
 	</aside>
 	
 	<!-- main -->

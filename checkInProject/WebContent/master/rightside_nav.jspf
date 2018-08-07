@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<style>
+.mytop_nav {
+	text-align: center;
+	margin: 50px 0 0 0;
+	width: 50px;
+	height: 300px;
+	font-size: 0.4em;
+	pading: 0;
+}
+
+.mytop_nav>a {
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	pading: 0;
+	margin: 0;
+}
+
+.mytop_nav>i {
+	text-align: center;
+	pading: 0;
+	margin: 0;
+}
+
+.hit-divs {
+	margin: 0 auto;
+	padding: 0 auto;
+	text-align: center;
+}
+
+/* Make the image fully responsive */
+.hit-imgs {
+	width: 80px;
+	height: 80px;
+}
+
+#hot {
+	border-radius: 5px;
+}
+
+
+
+</style>
+<script>
+	$(document).ready(function() {
+		$('[data-toggle="popover"]').popover();
+	});
+</script>
+<nav
+	class="w3-sidebar w3-bar-block w3-small w3-hide-small side-nav mytop_nav">
+	<a href="#about" class="w3-bar-item w3-button w3-hover-black border"> 
+		<i class="fa fa-user w3-medium"></i>
+		
+	</a> <a href="#" class="w3-bar-item w3-button w3-hover-black border"> <i
+		class="fa fa-eye w3-medium"></i>
+		
+	</a> <a href="#map"
+		 class="w3-bar-item w3-button w3-hover-black border">
+		<i class="fa fa-map w3-medium"></i>
+		
+	</a>
+
+	<!-- up down scroll spy -->
+	<a href="#" class="w3-bar-item w3-button w3-hover-none"> <i
+		class="fa fa-angle-up w3-large"></i>
+	</a> <a href="#pagination" class="w3-bar-item w3-button w3-hover-none"> <i
+		class="	fa fa-angle-down w3-large"></i>
+	</a>
+</nav>
