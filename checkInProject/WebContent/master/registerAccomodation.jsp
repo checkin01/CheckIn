@@ -47,8 +47,10 @@ $(function(){
 	<!-- 본문은 left center right으로 나뉜다.-->
 
 	<div id="main" class="row main">
-		<aside class="left col-sm-3" id="left"></aside>
-		<div class="col-sm-7 center" id="center" style="top: 50px">
+		<aside class="left col-sm-2" id="left">
+			<%@ include file="../nav_manager.jspf"%>
+		</aside>
+		<div class="col-sm-8 center" id="center" style="top: 50px">
 			<!--  -->
 			<div class="font1-small" style="padding: 20px 0">
 				<span> 홈 > 관리 페이지 > 숙박 업소 등록 </span>
