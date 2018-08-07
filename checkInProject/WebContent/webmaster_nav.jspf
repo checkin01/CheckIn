@@ -27,15 +27,15 @@
 <body>
 	<div id="sideBar" class="container">
 		<div>
-			<a href="<%=request.getContextPath() %>/master/manageAccomodation.jsp">
-				<img src="<%=request.getContextPath() %>/img/managerNavTop.png" id="navImg"/>
+			<a href="#">
+				<img src="<%=request.getContextPath() %>/img/webmaster_nav.PNG" id="navImg"/>
 			</a>
 		</div>
 		<div id="sideNavCnt">
-			<a href="<%=request.getContextPath() %>/master/manageAccomodation.jsp">관리자메인홈</a><br/>	
-			<a href="<%=request.getContextPath() %>/master/registerAccomodation.jsp">숙박업소등록</a><br/>
-			<a href="<%=request.getContextPath() %>/master/editAccomodation.jsp">숙박업소정보수정</a><br/>						
-			<a href="<%=request.getContextPath() %>/master/manageBookingInfo.jsp">숙박업소예약관리</a>				
+			<a href="#">공지사항</a><br/>	
+			<a href="#">숙박업소리스트보기</a><br/>
+			<a href="#">가맹점정보보기</a><br/>						
+			<a href="#">회원정보보기</a>				
 		</div>
 	</div>
 </body>
