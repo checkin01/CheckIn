@@ -56,8 +56,10 @@ body{
 
 }
  
-.theme{
- 	text-overflow:ellipsis;
+#theme{
+ 	white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 </style>
 <script>
@@ -129,7 +131,7 @@ body{
 						<div class="col-md-1">15:00</div>
 						<div class="col-md-1">14:00</div>
 						<div class="col-md-1">3일</div>
-						<div class="col-md-1"><a class="theme">스파,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+						<div class="col-md-1" id="theme">스파,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
 						<div class="col-md-1">2018-07-25</div>
 					</div>
 				</div> 
