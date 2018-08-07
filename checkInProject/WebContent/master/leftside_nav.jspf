@@ -22,6 +22,10 @@
 			#sideNavCnt{background-color:#f8f8f8;position:relative;padding:10px 15px}
 				#sideNavCnt>a{line-height:2.3em;color:black}
 				#sideNavCnt>a:hover{font-weight:bold;text-decoration:none}
+	#sideBar{
+		font-size:1em;
+		font-family:'Jua';
+	}
 </style>
 </head>
 <body>

@@ -21,11 +21,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="../css/default.css">
-<!-- 구글 차트 -->
-<script type="text/javascript"
-	src="https://www.gstatic.com/charts/loader.js"></script>
-	<script src="../js/gchart_combo.js"></script>
-<script src="../js/gchart_cal.js"></script>
+
 <!-- body 구성에 적용 되는 스타일 시트 -->
 <!-- daterangepicker-->
 <script type="text/javascript"
@@ -98,12 +94,7 @@ body{
 
 		<!-- center -->
 		<div class="col-sm-9 center" id="center">
-			<!------------------------------ google chart ---------------------------------------->
-			<div id="calendar_basic" style="width: 1000px; height: 350px;"></div>
-			<div id="chart_div" style="width: 900px; height: 500px;"></div>
-
-			<!------------------------------ google chart ---------------------------------------->
-			<hr />
+			
 			<div class="row" style="margin-left: 1px">
 				<h2>[업소이름] 실시간 예약 현황</h2>
 			</div>
@@ -328,7 +319,7 @@ body{
 		
 	<!-- right -->
 	<aside class="col-sm-1 right" id="right">
-		<%@ include file="../rightside_nav.jspf"%>
+		<%@ include file="rightside_nav.jspf"%>
 	</aside>
 	
 

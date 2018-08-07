@@ -15,9 +15,6 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="../js/gchart_accomodation.js"></script>
 <link rel="stylesheet" href="../css/default.css">
 <link rel="stylesheet" href="../css/manageAccomodation.css">
 <!-- body 구성에 적용 되는 스타일 시트 -->
@@ -27,13 +24,13 @@
   			//버튼 누르면 페이지 이동 효과
  $(function(){
   		$("#roomManageBtn").click(function(){
-  		location.href = "<%=request.getContextPath()%>/room/manageDetailRoom.jsp";
+  		location.href = "<%=request.getContextPath()%>/master/accomodation/manageDetailRoom.jsp";
   		});
   		$("#bookingBtn").click(function(){
-  		location.href = "<%=request.getContextPath()%>/master/manageBookingInfo.jsp";
+  		location.href = "<%=request.getContextPath()%>/master/manage/manageBookingInfo.jsp";
   		});
   		$("#infoEditBtn").click(function(){
-  			location.href = "<%=request.getContextPath()%>/master/editAccomodation.jsp";
+  			location.href = "<%=request.getContextPath()%>/master/manage/editAccomodation.jsp";
 	});
 	});
 </script>
@@ -58,14 +55,6 @@
 				<%@ include file="../leftside_nav.jspf"%>
 		</aside>
 		<div class="col-sm-8 center" id="center">
-			
-			
-			<!-- 관리 현황 페이지 google chart -->
-			<div class="gchart">
-				<div id="columnchart_material" style="width: 800px; height: 400px;"></div>
-			</div>
-      	
-  
 	      	<!-- 업소 이름 -->   
       		<div class="row" style="margin-top:10px">
       			<div class="font2-large col-md-6" id="aname">[업소이름] </div>
