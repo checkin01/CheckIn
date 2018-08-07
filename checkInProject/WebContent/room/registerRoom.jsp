@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
-<%@ include file="../nav.jspf" %>
+	<%@ include file="../topnav_master.jspf"%>
 <!DOCTYPE html>
 <html>
 <head>

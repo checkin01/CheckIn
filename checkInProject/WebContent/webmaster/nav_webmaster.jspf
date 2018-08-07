@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+#sideNav{width:12%}	
+#sideBar{position:relative;top:20px;left:10px;width:80%}	
+#navImg{width:100%}
+#sideNavCnt{background-color:#f8f8f8;position:relative;padding:10px 15px}
+#sideNavCnt>a{line-height:2.3em;color:black}
+#sideNavCnt>a:hover{font-weight:bold;text-decoration:none}
+</style>
+</head>
+
+	<div id="sideBar" class="container">
+		<div>
+			<a href="#">
+				<img src="<%=request.getContextPath() %>/img/webmaster_nav.PNG" id="navImg"/>
+			</a>
+		</div>
+		<div id="sideNavCnt">
+			<a href="#">공지사항</a><br/>	
+			<a href="<%=request.getContextPath() %>/webmaster/showAccoList.jsp">숙박업소리스트보기</a><br/>
+			<a href="<%=request.getContextPath() %>/webmaster/showMaster.jsp">가맹점정보보기</a><br/>						
+			<a href="<%=request.getContextPath() %>/webmaster/showMember.jsp">회원정보보기</a>				
+		</div>
+	</div>
+
+</html>

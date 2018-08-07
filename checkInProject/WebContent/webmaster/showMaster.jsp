@@ -97,11 +97,13 @@ body{
    본문은 left center right으로 나뉜다. -->
    <div id="main" class="row main" style="position: relative; top: 80px; margin-bottom:100px">
 
-      <aside class="left col-sm-1" id="left"></aside>
+      <aside class="left col-sm-2" id="left">
+      <%@ include file="nav_webmaster.jspf"%>
+      </aside>
 
       <!-- center -->
-      <div class="col-sm-10 center" id="center">
-         <h1 style="text-align:center">마스터 리스트</h1>
+      <div class="col-sm-9 center" id="center">
+         <h4 style="text-align:center">마스터 리스트</h4>
          <!-- 리스트 시작 -->         
       <div class="list-group" style="margin-top: 20px ; font-size:0.9em" id="bookingList">
 				<div class="list-group-item w3-indigo" id="bookListTop"
@@ -232,7 +234,7 @@ body{
          <!-- listGroup -->
          <!-- paging -->
 
-         <ul class="pagination pagination-md" style="padding-left: 650px" id="pagination">
+         <ul class="pagination pagination-md" id="pagination">
             <li class="page-item"><a href="manageBookingInfo.jsp"
                class="page-link">Prev</a></li>
             <li class="page-item"><a href="manageBookingInfo.jsp"
@@ -249,8 +251,7 @@ body{
                class="page-link">Next</a></li>
          </ul>
          <form action="list.jsp" id="searchFrm" class="form-inline">
-               <div class="list-group-item list-group-item-action"
-                  style="text-align: center">
+               <div style="text-align: center">
                   <select name="searchKey" class="form-control">
                      <option value="subject">연번</option>
                      <option value="content">숙박업소명</option>

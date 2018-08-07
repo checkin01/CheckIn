@@ -74,7 +74,7 @@ body{
 </script>
 </head>
 <body class="font1-medium">
-	<%@ include file="../nav.jspf"%>
+<%@ include file="../topnav_member.jspf"%>
 	<!-- 본문은 left center right으로 나뉜다. -->
 	<div id="main" class="row main" >
 		<aside class="left col-sm-3" id="left"></aside>

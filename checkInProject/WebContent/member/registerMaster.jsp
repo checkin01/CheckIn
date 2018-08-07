@@ -57,7 +57,7 @@ body{
 </style>
 </head>
 <body>
-<%@ include file="../nav.jspf"%>
+<%@ include file="../topnav_member.jspf"%>
 
 <body class="font1-medium">
 	<!-- 본문은 left center right으로 나뉜다. -->

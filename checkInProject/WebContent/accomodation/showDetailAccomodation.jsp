@@ -66,7 +66,7 @@ label {
 </style>
 </head>
 <body>
-	<%@ include file="../nav.jspf"%>
+<%@ include file="../topnav_member.jspf"%>
 
 	<div id="main" class="row main" style="top:80px">
  
