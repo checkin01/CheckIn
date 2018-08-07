@@ -25,8 +25,11 @@
 	<div id="main" class="row main" style="position: relative; top: 80px; margin-bottom: 100px">
 		<aside class="left col-sm-1" id="left"> </aside>
 		<div class="col-sm-10 center container" id="center" style="text-align:center">
+			<div class="btn-group">
+				 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#writeModal">새 공지 추가</button>
+			</div>
+			
 			<div class="list-group" style="margin-top: 20px; font-size: 0.9em" id="bookingList">
-				
 				<div class="list-group-item w3-indigo" id="bookListTop" style="text-align: center">
 					<div class="row">
 						<div class="col-md-1">번호</div>
