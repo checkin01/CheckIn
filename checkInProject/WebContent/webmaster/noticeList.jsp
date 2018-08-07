@@ -10,18 +10,22 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<style>
+#pagination{
+	margin-top:50px;
+	margin-left:40%;
+}
 
+</style>
 <head>
 <meta charset="UTF-8">
 <title>웹 관리 페이지</title>
 </head>
 <body>
-	<div id="main" class="row main"
-		style="position: relative; top: 80px; margin-bottom: 100px">
-		<aside class="left col-sm-1" id="left"></aside>
-		<div class="col-sm-10 center" id="center">
-			<div class="list-group" style="margin-top: 20px; font-size: 0.9em"
-				id="bookingList">
+	<div id="main" class="row main" style="position: relative; top: 80px; margin-bottom: 100px">
+		<aside class="left col-sm-1" id="left"> </aside>
+		<div class="col-sm-10 center container" id="center" style="text-align:center">
+			<div class="list-group" style="margin-top: 20px; font-size: 0.9em" id="bookingList">
 				
 				<div class="list-group-item w3-indigo" id="bookListTop" style="text-align: center">
 					<div class="row">
@@ -51,8 +55,10 @@
 						<div class="col-md-2">20180808</div>
 					</div>
 				</div>
-		
-			<ul class="pagination pagination-md " style="padding-left: 650px" id="pagination">
+				
+			</div>
+			
+			<ul class="pagination pagination-md" id="pagination">
 				<li class="page-item"><a href="manageBookingInfo.jsp"
 					class="page-link">Prev</a></li>
 				<li class="page-item"><a href="manageBookingInfo.jsp"
@@ -68,7 +74,7 @@
 				<li class="page-item"><a href="manageBookingInfo.jsp"
 					class="page-link">Next</a></li>
 			</ul>
-		</div>
+		
 		<!-- 여기 안에 모두 담자 -->
 
 	</div>
