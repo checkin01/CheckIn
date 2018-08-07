@@ -14,7 +14,7 @@
 	margin: 5px;
 	border: none;
 	background: #fff;
-	font-size: 12px;
+	font-size: 0.8em;
 	font-family: 'Gothic A1', sans-serif;
 }
 
@@ -23,7 +23,7 @@
 	margin: 5px;
 	height: 30px;
 	background: #fff;
-	font-size: 15px;
+	font-size: 0.9em;
 	font-family: 'Gothic A1', sans-serif;
 	border-radius: 5px;
 }
@@ -52,10 +52,10 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<input type="button" class="searchOption" id="searchMethod1"
+					<input type="button" class="searchOption btn" id="searchMethod1"
 						style="background: green;" value="주소로 검색하기"
 						onClick="whenClickSearchOption(1)"> <input type="button"
-						id="searchMethod2" class="searchOption" style="background: #ddd"
+						id="searchMethod2" class="searchOption btn" style="background: #ddd"
 						value="인근 지하철로 검색하기" onClick="whenClickSearchOption(2)">
 					<div class="row" id="gu_panel1"
 						style="width: 500px; padding: 10px; display: block">

@@ -126,3 +126,30 @@ label {
 	font-size: 1em;
 	
 }
+
+/*main page*/
+#main .name{
+	font-size:1em;
+	padding:0px;
+	margin:5px 0 0 0;
+	font-family: 'Gothic A1', sans-serif;
+}
+#main .addr{
+	font-size:0.9em;
+	padding:0px;
+	margin:5px 0 0 0;
+	font-family: 'Gothic A1', sans-serif;
+}
+#main .review{
+	font-size:0.8em;
+	padding:0px;
+margin:5px 0 0 0;
+	font-family: 'Gothic A1', sans-serif;
+}
+#main .grade{
+	font-size:0.8em;
+	padding:0px;
+	margin:5px 0 0 0;
+	font-family: 'Gothic A1', sans-serif;
+}
+

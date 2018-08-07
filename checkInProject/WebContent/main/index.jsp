@@ -7,16 +7,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>Check in !</title>
-<meta name="viewport" content="width=device-width,initial-scale=1" >
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="./css/index.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <!-- daterangepicker -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="./js/daterangepicker.js"></script>
 <link rel="stylesheet" href="./css/daterangepicker.css" />
 
@@ -33,16 +38,17 @@
 
 </script>
 </head>
-<body >
+<body>
 	<%@ include file="topnav_member.jspf"%>
 	<%@ include file="locationModal.jspf"%>
 	<!-- 
 	본문은 left center right으로 나뉜다.
 -->
-	<div class="header" >
+	<div class="header" style="position: relative">
 		<div class="paragrapgh container text w3-animate-left">
-			<strong><span style="color: orange">
-			 <i class="fa fa-check-square-o" style="font-size: 48px; color: orange"></i>Check In
+			<strong><span style="color: orange"> <i
+					class="fa fa-check-square-o" style="font-size: 48px; color: orange"></i>Check
+					In
 			</span></strong> <span style="font-size: 0.7em;">에서 빠르고 쉽게 예약하세요 !</span>
 		</div>
 		<div class="filters container rounded w3-animate-left">
@@ -95,7 +101,7 @@
 				});
 			</script>
 			<!-- 유형 filter 끝 -->
-			
+
 			<!-- 지역 filter -->
 			<div class="filter-child rounded">
 				<div>
@@ -118,7 +124,7 @@
 
 			</div>
 			<!-- 지역 filter 끝 -->
-			
+
 			<!-- 체크인/체크아웃 filter -->
 			<div class="filter-child rounded filter-checkinout">
 				<div>
@@ -127,8 +133,8 @@
 				<!-- filter_item 부분 변경 -->
 				<div class=" filter-main">
 					<div class="filter-item">
-						<i class="material-icons"> calendar_today</i>
-						 <input class="rounded" name="daterange" id="checkinout" type="text">
+						<i class="material-icons"> calendar_today</i> <input
+							class="rounded" name="daterange" id="checkinout" type="text">
 						<div>
 							<i class="material-icons">keyboard_arrow_down</i>
 						</div>
@@ -162,8 +168,113 @@
 				location.href="<%=request.getContextPath()%>/main/accomodation/showAccomodationList.jsp";
 			});
 		});
-	
 	</script>
-	<div id="main" class="main"></div>
+
+	<div id="main" class="main row" style="position: relative;">
+		<div class="col-lg-2"></div>
+		<div id="center" class="col-lg-8 center"
+			style="position: relative; margin: 50px 0;">
+
+			<!-- 리뷰 등록 순 -->
+			<!-- First Photo Grid-->
+			<div class="w3-row-padding"
+				style="text-align: center; padding: 10px 0px; font-family:'Jua'">
+				<h2>여기는 어떠세요?</h2>
+			</div>
+			<br/>
+			<div class="w3-row-padding"
+				style="text-align: center; padding: 20px;">
+				<h5><button class="btn btn-light showLocModal">
+					<i class="fa fa-map-marker"></i> <span class="selectedSido">서울</span>
+					<span class="selectedGu">강남구</span> <span class="selectedSubway"></span>
+					</button> 에서 평점이 가장 좋은 곳 이에요.</h5>
+			</div>
+			<div class="w3-row-padding">
+				<div class="w3-third w3-container  w3-margin-bottom" >
+					<img
+						src="<%=request.getContextPath()%>/img/accomodation/home1.jpg"
+						style="width: 100%" class="w3-hover-opacity">
+					<div class="w3-container w3-white">
+						<p class="name"><b>리노베이션 펜션</b></p>
+						<p class="addr">서울 특별시 강남구</p>
+						<p class="review">이렇게 꺠끗해도 될까요? 너무 관심이 많아서 후기 보고 예약 했는데....</p>
+						<p class="grade">평점 : <span id="grade">4.5</span></p>
+					</div>
+				</div>
+
+				<div class="w3-third w3-container w3-margin-bottom">
+					<img
+						src="<%=request.getContextPath()%>/img/accomodation/home1.jpg"
+						style="width: 100%" class="w3-hover-opacity">
+					<div class="w3-container w3-white">
+						<p class="name"><b>리노베이션 펜션</b></p>
+						<p class="addr">서울 특별시 강남구</p>
+						<p class="review">이렇게 꺠끗해도 될까요? 너무 관심이 많아서 후기 보고 예약 했는데....</p>
+						<p class="grade">평점 : <span id="grade">4.5</span></p>
+					</div>
+				</div>
+				<div class="w3-third w3-container">
+					<img
+						src="<%=request.getContextPath()%>/img/accomodation/home1.jpg"
+						style="width: 100%" class="w3-hover-opacity">
+					<div class="w3-container w3-white">
+						<p class="name"><b>리노베이션 펜션</b></p>
+						<p class="addr">서울 특별시 강남구</p>
+						<p class="review">이렇게 꺠끗해도 될까요? 너무 관심이 많아서 후기 보고 예약 했는데....</p>
+						<p class="grade">평점 : <span id="grade">4.5</span></p>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<hr/>
+			<div class="w3-row-padding"
+				style="text-align: center; padding: 20px;">
+				<h5><button class="btn btn-light showLocModal">
+					<i class="fa fa-map-marker"></i> <span class="selectedSido">서울</span>
+					<span class="selectedGu">강남구</span> <span class="selectedSubway"></span>
+					</button> 에서 예약 수가 가장 많은 곳 이에요.</h5>
+			</div>
+			<!-- 방문자 순 -->
+			<!-- Second Photo Grid-->
+			<div class="w3-row-padding">
+				<div class="w3-third w3-container w3-margin-bottom">
+					<img
+						src="<%=request.getContextPath()%>/img/accomodation/home2.jpg"
+						style="width: 100%" class="w3-hover-opacity">
+					<div class="w3-container w3-white">
+						<p class="name"><b>리노베이션 펜션</b></p>
+						<p class="addr">서울 특별시 강남구</p>
+		
+			
+					</div>
+				</div>
+				<div class="w3-third w3-container w3-margin-bottom">
+					<img
+						src="<%=request.getContextPath()%>/img/accomodation/home2.jpg"
+						style="width: 100%" class="w3-hover-opacity">
+					<div class="w3-container w3-white">
+						<p class="name"><b>리노베이션 펜션</b></p>
+						<p class="addr">서울 특별시 강남구</p>
+		
+				
+					</div>
+				</div>
+				<div class="w3-third w3-container">
+					<img
+						src="<%=request.getContextPath()%>/img/accomodation/home2.jpg"
+						style="width: 100%" class="w3-hover-opacity">
+					<div class="w3-container w3-white">
+						<p class="name"><b>리노베이션 펜션</b></p>
+						<p class="addr">서울 특별시 강남구</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-lg-2"></div>
+	</div>
+
+
+	<div id="footer" class="footer" style="position: relative;">바닥</div>
 </body>
 </html>

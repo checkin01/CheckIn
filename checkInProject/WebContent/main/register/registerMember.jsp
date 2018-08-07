@@ -49,21 +49,23 @@
 }
 
 body{
-	background:url('../img/h_r2.png')100% 100%;
+	background:url('../img/h_r2.jpg')100% 100%;
 	height:800px;
 }
 
-#regFrmMaster .btns{
-	border:solid black 1px;
-	position:relative;
-	width:100%;
-	text-align:center;
-	font-family:'Jua', 'Gothic A1', sans-serif;
+#regFrmMember .btns{
+	position: relative;
+	padding: 20px;
+	margin: 0 20px;
+	text-align: center;
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+}
+#regFrmMember{
+	background-color: rgba( 255, 255, 255, 0.9);
 }
 
-
 .center{
-	background-color: rgba( 255, 255, 255, 0.9);
+
 	font-family: 'Jua', 'Gothic A1', sans-serif;
 }
 
@@ -79,12 +81,12 @@ body{
 	<div id="main" class="row main" >
 		<aside class="left col-sm-3" id="left"></aside>
 		<div class="col-sm-6 center" id="center" style="padding-top:80px; padding-left:20px">
-			<div style="padding:20px 0">
+			
+			<form method="post" id="regFrmMember" style="margin-top:30px;"
+				action="../index.jsp" class="container form-horizontal rounded">
+				<div style="padding:20px 0">
 				<span style="padding:30px"> 홈 > 회원가입 </span>
-			</div>
-			<form method="post" id="regFrmMember" style="margin-top: 30px;"
-				action="../index.jsp" class="container form-horizontal">
-
+				</div>
 				<!-- 아이디 -->
 				<div class="row form-group">
 					<label class="col-sm-3">아이디</label> <input type="text" name="uid"
