@@ -3,7 +3,6 @@
 <style>
 .mytop_nav {
 	text-align: center;
-	margin: 50px 0 0 0;
 	width: 50px;
 	height: 180px;
 	font-size: 0.4em;
@@ -48,6 +47,7 @@
 		$('[data-toggle="popover"]').popover();
 	});
 </script>
+<!-- 
 <nav
 	class="w3-sidebar w3-bar-block w3-small w3-hide-small side-nav mytop_nav">
 	<a href="#about" class="w3-bar-item w3-button w3-hover-black border"> 
@@ -61,19 +61,87 @@
 		<i class="fa fa-map w3-medium"></i>
 		
 	</a>
-
-	<!-- up down scroll spy -->
+ -->
+	<!-- up down scroll spy
 	<a href="#" class="w3-bar-item w3-button w3-hover-none"> <i
 		class="fa fa-angle-up w3-large"></i>
 	</a> <a href="#footer" class="w3-bar-item w3-button w3-hover-none"> <i
 		class="	fa fa-angle-down w3-large"></i>
 	</a>
 </nav>
+ -->
+ <style>
+ 	#rigthSideBar div a{
+ 		text-align:center;
+ 		margin:0;
+ 		padding:0;
+ 	}
+ </style>
+<div class="w3-sidebar w3-bar-block w3-collapse" style="width:50px; height:205px;right:0; z-index:20;" id="iconSideBar">
+	<!-- 회사 정보-->
+	<div>
+		<a href=# class="w3-bar-item w3-button w3-hover-black border"><i class="fa fa-user w3-large"></i></a>
+	</div>
+	<!-- history -->
+	<div>
+		 <a href=# class="w3-bar-item w3-button w3-hover-black border"><i class="fa fa-eye w3-large"></i></a>
+	</div>
+	<!-- map -->
+	<div>
+		<a href="#map" class="w3-bar-item w3-button w3-hover-black border"><i class="fa fa-map w3-large"></i></a>
+	</div>
+	<div>
+	<!-- 위로 이동 -->
+		<a href="#" class="w3-bar-item w3-button w3-hover-black border"> <i class="fa fa-angle-up w3-large"></i></a>
+	</div>
+	<!-- 아래로 이동 -->
+	<div>
+		<a href="#footer" class="w3-bar-item w3-button w3-hover-black border"> <i class="fa fa-angle-down w3-large"></i></a>
+	</div>
+</div>
+<div class="w3-sidebar w3-bar-block w3-collapse border" style="width:250px;text-align:left; right:50px; height:205px;background:#fff" id="historySideBar">
+		<div style="height:40px; width:200px;position:relative;">
+			<span style="margin-left:50px; height:20px;text-align:center;background:red">
+				 최근 본 상품 
+			</span>
+			<span>
+				 X 
+			</span>
+		</div>
+		<div style="height:80px; width:250px;position:relative">
+			<span>
+				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;">
+			</span>
+			<span>
+				금강호텔
+			</span>
+		</div>
+		<div style="height:80px; width:250px;position:relative">
+			<span>
+				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;">
+			</span>
+			<span>
+				금강호텔
+			</span>
+		</div>
+		<div style="height:80px; width:250px;position:relative">
+			<span>
+				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;">
+			</span>
+			<span>
+				금강호텔
+			</span>
+		</div>
+</div>
 
+
+<!-- 
 <nav id="hot"
 	class="w3-sidebar w3-bar-block w3-small w3-hide-small side-nav border"
-	style="width: 120px; height: 300px; margin-top: 250px;">
-	<!-- up down scroll spy -->
+	style="width:120px; height: 300px; margin-top: 250px;">
+	<div style="text-align:center"></div>
+	<div>
+	<!-- up down scroll spy 
 	<div class="w3-bar-item w3-button w3-hover-none hit-divs">
 		<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG"
 			class="hit-imgs" alt="hot">
@@ -91,7 +159,8 @@
 	<div class="w3-bar-item w3-button w3-hover-none hit-divs">
 		<img src="<%=request.getContextPath()%>/img/accomodation/hotel04.PNG"
 			class="hit-imgs" alt="hot">
+			
 	</div>
-
+	</div>
 </nav>
-
+ -->
