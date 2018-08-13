@@ -12,7 +12,7 @@
 <style>
 </style>
 </head>
-<body>
+
 	<nav id="footer-nav">
 		<!-- footer 올리고 내리는거 아이콘있는곳 -->
 		<div class="row w3-green" id="footer-updown">
@@ -31,9 +31,9 @@
 					<button class="btn btn-light dropdown-toggle border"
 						data-toggle="dropdown" id="Bottom-type">숙박유형</button>
 					<div class="dropdown-menu">
-						<a class="dropdown-item droptype-item droptype-item" href="#">모텔</a>
-						<a class="dropdown-item active droptype-item" href="#">호텔</a> <a
-							class="dropdown-item disabled droptype-item" href="#">펜션</a>
+						<a class="dropdown-item droptype-item droptype-item" style="font-size:1em" >모텔</a>
+						<a class="dropdown-item active droptype-item" style="font-size:1em" >호텔</a> <a
+							class="dropdown-item disabled droptype-item" style="font-size:1em">펜션</a>
 					</div>
 
 				</li>
@@ -59,7 +59,7 @@
 		</form>
 
 	</nav>
-</body>
+
 <script>
 	$('#footer-updown').click(function() {
 		if ($('#footer-nav').css("bottom") == '-60px') {

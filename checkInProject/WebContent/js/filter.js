@@ -41,8 +41,6 @@ function whenSelectedLoc(i){
 			$(".selectedGu").text(addr2);
 			$(".selectedSubway").text('');
 		});
-		
-		
 	});
 	// modal 창 옵션 선택시 보이는 Panel 변경
 	function whenClickSearchOption(i) {
