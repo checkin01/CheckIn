@@ -1,4 +1,3 @@
-@@ -1,189 +0,0 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <!DOCTYPE html>
@@ -14,7 +13,7 @@
 <script src="//cdn.ckeditor.com/4.10.0/full/ckeditor.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script> 
 
-<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/default.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script>

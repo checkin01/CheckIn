@@ -51,7 +51,7 @@
 	text-align: center;
 	position: relative;
 	font-size:30px;
-	width:10%;
+	width:20%;
 }
 
 #main-nav .nav-item{
@@ -108,7 +108,6 @@
 	<nav class="navbar navbar-expand-lg" id="main-nav">
 		<div class="logo">
 			<a href="<%=request.getContextPath()%>/master/home.jsp" id="top-logo">Check In</a>
-			
 		</div>
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -121,12 +120,17 @@
 				<li class="nav-item bold">
 				<a class="nav-link" href="<%=request.getContextPath()%>/master/login/login.jsp">로그아웃</a></li>
 				<li class="nav-item bold">
-				<a class="nav-link" href="<%=request.getContextPath()%>/master/manage/manageAccomodation.jsp">숙소 관리 페이지</a>
+				<a class="nav-link" href="<%=request.getContextPath()%>/master/accomodation/manageAccomodation.jsp">숙소 관리 페이지</a>
+				</li>
+				<li class="nav-item bold">
+				<a class="nav-link" href="<%=request.getContextPath()%>/master/room/manageDetailRoom.jsp">객실 관리 페이지</a>
 				</li>
 				<li class="nav-item bold"><a class="nav-link"
-					href="<%=request.getContextPath()%>/master/manage/manageBookingInfo.jsp">예약 현황 페이지</a>
+					href="<%=request.getContextPath()%>/master/booking/manageBookingInfo.jsp">예약 현황 페이지</a>
 				</li>
-				
+				<li class="nav-item bold"><a class="nav-link"
+					href="<%=request.getContextPath()%>/master/review/showReviewList.jsp">리뷰 관리 페이지</a>
+				</li>
 			</ul>
 		</div>
 	</nav>

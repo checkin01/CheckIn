@@ -20,14 +20,14 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/default.css">
 
 <!-- body 구성에 적용 되는 스타일 시트 -->
 <!-- daterangepicker-->
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script src="../js/daterangepicker.js"></script>
-<link rel="stylesheet" href="../css/daterangepicker.css">
+<script src="<%=request.getContextPath() %>/js/daterangepicker.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/daterangepicker.css">
 <style>
 body{
 	font-size:1em;
@@ -86,48 +86,20 @@ body{
 	<%@ include file="../topnav_master.jspf"%>
 	<!-- 
 	본문은 left center right으로 나뉜다. -->
-	<div id="main" class="row main" style="position: relative; top: 80px; margin-bottom:100px">
+	<div id="main" class="row main" style="position: relative; top:80px; margin-bottom:100px">
 
-		<aside class="left col-sm-2" id="left">
-			<%@ include file="../leftside_nav.jspf"%>
+		<aside class="left col-sm-1" id="left">		
 		</aside>
 
 		<!-- center -->
-		<div class="col-sm-9 center" id="center">
-			
+		<div class="col-sm-10 center" id="center">
 			<div class="row" style="margin-left: 1px">
 				<h2>[업소이름] 실시간 예약 현황</h2>
 			</div>
 			<div class="row" style="margin-left: 1px">
 				<p>홈>업소이름>예약현황</p>
 			</div>
-			<!--  <div class="w3-row">
-					<br>
-					<div class="w3-quarter">
-						<img src="../img/home.png" alt="Boss" style="width: 45%"
-							class="w3-circle w3-hover-opacity">
-						<h3>홈</h3>
-					</div>
-
-					<div class="w3-quarter ">
-						<img src="../img/1541.png" alt="Boss" style="width: 45%"
-							class="w3-circle w3-hover-opacity">
-						<h3>예약현황 보기</h3>
-						
-					</div>
-
-					<div class="w3-quarter">
-						<img src="../img/1542.png" alt="Boss" style="width: 45%"
-							class="w3-circle w3-hover-opacity">
-						<h3>숙박업소 관리</h3>
-						
-					</div>
-
-					<div class="w3-quarter">
-						<img src="../img/logout1.png" alt="Boss" style="width: 45%"
-							class="w3-circle w3-hover-opacity">
-						<h3>로그아웃</h3> -->
-
+			
 			<!-- Team 끝 -->
 			<!-- style ="속성:속성값 ; 속성:속성값 " -->
 			<!-- Room 시작 -->
@@ -207,7 +179,7 @@ body{
 						<div class="col-md-2">2018-07-21</div>
 						<div class="col-md-2">2018-07-23</div>
 						<div class="col-md-2">2018-07-15</div>
-						<div class="col-md-1"><button class="btn w3-grey enter">입실완료</button></div>
+						<div class="col-md-1"><button class="btn w3-grey enter">입실</button></div>
 					</div>
 				</div>
 				<div class="list-group-item" style="text-align: center">
@@ -298,7 +270,7 @@ body{
 			<!-- listGroup -->
 			<!-- paging -->
 
-			<ul class="pagination pagination-md" style="padding-left: 650px" id="pagination">
+			<ul class="pagination pagination-md justify-content-center" id="pagination">
 				<li class="page-item"><a href="manageBookingInfo.jsp"
 					class="page-link">Prev</a></li>
 				<li class="page-item"><a href="manageBookingInfo.jsp"
@@ -319,7 +291,6 @@ body{
 		
 	<!-- right -->
 	<aside class="col-sm-1 right" id="right">
-		<%@ include file="rightside_nav.jspf"%>
 	</aside>
 	
 
