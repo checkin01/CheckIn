@@ -12,8 +12,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<link rel="stylesheet" href="../css/default.css" />
-<link rel="stylesheet" href="../css/showDetailStyle.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/default.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/showDetailStyle.css">
 <!--  body 구성에 적용 되는 스타일시트 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -21,9 +21,9 @@
 <!-- navermap api -->
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=Ve4ILimYsUbRNnlZeSVm&submodules=geocoder"></script>
 
-<script src="../js/daterangepicker.js"></script>
-<script src="../js/showDetailAccomodation.js"></script>
-<link rel="stylesheet" href="../css/daterangepicker.css">
+<script src="<%=request.getContextPath()%>/js/daterangepicker.js"></script>
+<script src="<%=request.getContextPath()%>/js/showDetailAccomodation.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/daterangepicker.css">
 <style>
 .historyImg {
 	width: 100%;

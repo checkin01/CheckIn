@@ -12,7 +12,7 @@
 <script   src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" href="../css/default.css"> <!-- body 구성에 적용 되는 스타일 시트 -->
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/default.css"> <!-- body 구성에 적용 되는 스타일 시트 -->
 <style>
 	#headerIng {width: 100%;height: 90px;margin-bottom: 10px}
 	.row {margin-right: 2px}

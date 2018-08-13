@@ -22,9 +22,11 @@
 	background-color: white;
 	border: none;
 	font-size: 0.5em;
-	color: #ddd;
+	color:black;
 }
-
+.modal-body .unselected-btn{
+	color:#ddd;
+}
 .theme-item {
 	margin-left: 10px;
 }
@@ -130,11 +132,11 @@
 
 				$("#hiddenOption").text(hiddenOption);
 
-				$(this).css("color", "#ddd");
+				$(this).css("color", "black");
 				$(this).addClass('clicked-btn');
 
 			} else {
-				$(this).css("color", "#000");
+				$(this).css("color", "#ddd");
 				$(this).removeClass('clicked-btn');
 
 				var str = $("#hiddenOption").text();

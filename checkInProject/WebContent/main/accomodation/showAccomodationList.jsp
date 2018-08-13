@@ -15,19 +15,19 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="../css/default.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/default.css" />
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="../js/showAccomodationList.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/showAccomodationList.js"></script>
 
 <!-- daterangepicker-->
-<script src="../js/daterangepicker.js"></script>
-<link rel="stylesheet" href="../css/daterangepicker.css">
-<link rel="stylesheet" href="../css/showAccomodationList.css">
+<script src="<%=request.getContextPath()%>/js/daterangepicker.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/daterangepicker.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/showAccomodationList.css">
 <!-- navermap api -->
 <script type="text/javascript"
 	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=Ve4ILimYsUbRNnlZeSVm&submodules=geocoder"></script>
-<script type="text/javascript" src="../js/filter.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/filter.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
@@ -66,8 +66,6 @@
 	function setdate(){
 		var checkinout = $('#acheckinout').val();
 
-		//var startdate = checkinout.split('-')[0];
-		//var lastdate = checkinout.split('-')[1].trim();
 	}
 </script>
 </head>
