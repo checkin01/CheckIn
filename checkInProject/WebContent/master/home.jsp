@@ -37,13 +37,13 @@
 <body>
 <%@ include file="topnav_master.jspf"%>
 	<div class="row main" id="main">
-		<aside class="col-lg-2">
-			<%@ include file="leftside_nav.jspf"%>
+		<aside class="col-lg-1">
+			
 		</aside>
 
 		<div class="col-lg-9 center" id="center" style="text-align:center">
 			<div style="text-align:center"> 
-				<h3>관리 현황</h3>
+				<h3>[<span>금강 호텔</span>] 매출 현황</h3>
 			</div>
 			<div class="table" style="text-align:center">
 					<div class="row">

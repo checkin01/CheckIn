@@ -36,13 +36,39 @@
 <script>
 	$(function() {
 		//datetimepicker
-		$('input[name="checkinout"]').daterangepicker({
-			opens : 'bottom auto'
+		$('input[name="acheckinout"]').daterangepicker({
+			opens : 'bottom auto',
+			locale: {
+			      format: 'YYYY/MM/DD'
+			   }
 		});
 		$('input[name="bottom-checkinout"]').daterangepicker({
-			opens : 'top auto'
+			opens : 'top auto',
+			locale: {
+			      format: 'YYYY/MM/DD'
+			   }
 		});
+	
+		
+		$("#searchButton").click(function(){
+			var atype = $("#Atype").text();
+			var asi = $("#asi").text();
+			var agu = $("#agu").text();
+			var asubway = $("#asubway").text();
+			var acheckinout = $('#acheckinout').val();
+			var startdate = acheckinout.split('-')[0].trim();
+			var lastdate = acheckinout.split('-')[1].trim();
+			console.log(atype+' '+asi+' '+agu+' '+asubway+' '+startdate+' '+lastdate);
+		});
+	
+	
 	});
+	function setdate(){
+		var checkinout = $('#acheckinout').val();
+
+		//var startdate = checkinout.split('-')[0];
+		//var lastdate = checkinout.split('-')[1].trim();
+	}
 </script>
 </head>
 <body>
@@ -68,12 +94,11 @@
 				</div>
 
 				<!-- 검색 필터 ------------------------------->
-				<form action="showAccomodationList.jsp" method="get" id="searchForm">
+				<div id="searchForm">
 					<!-- ------------숙박유형------------- -->
 					<div class="filter-item dropdown">
-						<button type="button" id="Atype"
-							class="btn btn-light dropdown-toggle" data-toggle="dropdown">숙박유형</button>
-						<div class="dropdown-menu border" id="Aitem">
+						<button type="button" id="Atype" class="btn btn-light dropdown-toggle" data-toggle="dropdown" name="atype">모텔</button>
+						<div class="dropdown-menu border" >
 							<a class="dropdown-item droptype-item" href="#">모텔</a> <a
 								class="dropdown-item droptype-item" href="#">호텔</a> <a
 								class="dropdown-item droptype-item" href="#">게스트하우스</a> <a
@@ -82,17 +107,17 @@
 
 					</div>
 					<!-- ------------지역 filter------------- -->
-					<div class="filter-item showLocModal" id='selectedLocation'
-						name='location'>
-						<button id="locationText" class="btn btn-light">
-							<i class="fa fa-map-marker"></i> <span class="selectedSido">서울</span>
-							<span class="selectedGu">강남구</span> <span class="selectedSubway"></span>
+					<div class="filter-item" id='selectedLocation' >
+						<button id="locationText" class="btn btn-light showLocModal">
+							<i class="fa fa-map-marker"></i> <span class="selectedSido" id="asi" name="asi">서울</span>
+							<span class="selectedGu" id="agu" name="agu">강남구</span> <span class="selectedSubway" name="asubway"></span>
 						</button>
 					</div>
-					<!-- -----------------체크인 체크아웃------------------------- -->
+					<!-- -------------------------- 체크인 체크아웃 --------------------------->
 					<div class="filter-item">
-						<input type="text" class="w3-border rounded btn btn-default"
-							name="checkinout" />
+						<input type="text" class="w3-border rounded btn btn-default" name="acheckinout" id="acheckinout" onchange="setdate()"/>
+							<input type="hidden" name="acheckin" id="acheckin"/>
+							<input type="hidden" name="acheckout" id="acheckout"/>
 					</div>
 
 					<div class="filter-item">
@@ -100,30 +125,28 @@
 							숙소검색 <i class="fa fa-search"></i>
 						</button>
 					</div>
-				</form>
+				</div>
+
+				
 			</div>
 			<!-- ===================================필터 끝 ====================================== -->
 
 			<!-- 정렬 ----------------------------------------------------------->
 			<div class="border rounded" id="searchSort">
-				<div class="btn-group sort-item">
-					<button type="button" class="btn btn-light dropdown-toggle"
-						data-toggle="dropdown">기본순</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#searchSort">최저가격순</a> <a
-							class="dropdown-item" href="#searchSort">별점순</a> 
-							<a class="dropdown-item" href="#searchSort">방문자순</a>
-					</div>
-				</div>
-
-				<div id="thema" class="sort-item">
-					<button type="button" class="btn btn-primary dropdown-toggle"
-						data-toggle="modal" data-target="#themaModal">테마</button>
+		
+					<select id="searchSort" class="btn btn-light sort-item border" style="font-family:'Jua'; text-align:center">
+						<option>등록일순</option> 
+						<option>최저가격순</option> 
+						<option>별점순</option> 
+						<option>방문자순</option>
+					</select >
+		
+				<div id="thema" class="sort-item" style="font-family:'Jua'">
+					<button class="btn btn-primary" data-toggle="modal" data-target="#themaModal">테마</button>
 					<!-- 테마에 대한 정보를 이곳에 hidden 속성으로 숨겨 둔다 -->
-
 				</div>
-				<div class="theme-item" id="hiddenOption"
-					style="font-family: 'Jua'; font-size: 0.9em; color: #aaa;" /></div>
+				
+				<div class="theme-item" id="hiddenOption" style="font-family: 'Jua'; font-size: 0.9em; color: #aaa;" /></div>
 			</div>
 
 			<!-- 지도 --------------------------------------------------------->

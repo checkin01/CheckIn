@@ -15,16 +15,16 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type='text/css' href="../css/default.css">
+<link rel="stylesheet" type='text/css' href="<%=request.getContextPath() %>/css/default.css">
 <!-- body 구성에 적용 되는 스타일 시트 -->
 <link rel="stylesheet" type='text/css'
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- script file -->
-<script src="../js/accomodationForm.js"></script>
+<script src="<%=request.getContextPath() %>/js/accomodationForm.js"></script>
 
 <!-- bootstrap-timepicki -->
-<script type="text/javascript" src="../js/timepicki.js"></script>
-<link rel="stylesheet" href="../css/timepicki.css">
+<script type="text/javascript" src="<%=request.getContextPath() %>/js/timepicki.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/timepicki.css">
 <script>
 $(function(){
 	$("#searchAddr").click(function(){
@@ -47,13 +47,13 @@ $(function(){
 	<!-- 본문은 left center right으로 나뉜다.-->
 
 	<div id="main" class="row main">
-		<aside class="left col-sm-2" id="left">
-				<%@ include file="../leftside_nav.jspf"%>
+		<aside class="left col-sm-1" id="left">
+
 		</aside>
 		<div class="col-sm-8 center" id="center" style="top: 50px">
-			<!--  -->
+			<!-- 이전 페이지로 이동  -->
 			<div class="font1-small" style="padding: 20px 0">
-				<span> 홈 > 관리 페이지 > 숙박 업소 등록 </span>
+				<a href="manageAccomodation.jsp">숙소 관리 페이지</a>
 			</div>
 
 			<!-- 
