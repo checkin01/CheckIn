@@ -16,22 +16,24 @@ public class AccomodationController {
 		
 	}
 	
+	//가맹점 주인 : 숙박 업소 정보 보기
 	// 매핑 경로 : /master/viewAcco
 	public ModelAndView viewAccomodation(HttpServletRequest request, AccomodationVO vo) {
 		
 	}
+	//가맹점 주인
 	// 매핑 경로 : /master/editAcco
 	public ModelAndView editAccomodationForm(HttpServletRequest request, AccomodationVO vo) {}
 	
+	//가맹점 주인
 	// 매핑 경로 : /master/editOkAcco
 	public ModelAndView editOkAccomodation(HttpServletRequest request, AccomodationVO vo) {}
 	
-	// 매핑 경로 : /master/viewAcco
-	public ModelAndView viewAccomodation(HttpServletRequest request, AccomodationVO vo) {}
-	
+	//가맹점 주인
 	// 매핑 경로 : /master/deleteAcco
 	public ModelAndView deleteAccomodation(HttpServletRequest request, AccomodationVO vo) {}
 	
+	//가맹점 주인
 	// 매핑 경로 : /master/insertAcco
 	public ModelAndView insertAccomodationForm(HttpServletRequest request) {}
 	
@@ -39,8 +41,5 @@ public class AccomodationController {
 	// 매핑 경로 : /master/insertOkAcco
 	public ModelAndView insertOkAccomodation(HttpServletRequest request, AccomodationVO vo) {}
 	
-	//숙박업소리스트(전체 관리자)
-	// 매핑 경로 : /webmaster/showAccoList
-	public ModelAndView showListWebmaster(HttpServletRequest request, AccomodationVO vo) {}
 	*/
 }
