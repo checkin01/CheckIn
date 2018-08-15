@@ -17,9 +17,9 @@
 </head>
 <body>
 <div id= "main" class="row main">
-<aside class="left col-sm-1" id="left">
+<aside class="left col-sm-2" id="left">
 </aside>
-	<div class="col-sm-9 center" id="center" style="top:50px">
+	<div class="col-sm-8 center" id="center" style="top:50px">
 		<!--  -->
 		<div class="font1-small" style="padding:20px 0;">
 			<a href="manageDetailRoom.jsp">룸 관리 페이지</a>
@@ -165,16 +165,14 @@
 			<input type="submit" value="룸 수정" class="btn btn-primary"/>
 		</div>
 	</form>
-	<footer class="row footer" id="footer">
-		<div>
-		</div>
-</footer>
 </div>
 <aside class="col-sm-2 right" id="right">
-	
 </aside>
-<!-- footer -->
 
+<!-- footer -->
+<footer id="footer" class="footer" style="width:100%;font-size:0.8em;margin-top:100px">
+<%@ include file="../companyInfo.jspf"%>
+</footer>
 
 </div>
 

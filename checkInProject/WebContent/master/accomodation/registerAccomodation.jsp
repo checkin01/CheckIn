@@ -40,7 +40,7 @@
 	<!-- 본문은 left center right으로 나뉜다.-->
 
 	<div id="main" class="row main">
-		<aside class="left col-sm-1" id="left"></aside>
+		<aside class="left col-sm-2" id="left"></aside>
 		<div class="col-sm-8 center" id="center" style="top: 50px">
 			<!-- 이전 페이지로 이동  -->
 			<div class="font1-small" style="padding: 20px 0">
@@ -189,6 +189,10 @@
 			</footer>
 		</div>
 		<aside class="col-sm-2 right" id="right"></aside>
+		<!-- footer -->
+		<footer id="footer" class="footer" style="width: 100%; font-size: 0.8em; margin-top: 150px">
+			<%@ include file="../companyInfo.jspf"%>
+		</footer>
 	</div>
 
 	<%@ include file="searchAddr.jspf"%>

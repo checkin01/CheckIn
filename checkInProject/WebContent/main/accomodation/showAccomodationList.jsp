@@ -70,7 +70,6 @@
 </script>
 </head>
 <body>
-
 	<%@ include file="../topnav_member.jspf"%>
 	<%@ include file="../locationModal.jspf"%>
 	<!-- 
@@ -206,24 +205,17 @@
 				</div>
 
 			</div>
-
-			<!-- footer -->
-			<footer class="row footer" id="footer">
-				<div class="col-sm-12"></div>
-			</footer>
 		</div>
 		<aside class="col-sm-2 right" id="right" style="text-align: right">
 			<%@ include file="rightside_nav.jspf"%>
 		</aside>
-	</div>
-
-
-
 	<!-- footer -->
-	<footer class="row footer" id="footer">
-		<%@ include file="footer_nav.jspf"%>
+	<footer id="footer" class="footer" style="width: 100%; font-size: 0.8em; margin-top: 150px;margin-bottom:40px">
+		<%@ include file="../companyInfo.jspf"%>
 	</footer>
+	<%@ include file="footer_nav.jspf"%>
 	<%@ include file="themeModal.jspf"%>
+	</div>
 </body>
 <script>
 	//--------------------------------------- naver map --------------------------------------/

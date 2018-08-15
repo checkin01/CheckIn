@@ -64,7 +64,7 @@ label {
 
 		<!-- 왼쪽 필터 부분 -->
 		<aside class="left col-lg-3 font1-medium w3-container" id="left">
-			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index: 3; width: 290px; margin-top: 80px; padding: 10px;" id="mySidebar">
+			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index: 3; width: 290px; padding:80px 10px 10px 10px;" id="mySidebar">
 				<!-- 정보 -->
 				<div class="w3-container w3-display-container w3-padding-16">
 					<i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
@@ -354,14 +354,13 @@ label {
 				</div>
 				<!--  -->
 			</div>
-			<!-- center 끝 -->
-			<footer class="row footer" id="footer">
-				<div></div>
-			</footer>
 		</div>
+		<aside class="col-sm-2"></aside>
+		<!-- footer -->
+		<footer id="footer" class="footer" style="width: 100%; font-size: 0.8em; margin-top: 150px;">
+			<%@ include file="../companyInfo.jspf"%>
+		</footer>
 	</div>
-	<aside class="col-sm-2"></aside>
-
 
 	<script src="../js/showDetailAccomodation.js"></script>
 

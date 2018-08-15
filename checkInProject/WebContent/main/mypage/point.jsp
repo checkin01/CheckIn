@@ -73,10 +73,10 @@
     <aside class="left" id="left" ></aside>
 </div>
   
-<!-- footer -->
-<footer class="row footer" id="footer">
-    <div class="col-sm-12"></div>
-</footer>
+	<!-- footer -->
+	<footer id="footer" class="footer" style="width: 100%; font-size: 0.8em; margin-top: 150px;">
+		<%@ include file="../companyInfo.jspf"%>
+	</footer>
 
 </body>
 </html>

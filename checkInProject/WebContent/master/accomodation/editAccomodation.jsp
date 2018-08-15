@@ -34,7 +34,7 @@
 		<aside class="left col-sm-2" id="left">
 			<%@ include file="../leftside_nav.jspf"%>
 		</aside>
-		<div class="col-sm-78center" id="center" style="top: 50px">
+		<div class="col-sm-8 center" id="center" style="top: 50px">
 			<!--  -->
 			<div class="font1-small" style="padding: 20px 0">
 				<span> 홈 > 관리 페이지 > 숙박 업소 정보 수정 </span>
@@ -183,6 +183,10 @@
 			</footer>
 		</div>
 		<aside class="col-sm-2 right" id="right"></aside>
+		<!-- footer -->
+		<footer id="footer" class="footer" style="width: 100%; font-size: 0.8em; margin-top: 150px">
+			<%@ include file="../companyInfo.jspf"%>
+		</footer>
 	</div>
 
 </body>

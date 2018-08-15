@@ -110,7 +110,7 @@ body {
 					<div class="form-group row list-group-item">
 						<label class="col-sm-3">상세주소</label> <input type="text" name="detailaddr" id="detailaddr" class="form-control col-sm-10" placeholder="상세주소를 입력하세요" />
 					</div>
-					
+
 					<!-- 기타 정보들.. checkbox -->
 					<div class="list-group-item row">
 						<i class="fa fa-check-square"> <label for="info">기타 정보</label></i>
@@ -155,12 +155,12 @@ body {
 			</div>
 		</div>
 		<aside class="left" id="left"></aside>
+		<!-- footer -->
+		<footer id="footer" class="footer" style="width: 100%; font-size: 0.8em; margin-top: 100px;">
+			<%@ include file="../companyInfo.jspf"%>
+		</footer>
 	</div>
 
-	<!-- footer -->
-	<footer class="row footer" id="footer">
-		<div class="col-sm-12"></div>
-	</footer>
 
 </body>
 </html>

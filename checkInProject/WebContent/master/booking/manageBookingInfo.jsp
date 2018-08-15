@@ -270,7 +270,10 @@ body {
 
 		<!-- right -->
 		<aside class="col-sm-1 right" id="right"></aside>
-
+	<!-- footer -->
+	<footer id="footer" class="footer" style="width: 100%; font-size: 0.8em; margin-top: 150px">
+		<%@ include file="../companyInfo.jspf"%>
+	</footer>
 
 
 	</div>
