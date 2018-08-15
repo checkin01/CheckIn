@@ -1,0 +1,90 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- datatimepicker -->
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/bootstrap-datetimepicker.css">
+<script src="<%=request.getContextPath() %>/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+</head>
+<div class="modal" id="writeModal">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="sub-title">공지 사항 쓰기</h4>
+			</div>
+			<form id="dataform" class="form-horizontal font1-medium modal-body" method="post" action="writeOk.jsp" enctype="multipart/form-data">
+				<input type="hidden" value="mid" id="mid" name="mid" />
+
+				<!-- 제목 -->
+				<div class="form-group" style="padding: 0 50px;">
+					<label for="ntitle" class="control-label">제목 </label> <input class="form-control" maxlength="20" id="ntitle" name="ntitle" type="text" /> <span class="error-text-box" id="anameMsg"></span>
+				</div>
+
+				<!-- 공지 사항 -->
+				<div class="form-group" style="padding: 0 50px;">
+					<label for="ncontent" class="control-label">내용</label>
+					<textarea id="ncontent" name="ncontent" class="form-control" rows="10" cols="50"></textarea>
+					<span class="error-text-box" id="anameMsg"></span>
+				</div>
+
+				<div class="form-group" style="padding: 0 50px;">
+					<label for="ntype" class="control-label">공지 대상</label> <select class="form-control" id="ntype" style="height: 100%">
+						<option>일반 회원</option>
+						<option>가맹점 회원</option>
+					</select>
+				</div>
+
+				<!-- 숙박 업소 체크인시간, 체크아웃시간  -->
+				<!-- datetimepicker 사용 -->
+				<div class="form-group" style="padding: 0 50px;">
+					<label class="control-label">공지 시작 날짜/시간</label>
+					<div class="form-group" style="padding: 0 20px;">
+						<div class='input-group date' id='datetimepicker6'>
+							<input type='text' class="form-control" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group" style="padding: 0 50px;">
+					<label class="control-label">공지 시작 날짜/시간</label>
+					<div class="form-group" style="padding: 0 20px;">
+						<div class='input-group date' id='datetimepicker7'>
+							<input type='text' class="form-control" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					$(function() {
+						$('#datetimepicker6').datetimepicker();
+						$('#datetimepicker7').datetimepicker({
+							useCurrent : true
+						//Important! See issue #1075
+						});
+						$("#datetimepicker6").on(
+								"dp.change",
+								function(e) {
+									$('#datetimepicker7')
+											.data("DateTimePicker").minDate(
+													e.date);
+								});
+						$("#datetimepicker7").on(
+								"dp.change",
+								function(e) {
+									$('#datetimepicker6')
+											.data("DateTimePicker").maxDate(
+													e.date);
+								});
+					});
+				</script>
+
+			</form>
+			<div class="modal-footer">
+				<button type="submit" class="btn w3-indigo">등록</button>
+			</div>
+		</div>
+	</div>
+</div>
