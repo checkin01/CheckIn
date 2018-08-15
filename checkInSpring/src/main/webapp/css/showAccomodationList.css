@@ -1,0 +1,191 @@
+div{
+	margin:0px;
+	padding:0px;
+}
+
+#searchFilter{
+	border-radius:5px;
+	width:100%;
+	font-family:'Jua','Gothic A1', sans-serif; 
+	color: white;
+	margin:0px;
+	padding:0px;
+}
+
+.labels{
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+#searchForm{
+	width:100%;
+	height:80%;
+	margin:0px;
+	padding:0px;
+}
+/******************************************************/
+ @media screen and (min-width: 1001px){
+ #searchFilter{
+ 	background: orange;
+ 	height:100px;
+ }
+ .labels{
+	height:20%;
+ }
+  .label-item{
+  		height:100%;
+  		width:24.5%;
+  }
+  .filter-item{
+  		width:24.5%;
+  }
+  }
+  
+ @media screen and (min-width: 801px) and (max-width: 1001px){
+ #searchFilter{
+ 	background: #fff;
+ }
+ .labels{
+	display:none;
+ }
+
+  .filter-item{
+  		width:49%;
+  		height:25%;
+  		border:#ddd 1px solid;
+  }
+}
+ 
+@media screen and (max-width:800px){
+   #searchFilter{
+ 	background: #fff;
+ }
+ .labels{
+ 	display:none;
+ }
+
+  .filter-item{
+  	height:20%;
+  	width: 100%;
+  	border:#ddd 1px solid;
+  }
+ }
+ /******************************************************/
+ 
+.label-item{
+	background: orange;
+	text-align:center;
+	display:inline-block;
+	margin:0px;
+	padding:0px;
+}
+
+.filter-item{
+	border-radius:5px;
+	padding-top:1%;
+	background: orange;
+	height:100%;
+	text-align:center;
+	background:orange;
+	display:inline-block;
+	margin:0px;
+}
+
+
+.filter-item input,.filter-item button {
+	border-radius:5px;
+	text-align:center;
+	height:80%;
+	width:80%;
+	padding:0px;
+	margin:0px;
+}
+.searchSort{
+	padding:0px;
+	width:100%;
+	height:100%;
+	margin:0px;
+}
+.sort-item{
+	width:20%;
+	display:inline-block;
+	padding:0px;
+	margin:0px;
+}
+
+.theme-item{
+	width:50%;
+	height:100%;
+	display:inline-block;
+}
+
+.sort-item button{
+	width:100%;
+	height:100%;
+}
+
+/* ------숙박업소 리스트 ---------------*/
+.list-item {
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+	border-radius:5px;
+	margin:5px;
+}
+
+#info1 {
+	line-height: 60px;
+	height: 60px;
+	font-size: 30px;
+	font-family: 'Gothic A1', sans-serif;
+}
+
+#info2 {
+	line-height: 40px;
+	height: 40px;
+	font-size: 16px;
+	font-family: 'Gothic A1', sans-serif;
+}
+
+
+/* -----------------숙박업소 이미지---------------*/
+.img-slide{
+	width: 100%;
+	height: 100%;
+}
+.carousel-item, .carousel-inner{
+	width: 100%;
+	height: 100%;
+}
+.roomsImg {
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+}
+
+/* -----------------숙박업소 리스트 ---------------*/
+
+
+
+
+#manageFrm {
+	margin-top: 30px;
+	padding: 10px 10px;
+}
+
+#manage {
+	text-align: center;
+}
+
+.dropdown-item {
+	font-size: 1.5em;
+}
+
+.showLocModal:hover {
+	cursor: pointer;
+}
+/* -----------------숙박업소 정렬 ---------------*/
+#searchSort div{
+	margin-top: 10px;
+	border: 1px solid black";
+	font-family:'Jua','Gothic A1', sans-serif; 
+}

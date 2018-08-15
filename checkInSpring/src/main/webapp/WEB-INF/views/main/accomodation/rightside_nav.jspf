@@ -1,0 +1,129 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<style>
+
+	#historySideBar{
+		width:160px; text-align:left; right:50px; height:205px;background:#fff; visibility:hidden;
+	}
+	#historySideBar .history-item{
+		 height:100px;
+		 position:relative;
+	}
+	#historySideBar .history-item {
+		font-family:'Jua';
+	}
+	#companySideBar, #filterSideBar{
+		width:160px;text-align:left; right:50px; height:205px;background:#fff; visibility:hidden;
+	}
+
+	#rigthSideBar div a{
+ 		text-align:center;
+ 		margin:0;
+ 		padding:0;
+ 	}
+ 	.item-head{
+ 		height:20px;
+ 		text-align:center;
+ 		font-size:0.8em;
+ 		font-family:'Jua';
+ 		background:#ddd;
+ 	}
+</style>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+function showCompanyInfo(){
+	if($("#companySideBar").css("visibility")=='hidden'){
+		$("#historySideBar").css("visibility","hidden");
+		$("#companySideBar").css("visibility","visible");
+	}else{
+		$("#companySideBar").css("visibility","hidden");
+	}
+}
+
+function showHistoryInfo(){
+	if($("#historySideBar").css("visibility")=='hidden'){
+		$("#companySideBar").css("visibility","hidden");
+		$("#historySideBar").css("visibility","visible");
+	}else{
+		$("#historySideBar").css("visibility","hidden");
+	}
+}
+
+</script>
+<!-- 아이콘 bar -->
+<div class="w3-sidebar w3-bar-block w3-collapse" style="width:50px; height:230px;right:0; z-index:20;" id="iconSideBar">
+	<!-- 회사 정보-->
+	<div>
+		<a onclick="showCompanyInfo();" data-toggle="tooltip" title="찜 한 상품" class="w3-bar-item w3-button w3-hover-black border"><i class="fa fa-user w3-large"></i></a>
+	</div>
+	<!-- history -->
+	<div>
+		 <a onclick="showHistoryInfo();" data-toggle="tooltip" title="이전에 본 상품" class="w3-bar-item w3-button w3-hover-black border"><i class="fa fa-eye w3-large"></i></a>
+	</div>
+	<!-- map -->
+	<div>
+		<a href="#map" data-toggle="tooltip" title="숙소 위치"  class="w3-bar-item w3-button w3-hover-black border"><i class="fa fa-map w3-large"></i></a>
+	</div>
+	<div>
+	<!-- 위로 이동 -->
+		<a href="#" class="w3-bar-item w3-button w3-hover-black border"> <i class="fa fa-angle-up w3-large"></i></a>
+	</div>
+	<!-- 아래로 이동 -->
+	<div>
+		<a href="#footer" class="w3-bar-item w3-button w3-hover-black border"> <i class="fa fa-angle-down w3-large"></i></a>
+	</div>
+</div>
+
+<script>
+
+</script>
+
+<!-- history -->
+<div class="w3-sidebar w3-bar-block w3-collapse border rounded w3-animate-right list-group" id="historySideBar">
+		<div class="list-group-item-text item-head list-group-item-success">
+				  최근 본 상품
+		</div>
+
+		<div class="history-item list-group-item" >
+	
+				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;" class="rounded">
+		
+		</div>
+
+		<div class="history-item list-group-item"  >
+		
+				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;"  class="rounded">
+		
+		</div>
+	
+		<div class="history-item list-group-item">
+	
+				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;"  class="rounded">
+		</div>
+</div>
+
+<!-- 회사 정보 -->
+<div class="w3-sidebar w3-bar-block w3-collapse border rounded w3-animate-right " style="" id="companySideBar">
+		<div class="list-group-item-text item-head list-group-item-success">
+				  찜한 상품
+		</div>
+
+		<div class="history-item list-group-item" >
+	
+				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;" class="rounded">
+		
+		</div>
+
+		<div class="history-item list-group-item"  >
+		
+				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;"  class="rounded">
+		
+		</div>
+	
+		<div class="history-item list-group-item">
+	
+				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;"  class="rounded">
+		</div>
+</div>

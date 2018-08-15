@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/footernav.css">
+<style>
+</style>
+</head>
+
+	<nav id="footer-nav">
+		<!-- footer 올리고 내리는거 아이콘있는곳 -->
+		<div class="row w3-green" id="footer-updown">
+			<div class="col-lg-4" id="white1"></div>
+			<div class="col-lg-4">
+				<i class="material-icons">menu</i>
+			</div>
+			<div class="col-lg-4" id="white2"></div>
+		</div>
+		<!-- ==================== footer 올리고 내리는거 아이콘있는곳======================================= -->
+
+		<form class="border rounded" id="search-out">
+			<ul>
+				<!--     =========================== 숙박유형=========================== -->
+				<li class="type-list container dropdown">
+					<button class="btn btn-light dropdown-toggle border"
+						data-toggle="dropdown" id="Bottom-type">숙박유형</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item droptype-item droptype-item" style="font-size:1em" >모텔</a>
+						<a class="dropdown-item active droptype-item" style="font-size:1em" >호텔</a> <a
+							class="dropdown-item disabled droptype-item" style="font-size:1em">펜션</a>
+					</div>
+
+				</li>
+
+				<!--     =========================== 지역 =========================== -->
+
+				<li class="showLocModal container"
+					style="margin: auto; text-align: center">
+					<button class="btn btn-light dropdown-toggle border"
+						id='selectedLocation' style="font-size: 1em">
+						<span class="selectedSido">서울</span> <span class="selectedGu">강남구</span>
+						<span class="selectedSubway"></span>
+					</button>
+				</li>
+				<!--     =========================== 지역 =========================== -->
+
+
+				<li class="container"><input type="text"
+					class="rounded btn btn-light border" name="bottom-checkinout" /></li>
+				<li class="container"><button type="submit"
+						class="btn w3-deep-orange rounded" style="width: 80%">검색</button></li>
+			</ul>
+		</form>
+
+	</nav>
+
+<script>
+	$('#footer-updown').click(function() {
+		if ($('#footer-nav').css("bottom") == '-60px') {
+			$('#footer-nav').css("bottom", "0px");
+		} else {
+			$('#footer-nav').css("bottom", "-60px");
+		}
+	});
+</script>
+</html>

@@ -1,0 +1,128 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+nav {
+	background: #fff;
+}
+
+.main {
+	width: 100%;
+	height: 50%;
+}
+div, span{
+	padding:0px;
+	margin:0px;
+	
+}
+
+.header {
+	margin-top:55px;
+	position: absolute;
+	height:600px;
+	width: 100%;
+	background: url('../img/4.png') no-repeat fixed center;
+	background-size: 100% 100%;
+}
+
+.paragrapgh {
+	margin-top:100px;
+	text-align: center;
+	font-size:45px;
+	color: #fff;
+	height: 140px;
+	font-family: 'Gothic A1', sans-serif;
+}
+
+.filters {
+	padding: 0px;
+	text-align:center;
+	height: 116px;
+	width:100%;
+
+}
+
+ @media screen and (min-width: 801px){
+  .filter-child {
+  		width: 22%;
+  }
+  .filter-checkinout{
+  		width: 30%;
+  }
+  }
+ 
+   @media screen and (max-width:800px){
+   	  .filter-child {
+  		width: 80%;
+  		border:1px solid #ddd;
+  }
+  .filter-checkinout{
+  		width: 80%;
+  }
+   }
+  
+  
+.filter-child {
+	text-align:center;
+	position:relative;
+	margin: 0px auto;
+	padding: 0px auto;
+	height: 110px;
+	display: inline-block;
+
+	background-color:#fff;
+}
+
+label {
+	
+	font-size:12%;
+	width: 100%;
+	heigth:20px;
+	font-family: 'Gothic A1', sans-serif;
+}
+
+.filter-main {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 10px;
+}
+
+.filter-item {
+	position:relative;
+	text-align: center;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	/*font-size: 1.5em;*/
+	font-size:100%;
+	font-family: 'Gothic A1', sans-serif;
+}
+
+.text{
+	font-family:'Jua','Gothic A1', sans-serif; 
+	font-size:50px;
+}
+
+.searchBtn{
+	position:relative;
+	width:100%;
+	font-size:100%;
+	font-family: 'Gothic A1', sans-serif;
+	margin: 0px;
+	padding: 0px;
+	border:none;
+}
+.searchBtn:hover
+, #checkinout:hover,
+#selectedLocation:hover {
+	cursor:pointer;
+}
+#checkinout{
+	border: #ddd solid 1px;
+	text-align:center;
+	width:80%;
+	font-size: 1em;
+	
+}

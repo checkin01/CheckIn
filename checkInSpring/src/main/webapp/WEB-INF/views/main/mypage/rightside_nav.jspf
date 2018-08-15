@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css?family=Faster+One|Jua|Nanum+Pen+Script|Gothic+A1&amp;subset=korean" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<style>
+#sideNav {
+	width: 12%
+}
+#sideBar {
+	position: relative;
+	top: 20px;
+	left: 10px;
+	width: 80%
+}
+
+#navImg {
+	width: 100%
+}
+
+#sideNavCnt {
+	background-color: #f8f8f8;
+	position: relative;
+	padding: 10px 15px
+}
+
+#sideNavCnt>a {
+	line-height: 2.3em;
+	color: black
+}
+
+#sideNavCnt>a:hover {
+	font-weight: bold;
+	text-decoration: none
+}
+</style>
+</head>
+<body>
+	<div id="sideBar" class="container">
+		<div>
+			<a href="<%=request.getContextPath()%>/mypage/point.jsp"> <img src="<%=request.getContextPath()%>/img/newmypageNavTop.PNG" id="navImg" />
+			</a>
+		</div>
+		<div id="sideNavCnt">
+			<a href="<%=request.getContextPath()%>/main/mypage/bookList.jsp">예약내역</a><br /> <a href="<%=request.getContextPath()%>/main/mypage/point.jsp">포인트</a><br /> <a
+				href="<%=request.getContextPath()%>/main/mypage/checkPwdInfo.jsp">회원정보확인/수정</a>
+		</div>
+	</div>
+</body>
+</html>

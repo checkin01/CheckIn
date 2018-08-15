@@ -1,0 +1,73 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+	#review_btns button{margin:0% 1%}
+</style>
+</head>
+<body>
+	<!-- 
+	본문은 left center right으로 나뉜다.
+	showMyBookingList - 예약 보 리스트로 보기 - 용세
+	예약한 현황, 예약 취소한 현황, 리뷰 쓰기 버튼, 예약취소정	
+	-->
+	<!-- 예약 현황 리스트 시작 -->
+	<div>
+		<!-- 예약 현황 1 시작 -->
+		<div class="input-group">
+			<div class="input-group-item col-lg-3 border">
+				<img src="<%=request.getContextPath()%>/main/img/accomodation/hotel01.PNG" style="width:100%;height:100%"/>
+			</div>
+			<div class="container input-group-item col-lg-9">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>예약날짜</th>
+							<th>체크인</th>
+							<th>체크아웃</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>2018-07-22</td>
+							<td>2018-07-21</td>
+							<td>2018-07-22</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>숙박업소</th>
+							<th>룸번호(이름)</th>
+							<th>연락처</th>
+							<th>인원수</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>고추잠자리</td>
+							<td>302호</td>
+							<td>032-531-7549</td>
+							<td>2</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="row" id="review_btns">
+					<span class="col-sm-5"></span>
+					<button id="writeBtn" data-toggle="modal" data-target="#reviewModal" class="btn col-sm-2 showreviewModal" style="background-color:#5284FF;color:#fff;font-weight:bold">리뷰작성</button>
+					<button id="editBtn" data-toggle="modal" data-target="#reviewModal_edit" class="btn col-sm-2 showreviewModal_edit" style="background-color:#5284FF;color:#fff;font-weight:bold">리뷰수정</button>
+					<button id="cancleBtn" class="btn btn-danger col-sm-2">예약취소</button>
+				</div>
+			</div>
+		</div>
+		<!-- 예약 현황 1 끝 -->
+	</div>
+	<!-- 예약 현황 리스트 끝 -->
+
+	</body>
+
+</html>

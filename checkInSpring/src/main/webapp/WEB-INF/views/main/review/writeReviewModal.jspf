@@ -1,0 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<style>		
+	#reviewFrm .review-item{margin:20px;} 
+</style>
+</head>
+<body>
+  <!-- The Modal -->
+  <div class="modal fade bd-example-modal-lg" id="reviewModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">리뷰 등록</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+         	<form id="reviewFrm" name="reviewFrm" method="post" action="">
+            	<div class="form-group">
+            		<div class= row>
+            			<label class="col-sm-2">별점</label>
+            			<select class="form-control review-item col-sm-5">
+            				<option>1</option>
+            				<option>2</option>
+            				<option>3</option>
+            				<option>4</option>
+            				<option>5</option>
+            			</select>
+            		</div>
+            		<div class="row">
+            			<label class="col-sm-2">제목</label>
+            			<input type="text" class="form-control review-item" id="title" name="title"/>
+            		</div>
+            		<div class="row">
+            			<label class="col-sm-2">내용</label>
+            			<textarea type="text" class="form-control review-item" id="content" name="content"></textarea>
+            		</div>
+            		
+            		<div class="row">
+						<label class="col-sm-5"><i class="fa fa-file-image-o" style="font-size: 16px">
+							이미지 등록(최대 3개) </i></label>
+						<input type="file" id="img1" class="form-control review-item">
+						<input type="file" id="img1" class="form-control review-item">
+						<input type="file" id="img1" class="form-control review-item">
+				</div>
+            	</div>
+            	<button type="reset">다시작성</button>
+            	<input type="submit" value="등록"/>
+            </form>      
+        </div>  
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

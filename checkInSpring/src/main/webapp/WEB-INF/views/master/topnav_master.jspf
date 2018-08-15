@@ -1,0 +1,118 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css?family=Faster+One|Jua|Nanum+Pen+Script|Gothic+A1&amp;subset=korean" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+</head>
+
+<style>
+
+/*main-nav*/
+#main-nav .logo>a {
+	color: #fff;
+	border-bottom: none;
+}
+
+#main-nav .logo>a:hover {
+	text-decoration: none;
+}
+
+#main-nav {
+	position: fixed;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	transition: top 0.2s ease-in-out;
+	background-color: #ff8c44;
+	z-index: 10;
+}
+
+#main-nav .logo a {
+	text-align: center;
+	position: relative;
+	heigth: 100%;
+	display: inline-block;
+}
+
+#main-nav .logo {
+	heigth: 100%;
+	text-align: center;
+	position: relative;
+	font-size: 30px;
+	width: 20%;
+}
+
+#main-nav .nav-item {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	width: 150px;
+	height: 100%;
+	background: #ff8c44;
+}
+
+#main-nav .nav-item a {
+	color: #fff;
+	height: 100%;
+	background: #ff8c44;
+}
+
+/*main-nav*/
+.nav-item>a:hover {
+	color: #fff;
+	border-bottom: none;
+	background: #ddd;
+}
+
+#collapsibleNavbar {
+	position: relative;
+	left: 30px;
+	width: 80%;
+	font-size: 1em;
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+	display: inline-box;
+}
+
+#top-logo {
+	position: relative;
+	display: inline-block;
+	left: 10px;
+	width: 200px;
+	font-size: 1em;
+	font-family: 'Faster One', sans-serif;
+}
+
+<!--
+myspage에서 적용할 nav-->#sideNav a, #sideNav div, #sideNav b {
+	font-size: 1em;
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+}
+</style>
+
+</head>
+
+<!---------------------------------------- main navigation bar ----------------------------------->
+<nav class="navbar navbar-expand-lg" id="main-nav">
+	<div class="logo">
+		<a href="<%=request.getContextPath()%>/master/home.jsp" id="top-logo">Check In</a>
+	</div>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"><i class="fa fa-align-justify" style="font-size: 30px; color: #fff"></i></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav">
+			<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath()%>/master/login/login.jsp">로그아웃</a></li>
+			<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath()%>/master/accomodation/manageAccomodation.jsp">숙소 관리 페이지</a></li>
+			<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath()%>/master/room/manageDetailRoom.jsp">객실 관리 페이지</a></li>
+			<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath()%>/master/booking/manageBookingInfo.jsp">예약 현황 페이지</a></li>
+			<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath()%>/master/review/showReviewList.jsp">리뷰 관리 페이지</a></li>
+		</ul>
+	</div>
+</nav>
+<!--navigation bar-->
