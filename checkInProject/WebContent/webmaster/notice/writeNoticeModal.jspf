@@ -18,18 +18,18 @@
 				<input type="hidden" value="mid" id="mid" name="mid" />
 
 				<!-- 제목 -->
-				<div class="form-group" style="padding: 0 10px;">
+				<div class="form-group" style="padding: 0 50px;">
 					<label for="ntitle" class="control-label">제목 </label> <input class="form-control" maxlength="20" id="ntitle" name="ntitle" type="text" /> <span class="error-text-box" id="anameMsg"></span>
 				</div>
 
 				<!-- 공지 사항 -->
-				<div class="form-group" style="padding: 0 10px;">
+				<div class="form-group" style="padding: 0 50px;">
 					<label for="ncontent" class="control-label">내용</label>
 					<textarea id="ncontent" name="ncontent" class="form-control" rows="10" cols="50"></textarea>
 					<span class="error-text-box" id="anameMsg"></span>
 				</div>
 
-				<div class="form-group" style="padding: 0 10px;">
+				<div class="form-group" style="padding: 0 50px;">
 					<label for="ntype" class="control-label">공지 대상</label> <select class="form-control" id="ntype" style="height: 100%">
 						<option>일반 회원</option>
 						<option>가맹점 회원</option>
@@ -38,7 +38,7 @@
 
 				<!-- 숙박 업소 체크인시간, 체크아웃시간  -->
 				<!-- datetimepicker 사용 -->
-				<div class="form-group" style="padding: 0 10px;">
+				<div class="form-group" style="padding: 0 50px;">
 					<label class="control-label">공지 시작 날짜/시간</label>
 					<div class="form-group" style="padding: 0 20px;">
 						<div class='input-group date' id='datetimepicker6'>
@@ -48,7 +48,7 @@
 					</div>
 				</div>
 
-				<div class="form-group" style="padding: 0 10px;">
+				<div class="form-group" style="padding: 0 50px;">
 					<label class="control-label">공지 시작 날짜/시간</label>
 					<div class="form-group" style="padding: 0 20px;">
 						<div class='input-group date' id='datetimepicker7'>
@@ -83,9 +83,7 @@
 
 			</form>
 			<div class="modal-footer">
-				<button type="button" class="btn w3-indigo">등록</button>
-				<button type="button" class="btn btn-basic">취소</button>
-
+				<button type="submit" class="btn w3-indigo">등록</button>
 			</div>
 		</div>
 	</div>

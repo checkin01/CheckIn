@@ -68,15 +68,15 @@ body {
 </script>
 </head>
 <body>
-
+<%@ include file="../topnav_webmaster.jspf"%>
 	<!-- 
 	본문은 left center right으로 나뉜다. -->
 	<div id="main" class="row main" style="position: relative; top: 80px; margin-bottom: 100px">
-		<aside class="left col-sm-2" id="left">
-			<%@ include file="../topnav_webmaster.jspf"%>
+		<aside class="left col-sm-1" id="left">
+			
 		</aside>
 		<!-- center -->
-		<div class="col-sm-9 center" id="center">
+		<div class="col-sm-10 center" id="center">
 			<h4 style="text-align: center;" class="sub-title">숙박업소 리스트</h4>
 			<!-- 리스트 시작 -->
 			<div class="list-group" style="margin-top: 20px; font-size: 0.9em" id="bookingList">

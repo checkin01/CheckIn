@@ -4,10 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/default.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 <style>
 #pagination {
@@ -19,11 +20,12 @@
 </head>
 <%@ include file="writeNoticeModal.jspf"%>
 <body>
+<%@ include file="../topnav_webmaster.jspf"%>
 	<div id="main" class="row main" style="position: relative; top: 80px; margin-bottom: 100px">
-		<aside class="left col-sm-2" id="left">
-			<%@ include file="../topnav_webmaster.jspf"%>
+		<aside class="left col-sm-1" id="left">
+		
 		</aside>
-		<div class="col-sm-8 center container" id="center" style="text-align: center">
+		<div class="col-sm-10 center container" id="center" style="text-align: center">
 			<h4 class="sub-title" style="text-align: center">공지 사항 리스트</h4>
 			<div class="btn-group row" style="text-align: right; width: 100%">
 				<button type="button" class="btn w3-indigo" data-toggle="modal" data-target="#writeModal">새 공지 추가</button>
