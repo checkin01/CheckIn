@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page trimDirectiveWhitespaces="true"%>
 <style>
 .foot-section ul {
     list-style:none;
@@ -31,7 +31,7 @@
 		</div>
 		<hr/>
 		<div>
-			
+			<div class="logo"><img src="img/"/></div>
 			<div>
 				<ul>
 					<li>주식회사 체크인 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>

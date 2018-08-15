@@ -1,74 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
-<!DOCTYPE html>
-<html>
-<link
-	href="https://fonts.googleapis.com/css?family=Gothic+A1:600|Jua&amp;subset=korean"
-	rel="stylesheet">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <head>
-
-<style>
-#sideNav {
-	width: 12%
-}
-
-#sideBar {
-	position: relative;
-	top: 20px;
-	left: 10px;
-	width: 80%
-}
-
-#navImg {
-	width: 100%
-}
-
-#sideNavCnt {
-	background-color: #f8f8f8;
-	position: relative;
-	padding: 10px 15px
-}
-
-#sideNavCnt>a {
-	line-height: 2.3em;
-	color: black
-}
-
-#sideNavCnt>a:hover {
-	font-weight: bold;
-	text-decoration: none
-}
-
-#sideNavCnt a {
-	font-family: 'Gothic A1', sans-serif;
-	font-size: 0.9em;
-}
-
-.sub-title, .bread {
-	font-family: 'Gothic A1', sans-serif;
-}
-</style>
 </head>
-
-<div id="sideBar" class="container">
-	<div>
-		<a href="#"> <img
-			src="<%=request.getContextPath()%>/img/webmaster_nav.PNG"
-			id="navImg" />
-		</a>
-	</div>
-	<div id="sideNavCnt">
-		<a href="<%=request.getContextPath()%>/main/index.jsp">체크인 사이트</a><br />
-		<a
-			href="<%=request.getContextPath()%>/webmaster/notice/showNoticeList.jsp">공지사항</a><br />
-		<a
-			href="<%=request.getContextPath()%>/webmaster/accomodation/showAccoList.jsp">숙박업소리스트보기</a><br />
-		<a
-			href="<%=request.getContextPath()%>/webmaster/member/showMaster.jsp">가맹점정보보기</a><br />
-		<a
-			href="<%=request.getContextPath()%>/webmaster/member/showMember.jsp">회원정보보기</a>
-	</div>
-</div>
-
-</html>
+<!-- Grey with black text -->
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+	<ul class="navbar-nav">
+		<li class="nav-item active"><a class="nav-link" href="<%=request.getContextPath()%>/webmaster/main.jsp">메인</a></li>
+		<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/webmaster/notice/showNoticeList.jsp">공지사항</a></li>
+		<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/webmaster/accomodation/showAccoList.jsp">숙박업소리스트보기</a></li>
+		<li class="nav-item"><a class="nav-link disabled" href="<%=request.getContextPath()%>/webmaster/member/showMaster.jsp">가맹점정보보기</a></li>
+		<li class="nav-item"><a class="nav-link disabled" href="<%=request.getContextPath()%>/webmaster/member/showMember.jsp">회원정보보기</a></li>
+		<li class="nav-item"><a class="nav-link disabled" href="<%=request.getContextPath()%>/webmaster/member/showMember.jsp">로그 아웃</a></li>
+	</ul>
+</nav>

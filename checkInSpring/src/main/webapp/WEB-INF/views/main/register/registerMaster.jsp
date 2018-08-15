@@ -161,7 +161,6 @@ body {
 		<aside class="col-sm-3 right" id="right"></aside>
 	</div>
 </body>
-<!-- footer -->
 
 </body>
 </html>
