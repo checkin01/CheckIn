@@ -30,4 +30,10 @@ public class HomeController {
 		return "main/index";
 	}
 	
+	@RequestMapping(value = "/webmaster", method = RequestMethod.GET)
+	public String webmasterMain(Locale locale, Model model) {
+		
+		return "webmaster/main";
+	}
+	
 }
