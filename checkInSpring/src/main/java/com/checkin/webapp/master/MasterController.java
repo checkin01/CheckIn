@@ -14,13 +14,13 @@ public class MasterController {
 		
 	}
 	
-	//로그인폼으로 이동 - 로그인 멤버 한개만 있으면 됨, 폼 동일함
+	//로그인폼으로 이동 - 구현 X
 	// 매핑 경로 : /main/login
 	public ModelAndView loginFormMaster(HttpServletRequest request) {
 		
 	}
 	
-	//로그아웃 역시 동일함
+	//로그아웃 - 구현 X
 	// 매핑 경로 : /main/logout
 	public ModelAndView logoutMaster(HttpServletRequest request) {
 		
