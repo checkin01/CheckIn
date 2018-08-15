@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ include file="writeNoticeModal.jspf"%>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/default.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
 #pagination {
@@ -18,12 +19,11 @@
 
 <title>웹 관리 페이지</title>
 </head>
-<%@ include file="writeNoticeModal.jspf"%>
+
 <body>
 <%@ include file="../topnav_webmaster.jspf"%>
 	<div id="main" class="row main" style="position: relative; top: 80px; margin-bottom: 100px">
 		<aside class="left col-sm-1" id="left">
-		
 		</aside>
 		<div class="col-sm-10 center container" id="center" style="text-align: center">
 			<h4 class="sub-title" style="text-align: center">공지 사항 리스트</h4>

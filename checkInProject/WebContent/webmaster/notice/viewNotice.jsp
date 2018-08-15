@@ -27,9 +27,9 @@
 	}
 </style>
 </head>
-	<%@ include file="../topnav_webmaster.jspf"%>
+	
 <body>
-
+<%@ include file="../topnav_webmaster.jspf"%>
 	<div id="main" class="row main" style="position:relative; top: 80px; margin-bottom: 100px">
 		<aside class="left col-sm-1" id="left">
 		
