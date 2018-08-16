@@ -59,17 +59,7 @@ body {
 </style>
 </head>
 <body>
-	<%@ include file="../topnav_member.jspf"%>
-<body class="font1-medium">
-	<!-- 본문은 left center right으로 나뉜다. -->
-	<div id="main" class="row main">
-		<aside class="left col-sm-3" id="left"></aside>
-		<div class="col-sm-6 center" id="center"
-			style="padding-top: 80px; padding-left: 20px;">
-			<!-- Background 꾸미기 -->
-			<div class="back">
-			
-				<form method="post" id="regFrmMaster" style="padding: 30px;"
+				<form method="post" id="regFrmMaster" style="margin-top:30px;"
 					action="registerFormOk.jsp"
 					class="container form-horizontal rounded">
 					<div style="padding:30px">
@@ -155,11 +145,6 @@ body {
 						<input class="btn col-sm-3" type="button" value="취소하기" />
 					</div>
 				</form>
-			</div>
-			<!-- Background 꾸미기 -->
-		</div>
-		<aside class="col-sm-3 right" id="right"></aside>
-	</div>
 </body>
 
 </body>

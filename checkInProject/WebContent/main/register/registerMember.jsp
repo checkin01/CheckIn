@@ -49,7 +49,7 @@
 }
 
 body{
-	background:url('../img/h_r2.jpg')100% 100%;
+	background:url('../img/b_r.jpg')100% 100%;
 	height:800px;
 }
 
@@ -75,13 +75,7 @@ body{
 	
 </script>
 </head>
-<body class="font1-medium">
-<%@ include file="../topnav_member.jspf"%>
-	<!-- 본문은 left center right으로 나뉜다. -->
-	<div id="main" class="row main" >
-		<aside class="left col-sm-3" id="left"></aside>
-		<div class="col-sm-6 center" id="center" style="padding-top:80px; padding-left:20px">
-			
+<body>
 			<form method="post" id="regFrmMember" style="margin-top:30px;"
 				action="../index.jsp" class="container form-horizontal rounded">
 				<div style="padding:20px 0">
@@ -190,8 +184,5 @@ body{
 					<input class="col-sm-3 btn" type="button" value="취소하기" />
 				</div>
 			</form>
-		</div>
-		<aside class="col-sm-3 right" id="right"></aside>
-	</div>
 </body>
 </html>
