@@ -167,7 +167,7 @@ myspage에서 적용할 nav-->#sideNav a, #sideNav div, #sideNav b {
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath()%>/main/login/login">로그인</a></li>
-				<li class="nav-item bold"><a class="nav-link" href=#>회원가입</a></li>
+				<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath()%>/main/register/registerSelect">회원가입</a></li>
 				<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/main/mypage">마이 페이지</a></li>
 				<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath()%>/main/mypage/booking">예약 확인</a></li>
 			</ul>
