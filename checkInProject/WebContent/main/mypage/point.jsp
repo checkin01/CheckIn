@@ -12,7 +12,7 @@
 <script   src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" href="../css/default.css"> <!-- body 구성에 적용 되는 스타일 시트 -->
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/default.css"> <!-- body 구성에 적용 되는 스타일 시트 -->
    <!-- 
    uid 아이디
    upwd 
@@ -73,10 +73,10 @@
     <aside class="left" id="left" ></aside>
 </div>
   
-<!-- footer -->
-<footer class="row footer" id="footer">
-    <div class="col-sm-12"></div>
-</footer>
+	<!-- footer -->
+	<footer id="footer" class="footer" style="width: 100%; font-size: 0.8em; margin-top: 150px;">
+		<%@ include file="../companyInfo.jspf"%>
+	</footer>
 
 </body>
 </html>

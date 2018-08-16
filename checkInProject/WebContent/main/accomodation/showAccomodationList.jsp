@@ -15,19 +15,19 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="../css/default.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/default.css" />
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="../js/showAccomodationList.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/showAccomodationList.js"></script>
 
 <!-- daterangepicker-->
-<script src="../js/daterangepicker.js"></script>
-<link rel="stylesheet" href="../css/daterangepicker.css">
-<link rel="stylesheet" href="../css/showAccomodationList.css">
+<script src="<%=request.getContextPath()%>/js/daterangepicker.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/daterangepicker.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/showAccomodationList.css">
 <!-- navermap api -->
 <script type="text/javascript"
 	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=Ve4ILimYsUbRNnlZeSVm&submodules=geocoder"></script>
-<script type="text/javascript" src="../js/filter.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/filter.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
@@ -36,17 +36,40 @@
 <script>
 	$(function() {
 		//datetimepicker
-		$('input[name="checkinout"]').daterangepicker({
-			opens : 'bottom auto'
+		$('input[name="acheckinout"]').daterangepicker({
+			opens : 'bottom auto',
+			locale: {
+			      format: 'YYYY/MM/DD'
+			   }
 		});
 		$('input[name="bottom-checkinout"]').daterangepicker({
-			opens : 'top auto'
+			opens : 'top auto',
+			locale: {
+			      format: 'YYYY/MM/DD'
+			   }
 		});
+	
+		
+		$("#searchButton").click(function(){
+			var atype = $("#Atype").text();
+			var asi = $("#asi").text();
+			var agu = $("#agu").text();
+			var asubway = $("#asubway").text();
+			var acheckinout = $('#acheckinout').val();
+			var startdate = acheckinout.split('-')[0].trim();
+			var lastdate = acheckinout.split('-')[1].trim();
+			console.log(atype+' '+asi+' '+agu+' '+asubway+' '+startdate+' '+lastdate);
+		});
+	
+	
 	});
+	function setdate(){
+		var checkinout = $('#acheckinout').val();
+
+	}
 </script>
 </head>
 <body>
-
 	<%@ include file="../topnav_member.jspf"%>
 	<%@ include file="../locationModal.jspf"%>
 	<!-- 
@@ -68,12 +91,11 @@
 				</div>
 
 				<!-- 검색 필터 ------------------------------->
-				<form action="showAccomodationList.jsp" method="get" id="searchForm">
+				<div id="searchForm">
 					<!-- ------------숙박유형------------- -->
 					<div class="filter-item dropdown">
-						<button type="button" id="Atype"
-							class="btn btn-light dropdown-toggle" data-toggle="dropdown">숙박유형</button>
-						<div class="dropdown-menu border" id="Aitem">
+						<button type="button" id="Atype" class="btn btn-light dropdown-toggle" data-toggle="dropdown" name="atype">모텔</button>
+						<div class="dropdown-menu border" >
 							<a class="dropdown-item droptype-item" href="#">모텔</a> <a
 								class="dropdown-item droptype-item" href="#">호텔</a> <a
 								class="dropdown-item droptype-item" href="#">게스트하우스</a> <a
@@ -82,17 +104,17 @@
 
 					</div>
 					<!-- ------------지역 filter------------- -->
-					<div class="filter-item showLocModal" id='selectedLocation'
-						name='location'>
-						<button id="locationText" class="btn btn-light">
-							<i class="fa fa-map-marker"></i> <span class="selectedSido">서울</span>
-							<span class="selectedGu">강남구</span> <span class="selectedSubway"></span>
+					<div class="filter-item" id='selectedLocation' >
+						<button id="locationText" class="btn btn-light showLocModal">
+							<i class="fa fa-map-marker"></i> <span class="selectedSido" id="asi" name="asi">서울</span>
+							<span class="selectedGu" id="agu" name="agu">강남구</span> <span class="selectedSubway" name="asubway"></span>
 						</button>
 					</div>
-					<!-- -----------------체크인 체크아웃------------------------- -->
+					<!-- -------------------------- 체크인 체크아웃 --------------------------->
 					<div class="filter-item">
-						<input type="text" class="w3-border rounded btn btn-default"
-							name="checkinout" />
+						<input type="text" class="w3-border rounded btn btn-default" name="acheckinout" id="acheckinout" onchange="setdate()"/>
+							<input type="hidden" name="acheckin" id="acheckin"/>
+							<input type="hidden" name="acheckout" id="acheckout"/>
 					</div>
 
 					<div class="filter-item">
@@ -100,30 +122,28 @@
 							숙소검색 <i class="fa fa-search"></i>
 						</button>
 					</div>
-				</form>
+				</div>
+
+				
 			</div>
 			<!-- ===================================필터 끝 ====================================== -->
 
 			<!-- 정렬 ----------------------------------------------------------->
 			<div class="border rounded" id="searchSort">
-				<div class="btn-group sort-item">
-					<button type="button" class="btn btn-light dropdown-toggle"
-						data-toggle="dropdown">기본순</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#searchSort">최저가격순</a> <a
-							class="dropdown-item" href="#searchSort">별점순</a> 
-							<a class="dropdown-item" href="#searchSort">방문자순</a>
-					</div>
-				</div>
-
-				<div id="thema" class="sort-item">
-					<button type="button" class="btn btn-primary dropdown-toggle"
-						data-toggle="modal" data-target="#themaModal">테마</button>
+		
+					<select id="searchSort" class="btn btn-light sort-item border" style="font-family:'Jua'; text-align:center">
+						<option>등록일순</option> 
+						<option>최저가격순</option> 
+						<option>별점순</option> 
+						<option>방문자순</option>
+					</select >
+		
+				<div id="thema" class="sort-item" style="font-family:'Jua'">
+					<button class="btn btn-primary" data-toggle="modal" data-target="#themaModal">테마</button>
 					<!-- 테마에 대한 정보를 이곳에 hidden 속성으로 숨겨 둔다 -->
-
 				</div>
-				<div class="theme-item" id="hiddenOption"
-					style="font-family: 'Jua'; font-size: 0.9em; color: #aaa;" /></div>
+				
+				<div class="theme-item" id="hiddenOption" style="font-family: 'Jua'; font-size: 0.9em; color: #aaa;" /></div>
 			</div>
 
 			<!-- 지도 --------------------------------------------------------->
@@ -185,24 +205,17 @@
 				</div>
 
 			</div>
-
-			<!-- footer -->
-			<footer class="row footer" id="footer">
-				<div class="col-sm-12"></div>
-			</footer>
 		</div>
 		<aside class="col-sm-2 right" id="right" style="text-align: right">
 			<%@ include file="rightside_nav.jspf"%>
 		</aside>
-	</div>
-
-
-
 	<!-- footer -->
-	<footer class="row footer" id="footer">
-		<%@ include file="footer_nav.jspf"%>
+	<footer id="footer" class="footer" style="width: 100%; font-size: 0.8em; margin-top: 150px;margin-bottom:40px">
+		<%@ include file="../companyInfo.jspf"%>
 	</footer>
+	<%@ include file="footer_nav.jspf"%>
 	<%@ include file="themeModal.jspf"%>
+	</div>
 </body>
 <script>
 	//--------------------------------------- naver map --------------------------------------/

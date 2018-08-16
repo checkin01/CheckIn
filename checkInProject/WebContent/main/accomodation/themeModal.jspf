@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<head>
+
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
@@ -22,14 +22,16 @@
 	background-color: white;
 	border: none;
 	font-size: 0.5em;
-	color: #ddd;
+	color:black;
 }
-
+.modal-body .unselected-btn{
+	color:#ddd;
+}
 .theme-item {
 	margin-left: 10px;
 }
 </style>
-</head>
+
 <!-- The Modal -->
 <div class="modal" id="themaModal">
 	<div class="modal-dialog">
@@ -130,11 +132,11 @@
 
 				$("#hiddenOption").text(hiddenOption);
 
-				$(this).css("color", "#ddd");
+				$(this).css("color", "black");
 				$(this).addClass('clicked-btn');
 
 			} else {
-				$(this).css("color", "#000");
+				$(this).css("color", "#ddd");
 				$(this).removeClass('clicked-btn');
 
 				var str = $("#hiddenOption").text();

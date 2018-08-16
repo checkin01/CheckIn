@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<mvc:interceptors>
+	<!-- 일반 회원 관련 인터셉터 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/main/mypage/*" />
+			<bean class="com.checkin.webapp.interceptor.LoginMemberInterceptor" />	
+		</mvc:interceptor>
+		
+	<!-- 가맹점 회원 관련 인터셉터 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/master/*" />
+			<bean class="com.checkin.webapp.interceptor.LoginMasterInterceptor" />	
+		</mvc:interceptor>
+	
+	<!-- 웹 관리자 회원 관련 인터셉터 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/webmaster/*" />
+			<mvc:mapping path="/webmaster/accomodation/*" />
+			<mvc:mapping path="/webmaster/member/*" />
+			<mvc:mapping path="/webmaster/notice/*" />
+			<bean class="com.checkin.webapp.interceptor.LoginWebmasterInterceptor" />	
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+</beans>

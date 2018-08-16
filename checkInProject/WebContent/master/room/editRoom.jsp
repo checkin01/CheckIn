@@ -12,17 +12,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/default.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div id= "main" class="row main">
-<aside class="left col-sm-3" id="left">
+<aside class="left col-sm-2" id="left">
 </aside>
-	<div class="col-sm-7 center" id="center" style="top:50px">
+	<div class="col-sm-8 center" id="center" style="top:50px">
 		<!--  -->
-		<div class="font1-small" style="padding:20px 0">
-			<span> 홈 > 관리 페이지 > 룸 수정하기 </span>
+		<div class="font1-small" style="padding:20px 0;">
+			<a href="manageDetailRoom.jsp">룸 관리 페이지</a>
 		</div>
 		
 		<form id="dataform" class="form-horizontal font1-medium list-group" method="post" action="writeOk.jsp" enctype="multipart/form-data">
@@ -160,21 +160,19 @@
 		</div>
 		
 		<!-- 등록 버튼 -->	
-		<div class="list-group-item row">
-			<input type="reset" value="다시 쓰기" class="btn btn-success form-control col-sm-3"/>
-			<input type="submit" value="파일 등록" class="btn btn-success form-control col-sm-3"/>
+		<div class="list-group-item row" style="text-align:center">
+			<input type="reset" value="다시 쓰기" class="btn btn-primary"/>
+			<input type="submit" value="룸 수정" class="btn btn-primary"/>
 		</div>
 	</form>
-	<footer class="row footer" id="footer">
-		<div>
-		</div>
-</footer>
 </div>
 <aside class="col-sm-2 right" id="right">
-	
 </aside>
-<!-- footer -->
 
+<!-- footer -->
+<footer id="footer" class="footer" style="width:100%;font-size:0.8em;margin-top:100px">
+<%@ include file="../companyInfo.jspf"%>
+</footer>
 
 </div>
 

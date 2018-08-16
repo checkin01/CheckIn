@@ -1,0 +1,123 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<style>
+.gu, .subway {
+	hieght: 10px;
+	margin: 5px;
+	border: none;
+	background: #fff;
+	font-size: 0.8em;
+	font-family: 'Gothic A1', sans-serif;
+}
+
+.searchOption {
+	border: none;
+	margin: 5px;
+	height: 30px;
+	background: #fff;
+	font-size: 0.9em;
+	font-family: 'Gothic A1', sans-serif;
+	border-radius: 5px;
+}
+
+.panel-body {
+	padding: 10px;
+	width: 490px;
+	border: 1px #ddd solid;
+}
+
+</style>
+</head>
+<body>
+	<!----------------------------------- modal ---------------------------------->
+	<div class="modal fade" id="locModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">
+						<span class="selectedSido">서울</span> <span class="selectedGu">강남구</span>
+						<span class="selectedSubway"></span>
+					</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<input type="button" class="searchOption btn" id="searchMethod1"
+						style="background: green;" value="주소로 검색하기"
+						onClick="whenClickSearchOption(1)"> <input type="button"
+						id="searchMethod2" class="searchOption btn" style="background: #ddd"
+						value="인근 지하철로 검색하기" onClick="whenClickSearchOption(2)">
+					<div class="row" id="gu_panel1"
+						style="width: 500px; padding: 10px; display: block">
+						<button class="gu">강남구</button>
+						<button class="gu">강동구</button>
+						<button class="gu">강북구</button>
+						<button class="gu">강서구</button>
+						<button class="gu">관악구</button>
+						<button class="gu">광진구</button>
+						<button class="gu">구로구</button>
+						<button class="gu">금천구</button>
+						<button class="gu">노원구</button>
+						<button class="gu">도봉구</button>
+						<button class="gu">동대문구</button>
+						<button class="gu">동작구</button>
+						<button class="gu">마포구</button>
+						<button class="gu">서대문구</button>
+						<button class="gu">서초구</button>
+						<button class="gu">성동구</button>
+						<button class="gu">성북구</button>
+						<button class="gu">송파구</button>
+						<button class="gu">양천구</button>
+						<button class="gu">영등포구</button>
+						<button class="gu">용산구</button>
+						<button class="gu">은평구</button>
+						<button class="gu">종로구</button>
+						<button class="gu">중구</button>
+						<button class="gu">중랑구</button>
+
+					</div>
+					<div class="row" id="gu_panel2"
+						style="width: 500px; padding: 10px; display: none">
+						<button class="subway">강남/역삼/삼성/논현</button>
+						<button class="subway">서초/신사/방배역</button>
+						<button class="subway">동묘/신설동/청량리/회기</button>
+						<button class="subway">장안동/답십리</button>
+						<button class="subway">신림/서울대/사당/금천/동작</button>
+						<button class="subway">신촌/홍대/합정</button>
+						<button class="subway">강서/화곡/까치산/양천</button>
+						<button class="subway">수유/미아</button>
+						<button class="subway">잠실/신천</button>
+						<button class="subway">신촌/홍대/합정</button>
+						<button class="subway">동묘/신설동/청량리/회기</button>
+						<button class="subway">연신내/불광/응암</button>
+						<button class="subway">상봉/중랑/면목</button>
+						<button class="subway">태릉/노원/도봉/창동</button>
+						<button class="subway">종로(3,5가)/혜화</button>
+						<button class="subway">동대문/충무로/신당/약수/금호</button>
+						<button class="subway">성신여대/성북/월곡</button>
+						<button class="subway">왕십리/성수/강변</button>
+						<button class="subway">건대/군자/구의</button>
+						<button class="subway">이태원/삼각지/용산/서울/명동/회현</button>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+</body>
+</html>
