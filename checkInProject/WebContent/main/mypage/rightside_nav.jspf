@@ -46,6 +46,7 @@
 			</a>
 		</div>
 		<div id="sideNavCnt">
+			<a href="<%=request.getContextPath()%>/main/mypage/myreview.jsp">나의리뷰</a></br/>
 			<a href="<%=request.getContextPath()%>/main/mypage/bookList.jsp">예약내역</a><br /> <a href="<%=request.getContextPath()%>/main/mypage/point.jsp">포인트</a><br /> <a
 				href="<%=request.getContextPath()%>/main/mypage/checkPwdInfo.jsp">회원정보확인/수정</a>
 		</div>
