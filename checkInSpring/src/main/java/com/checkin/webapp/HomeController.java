@@ -24,7 +24,7 @@ public class HomeController {
 	
 	@Autowired
 	public void setSqlSession() {
-		Constants.sqlSesssion = mySqlsession;
+		Constants.sqlSession = mySqlsession;
 	}
 	
 	/**
