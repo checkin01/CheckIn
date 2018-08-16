@@ -67,24 +67,46 @@ body{
 }
 
 #aa{text-overflow:ellipsis}
+
+#left {
+	width: 15%
+}
+
+#center {
+	padding: 20px 0px;
+	margin: 0px;
+	weight: 500px
+}
+#review_btns button{margin:0% 1%}
 </style>
 
    
 
 </head>
 <body>
+	<%@ include file="../topnav_member.jspf"%>
+
 
    <!-- 
    본문은 left center right으로 나뉜다. -->
    <div id="main" class="row main" style="position: relative; top: 80px; margin-bottom:100px">
 
-      <aside class="left col-sm-2" id="left">
+     <!-- side Nav -->
+		<aside class="left" id="sideNav">
+			<%@ include file="rightside_nav.jspf"%>
+		</aside>
+
     	
-      </aside>
+    	
+   
 
       <!-- center -->
-      <div class="col-sm-8 center" id="center">
-         <h4 style="text-align:center" class="sub-title">나의 리뷰</h4>
+      
+ <div class="col-sm-10 container" id="center">
+      <span class="font1-small">홈>마이페이지>예약내역</span>
+		
+      
+         
          <!-- 리스트 시작 -->         
          <div class="list-group" style="margin-top: 20px ; font-size:0.9em" id="bookingList">
           
@@ -92,25 +114,25 @@ body{
             <!-- 숙박업소 리스트 중 한개 -->
        
      
-           <div style="width: 100%; padding: 10px; background: #e6ffe6;">
+           <div style="width: 100%; padding: 10px; ">
               
 
-                  <div class="container input-group" id="review"
+                  <div class="container input-group " id="review"
                      style="display:inline; padding-top: 10px">
                      <div class="row ">
-                        <p class="col-sm-4 review-p border">
-                           <class="fa fa-thumbs-o-up"></i> 평점 : </label> <span
+                        <p class="col-sm-4 review-p border"; style=" font-size:1.5em;">
+                           <class="fa fa-thumbs-o-up"><label> <b>평점 :</b> </label> <span
                               id="grade">★ ★ ★ ★ ★</span>
                         </p>
-                        <p class="col-sm-4 review-p border">
-                           <label><i class="fa fa-user"></i> 아이디 : </label><span id="uid">123456</span>
+                        <p class="col-sm-4 review-p border"; style=" font-size:1.5em;">
+                           <label><i class="fa fa-user"></i><b> 아이디 :</b> </label><span id="uid">123456</span>
                         </p>
-                        <p class="col-sm-4 review-p border">
-                           <label><i class="fa fa-calendar"></i> 날짜 : </label> <span
+                        <p class="col-sm-4 review-p border"; style=" font-size:1.5em;">
+                           <label><i class="fa fa-calendar"></i><b> 날짜 :</b> </label> <span
                               id="grade">2018-07-24</span>
                         </p>
                      </div>
-                     <label><i class="fa fa-comments"></i> 내용 </label>
+                     <label><i class="fa fa-comments"></i> <b>내용 </b></label>
                      <div class="row">
                         <!-- 쓰기는 예약 내역에서 가능 있음. -->
  		                        <div class="col-sm-8 font1-small border review-p" id="content">
@@ -166,16 +188,17 @@ function showDivs(n) {
                </div>
          </div>
        
-                <div style="text-align:right">
+              
                
-               <input type="submit" value="수정">
-                  <input type="submit" value="삭제">
-                  </div>
-                  
+              <div class="row" id="review_btns"; style="text-align:right">
+					<span class="col-sm-7"></span>
+					<button id="writeBtn" data-toggle="modal" data-target="#reviewModal" class="btn col-sm-2 showreviewModal" style="background-color:#5284FF;color:#fff;font-weight:bold">리뷰수정</button>
+					<button id="editBtn" data-toggle="modal" data-target="#reviewModal_edit" class="btn col-sm-2 showreviewModal_edit" style="background-color:#5284FF;color:#fff;font-weight:bold">리뷰삭제</button>
+					
+				</div>
                   
             
 
-      </div>
       <!-- 여기 안에 모두 담자 -->
       
    <!-- right -->
@@ -183,7 +206,7 @@ function showDivs(n) {
       
    </aside>
    
-
+</div>
 
 </div>
 
