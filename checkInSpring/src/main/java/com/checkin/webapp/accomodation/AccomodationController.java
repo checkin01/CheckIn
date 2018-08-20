@@ -1,10 +1,15 @@
 package com.checkin.webapp.accomodation;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.checkin.webapp.accomodation.command.RecommendCommand;
 import com.checkin.webapp.accomodation.model.AccomodationVO;
 
 @Controller
@@ -42,4 +47,10 @@ public class AccomodationController {
 	public ModelAndView insertOkAccomodation(HttpServletRequest request, AccomodationVO vo) {}
 	
 	*/
+	@RequestMapping("/main/recommend")
+	@ResponseBody
+	public List<AccomodationVO> recommendAjax(HttpServletRequest request, AccomodationVO vo) {
+		System.out.println("AccomodationController...recommendAjax" + vo.toString());
+		return new RecommendCommand().execute2(request, vo);
+	}
 }

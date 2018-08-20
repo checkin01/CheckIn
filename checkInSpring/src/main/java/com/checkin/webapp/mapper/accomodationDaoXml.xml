@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.checkin.webapp.accomodation.model.AccomodationDAOInterface">
-
+<select id="get3TopGradeAccomodation" resultType="com.checkin.webapp.accomodation.model.AccomodationVO" >
+select acc.a a,aname,atel,aaddr, agrade, aimg1 from accomodation acc,
+(select a,floor(avg(vgrade)) agrade from review group by a order by agrade desc) re
+where acc.a = re.a 
+<if test="asubway != null">
+and asubway like '%'|| #{asubway} ||'%'
+</if>
+<if test = "agu != null">
+and agu like '%'|| #{agu} ||'%'
+</if>
+</select>
 </mapper>

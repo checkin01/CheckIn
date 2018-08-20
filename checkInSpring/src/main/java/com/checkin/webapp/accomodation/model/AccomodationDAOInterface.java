@@ -18,4 +18,7 @@ public interface AccomodationDAOInterface {
 	public List<AccomodationVO> getHistory(int a1, int a2, int a3);
 	
 	public List<AccomodationVO> get3TopGradeAccomodation(AccomodationVO vo);
+	
+	public int getListCnt(AccomodationVO vo);
+	
 }
