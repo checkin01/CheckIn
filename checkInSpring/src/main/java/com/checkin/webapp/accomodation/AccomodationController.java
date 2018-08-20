@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.checkin.webapp.accomodation.command.RecommendCommand;
+import com.checkin.webapp.accomodation.command.ShowAccoListCommand;
 import com.checkin.webapp.accomodation.model.AccomodationVO;
 
 @Controller
@@ -53,4 +54,13 @@ public class AccomodationController {
 		System.out.println("AccomodationController...recommendAjax" + vo.toString());
 		return new RecommendCommand().execute2(request, vo);
 	}
+	
+
+	// 매핑 경로 : /main/showAccoList
+	@RequestMapping("/main/showAccoList")
+	public ModelAndView showList(HttpServletRequest request, AccomodationVO vo) {
+		System.out.println("AccomodationController...showList()..."+ vo.toString());
+		return new ShowAccoListCommand().execute(request);
+	}
+	
 }

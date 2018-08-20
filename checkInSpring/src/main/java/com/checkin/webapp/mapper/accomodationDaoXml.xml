@@ -12,4 +12,38 @@ and asubway like '%'|| #{asubway} ||'%'
 and agu like '%'|| #{agu} ||'%'
 </if>
 </select>
+
+<select id="selectAllList" resultType="com.checkin.webapp.accomodation.model.AccomodationVO">
+	select acco.a a, acco.mid a, aname,atel,aaddr,atype,acheckin, acheckout,aimg1,aimg2,aimg3,atheme, agrade , amaxprice , aminprice 
+	from (
+		select * from accomodation where atype= #{atype}
+		<if test="asubway != null and !(asubway.equals(''))">
+		and asubway like '%'|| #{asubway} ||'%'
+		</if>
+		<if test = "agu != null and !(agu.equals(''))">
+		and agu like '%'|| #{agu} ||'%'
+		</if>
+		<![CDATA[ AND ROWNUM <= #{acurpage}*#{aonepage} ]]>
+		<if test="athemeList != null">
+		 <foreach collection="athemeList" item="item" index="index"  open="" close="" separator=" ">
+           and atheme like '%'|| #{item} ||'%'
+        </foreach>
+        </if>
+	) acco left outer join 
+	(select a, min(rprice) aminprice, max(rprice) amaxprice from room group by a) ro  
+	on acco.a = ro.a 
+	left outer join 
+	(select NVL(floor(avg(vgrade)),1) agrade, a  from review group by a) re
+	on acco.a = re.a
+	<if test="asortkey=='writedate'">
+	order by writedate desc
+	</if>
+	<if test="asortkey=='aminprice'">
+	order by aminprice asc
+	</if> 
+	<if test="asortkey=='agrade'">
+	order by agrade desc
+	</if> 
+</select>
+
 </mapper>
