@@ -22,11 +22,13 @@
 	background-color: white;
 	border: none;
 	font-size: 0.5em;
-	color:black;
+	color: black;
 }
-.modal-body .unselected-btn{
-	color:#ddd;
+
+.modal-body .unselected-btn {
+	color: #ddd;
 }
+
 .theme-item {
 	margin-left: 10px;
 }
@@ -109,10 +111,12 @@
 					<i class="material-icons">desktop_windows</i>3DTV
 				</button>
 			</div>
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary searchButton" data-dismiss="modal">확인</button>
+			</div>
 		</div>
-		<!-- Modal footer -->
-		<div class="modal-footer">
-		</div>
+
 	</div>
 </div>
 
@@ -148,6 +152,12 @@
 			}
 
 		});
-
+		
+		$("#theme_ok").click(function(){
+			
+		})
+				
+			
+		
 	});
 </script>
