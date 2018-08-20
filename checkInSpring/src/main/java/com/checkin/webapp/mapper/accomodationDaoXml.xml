@@ -46,4 +46,33 @@ and agu like '%'|| #{agu} ||'%'
 	</if> 
 </select>
 
+<select id="getListCnt" resultType="int">
+	select count(a) 
+	from accomodation where atype= #{atype} 
+	<if test="asubway != null and !(asubway.equals(''))">
+		and asubway like '%'|| #{asubway} ||'%'
+	</if>
+	<if test = "agu != null and !(agu.equals(''))">
+		and agu like '%'|| #{agu} ||'%'
+	</if>
+	<if test="acurpage > 0">
+		<![CDATA[ AND ROWNUM > #{acurpage}*#{aonepage} AND ROWNUM <= #{acurpage}+1*#{aonepage} ]]>
+	</if>
+	<if test="athemeList != null">
+		 <foreach collection="athemeList" item="item" index="index"  open="" close="" separator=" ">
+           and atheme like '%'|| #{item} ||'%'
+        </foreach>
+    </if>
+		<if test="asortkey=='writedate'">
+			order by writedate desc
+	</if>
+	<if test="asortkey=='aminprice'">
+			order by aminprice asc
+	</if> 
+	<if test="asortkey=='agrade'">
+			order by agrade desc
+	</if>
+</select>
+
+
 </mapper>
