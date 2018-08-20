@@ -42,8 +42,7 @@
 			<!-- Modal Header -->
 			<div class="modal-header">
 				<h3 class="font1-medium">테마 선택</h3>
-				<!-- 테마선택하면 들어가는곳 -->
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
+
 			</div>
 
 			<!-- Modal body -->

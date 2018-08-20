@@ -49,7 +49,6 @@ public class ShowAccoListCommand implements AccomodationCommandInterface {
 		String atheme = request.getParameter("atheme");
 		if(atheme != null) {
 			athemeList = new ArrayList<String>(Arrays.asList(atheme.trim().split(" ")));
-			
 		}
 		
 		//dao 작업
@@ -93,7 +92,7 @@ public class ShowAccoListCommand implements AccomodationCommandInterface {
 		session.setAttribute("gu", agu);
 		session.setAttribute("subway", asubway);
 		session.setAttribute("type", atype);
-		session.setAttribute("atheme", atheme);
+		session.setAttribute("theme", atheme);
 		if (asorttype== null || asorttype == "") session.setAttribute("asorttype", "writedate");
 		else session.setAttribute("asorttype", asorttype);
 		

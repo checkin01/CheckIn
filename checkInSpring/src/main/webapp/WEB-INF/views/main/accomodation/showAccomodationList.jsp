@@ -224,7 +224,7 @@
 					<!-- 테마에 대한 정보를 이곳에 hidden 속성으로 숨겨 둔다 -->
 				</div>
 				
-				<div class="theme-item" id="hiddenOption" style="font-family: 'Jua'; font-size: 0.9em; color: #aaa;" /></div>
+				<div class="theme-item" id="hiddenOption" style="font-family: 'Jua'; font-size: 0.9em; color: #aaa;" />${theme}</div>
 			</div>
 
 			<!-- 지도 --------------------------------------------------------->
