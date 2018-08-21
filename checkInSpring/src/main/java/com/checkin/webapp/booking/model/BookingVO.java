@@ -3,7 +3,7 @@ package com.checkin.webapp.booking.model;
 public class BookingVO {
 	private int b; //예약시퀀스
 	private int r; //룸 시퀀스
-	private String uid;//예약자 아이디
+	private String u;//예약자 아이디
 	private int a; //숙밥업소 시퀀스
 	private String mid; //가맹점주인 아이디
 	private String bcheckin; //입실시간(날짜YYYY-MM-DD)
@@ -41,11 +41,11 @@ public class BookingVO {
 	public void setR(int r) {
 		this.r = r;
 	}
-	public String getUid() {
-		return uid;
+	public String getU() {
+		return u;
 	}
-	public void setUid(String uid) {
-		this.uid = uid;
+	public void setU(String u) {
+		this.u = u;
 	}
 	public int getA() {
 		return a;
