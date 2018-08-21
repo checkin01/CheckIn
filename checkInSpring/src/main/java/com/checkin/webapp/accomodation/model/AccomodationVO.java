@@ -13,6 +13,7 @@ public class AccomodationVO {
 	private String acheckout; //퇴실시간
 	private String asi; //서울시
 	private String agu; //금천구
+	private String agil; //금천구
 	private String agunmul; //시흥대로101
 	private String adong; //장충동
 	private String aimg1; //이미지1 경로
@@ -36,6 +37,14 @@ public class AccomodationVO {
 	private String asearchvalue; //검색값
 	private String asortkey = "writedate";
 	
+	
+	
+	public String getAgil() {
+		return agil;
+	}
+	public void setAgil(String agil) {
+		this.agil = agil;
+	}
 	public List<String> getAthemeList() {
 		return athemeList;
 	}
@@ -220,7 +229,7 @@ public class AccomodationVO {
 	public String toString() {
 		return "AccomodationVO [a=" + a + ", mid=" + mid + ", aname=" + aname + ", atel=" + atel + ", aaddr=" + aaddr
 				+ ", atype=" + atype + ", acheckin=" + acheckin + ", acheckout=" + acheckout + ", asi=" + asi + ", agu="
-				+ agu + ", agunmul=" + agunmul + ", adong=" + adong + ", aimg1=" + aimg1 + ", aimg2=" + aimg2
+				+ agu + ", agunmul=" + agunmul + ", adong=" + adong + ", agil=" + agil + ", aimg1=" + aimg1 + ", aimg2=" + aimg2
 				+ ", aimg3=" + aimg3 + ", amaxreservedate=" + amaxreservedate + ", amaxsleepdate=" + amaxsleepdate
 				+ ", atheme=" + atheme + ", anotice=" + anotice + ", writedate=" + writedate + ", asubway=" + asubway
 				+ ", agrade=" + agrade + ", amaxprice=" + amaxprice + ", aminprice=" + aminprice + ", acurpage="
