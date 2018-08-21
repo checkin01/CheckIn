@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.checkin.webapp.booking.model.BookingDAOInterface">
+	<select id="getRoomsBookingAvailability" resultType="int" >
+		select nvl(bo.c,0) from
+		(select r from room where a = #{a}) ro
+		left outer join
+		(select r, count(b) c 
+			from booking
+			where bcheckin
+			between to_date(#{checkin},'YY/MM/dd') and
+			to_date(#{checkout},'YY/MM/dd') -1
+			or bcheckout
+			between to_date(#{checkin},'YY/MM/dd') +1 and
+			to_date(#{checkout},'YY/MM/dd')
+			 group by r,a having a = #{a}
+			
+		) bo on ro.r = bo.r
+		order by ro.r
+		
+	</select>
 
 </mapper>

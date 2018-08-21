@@ -20,4 +20,6 @@ public interface RoomDAOInterface {
 	public int getAvgGradeOneRoom(RoomVO vo);
 	
 	public List<Boolean> getAvailBooking(RoomVO vo);
+	
+	public List<Integer> getRoomNs(int a);
 }

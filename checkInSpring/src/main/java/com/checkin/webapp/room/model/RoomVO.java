@@ -16,8 +16,16 @@ public class RoomVO {
 	private int rdiningroom;//거실 수
 	private int rkitchen;// 주방 수
 	private String rtheme; //테마(복층, 스파, PC커플, 온돌)
+	private int rgrade;
 	private String writedate; //입력날짜
 	
+
+	public int getRgrade() {
+		return rgrade;
+	}
+	public void setRgrade(int rgrade) {
+		this.rgrade = rgrade;
+	}
 	
 	public String getWritedate() {
 		return writedate;

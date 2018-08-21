@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.checkin.webapp.room.model.RoomDAOInterface">
-
+	<select id="selectAllRoomList" resultType="com.checkin.webapp.room.model.RoomVO">
+		select ro.r, a, mid, rname, rmin, rmax, rprice, rimg1, rimg2, rimg3, rtype, rbedroom, rrestroom, rdiningroom,
+		rkitchen,rtheme, rgrade
+		from room ro
+		left outer join 
+		(select r, floor(avg(vgrade)) rgrade from review group by r ) re
+		on ro.r = re.r
+		where ro.a = #{a} order by ro.r
+	</select>
+	<select id="getRoomNs" resultType="int">
+		select r from room where a = #{param1}
+	</select>
 </mapper>

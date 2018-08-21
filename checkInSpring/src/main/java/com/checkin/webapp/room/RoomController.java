@@ -3,8 +3,10 @@ package com.checkin.webapp.room;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.checkin.webapp.room.command.ShowRoomListCommand;
 import com.checkin.webapp.room.model.RoomVO;
 
 @Controller
@@ -38,4 +40,12 @@ public class RoomController {
 	// 매핑 주소 : /master/tryAddGuestroomInfo
 	public ModelAndView insertRoomOk(HttpServletRequest reqeust, RoomVO vo) {}
 	*/
+	
+	//일반사용자가 보는 룸리스트로 이동
+	@RequestMapping("/main/room/showList")
+	public ModelAndView showAllRoomList(HttpServletRequest request) {
+		
+		return new ShowRoomListCommand().execute(request);
+	}
+	
 }

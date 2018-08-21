@@ -73,6 +73,10 @@ and agu like '%'|| #{agu} ||'%'
 			order by agrade desc
 	</if>
 </select>
-
+<select id="selectOneRecord" resultType="com.checkin.webapp.accomodation.model.AccomodationVO">
+	select a, mid,aname, atel , aaddr, acheckin, acheckout, agil, amaxreservedate, amaxsleepdate, anotice
+	from accomodation
+	where a = #{a}
+</select>
 
 </mapper>
