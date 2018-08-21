@@ -26,7 +26,7 @@ var data = google.visualization.arrayToDataTable([
           }
         };
 
-        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+        var chart = new google.charts.Bar(document.getElementById('chart_div'));
 
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }

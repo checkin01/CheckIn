@@ -135,10 +135,20 @@
 	var yyyy = today.getFullYear();
 	var data = google.visualization.arrayToDataTable([
 	          ['Week', '매출', '예약건수'],
-	          <c:forEach items="${list2}" var="vo" varStatus="status">
-		    	['${vo.bookingdate}', ${vo.price}, ${vo.bcount}]
-		    	<c:if test="${!status.last}">,</c:if>
-		      </c:forEach>
+	          <%
+				ArrayList<MasterChartVO> list2 = (ArrayList<MasterChartVO>)request.getAttribute("list2");
+				String content2="";
+				for(int i=0; i<list2.size(); i++) {
+					MasterChartVO mVo = list2.get(i);
+					content2 += "['" +mVo.getBookingdate() +"',"+mVo.getPrice()+","+mVo.getBcount()+"]";
+					if(i==list2.size()-1) {
+						content2 += "";
+					}else {
+						content2 += ",";
+					}
+				}
+				out.println(content2);
+			%>
 	        ]);
 
 	        var options = {
@@ -161,7 +171,37 @@
 	        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
 
 	        chart.draw(data, google.charts.Bar.convertOptions(options));
-	      }	
+	      }
+	
+	//룸별 예약 통계	
+	  google.charts.load('current', {'packages':['corechart', 'bar']});
+	google.charts.setOnLoadCallback(drawVisualization);
+
+
+	function drawVisualization() {
+		
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+		var data = google.visualization.arrayToDataTable([
+		          ['룸명', '예약건수'],
+		          ['스탠다드', 1000],
+		          ['스탠다드', 1170],
+		          ['스위트', 660]
+		        ]);
+
+		        var options = {
+		          chart: {
+		            title: '룸별 예약 통계',
+		            subtitle: mm+'/'+dd+'/'+yyyy,
+		          }
+		        };
+
+		        var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+		        chart.draw(data, google.charts.Bar.convertOptions(options));
+	      }
 </script>
 
 </body>
