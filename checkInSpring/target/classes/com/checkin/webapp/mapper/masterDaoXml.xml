@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.checkin.webapp.master.model.MasterDAOInterface">
-
+	<select id="selectMaster" parameterType="com.checkin.webapp.master.model.MasterVO" resultType="com.checkin.webapp.master.model.MasterVO">
+		select m.m, m.mid, a.a a, a.aname aname from master m join accomodation a on m.mid = a.mid where m.mid=#{mid}  
+	</select>
+	
+	<select id="selectMasterChart" parameterType="com.checkin.webapp.master.model.MasterChartVO" resultType="com.checkin.webapp.master.model.MasterChartVO">
+		select count(b) bcount from booking where mid=#{mid} and to_char(writedate, 'YYYY-MM') = to_char(sysdate, 'YYYY-MM')
+	</select>
+	<select id="selectMasterChart2" parameterType="com.checkin.webapp.master.model.MasterChartVO" resultType="com.checkin.webapp.master.model.MasterChartVO">
+		select avg(vgrade) vgrade, count(v) vcount from review where mid=#{mid} 
+	</select>
+	<select id="selectMasterChart3" parameterType="com.checkin.webapp.master.model.MasterChartVO" resultType="com.checkin.webapp.master.model.MasterChartVO">
+		select count(r) rcount from room where mid=#{mid} 
+	</select>
+	<select id="selectBookingDate" resultType="com.checkin.webapp.master.model.MasterChartVO">
+		select to_char(writedate, 'YYYY,MM,DD') bookingdate, count(b) bcount from booking where mid=#{mid} group by to_char(writedate, 'YYYY,MM,DD')
+	</select>
+	<select id="selectSaleBooking" resultType="com.checkin.webapp.master.model.MasterChartVO">
+		select to_char(b.writedate, 'DAY') bookingdate, sum(r.rprice) price, count(b.b) bcount from room r join booking b on r.r = b.r where b.mid=#{mid} group by to_char(b.writedate, 'DAY')
+	</select>
 </mapper>

@@ -12,6 +12,7 @@
           [ new Date(2017, 3, 16), 38108 ],
           [ new Date(2017, 3, 17), 38229 ],
           // Many rows omitted for brevity.
+          [ new Date(2018, 3, 1), 38177 ],
           [ new Date(2018, 9, 4), 38177 ],
           [ new Date(2018, 9, 5), 38705 ],
           [ new Date(2018, 9, 12), 38210 ],

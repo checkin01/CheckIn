@@ -2,18 +2,28 @@ package com.checkin.webapp.master;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.checkin.webapp.master.command.LoginOkMasterCommand;
 import com.checkin.webapp.master.model.MasterVO;
 
+@Controller
 public class MasterController {
-	/*
+	
 	//로그인 성공/실패
 	// 매핑 경로 : /main/tryLoginManager
-	public ModelAndView loginOkMaster(HttpServletRequest request, MasterVO vo) {
-		
+	@RequestMapping(value="/main/tryLoginManager", method=RequestMethod.POST)
+	@ResponseBody
+	public MasterVO loginOkMaster(HttpServletRequest request, MasterVO vo) {
+		System.out.println(3+vo.toString());
+		LoginOkMasterCommand command = new LoginOkMasterCommand();
+		return command.executeVo(request, vo);
 	}
 	
+	/*
 	//로그인폼으로 이동 - 구현 X
 	// 매핑 경로 : /main/login
 	public ModelAndView loginFormMaster(HttpServletRequest request) {

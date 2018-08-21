@@ -10,4 +10,6 @@ public interface MemberCommandInterface {
 	public ModelAndView execute(HttpServletRequest request, MemberVO vo);
 	
 	public ModelAndView execute(HttpServletRequest request);
+	
+	public MemberVO executeVo(HttpServletRequest request, MemberVO vo);
 }

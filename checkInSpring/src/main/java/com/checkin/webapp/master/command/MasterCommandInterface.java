@@ -10,4 +10,6 @@ public interface MasterCommandInterface {
 	public ModelAndView execute(HttpServletRequest request, MasterVO vo);
 	
 	public ModelAndView execute(HttpServletRequest request);
+	
+	public MasterVO executeVo(HttpServletRequest request, MasterVO vo);
 }
