@@ -1,0 +1,423 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%-- <%@ include file="../login/idChkWin.jspf"%> --%>
+<style>
+#main .row {
+	margin-right: 2px;
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+}
+
+#main label {
+	font-size: 1em;
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+	text-align: center;
+	padding-right: 20px;
+}
+
+.error-text {
+	font-size: 12px;
+	color: red;
+}
+
+/* body {
+	background: url('../img/h_r2.jpg') 100% 100%;
+	height: 800px;
+} */
+
+#regFrmMember .btns {
+	position: relative;
+	padding: 20px;
+	margin: 0 20px;
+	text-align: center;
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+}
+
+#regFrmMember {
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.center {
+	font-family: 'Jua', 'Gothic A1', sans-serif;
+}
+</style>
+		<form method="post" id="regFrmMember" style="margin-top: 30px; display:none " class="font1-medium"
+			action="/webapp/main/tryRegisterUser"
+			class="container form-horizontal rounded">
+			<!-- <form method="post" action="/home/board/writeOk"> -->
+			<div style="padding: 20px 0">
+				<span style="padding: 30px"> 홈 > 회원가입 </span>
+			</div>
+			<!-- 아이디 -->
+			<div class="row form-group">
+				<label class="col-sm-3">아이디</label> <input type="text" name="uuid"
+					id="uuid" class="form-control col-sm-5 input-group-item"
+					placeholder="아이디를 입력하세요" />
+
+
+				<!-- 중복확인 -->
+				<input type="button" value="아이디 중복체크" id="uuidChk"
+					class="form-control btn-primary col-sm-3 input-group-item"
+					style="font-size: 0.9em;"/> 
+					<input type="hidden" name="idMemberCheckResult" id="idMemberCheckResult" value="N" />					
+			</div>
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<span id="uuidMsg" class="error-text"></span>
+			</div>
+
+			<!-- 비밀번호 -->
+			<div class="form-group row">
+				<label class="col-sm-3">비밀번호</label> <input type="password"
+					name="upwd" id="upwd" class="form-control col-sm-8"
+					placeholder="비밀번호를 입력하세요">
+			</div>
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<span id="upwdMsg" class="error-text"></span>
+			</div>
+
+			<!-- 비밀번호 확인 -->
+			<div class="form-group row">
+				<label class="col-sm-3">비밀번호확인</label> <input type="password"
+					name="upwd2" id="upwd2" class="form-control col-sm-8"
+					placeholder="비밀번호확인">
+			</div>
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<span id="upwd2Msg" class="error-text"></span>
+			</div>
+
+
+			<!-- 이름 -->
+			<div class="form-group row">
+				<label class="col-sm-3">이름</label> <input type="text" name="uname"
+					id="uname" class="form-control col-sm-8" placeholder="이름을 입력하세요">
+
+			</div>
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<span id="unameMsg" class="error-text"></span>
+			</div>
+
+			<!-- 생년월일 -->
+			<div class="form-group row">
+				<input style="display:none" id="birth" name="birth"/> <label class="col-sm-3">생년월일</label>
+				<input type="date" name="birthdate" id="birthdate"
+					class="form-control col-sm-4"> <select
+					class="form-control col-sm-4" id="gender">
+					<option value="1">남성</option>
+					<option value="2">여성</option>
+				</select>
+			</div>
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<span id="birthMsg" class="error-text"></span>
+			</div>
+
+
+			<!-- tel -->
+			<div class="form-group row">
+				<label class="col-sm-3">연락처</label> <input type="text" name="utel"
+					id="utel" class="form-control col-sm-8"
+					placeholder="연락처입력(예:010-1234-5678)">
+
+			</div>
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<span id="utelMsg" class="error-text"></span>
+			</div>
+
+			<!-- email -->
+			<div class="form-group row">
+				<label class="col-sm-3">이메일</label> <input type="text" name="uemail"
+					id="uemail" class="form-control col-sm-8"
+					placeholder="이메일입력(예:abcde@.com)">
+			</div>
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<span id="uemailMsg" class="error-text"></span>
+			</div>
+
+			<!-- addr -->
+			<div class="form-group row">
+				<input type="hidden" id="location" /> <label class="col-sm-3">지역</label>
+				<select class="form-control col-sm-5" id="uaddr" name="uaddr" onchange='checkUlocation()'>
+					<option value="서울">서울</option>
+					<option value="경기">경기</option>
+					<option value="인천">인천</option>
+					<option value="강원">강원</option>
+					<option value="부산">부산</option>
+					<option value="경남">경남</option>
+					<option value="대구">대구</option>
+					<option value="경북">경북</option>
+					<option value="울산">울산</option>
+					<option value="대전">대전</option>
+					<option value="광주">광주</option>
+					<option value="전남">전남</option>
+					<option value="전북">전북</option>
+					<option value="제주">제주</option>
+				</select>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-sm-3" for="info">기타 정보</label>
+				<div class="form-group row" id="info">
+					<div class="input-group-prepend d-inline-flex p-3">
+						<div class="input-group-text">
+							<input type="checkbox" name="uthemeArray" value="스파" > <span class="col-sm-3">스파</span>
+						</div>
+					</div>
+
+					<div class="input-group-prepend d-inline-flex p-3">
+						<div class="input-group-text">
+							<input type="checkbox" name="uthemeArray" value="애견"> <span class="col-sm-3">애견</span>
+						</div>
+					</div>
+						<div class="input-group-prepend d-inline-flex p-3">
+						<div class="input-group-text">
+							<input type="checkbox" name="uthemeArray" value="바베큐"> <span class="col-sm-3">바베큐</span>
+						</div>
+					</div>
+						<div class="input-group-prepend d-inline-flex p-3">
+						<div class="input-group-text">
+							<input type="checkbox" name="uthemeArray" value="오션뷰"> <span class="col-sm-3">오션뷰</span>
+						</div>
+					</div>
+					<input type="hidden" id="utheme" name="utheme"/> 
+				</div>
+			</div>
+			
+			<div class="container btns form-group">
+				<input class="col-sm-3 btn btn-primary" type="submit" value="가입하기" />
+				<input class="col-sm-3 btn" type="button" id="regMemberCancleBtn" value="취소하기" />
+			</div>
+		</form>
+
+<!-- script start -->
+<script>
+$(function() {
+	$("#uuidChk").click(function(){
+		var uuid = $("#uuid").val();
+		if(uuid != null && uuid != ""){
+			$("#userid").val(uuid);
+			$("#UidChkModal").modal('show');
+		}else{
+			alert("아이디를 입력 하세요 ");
+		}
+			
+	});
+	$("#regMemberCancleBtn").click(function(){
+		location.href="/webapp";
+	});
+	
+	// 회원가입 일반 회원 유효성 검사
+	$("#regFrmMember").submit(function() {		
+		var result = true;
+		changeBirthInputValue();
+		result &=wasCheckUid();
+		result &=checkUid();		
+		result &=checkUname();		
+		result &=checkUpwd();		
+		result &=checkUpwd2();		
+		result &=checkUemail();		
+		result &=checkUtel();		
+		result &=checkBirth();		
+		result &=checkUlocation();		
+		
+		if(result == 0) return false;
+		else{
+			getUtheme();
+			alert("회원가입이 성공적으로 완료되었습니다.");
+			return true;
+		}
+	});
+
+	$("#uuid").focusout(function(){
+		checkUid();
+		whenFocusUid();
+	});
+	$("#upwd").focusout(function(){
+		checkUpwd();
+	});
+	$("#upwd2").focusout(function(){
+		checkUpwd2();
+	});
+	$("#uname").focusout(function(){
+		checkUname();
+	});
+	$("#utel").focusout(function(){
+		checkUtel();
+	});
+	
+	$("#uemail").focusout(function(){
+		checkUemail();
+	});			
+});
+
+function changeBirthInputValue(){
+	var birthdate = $("#birthdate").val();
+	
+	var gender = $("#gender").val();
+	$("#birth").val(birthdate.split('-')[0].trim().substring(2,4) +birthdate.split('-')[1].trim()+birthdate.split('-')[2].trim()+gender);	
+}
+
+function whenFocusUid(){
+	// 아이디중복 검사후 수정시 중복검사 취소하기
+	$("#uuid").keyup(function() {
+		$("#idMemberCheckResult").val("N");
+	});
+}
+
+function wasCheckUid(){
+	// 중복검사
+	var id = $("#idMemberCheckResult").val();
+	
+	console.log(id);
+	
+	if (!(id == 'Y')) {		
+		alert("아이디 중복검사를 실행하세요.");
+		return false;
+	}
+	else return true;
+}
+
+//----------------------------정규식 체크---------------------------//
+function checkUid(){
+	var data = $("#uuid").val();
+	var reg = /^[a-zA-Z]{1}\w{4,14}$/;// 표현식
+	var msg = "";
+	var result = true;
+	
+	if (!reg.test(data)) { // 정규표현식 검사 메소드 : true, false
+		msg = "아이디는 영문자로 시작하며 영문자,숫자로 이루어진 5글자 이상 15글자 이하의 문자열입니다.";
+		result = false;
+	}
+	
+	if(data== null || data ==""){
+		msg = "필수 정보 입니다.";
+		result = false;
+	}
+	
+	if(reg.test(data)) result=true;
+	
+	$("#uuidMsg").html(msg);
+	return result;	
+}
+
+function checkUpwd(){
+	var reg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-~])(?=.*[0-9]).{5,15}/;
+	// 표현식
+	//최소 1개의 숫자 혹은 특수 문자를 포함해야 함
+	var data = $("#upwd").val();
+	var msg = "";
+	var result = true;
+	
+	if(!reg.test(data)){ // 정규표현식 검사 메소드 : true, false
+		msg= "비밀번호는 최소 1개의 숫자 혹은 특수 문자를 포함한 5~15글자의 문자열입니다.";
+		result = false;
+	}
+	
+	if(data== null || data ==""){
+		msg = "필수 정보 입니다.";
+		result = false;
+	}
+	
+	if(reg.test(data)) result=true;
+	
+	$("#upwdMsg").html(msg);
+	return result;
+}
+
+function checkUpwd2(){
+	var upwd = $("#upwd").val();
+	var upwd2 = $("#upwd2").val();
+	
+	if (upwd!=upwd2 || upwd == "") {
+		$("#upwd2Msg").html("비밀번호가 일치 하지 않습니다.");
+		return false;
+	}
+	$("#upwd2Msg").html("");
+	return true;
+}
+
+function checkUname(){
+	// 이름검사 :한글,2~6글자까지 허용
+	var data = $("#uname").val();
+	var reg = /^[가-힣]{2,6}$/;
+	if (!reg.test(data)) {		
+		$("#unameMsg").html("이름 형식이 잘못 되었습니다.");
+		return false;
+	}
+	$("#unameMsg").html("");
+	return true;
+}
+
+function checkUlocation(){
+
+	var data = $("#uaddr option:selected").val();
+	
+	console.log("select 체크"+data);
+	
+	if(data==null || data == ''){
+		return false;
+	}
+	return true;
+}
+
+function checkUtel(){
+	// 전화번호 검사
+	var data = $("#utel").val();
+	// 010, 011, 02, 031, 032, 051.....
+	var reg = /^[0-9]{2,3}[-][0-9]{3,4}[-][0-9]{4}$/;
+	var msg="";
+	var result = true;
+	if (!reg.test(data)) {
+		msg = "전화번호 형식이 잘못 되었습니다.";
+		result = false;
+	}
+	if(data==null || data == ""){
+		msg = "필수 입력 값입니다.";
+		result = false;
+	}
+	$("#utelMsg").html(msg);
+	return result;
+}
+
+function checkUemail(){
+	// 이메일검사 : 아이디 @ 영. 영 . 영 goguma12345@korea.com,
+	var data = $("#uemail").val();
+	var reg = /^\w{3,20}[@][a-zA-Z]{2,10}[.][a-z]{2,3}([.][a-z]{2,3})?/;
+	var msg="";
+	var result = true;
+	if (!reg.test(data)) {
+		msg= "이메일을 잘못입력하셨습니다.";
+		result =false;
+	}
+	
+	if(data==null || data == ""){
+		msg= "필수 입력 값입니다.";
+		result =false;
+	}
+	$("#uemailMsg").html(msg);
+	return result;
+}
+
+function checkBirth(){
+	// 생년월일
+	var data = $("#birthdate").val();
+	// 89-02-28
+	if (data==""|| data == null) {
+		$("#birthMsg").html("선택되지 않았습니다.");
+		return false;
+	}
+	return true;
+}
+
+function getUtheme(){
+	var checkTheme = "";		
+
+	$("input[name='uthemeArray']:checked").each(function(){
+ 		checkTheme += $(this).val()+" ";
+	});
+	$("#utheme").val(checkTheme);
+}
+</script>

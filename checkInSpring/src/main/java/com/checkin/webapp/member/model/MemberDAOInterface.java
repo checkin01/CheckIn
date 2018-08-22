@@ -15,5 +15,8 @@ public interface MemberDAOInterface {
 	//전체 멤버 보기
 	public List<MemberVO> selectAllMember(MemberVO vo);
 	
+	//일반회원 아이디 중복체크
+	public int uidCheck(String uuid);
+	
 	
 }

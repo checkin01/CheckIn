@@ -4,4 +4,12 @@
 	<select id="selectMember" resultType="com.checkin.webapp.member.model.MemberVO">
 		select u, uuid, upwd, uname from member where uuid=#{uuid} and upwd=#{upwd}
 	</select>
+	
+	<insert id="insertMember" parameterType="com.checkin.webapp.member.model.MemberVO">
+		insert into member(u,uuid,upwd,uname,uaddr,utel,uemail,birth,upoint,utheme,writedate)
+		values (usersq.nextval,#{uuid},#{upwd},#{uname},#{uaddr},#{utel},#{uemail},#{birth},0,#{utheme},sysdate)
+	</insert>
+	<select id="uidCheck" resultType="int">
+		select count(u) from member where uuid=#{param1}
+	</select>
 </mapper>
