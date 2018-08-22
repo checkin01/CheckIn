@@ -1,0 +1,99 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<script>
+	$(function(){		
+		//아이디 서버로 중복 체크
+	 	$("#checkMidBtn").click(function(){
+	 		var masterid = $("#masterid").val();	 		
+	 		if(masterid !=null && masterid != "" && checkMid()){
+	 			//아이디 중복 여부 ajax 처리
+	 			
+	 			ajax_checkMid(masterid);
+	 		}
+	 	});
+		
+	 	//모달 종료시 usedMemberId 및 checkIdResultDiv 비활성화
+		$("#midChkModalClose").click(function(){
+			$("#checkMidResultDiv").text('');
+			$("#usedMasterId").css("display","none");
+		});
+		
+	 	function checkMid(){
+	 		var data = $("#masterid").val();
+	 		var reg = /^[a-zA-Z]{1}\w{4,14}$/;// 표현식
+	 		var msg = "";
+	 		var result = true;
+	 		
+	 		if (!reg.test(data)) { // 정규표현식 검사 메소드 : true, false
+	 			msg = "아이디는 영문자로 시작하며 영문자,숫자로 이루어진 5글자 이상 15글자 이하의 문자열입니다.";
+	 			result = false;
+	 		}
+	 		
+	 		if(data== null || data ==""){
+	 			msg = "필수 정보 입니다.";
+	 			result = false;
+	 		}
+	 		
+	 		$("#checkMidResultDiv").html(msg);
+	 		return result;	
+	 	}
+	 	
+		//아이디 사용하기
+		$("#usedMasterId").click(function(){
+			var masterid = $("#masterid").val();
+			$("#mid").val(masterid);
+			$("#idMasterCheckResult").val("Y");
+			$("#MidChkModal").modal("hide");
+			$("#checkMidResultDiv").text('');
+			$("#usedMasterId").css("display","none");
+		});
+	});
+	
+	//아이디 중복 여부 ajax 처리
+	function ajax_checkMid(masterid){
+		var param = "mid="+masterid;
+		$.ajax({
+			type:"GET",
+			url:"/webapp/main/midCheckAjax",
+			data:param,
+			contentType:"application/json;charset=UTF-8",
+			success:function(result){				
+				if(result == 0){
+					//중복이 없는거니까 가능하다고 하고		
+					//$("#idMemeberCheckResult").val("Y");
+					$("#checkMidResultDiv").text('사용할 수 있는 아이디 입니다.');				
+					$("#usedMasterId").css("display","block");				
+				}else{
+					$("#idMasterCheckResult").val("N");
+					$("#checkMidResultDiv").text('사용할 수 없는 아이디 입니다.');					
+				}
+			},
+			error:function(e){
+				alert(e.responseText)
+			}
+		});			
+	}	
+</script>
+	<!-- masterID체크 모달 -->
+	<div class="modal fade" id="MidChkModal" style="display:none">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					아이디 중복 검사
+				</div>
+				<div class="modal-body">
+					<div>
+						<input type="text" id="masterid" name="masterid" placeholder="아이디를 입력하세요." value="" />
+						<input type="button" class="btn btn-success" value="아이디체크" id="checkMidBtn"/>
+					</div>
+					<div>
+						<span id="checkMidResultDiv"class="error-text"></span>
+						<button class="btn btn-success" id="usedMasterId" style="display:none">사용하기</button>
+					</div>
+				</div>
+				<div class="modal-footer">
+          			<button type="button" id="modalClose" class="btn btn-default" data-dismiss="modal">Close</button>
+       			 </div>
+			</div>
+		</div>
+	</div>
