@@ -20,4 +20,12 @@
 	<select id="selectSaleBooking" resultType="com.checkin.webapp.master.model.MasterChartVO">
 		select to_char(b.writedate, 'DAY') bookingdate, sum(r.rprice) price, count(b.b) bcount from room r join booking b on r.r = b.r where b.mid=#{mid} group by to_char(b.writedate, 'DAY')
 	</select>
+	
+	<insert id="insertMaster" parameterType="com.checkin.webapp.master.model.MasterVO">
+		insert into master(m,mid,mpwd,mname,mtel,memail,writedate)
+		values (usersq.nextval,#{mid},#{mpwd},#{mname},#{mtel},#{memail},sysdate)
+	</insert>
+	<select id="midCheck" resultType="int">
+		select count(m) from master where mid=#{param1}
+	</select>
 </mapper>
