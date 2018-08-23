@@ -64,13 +64,13 @@
 						<!-- The slide show -->
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="${vo.rimg1 }" class="roomsImg rounded">
+								<img src="${vo.rimg1 }" class="roomsImg rounded" onerror="this.src='/webapp/img/1.png'">
 							</div>
 							<div class="carousel-item">
-								<img src="${vo.rimg2 }" class="roomsImg rounded">
+								<img src="${vo.rimg2 }" class="roomsImg rounded" onerror="this.src='/webapp/img/1.png'">
 							</div>
 							<div class="carousel-item">
-								<img src="${vo.rimg3 }" class="roomsImg rounded">
+								<img src="${vo.rimg3 }" class="roomsImg rounded" onerror="this.src='/webapp/img/1.png'">
 							</div>
 						</div>
 

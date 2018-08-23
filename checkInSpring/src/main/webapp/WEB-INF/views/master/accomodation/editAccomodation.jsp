@@ -34,10 +34,14 @@
 		var wrongMsg = "잘못 입력하셨습니다.";
 		var options = $(document).find('option');
 		var type = '${vo.atype}';
-		$(document).find('option[name='+type+']').attr('selected','selected');
+		if(type!=null && type != '')
+			$(document).find('option[name='+type+']').attr('selected','selected');
 		
+		//subway 처리
 		var subway = '${vo.asubway}';
-		$(document).find('option[name='+subway+']').attr('selected','selected');
+		if(subway!=null && subway != ''){
+			$(document).find('option[name='+subway+']').attr('selected','selected');
+		}
 		
 		var theme ='${vo.atheme}';
 		

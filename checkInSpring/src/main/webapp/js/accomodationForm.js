@@ -9,12 +9,11 @@
  * 
  * 
  */
-var blankMsg = "필수 정보입니다.";
-var wrongMsg = "잘못 입력하셨습니다.";
+
 $(function(){
-	$('#checkin').timepicki({start_time:["03", "00", "PM"]});
-	$('#checkout').timepicki({start_time:["12", "00", "AM"]});
-	
+	var blankMsg = "필수 정보입니다.";
+	var wrongMsg = "잘못 입력하셨습니다.";
+
 	$("#dataform").submit(function(){
 		var result = true;
 		result &= checkAname();
@@ -43,8 +42,11 @@ $(function(){
 	});
 });
 
-
 function checkAname(){
+
+	var blankMsg = "필수 정보입니다.";
+	var wrongMsg = "잘못 입력하셨습니다.";
+	
 	var msg = "";
 	var result = true;
 	var data =$("#aname").val();

@@ -16,10 +16,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/index.css">
+<link rel="stylesheet" href="/webapp/css/index.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/default.css">
+<link rel="stylesheet" href="/webapp/css/default.css">
 <!-- 구글 차트 -->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="/webapp/js/gchart_combo.js"></script>
@@ -34,7 +34,7 @@
 </head>
 <body>
 	<%HttpSession Session = request.getSession(); %>
-	<%@ include file="topnav_master.jspf"%>
+	<%@ include file="../topnav_master.jspf"%>
 	
 	<div class="row main" id="main">
 		<aside class="col-lg-1"></aside>
@@ -81,7 +81,7 @@
 
 		<aside class="col-lg-1"></aside>
 		<footer id="footer" class="footer" style="width:100%;font-size:0.8em;margin-top:50px">
-		<%@ include file="companyInfo.jspf"%>
+		<%@ include file="../companyInfo.jspf"%>
 		</footer>
 		
 	</div>

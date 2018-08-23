@@ -81,13 +81,13 @@
 					url:url,
 					data:"uuid="+uuid+"&upwd="+upwd,
 					success:function(result){
-						
-						if(result == ""){
-							alert("로그인 실패");
-						}else{
-							alert("로그인 성공");
-							location.href="/webapp";
-						}												
+							if(result == ""){
+								alert("로그인 실패");
+							}else{
+								alert("로그인 성공");
+								location.href="/webapp";
+							}												
+							
 					},
 					error:function(e){
 						console.log(e);
@@ -107,12 +107,17 @@
 					url:url,
 					data:"mid="+mid+"&mpwd="+mpwd,
 					success:function(result){
-						alert(result.aname);
+						
 						if(result == ""){
 							alert("로그인 실패");
 						}else{
 							alert("로그인 성공");
-							location.href="/webapp/master";
+							if('${session.a}'!=null && '${session.a}'!=''){
+								alert("등록된 숙소가 없습니다."+result.aname);
+								location.href="/webapp/master";
+							}else{
+								location.href="/webapp/master/viewAcco";
+							}
 						}
 					},
 					error:function(e){

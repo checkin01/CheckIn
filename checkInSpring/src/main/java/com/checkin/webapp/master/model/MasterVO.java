@@ -18,7 +18,14 @@ public class MasterVO {
 	private String msearchkey;//검색조건
 	private String msearchvalue; //검색값
 	
-	
+
+	@Override
+	public String toString() {
+		return "MasterVO [m=" + m + ", mid=" + mid + ", mpwd=" + mpwd + ", mname=" + mname + ", mtel=" + mtel
+				+ ", memail=" + memail + ", writedate=" + writedate + ", a=" + a + ", aname=" + aname + ", mcurpage="
+				+ mcurpage + ", monepage=" + monepage + ", msearchkey=" + msearchkey + ", msearchvalue=" + msearchvalue
+				+ "]";
+	}
 	
 	
 	public int getA() {

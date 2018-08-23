@@ -25,7 +25,7 @@ function getAtheme(){
 
 	   $("input:checkbox:checked").each(function(){
 	       checkTheme += $(this).val()+" ";
-	       alert(checkTheme);
+	       //alert(checkTheme);
 	   });
 	   $("#rtheme").val(checkTheme);
 	}
@@ -385,7 +385,7 @@ $(function(){
 	$("#dataform").submit(function(){
 		
 		var result = true;
-		alert("result="+result);
+		//alert("result="+result);
 		result &= rcheckRname();
 		result &= rcheckPrice();
 		result &= rcheckMin();
@@ -394,7 +394,7 @@ $(function(){
 		result &= rcheckDiningroom();
 		result &= rcheckKitchen();
 		result &= rcheckRestroom();
-		alert("result="+result);
+		//alert("result="+result);
 		if(result == 1){
 			getAtheme();
 			return true;

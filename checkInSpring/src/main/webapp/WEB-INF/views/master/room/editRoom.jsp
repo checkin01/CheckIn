@@ -24,7 +24,7 @@
 $(function(){
     var theme ='${vo.rtheme}';
     var themeArr = theme.split(' ');
-    alert(themeArr.length);
+    //alert(themeArr.length);
     jQuery.each(themeArr,function(index,value){
        //체크 박스 처리
        if(value.trim() != ''){

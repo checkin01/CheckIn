@@ -18,13 +18,13 @@ public class ViewAccoCommand implements AccomodationCommandInterface {
 
 	@Override
 	public ModelAndView execute(HttpServletRequest request) {
-		System.out.println("GetAccoCommand.. in");
+		System.out.println("ViewAccoCommand.. in");
 		ModelAndView mav = new ModelAndView();
 		
 		//session 처리
 		String mid = getMidToSession(request);
 		if(mid != null && mid != "") {
-			System.out.println("GetAccoCommand.."+mid);
+			System.out.println("ViewAccoCommand.."+mid);
 		
 			//dao처리
 			AccomodationVO vo = excuteDAO(mid);

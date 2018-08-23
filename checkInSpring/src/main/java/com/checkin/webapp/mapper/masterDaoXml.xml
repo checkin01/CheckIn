@@ -2,7 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.checkin.webapp.master.model.MasterDAOInterface">
 	<select id="selectMaster" parameterType="com.checkin.webapp.master.model.MasterVO" resultType="com.checkin.webapp.master.model.MasterVO">
-		select m.m, m.mid, a.a a, a.aname aname from master m join accomodation a on m.mid = a.mid where m.mid=#{mid}  
+		select m,mname,mtel,memail from master 
+		where
+		<choose>
+			<when test='mid!=null and mid!=""'>
+			mid=#{mid}
+			</when>
+			<when test='m!=null and m!=""'>
+			m=#{m}
+		</when>
+		</choose>
+	</select>
+	
+	<select id="loginMaster" parameterType="com.checkin.webapp.master.model.MasterVO" resultType="com.checkin.webapp.master.model.MasterVO">
+		select m, mid, mname from master where mid = #{mid} and mpwd = #{mpwd}
 	</select>
 	
 	<select id="selectMasterChart" parameterType="com.checkin.webapp.master.model.MasterChartVO" resultType="com.checkin.webapp.master.model.MasterChartVO">
