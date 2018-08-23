@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.checkin.webapp.room.model.RoomDAOInterface">
 	<select id="selectAllRoomList" resultType="com.checkin.webapp.room.model.RoomVO">
+<<<<<<< HEAD
 		select ro.r, a, mid, rname, rmin, rmax, rprice, rimg1, rimg2, rimg3, rtype, rbedroom, rrestroom, rdiningroom,
 		rkitchen,rtheme, rgrade
 		from room ro
@@ -13,4 +14,22 @@
 	<select id="getRoomNs" resultType="int">
 		select r from room where a = #{param1}
 	</select>
+=======
+		select r, a, mid, rname, rmin, rmax, rprice, rimg1, rimg2, rimg3, rtype, rbedroom, rrestroom, rdiningroom, rkitchen, rtheme, writedate from room where mid=#{mid}		
+	</select>
+	<select id="selectOneRoom" resultType="com.checkin.webapp.room.model.RoomVO">
+		select r, a, mid, rname, rmin, rmax, rprice, rimg1, rimg2, rimg3, rtype, rbedroom, rrestroom, rdiningroom, rkitchen, rtheme, writedate from room where r=#{r} 
+	</select>
+	<update id="updateRoom" parameterType="com.checkin.webapp.room.model.RoomVO">
+		update room set rname=#{rname}, 
+		rmin=#{rmin}, rmax=#{rmax}, rprice=#{rprice}, rimg1=#{rimg1}, rimg2=#{rimg2}, 
+		rimg3=#{rimg3}, rtype=#{rtype}, rbedroom=#{rbedroom}, rrestroom=#{rrestroom}, 
+		rdiningroom=#{rdiningroom}, rkitchen=#{rkitchen}, rtheme=#{rtheme}, writedate=sysdate
+		where r=#{r}
+	</update>
+	<insert id="insertRoom" parameterType="com.checkin.webapp.room.model.RoomVO">
+		insert into room(r, a, mid, rname, rmin, rmax, rprice, rimg1, rimg2, rimg3, rtype, rbedroom, rdiningroom, rrestroom, rkitchen, rtheme, writedate)
+		values(roomsq.nextval, (select a from accomodation where mid=#{mid}), #{mid}, #{rname}, #{rmin}, #{rmax}, #{rprice}, #{rimg1}, #{rimg2}, #{rimg3}, #{rtype}, #{rbedroom}, #{rrestroom},#{rdiningroom}, #{rkitchen}, #{rtheme}, sysdate)
+	</insert>
+>>>>>>> jiwoong0821
 </mapper>

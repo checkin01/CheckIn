@@ -20,6 +20,7 @@
 	<select id="selectSaleBooking" resultType="com.checkin.webapp.master.model.MasterChartVO">
 		select to_char(b.writedate, 'DAY') bookingdate, sum(r.rprice) price, count(b.b) bcount from room r join booking b on r.r = b.r where b.mid=#{mid} group by to_char(b.writedate, 'DAY')
 	</select>
+<<<<<<< HEAD
 	
 	<insert id="insertMaster" parameterType="com.checkin.webapp.master.model.MasterVO">
 		insert into master(m,mid,mpwd,mname,mtel,memail,writedate)
@@ -27,5 +28,17 @@
 	</insert>
 	<select id="midCheck" resultType="int">
 		select count(m) from master where mid=#{param1}
+=======
+	<select id="selectAllRoomName" resultType="com.checkin.webapp.master.model.MasterChartVO">
+		select rname from room where mid=#{mid}
+	</select>
+	<select id="getBookingCountEachRoom" resultType="com.checkin.webapp.master.model.MasterChartVO">
+		select nvl(table2.booking_count,0) bcount from (select month, r from calendar cross join
+        (select r from room group by r, mid having mid = 'master1') ) table1 
+		left outer join
+    	(select r, count(b) booking_count, to_char(writedate,'MM') mm from booking group by r,mid,to_char(writedate,'MM') having mid='master1') table2
+		on table1.r = table2.r and table1.month = table2.mm
+		order by month, table1.r
+>>>>>>> jiwoong0821
 	</select>
 </mapper>

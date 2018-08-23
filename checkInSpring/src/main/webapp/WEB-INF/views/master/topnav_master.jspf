@@ -6,8 +6,6 @@
 <link href="https://fonts.googleapis.com/css?family=Faster+One|Jua|Nanum+Pen+Script|Gothic+A1&amp;subset=korean" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-</head>
-
 <style>
 
 /*main-nav*/
@@ -106,11 +104,19 @@ myspage에서 적용할 nav-->#sideNav a, #sideNav div, #sideNav b {
 	</button>
 	<div class="collapse navbar-collapse" id="collapsibleNavbar">
 		<ul class="navbar-nav">
+<<<<<<< HEAD
 			<li class="nav-item bold"><a class="nav-link" href="#">로그아웃</a></li>
 			<li class="nav-item bold"><a class="nav-link" href="/webapp/master/viewAcco">숙소 관리 페이지</a></li>
 			<li class="nav-item bold"><a class="nav-link" href="#">객실 관리 페이지</a></li>
 			<li class="nav-item bold"><a class="nav-link" href="#">예약 현황 페이지</a></li>
 			<li class="nav-item bold"><a class="nav-link" href="#">리뷰 관리 페이지</a></li>
+=======
+			<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath()%>/master/logout">로그아웃</a></li>
+			<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath()%>/master/manageAcco">숙소 관리 페이지</a></li>
+			<li class="nav-item bold"><a class="nav-link" href="/webapp/master/showMyGuestroomList">객실 관리 페이지</a></li>
+			<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath()%>/master/manageBooking">예약 현황 페이지</a></li>
+			<li class="nav-item bold"><a class="nav-link" href="<%=request.getContextPath()%>/master/manageReview">리뷰 관리 페이지</a></li>
+>>>>>>> jiwoong0821
 		</ul>
 	</div>
 </nav>

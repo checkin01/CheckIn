@@ -66,9 +66,19 @@ public class ShowMasterMain implements MasterCommandInterface{
 		System.out.println("showMasterMain..."+list2.toString());
 		mav.addObject("list2", list2);
 		
-		//
+		//룸별 예약건수 통계
+		////룸 이름 리스트
+		ArrayList<MasterChartVO> list3 = dao.selectAllRoomName(vo);
+		mav.addObject("list3",list3);
+		//매월 룸별 예약 건수 리스트
+		ArrayList<MasterChartVO> list4 = dao.getBookingCountEachRoom(vo);
+		mav.addObject("list4", list4);
+		
+		//뷰 페이지
 		mav.setViewName("master/home");
 		System.out.println("ShowMasterMain...execute..");
+		
+		
 		}
 		return mav;
 	}
