@@ -11,7 +11,7 @@ public class LoginWebmasterInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		System.out.println("웹 관리자 로그인 인터셉터 실행....");
+		
 		
 		return true;
 	}

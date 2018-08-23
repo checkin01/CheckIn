@@ -16,13 +16,15 @@
 		
 	<!-- 가맹점 회원 관련 인터셉터 -->
 		<mvc:interceptor>
-			<mvc:mapping path="/master/*" />
+			<mvc:mapping path="/master/accomodation/*" />
+			<mvc:mapping path="/master/booking/*" />
+			<mvc:mapping path="/master/room/*" />
+			<mvc:mapping path="/master/review/*" />
 			<bean class="com.checkin.webapp.interceptor.LoginMasterInterceptor" />	
 		</mvc:interceptor>
 	
 	<!-- 웹 관리자 회원 관련 인터셉터 -->
 		<mvc:interceptor>
-			<mvc:mapping path="/webmaster/*" />
 			<mvc:mapping path="/webmaster/accomodation/*" />
 			<mvc:mapping path="/webmaster/member/*" />
 			<mvc:mapping path="/webmaster/notice/*" />
