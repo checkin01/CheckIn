@@ -29,6 +29,16 @@
 	padding: 0px;
 }
 </style>
+<script>
+	function delChk(r){
+		var result = confirm("정말 삭제하시겠습니까??");
+		if(result){
+			location.href="/webapp/master/deleteGuestroomInfo?r="+r;
+		}else{
+			return false;
+		}
+	}
+</script>
 </head>
 <body>
 	<%@ include file="../topnav_master.jspf"%>
@@ -128,7 +138,7 @@
 
 						<!-- 버튼 폼 시작 -->
 						<div class="row" style="padding: 10px; text-align: right;">
-							<a href="/webapp/master/deleteGuestroomInfo?r=${vo.r }"><input type="button" value="삭제하기" class="btn  btn-danger" id="delBtn" /></a>
+							<input type="button" value="삭제하기" class="btn  btn-danger" id="delBtn" onclick="delChk(${vo.r})"/>
 							<div class="col-sm-1"></div>
 							<a href="/webapp/master/modifyGuestroomInfo?r=${vo.r }"><input type="button" value="수정하기" class="btn  btn-success" id="editBtn" /></a>
 							<div class="col-sm-1"></div>

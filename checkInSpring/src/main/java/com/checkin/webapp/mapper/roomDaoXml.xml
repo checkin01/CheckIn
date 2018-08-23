@@ -36,5 +36,7 @@
 		insert into room(r, a, mid, rname, rmin, rmax, rprice, rimg1, rimg2, rimg3, rtype, rbedroom, rdiningroom, rrestroom, rkitchen, rtheme, writedate)
 		values(roomsq.nextval, (select a from accomodation where mid=#{mid}), #{mid}, #{rname}, #{rmin}, #{rmax}, #{rprice}, #{rimg1}, #{rimg2}, #{rimg3}, #{rtype}, #{rbedroom}, #{rrestroom},#{rdiningroom}, #{rkitchen}, #{rtheme}, sysdate)
 	</insert>
-
+	<delete id="deleteRoom" parameterType="com.checkin.webapp.room.model.RoomVO">
+		delete from room where r=#{r}
+	</delete>
 </mapper>

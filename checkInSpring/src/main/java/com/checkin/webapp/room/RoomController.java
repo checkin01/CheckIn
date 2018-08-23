@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.checkin.webapp.room.command.DeleteRoomCommand;
 import com.checkin.webapp.room.command.InsertRoomFormCommand;
 import com.checkin.webapp.room.command.InsertRoomOkCommand;
 import com.checkin.webapp.room.command.ShowMasterRoomListCommand;
@@ -93,11 +94,13 @@ public class RoomController {
 	
 	
 	
-	/*//룸 삭제(가맹점)
+	//룸 삭제(가맹점)
 	// 매핑 주소 : /master/deleteGuestroomInfo
-	public ModelAndView deleteRoom(@RequestParam("r") int r) {
+	@RequestMapping("/master/deleteGuestroomInfo")
+	public ModelAndView deleteRoom(HttpServletRequest request, @RequestParam("r") int r) {
+		System.out.println("deleteRoomdd"+r);
 		DeleteRoomCommand command = new DeleteRoomCommand();
-		return command.execute(r);
-	}*/
+		return command.execute(request, r);
+	}
 		
 }
