@@ -64,7 +64,7 @@ label {
 
 		<!-- 왼쪽 필터 부분 -->
 		<aside class="left col-lg-3 font1-medium w3-container" id="left">
-			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index: 3; width: 290px; padding:80px 10px 10px 10px;" id="mySidebar">
+			<nav class="w3-sidebar w3-light-grey w3-collapse w3-top w3-card-4" style="z-index: 3; width: 290px; padding:80px 10px 10px 10px;" id="mySidebar">
 				<!-- 정보 -->
 				<div class="w3-container w3-display-container w3-padding-16">
 					<i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
@@ -240,9 +240,9 @@ label {
 			</button>
 			<div class="border w3-show" id="rooms" style="padding: 20px">
 				<!-- 룸 리스트 정보 시작 -->
-				<div class="border row rounded">
+				<div class="border row rounded w3-card-4">
 					<!-- 이미지 DIV 시작 -->
-					<div id="ImgDiv1" class="container carousel slide col-lg-4" data-ride="carousel">
+					<div id="ImgDiv1" class="container carousel slide col-lg-4 " data-ride="carousel">
 						<!-- Indicators -->
 						<ul class="carousel-indicators">
 							<li data-target="#room1" data-slide-to="0" class="active"></li>
@@ -271,7 +271,7 @@ label {
 					<!-- 이미지 DIV 끝 -->
 
 					<!-- 정보 DIV 시작 -->
-					<div class="container font1-medium col-lg-8" style="margin: 0px; padding: 10px 20px 0 20px">
+					<div class="container font1-medium col-lg-8 " style="margin: 0px; padding: 10px 20px 0 20px">
 						<h3 class="row">
 							<span id="rname"><strong>Standard</strong></span>
 						</h3>
@@ -354,8 +354,11 @@ label {
 				</div>
 				<!--  -->
 			</div>
+			
 		</div>
-		<aside class="col-sm-2"></aside>
+		<aside class="col-sm-1 right" id="right" style="text-align: right">
+			<%@ include file="rightside_nav.jspf"%>
+		</aside>
 		<!-- footer -->
 		<footer id="footer" class="footer" style="width: 100%; font-size: 0.8em; margin-top: 150px;">
 			<%@ include file="../companyInfo.jspf"%>
