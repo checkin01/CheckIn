@@ -5,11 +5,20 @@ public class MasterChartVO {
 	private int bcount; // 예약 수
 	private int vgrade; // 총 평점
 	private int vcount; // 리뷰 개수
+	private String rname; //룸 이름
 	private int rcount; // 룸 개수
 	private String bookingdate;
 	private int price;
 	
 	
+	public String getRname() {
+		return rname;
+	}
+
+	public void setRname(String rname) {
+		this.rname = rname;
+	}
+
 	public int getPrice() {
 		return price;
 	}

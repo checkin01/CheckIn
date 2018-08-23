@@ -17,6 +17,10 @@ public interface MasterDAOInterface {
 	
 	public ArrayList<MasterChartVO> selectSaleBooking(MasterChartVO vo);
 	
+	
+	public ArrayList<MasterChartVO> selectAllRoomName(MasterChartVO vo); //룸 이름 리스트
+	public ArrayList<MasterChartVO> getBookingCountEachRoom(MasterChartVO vo);//매월 룸별 예약 건수리스트
+	
 	public int insertMaster(MasterVO vo);
 	
 	public int updateMaster(MasterVO vo);

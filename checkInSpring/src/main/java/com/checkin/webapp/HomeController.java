@@ -55,4 +55,9 @@ public class HomeController {
 	public ModelAndView masterMain(HttpServletRequest request) {
 		return new ShowMasterMain().execute(request);
 	}
+	
+	@RequestMapping(value="/error", method = RequestMethod.GET)
+	public String error(HttpServletRequest request) {
+		return "error";
+	}
 }

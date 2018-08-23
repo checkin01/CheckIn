@@ -174,34 +174,59 @@
 	      }
 	
 	//룸별 예약 통계	
-	  google.charts.load('current', {'packages':['corechart', 'bar']});
-	google.charts.setOnLoadCallback(drawVisualization);
+	google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawVisualization);
 
-
-	function drawVisualization() {
+    function drawVisualization() {
+      // Some raw data (not necessarily accurate)
+      var data = google.visualization.arrayToDataTable([
+       <%
+       	ArrayList<MasterChartVO> list3 = (ArrayList<MasterChartVO>)request.getAttribute("list3");
+       	ArrayList<MasterChartVO> list4 = (ArrayList<MasterChartVO>)request.getAttribute("list4");
+       	int index = 0;
+       	
+       	String content3 = "['Month', ";
+    	for(int i=0; i<list3.size(); i++){
+    		MasterChartVO mVo = list3.get(i);
+    		content3 += "'"+mVo.getRname()+"'";
+    		if(i != list3.size()-1){
+    			content3 += ", ";
+    		}
+    	}
+    	content3 += "], ";
+    	
+    	for(int i=1; i<=12; i++){
+    		content3 += "[";
+    		content3 += "'"+i+"월'";
+    		content3 += ", ";
+    		for(int start = index, end = index+list3.size(); index < end; index++){
+    			MasterChartVO mVo = list4.get(index);
+    			content3 += mVo.getBcount();
+    			if(index != start+list3.size()-1){
+    				content3 += ", ";
+    			}
+    		}
+    		content3 += "]";
+    		if(i != 12){
+    			content3 += ", ";
+    		}
+    	}
+    	out.println(content3);
+		%>
 		
-		var today = new Date();
-		var dd = today.getDate();
-		var mm = today.getMonth()+1; //January is 0!
-		var yyyy = today.getFullYear();
-		var data = google.visualization.arrayToDataTable([
-		          ['룸명', '예약건수'],
-		          ['스탠다드', 1000],
-		          ['스탠다드', 1170],
-		          ['스위트', 660]
-		        ]);
+	  ]);
 
-		        var options = {
-		          chart: {
-		            title: '룸별 예약 통계',
-		            subtitle: mm+'/'+dd+'/'+yyyy,
-		          }
-		        };
+  var options = {
+    title : '룸별 예약 현황',
+    vAxis: {title: '예약자수'},
+    hAxis: {title: 'Month'},
+    seriesType: 'bars',
+    series: {5: {type: 'line'}}
+  };
 
-		        var chart = new google.charts.Bar(document.getElementById('chart_div'));
-
-		        chart.draw(data, google.charts.Bar.convertOptions(options));
-	      }
+  var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
 </script>
 
 </body>
