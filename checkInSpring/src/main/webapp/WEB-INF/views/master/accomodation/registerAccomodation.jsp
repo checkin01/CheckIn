@@ -24,9 +24,10 @@
 <script src="/webapp/js/accomodationForm.js"></script>
 
 <script type="text/javascript">
+	var blankMsg = "필수 정보입니다.";
+	var wrongMsg = "잘못 입력하셨습니다.";	
 	$(function() {
-		var blankMsg = "필수 정보입니다.";
-		var wrongMsg = "잘못 입력하셨습니다.";
+		
 		$("#searchAddr").click(function() {
 			$('#searchAddr-modal').modal('show');
 		});
@@ -56,23 +57,24 @@
 	}
 
 	function whenClickSubmitBtn() {
-		alert("submit");
+		
 		var result = true;
 		result &= checkAname();
-		alert(result);
+		
 		result &= checkTel();
-		alert(result);
+		
 		result &= checkAddr();
-		alert(result);
+		
 		result &= checkMaxsleepdate();
-		alert(result);
+		
 		result &= checkMaxreservedate();
-		alert(result);
+		
 		result &= checkCheckIn();
-		alert(result);
+		
 		result &= checkCheckOut();
-		alert(result);
+		
 		if (result == 0) {
+			alert('입력 값을 다시 확인 해주세요.');
 			return false;
 		} else {
 			getAtheme();
@@ -107,7 +109,7 @@
 			$("#addrDetail").val(addrDetail);
 			$("#a").val(zipNo.trim());
 			$("#adong").val(roadAddrPart2);
-			alert($("#a").val());
+			//alert($("#a").val());
 			$.each(aaddr, function(i, l) {
 				
 				if (l.match(sireg) != null) {
@@ -369,10 +371,7 @@
 
 				<!-- 등록 버튼 -->
 				<div class="list-group-item row">
-					<input type="reset" value="다시 쓰기"
-						class="btn btn-success form-control col-sm-3" /> <input
-						type="button" value="돌아가기"
-						class="btn btn-success form-control col-sm-3" /> <input
+					<input
 						type="submit" value="등록"
 						class="btn btn-success form-control col-sm-3" />
 				</div>

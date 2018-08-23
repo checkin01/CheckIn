@@ -23,7 +23,7 @@
           [ new Date(2018, 9, 30), 38447 ],
           [ new Date(2019, 9, 30), 38447 ],
         ]);
-       alert("asdsadsad");
+  
        var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
 
        var options = {

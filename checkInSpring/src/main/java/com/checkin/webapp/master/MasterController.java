@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.checkin.webapp.master.command.RegisterOkMasterCommand;
+import com.checkin.webapp.master.command.ShowMasterChart;
 import com.checkin.webapp.master.command.LoginOkMasterCommand;
 import com.checkin.webapp.master.command.MidCheckCommand;
 import com.checkin.webapp.master.model.MasterVO;
@@ -60,6 +61,11 @@ public class MasterController {
 	public ModelAndView registerOkMaster(HttpServletRequest request,MasterVO vo) {
 		return new RegisterOkMasterCommand().execute(request,vo);
 	}
+	@RequestMapping(value="/master/showChart", method = RequestMethod.GET)
+	public ModelAndView masterMain(HttpServletRequest request) {
+		return new ShowMasterChart().execute(request);
+	}
+	
 	/*
 	//수정하기폼으로 이동
 	// 매핑 경로 : /main/modifyManagerInfo

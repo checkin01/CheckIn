@@ -30,4 +30,6 @@ public interface MasterDAOInterface {
 	public List<MasterVO> selectAllMaster(MasterVO vo);
 	
 	public int midCheck(String mid);//masterId중복체크
+	
+	public MasterVO loginMaster(MasterVO vo);//로그인
 }

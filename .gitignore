@@ -2,3 +2,5 @@
 *.class
 *.class
 *.class
+.metadata/.lock
+.metadata/.log
