@@ -74,9 +74,92 @@ and agu like '%'|| #{agu} ||'%'
 	</if>
 </select>
 <select id="selectOneRecord" resultType="com.checkin.webapp.accomodation.model.AccomodationVO">
-	select a, mid,aname, atel , aaddr, acheckin, acheckout, agil, amaxreservedate, amaxsleepdate, anotice
+	select a, atype,mid,aname, atel , aaddr, acheckin, acheckout, agil, amaxreservedate, amaxsleepdate, anotice, aimg1,aimg2,aimg3, atheme
 	from accomodation
-	where a = #{a}
+	<choose>
+		<when test = "mid != null">
+		where mid = #{mid}
+		</when>
+		<when test ="a!=0">
+		where a = #{a}
+		</when>
+	</choose>
+
 </select>
+
+<update id="updateAccomodation" parameterType="com.checkin.webapp.accomodation.model.AccomodationVO">
+	update accomodation
+	set writedate = sysdate
+	<if test="#{aname!=null and aname !=''  }">
+	, aname = #{aname}
+	</if>
+	<if test="#{atype!=null and atype !=''  }">
+	, atype = #{atype}
+	</if>
+	<if test="#{aaddr!=null and aaddr !=''}">
+	, aaddr = #{aaddr}
+	</if>
+	<if test="#{atel!=null and atel !=''  }">
+	, atel = #{atel}
+	</if>
+	<if test="#{amaxreservedate != 0}">
+	, amaxreservedate = #{amaxreservedate}
+	</if>
+	<if test="#{amaxsleepdate != 0}">
+	, amaxsleepdate = #{amaxsleepdate}
+	</if>
+	<if test="#{acheckin!=null and acheckin!= ''}">
+	, acheckin = #{acheckin}
+	</if>
+	<if test="#{acheckout!=null and acheckout!= ''}">
+	, acheckout = #{acheckout}
+	</if>
+	<if test="#{aimg1!=null and aimg1!= ''}">
+	, aimg1 = #{aimg1}
+	</if>
+	<if test="#{aimg2!=null and aimg2!=''}">
+	, aimg2 = #{aimg2}
+	</if>
+	<if test="#{aimg3!=null and aimg3!= ''}">
+	, aimg3 = #{aimg3}
+	</if>
+	<if test="#{atheme !=null and atheme!= ''}">
+	, atheme  = #{atheme}
+	</if>
+	<if test="#{anotice !=null and anotice!= ''}">
+	, anotice  = #{anotice}
+	</if>
+	where a = #{a}
+</update>
+
+<insert id="insertAccomodation">
+insert into 
+accomodation(a,mid,aname,atel,aaddr,atype,acheckin,acheckout,asi,agu,agil,adong,agunmul,aimg1,aimg2,aimg3,amaxreservedate,amaxsleepdate,atheme,anotice,writedate,asubway)
+ values (
+ 	accosq.nextval,
+ 	#{mid},
+ 	#{aname},
+ 	#{atel},
+ 	#{aaddr},
+ 	#{atype},
+ 	#{acheckin},
+ 	#{acheckout},
+ 	#{asi},
+ 	#{agu},
+ 	#{agil},
+ 	#{adong},
+ 	#{agunmul},
+ 	#{aimg1},
+ 	#{aimg2},
+ 	#{aimg3},
+ 	#{amaxreservedate},
+ 	#{amaxsleepdate},
+ 	#{atheme},
+ 	#{anotice},
+ 	sysdate,
+ 	'종로5가'
+ )
+ 
+</insert>
 
 </mapper>
