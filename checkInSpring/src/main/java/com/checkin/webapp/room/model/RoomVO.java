@@ -8,15 +8,18 @@ public class RoomVO {
 	private int rmin; //기본인원
 	private int rmax; //최대인원
 	private int rprice; //가격
-	private String rimg1;
-	private String rimg2;
-	private String rimg3;
+	private String rimg1="";
+	private String rimg2="";
+	private String rimg3="";
+	private String rtype;
 	private int rbedroom;//침실 수
 	private int rrestroom;//화장실 수
 	private int rdiningroom;//거실 수
 	private int rkitchen;// 주방 수
-	private String rtheme; //테마(복층, 스파, PC커플, 온돌)
+
 	private int rgrade;
+	private String rtheme=""; //테마(복층, 스파, PC커플, 온돌)
+
 	private String writedate; //입력날짜
 	
 
@@ -27,6 +30,19 @@ public class RoomVO {
 		this.rgrade = rgrade;
 	}
 	
+	@Override
+	public String toString() {
+		return "RoomVO [r=" + r + ", a=" + a + ", mid=" + mid + ", rname=" + rname + ", rmin=" + rmin + ", rmax=" + rmax
+				+ ", rprice=" + rprice + ", rimg1=" + rimg1 + ", rimg2=" + rimg2 + ", rimg3=" + rimg3 + ", rtype="
+				+ rtype + ", rbedroom=" + rbedroom + ", rrestroom=" + rrestroom + ", rdiningroom=" + rdiningroom
+				+ ", rkitchen=" + rkitchen + ", rtheme=" + rtheme + ", writedate=" + writedate + "]";
+	}
+	public String getRtype() {
+		return rtype;
+	}
+	public void setRtype(String rtype) {
+		this.rtype = rtype;
+	}
 	public String getWritedate() {
 		return writedate;
 	}

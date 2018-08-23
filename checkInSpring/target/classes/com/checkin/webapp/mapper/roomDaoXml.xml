@@ -8,9 +8,33 @@
 		left outer join 
 		(select r, floor(avg(vgrade)) rgrade from review group by r ) re
 		on ro.r = re.r
-		where ro.a = #{a} order by ro.r
+		where 
+		<choose>
+			<when test="a != 0">
+			ro.a = #{a} 
+			</when>
+			<when test = "mid !=null and mid != ''">
+			ro.mid = #{mid} 
+			</when>
+		</choose>
+		order by ro.r
 	</select>
 	<select id="getRoomNs" resultType="int">
 		select r from room where a = #{param1}
 	</select>
+	<select id="selectOneRoom" resultType="com.checkin.webapp.room.model.RoomVO">
+		select r, a, mid, rname, rmin, rmax, rprice, rimg1, rimg2, rimg3, rtype, rbedroom, rrestroom, rdiningroom, rkitchen, rtheme, writedate from room where r=#{r} 
+	</select>
+	<update id="updateRoom" parameterType="com.checkin.webapp.room.model.RoomVO">
+		update room set rname=#{rname}, 
+		rmin=#{rmin}, rmax=#{rmax}, rprice=#{rprice}, rimg1=#{rimg1}, rimg2=#{rimg2}, 
+		rimg3=#{rimg3}, rtype=#{rtype}, rbedroom=#{rbedroom}, rrestroom=#{rrestroom}, 
+		rdiningroom=#{rdiningroom}, rkitchen=#{rkitchen}, rtheme=#{rtheme}, writedate=sysdate
+		where r=#{r}
+	</update>
+	<insert id="insertRoom" parameterType="com.checkin.webapp.room.model.RoomVO">
+		insert into room(r, a, mid, rname, rmin, rmax, rprice, rimg1, rimg2, rimg3, rtype, rbedroom, rdiningroom, rrestroom, rkitchen, rtheme, writedate)
+		values(roomsq.nextval, (select a from accomodation where mid=#{mid}), #{mid}, #{rname}, #{rmin}, #{rmax}, #{rprice}, #{rimg1}, #{rimg2}, #{rimg3}, #{rtype}, #{rbedroom}, #{rrestroom},#{rdiningroom}, #{rkitchen}, #{rtheme}, sysdate)
+	</insert>
+
 </mapper>

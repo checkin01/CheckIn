@@ -14,6 +14,18 @@
 
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/default.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+$(function(){
+    var theme ='${vo.rtheme}';
+    var themeArr = theme.split(' ');
+    alert(themeArr.length);
+    jQuery.each(themeArr,function(index,value){
+       //체크 박스 처리
+       $(document).find('input[name='+value+']:checkbox').attr('checked','checked');
+    })
+    
+ });
+</script>
 </head>
 <body>
 <div id= "main" class="row main">
@@ -101,16 +113,32 @@
 			</div>
 		</div>
 		<!-- 이미지 등록 -->
-		<div class="list-group-item row">
-			<i class="fa fa-file-image-o col-sm-4" style="font-size:16px"> <label>이미지 등록(최대 3개) </label></i>
-			<div class="form-group row">
-					<input type="file" id="file1" class="file-control-form col-sm-4">
-					<input type="file" id="file1" class="file-control-form col-sm-4">
-					<input type="file" id="file1" class="file-control-form col-sm-4">
-					<script>
-					</script>
-			</div>
-		</div>
+		<!-- 이미지 등록 -->
+            <div class="list-group-item row">
+               <p>
+                  <i class="fa fa-file-image-o col-sm-12" style="font-size: 16px"> 이미지 등록(최대 3개) </i>
+               </p>
+               <div class="form-group row">
+                  <span id="imgTextSpan1" >${vo.aimg1}<span class="btn text-muted btn-light" onclick="whenclickimgbtn(1)">수정</span></span>
+                  <span id="fileSpan1" style="display:none"><input type="file" id="img1" class="file-control-form col-sm-12" ></span>
+               </div>
+               <div class="form-group row">
+                  <span id="imgTextSpan2" >${vo.aimg2}<span class="btn text-muted btn-light"  onclick="whenclickimgbtn(2)">수정</span></span>
+                  <span id="fileSpan2" style="display:none"><input type="file" id="img1" class="file-control-form col-sm-12"></span>
+               </div>
+               <div class="form-group row">
+                  <span id="imgTextSpan3" >${vo.aimg3}<span class="btn text-muted btn-light" onclick="whenclickimgbtn(3)">수정</span></span>
+                  <span id="fileSpan3" style="display:none"><input type="file" id="img1" class="file-control-form col-sm-12" ></span>
+               </div>
+            </div>
+            <script>
+               function whenclickimgbtn(i){
+                  $('#imgTextSpan'+i).css('display','none');
+                  $('#fileSpan'+i).css('display','block');
+                  
+               }   
+            
+            </script>
 		
 		<!-- 기타 정보들.. checkbox -->
 		<div class="list-group-item row">

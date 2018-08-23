@@ -135,10 +135,20 @@
 	var yyyy = today.getFullYear();
 	var data = google.visualization.arrayToDataTable([
 	          ['Week', '매출', '예약건수'],
-	          <c:forEach items="${list2}" var="vo" varStatus="status">
-		    	['${vo.bookingdate}', ${vo.price}, ${vo.bcount}]
-		    	<c:if test="${!status.last}">,</c:if>
-		      </c:forEach>
+	          <%
+				ArrayList<MasterChartVO> list2 = (ArrayList<MasterChartVO>)request.getAttribute("list2");
+				String content2="";
+				for(int i=0; i<list2.size(); i++) {
+					MasterChartVO mVo = list2.get(i);
+					content2 += "['" +mVo.getBookingdate() +"',"+mVo.getPrice()+","+mVo.getBcount()+"]";
+					if(i==list2.size()-1) {
+						content2 += "";
+					}else {
+						content2 += ",";
+					}
+				}
+				out.println(content2);
+			%>
 	        ]);
 
 	        var options = {
@@ -161,7 +171,62 @@
 	        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
 
 	        chart.draw(data, google.charts.Bar.convertOptions(options));
-	      }	
+	      }
+	
+	//룸별 예약 통계	
+	google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawVisualization);
+
+    function drawVisualization() {
+      // Some raw data (not necessarily accurate)
+      var data = google.visualization.arrayToDataTable([
+       <%
+       	ArrayList<MasterChartVO> list3 = (ArrayList<MasterChartVO>)request.getAttribute("list3");
+       	ArrayList<MasterChartVO> list4 = (ArrayList<MasterChartVO>)request.getAttribute("list4");
+       	int index = 0;
+       	
+       	String content3 = "['Month', ";
+    	for(int i=0; i<list3.size(); i++){
+    		MasterChartVO mVo = list3.get(i);
+    		content3 += "'"+mVo.getRname()+"'";
+    		if(i != list3.size()-1){
+    			content3 += ", ";
+    		}
+    	}
+    	content3 += "], ";
+    	
+    	for(int i=1; i<=12; i++){
+    		content3 += "[";
+    		content3 += "'"+i+"월'";
+    		content3 += ", ";
+    		for(int start = index, end = index+list3.size(); index < end; index++){
+    			MasterChartVO mVo = list4.get(index);
+    			content3 += mVo.getBcount();
+    			if(index != start+list3.size()-1){
+    				content3 += ", ";
+    			}
+    		}
+    		content3 += "]";
+    		if(i != 12){
+    			content3 += ", ";
+    		}
+    	}
+    	out.println(content3);
+		%>
+		
+	  ]);
+
+  var options = {
+    title : '룸별 예약 현황',
+    vAxis: {title: '예약자수'},
+    hAxis: {title: 'Month'},
+    seriesType: 'bars',
+    series: {5: {type: 'line'}}
+  };
+
+  var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
 </script>
 
 </body>

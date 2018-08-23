@@ -16,13 +16,13 @@ public class AccomodationVO {
 	private String agil; //금천구
 	private String agunmul; //시흥대로101
 	private String adong; //장충동
-	private String aimg1; //이미지1 경로
-	private String aimg2; //이미지2 경로
-	private String aimg3; //이미지3 경로
+	private String aimg1=""; //이미지1 경로
+	private String aimg2=""; //이미지2 경로
+	private String aimg3=""; //이미지3 경로
 	private int amaxreservedate; //최대 예약 가능한 날
 	private int amaxsleepdate; //최대 머무를 수 있는 날
-	private String atheme; //테마
-	private String anotice; //주의사항
+	private String atheme=""; //테마
+	private String anotice=""; //주의사항
 	private String writedate; //등록 날짜
 	private String asubway; //주변 지하철역
 	private int agrade; //숙박업소 평균 평점

@@ -1,46 +1,46 @@
 	$(function(){
 		$("#rname").focusout(function(){
-			checkRname();
+			rcheckRname();
 		});
 		
-		$("#price").focusout(function(){
-			checkPrice();
+		$("#rprice").focusout(function(){
+			rcheckPrice();
 		});
 		
-		$("#min").focusout(function(){
+		$("#rmin").focusout(function(){
 			var result = checkMin();			
 			if(result == true){				
-				compareMaxMin();
+				rcompareMaxMin();
 			}
 		});
 
-		$("#max").focusout(function(){
+		$("#rmax").focusout(function(){
 			var result = checkMax();
 			if(result == true) {
-				compareMaxMin();
+				rcompareMaxMin();
 			}
 		});		
 	
-		$("#bedroom").focusout(function(){
-			checkBedroom();
+		$("#rbedroom").focusout(function(){
+			rcheckBedroom();
 		});
 		
-		$("#diningroom").focusout(function(){
-			checkDiningroom();
+		$("#rdiningroom").focusout(function(){
+			rcheckDiningroom();
 		});
 		
-		$("#kitchen").focusout(function(){
-			checkkitchen();
+		$("#rkitchen").focusout(function(){
+			rcheckkitchen();
 		});
 		
-		$("#restroom").focusout(function(){
-			checkRestroom();
+		$("#rrestroom").focusout(function(){
+			rcheckRestroom();
 		});
 	});
 	
-	function compareMaxMin(){
-		var min = $("#min").val();
-		var max = $("#max").val();
+	function rcompareMaxMin(){
+		var min = $("#rmin").val();
+		var max = $("#rmax").val();
 		var result = true;
 		if(min=="" || min==null || max==""|| max==null) return false;
 		if(min>max){
@@ -52,7 +52,7 @@
 		}
 	}
 	
-	function checkRname(){	
+	function rcheckRname(){	
 		//객실 명 검사		
 		var rname = $("#rname").val();
 		var reg = /^[a-zA-Z가-힣0-9]{1,20}$/;	
@@ -72,9 +72,9 @@
 		return result;
 	}
 	
-	function checkPrice(){
+	function rcheckPrice(){
 		//객실 요금 검사
-		var price = $("#price").val();
+		var price = $("#rprice").val();
 		var reg = /^[0-9]{1,8}$/;	
 		var msg = "";
 		var result = true;
@@ -91,9 +91,9 @@
 		return result;
 	}
 	
-	function checkMin(){
+	function rcheckMin(){
 		//최소 수용인원 검사
-		var min = $("#min").val();
+		var min = $("#rmin").val();
 		var msg = "";
 		var result = true;
 		
@@ -110,10 +110,10 @@
 		return result;
 	}
 	
-	function checkMax(){
+	function rcheckMax(){
 		//최대 수용인원 검사
 		var msg = "";
-		var max = $("#max").val();
+		var max = $("#rmax").val();
 		var result = true;
 	
 		if(max == "" || max == null){
@@ -130,9 +130,9 @@
 		return result;
 	}
 	
-	function checkBedroom(){
+	function rcheckBedroom(){
 		//침실
-		var bedroom = $("#bedroom").val();
+		var bedroom = $("#rbedroom").val();
 		var msg = "";
 		var result = true;
 		
@@ -148,9 +148,9 @@
 		return result;
 	}
 	
-	function checkDiningroom(){
+	function rcheckDiningroom(){
 		//거실
-		var diningroom = $("#diningroom").val();
+		var diningroom = $("#rdiningroom").val();
 		var msg = "";
 		var result = true;
 		
@@ -166,9 +166,9 @@
 		return result;
 	}
 	
-	function checkKitchen(){
+	function rcheckKitchen(){
 		//주방
-		var kitchen = $("#kitchen").val();
+		var kitchen = $("#rkitchen").val();
 		var msg = "";
 		var result = true;
 		
@@ -184,9 +184,9 @@
 		return result;		
 	}
 		
-	function checkRestroom(){
+	function rcheckRestroom(){
 		//화장실
-		var restroom = $("#restroom").val();
+		var restroom = $("#rrestroom").val();
 		var msg = "";
 		var result = true;
 		
@@ -206,15 +206,18 @@
 	$(function(){
 		$("#dataform").submit(function(){
 			var result = true;
-			result &= checkRname();
-			result &= checkPrice();
-			result &= checkMin();
-			result &= checkMax();
-			result &= checkBedroom();
-			result &= checkDiningroom();
-			result &= checkKitchen();
-			result &= checkRestroom();
-			if(result == 1) return true;
+			result &= rcheckRname();
+			result &= rcheckPrice();
+			result &= rcheckMin();
+			result &= rcheckMax();
+			result &= rcheckBedroom();
+			result &= rcheckDiningroom();
+			result &= rcheckKitchen();
+			result &= rcheckRestroom();
+			if(result == 1){
+				getAtheme();
+				return true;
+			}
 			else return false;
 		});
 	});
