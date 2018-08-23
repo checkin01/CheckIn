@@ -24,7 +24,9 @@ public class ShowMasterRoomListCommand implements RoomCommandInterface {
 		HttpSession session = request.getSession();
 		String mid = (String)session.getAttribute("mid");
 		RoomDAOInterface dao = Constants.sqlSession.getMapper(RoomDAOInterface.class);
-		List<RoomVO> list = dao.selectAllRoomList(mid);
+		RoomVO vo = new RoomVO();
+		vo.setMid(mid);
+		List<RoomVO> list = dao.selectAllRoomList(vo);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list",list);

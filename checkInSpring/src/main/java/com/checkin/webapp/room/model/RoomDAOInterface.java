@@ -5,7 +5,7 @@ import java.util.List;
 public interface RoomDAOInterface {
 	
 	//특정 숙박업소의 룸 전체 리스트
-	public List<RoomVO> selectAllRoomList(String mid);
+	public List<RoomVO> selectAllRoomList(RoomVO vo);
 	
 	public RoomVO selectOneRoom(int r);
 	

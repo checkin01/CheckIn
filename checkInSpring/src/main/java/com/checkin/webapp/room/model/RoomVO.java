@@ -16,12 +16,10 @@ public class RoomVO {
 	private int rrestroom;//화장실 수
 	private int rdiningroom;//거실 수
 	private int rkitchen;// 주방 수
-<<<<<<< HEAD
-	private String rtheme; //테마(복층, 스파, PC커플, 온돌)
+
 	private int rgrade;
-=======
 	private String rtheme=""; //테마(복층, 스파, PC커플, 온돌)
->>>>>>> jiwoong0821
+
 	private String writedate; //입력날짜
 	
 

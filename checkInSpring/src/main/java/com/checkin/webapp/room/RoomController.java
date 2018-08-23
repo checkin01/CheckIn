@@ -5,11 +5,11 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-<<<<<<< HEAD
+
 import org.springframework.web.servlet.ModelAndView;
 
 import com.checkin.webapp.room.command.ShowRoomListCommand;
-=======
+
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,7 +20,6 @@ import com.checkin.webapp.room.command.InsertRoomOkCommand;
 import com.checkin.webapp.room.command.ShowMasterRoomListCommand;
 import com.checkin.webapp.room.command.UpdateRoomFormCommand;
 import com.checkin.webapp.room.command.UpdateRoomOkCommand;
->>>>>>> jiwoong0821
 import com.checkin.webapp.room.model.RoomVO;
 
 @Controller
@@ -35,7 +34,6 @@ public class RoomController {
 	// 매핑 주소 : /master/showMyGuestroomList
 	@RequestMapping("/master/showMyGuestroomList")
 	public ModelAndView showMasterRoomList(HttpServletRequest request) {
-		
 		ShowMasterRoomListCommand command = new ShowMasterRoomListCommand();
 		return command.execute(request);
 	}
@@ -74,12 +72,6 @@ public class RoomController {
 		return command.execute(request);
 	}
 	
-	//룸 추가OK
-	// 매핑 주소 : /master/tryAddGuestroomInfo
-<<<<<<< HEAD
-	public ModelAndView insertRoomOk(HttpServletRequest reqeust, RoomVO vo) {}
-	*/
-	
 	//일반사용자가 보는 룸리스트로 이동
 	@RequestMapping("/main/room/showList")
 	public ModelAndView showAllRoomList(HttpServletRequest request) {
@@ -87,7 +79,7 @@ public class RoomController {
 		return new ShowRoomListCommand().execute(request);
 	}
 	
-=======
+
 	@RequestMapping("/master/tryAddGuestroomInfo")
 	public ModelAndView insertRoomOk(HttpServletRequest request, RoomVO vo,
 			@RequestParam("filename1") MultipartFile rimg1,
@@ -108,5 +100,4 @@ public class RoomController {
 		return command.execute(r);
 	}*/
 		
->>>>>>> jiwoong0821
 }

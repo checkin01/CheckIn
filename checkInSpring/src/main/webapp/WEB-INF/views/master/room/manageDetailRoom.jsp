@@ -105,9 +105,18 @@
 						<div class="row">
 							<!-- 평점 정보 시작 -->
 							<p class="col-lg-6">
-								<label>평점</label> <i class="fa fa-fw fa-star"></i> <i class="fa fa-fw fa-star"></i> <i class="fa fa-fw fa-star"></i> <i class="fa fa-fw fa-star"></i> <i class="fa fa-fw fa-star"></i>
-							</p>
-
+							<c:choose>
+								<c:when test ="${vo.rgrade != null and vo.rgrade != 0 }">
+									<label>평점</label>
+									<c:forEach begin = '1' end='${vo.rgrade}' step='1'>
+									<i class="fa fa-fw fa-star"></i> <i class="fa fa-fw fa-star"></i> 
+								</c:forEach>
+								</c:when>
+								<c:when test ="${vo.rgrade == null or vo.rgrade == 0}">
+									<label>등록된 리뷰가 없습니다.</label>
+								</c:when>
+							</c:choose>
+								</p>
 							<!-- 평점 정보 끝 -->
 							<div class="col-lg-2"></div>
 							<h4 class="col-lg-4">
@@ -123,7 +132,13 @@
 							<div class="col-sm-1"></div>
 							<a href="/webapp/master/modifyGuestroomInfo?r=${vo.r }"><input type="button" value="수정하기" class="btn  btn-success" id="editBtn" /></a>
 							<div class="col-sm-1"></div>
-							<a href="<%=request.getContextPath()%>/master/review/showReviewList.jsp"><input type="button" value="리뷰 보기" class="btn  btn-success" /></a>
+							<c:choose>
+								<c:when test ="${vo.rgrade != null and vo.rgrade != 0 }">
+									<a href="<%=request.getContextPath()%>/master/review/showReviewList.jsp"><input type="button" value="리뷰 보기" class="btn  btn-success" /></a>
+								</c:when>
+								
+							</c:choose>
+							
 							<div class="col-sm-1"></div>
 						</div>
 						<!-- 버튼 폼 끝 -->

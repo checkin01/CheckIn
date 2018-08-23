@@ -96,4 +96,10 @@ public class ShowRoomListCommand implements RoomCommandInterface {
 		return mav;
 	}
 
+	@Override
+	public RoomVO executeVo(HttpServletRequest request, RoomVO vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
