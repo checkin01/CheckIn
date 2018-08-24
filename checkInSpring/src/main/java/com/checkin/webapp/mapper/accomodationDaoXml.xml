@@ -161,5 +161,7 @@ accomodation(a,mid,aname,atel,aaddr,atype,acheckin,acheckout,asi,agu,agil,adong,
  )
  
 </insert>
-
+<delete id="deleteAccomodation">
+	delete from accomodation where mid = #{mid}
+</delete>
 </mapper>

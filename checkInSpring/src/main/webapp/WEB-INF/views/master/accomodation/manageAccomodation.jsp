@@ -58,14 +58,14 @@
 				  <!-- 숙소 정보 있을 때 -->
 				   <c:if test="${vo.a!=null and vo.a!=''}" >
 				 
-				  <li class="nav-item btn btn-primary ">
-				    <a class="nav-link w3-text-white w3-large active"  href="/webapp/master/viewAcco"><b>숙소  보기</b></a>
+				  <li class="nav-item " style="margin-left:30px;">
+				    <a class="nav-link btn btn-primary w3-text-white w3-large active"  href="/webapp/master/viewAcco"><b>숙소  보기</b></a>
 				  </li>
-				  <li class="nav-item btn btn-primary">
-				    <a class="nav-link w3-text-black w3-large"  href="/webapp/master/editAcco"><b>숙소 정보 수정</b></a>
+				  <li class="nav-item "  style="margin-left:30px;">
+				    <a class="nav-link btn btn-primary w3-text-black w3-large"  href="/webapp/master/editAcco"><b>숙소 정보 수정</b></a>
 				  </li>
-				   <li class="nav-item btn btn-primary">
-				    <a class="nav-link w3-text-black w3-large"  href="#"><b>숙소 정보 삭제</b></a>
+				   <li class="nav-item"  style="margin-left:30px;">
+				    <a class="nav-link btn w3-red w3-text-black w3-large"  href="/webapp/master/deleteAcco"><b>숙소 정보 삭제</b></a>
 				  </li>
 				 </c:if>
 				</ul>
@@ -152,8 +152,7 @@
 
 				</div>
 			</div>
-			</c:if>
-
+	</c:if>
 		</div>
 		
 		<!-- footer -->
@@ -161,5 +160,7 @@
 			<%@ include file="../companyInfo.jspf"%>
 		</footer>
 	</div>
+
+
 </body>
 </html>

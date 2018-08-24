@@ -30,6 +30,10 @@ body, html {height: 100%}
   <div class="w3-display-topleft w3-padding-large w3-xlarge">
  	Check In
   </div>
+
+  <div class="w3-display-topright w3-padding-large w3-xlarge">
+ 	${mname}님 환영 합니다. <a href = "/webapp/master/logout" class="w3-large">로그아웃</a>
+  </div>
   <div class="w3-display-middle">
     <h1 class="w3-jumbo w3-animate-top">지금 시작 하세요.</h1>
     <hr class="w3-border-grey" style="margin:auto;width:40%">

@@ -7,16 +7,14 @@ import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.checkin.webapp.master.command.ShowMasterChart;
+
 
 /**
  * Handles requests for the application home page.
@@ -51,10 +49,11 @@ public class HomeController {
 		return "webmaster/main";
 	}
 	
-	//@RequestMapping(value="/master", method = RequestMethod.GET)
-	//public ModelAndView masterMain(HttpServletRequest request) {
-	//	return new ShowMasterChart().execute(request);
-	//}
+	@RequestMapping(value="/master/first", method = RequestMethod.GET)
+	public String masterMain(HttpServletRequest request) {
+		if((String)request.getSession().getAttribute("mid")==null) return "main/login/login";
+		return "master/first";
+	}
 	
 	@RequestMapping(value="/error", method = RequestMethod.GET)
 	public String error(HttpServletRequest request) {

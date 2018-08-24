@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.checkin.webapp.accomodation.command.DeleteAccoCommand;
 import com.checkin.webapp.accomodation.command.EditAccoCommand;
 import com.checkin.webapp.accomodation.command.EditFormAccoCommand;
 import com.checkin.webapp.accomodation.command.GetListCntCommand;
@@ -126,6 +127,12 @@ public class AccomodationController {
 	public String searchAddr(HttpServletRequest request){
 		return "master/accomodation/jusoPopup";
 	}
+	
+	 //매핑 경로 : /master/deleteAcco public ModelAndView
+	@RequestMapping("/master/deleteAcco")
+	 public ModelAndView deleteAccomodation(HttpServletRequest request, AccomodationVO vo) {
+		 return new DeleteAccoCommand().execute(request,vo);
+	 }
 	
 	
 	
