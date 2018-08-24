@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.checkin.webapp.review.model.ReivewDAOInterface">
+<mapper namespace="com.checkin.webapp.review.model.ReviewDAOInterface">
 
+	<select id="getReviewListCnt" resultType="int">
+		select count(*) from review where r = #{r}
+	</select>
+	<select id="selectAllReviewList" resultType="com.checkin.webapp.review.model.ReviewVO">
+		select v,r,re.u,vgrade,vimg1,vimg2,vimg3,vcontent,writedate, uuid from review re
+		,(select u,uuid from member) me
+		where re.u = me.u
+		<![CDATA[ AND (ROWNUM > (#{vcurpage}-1*#{vonepage}) AND ROWNUM <= #{vcurpage}*#{vonepage}) ]]>
+		<choose>
+			<when test = "r!=0">
+				and r=#{r}
+			</when>
+		</choose>
+		order by writedate
+		
+	</select>
+	
+	<insert id="insertReview" parameterType="com.checkin.webapp.review.model.ReviewVO">
+		insert into review(v,r,u,a,mid,vgrade,vcontent)
+		 values (reviewsq.nextval,22,42,360,'master1',5,'cccc')	
+	</insert>
+	
 </mapper>

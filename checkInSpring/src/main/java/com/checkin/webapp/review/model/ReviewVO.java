@@ -13,10 +13,18 @@ public class ReviewVO {
 	private String vcontent;//리뷰내용
 	private String writedate;//작성날짜
 	
-	private int vcurpage; //현재 페이지
-	private int vonepage; //한 페이지에 보여질 리스트 개수
+	private int vcurpage=1; //현재 페이지
+	private int vonepage=10; //한 페이지에 보여질 리스트 개수
 	
+
+	private String uuid; //사용자아이디
 	
+	public String getUuid() {
+		return uuid;
+	}
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 	
 	public int getVcurpage() {
 		return vcurpage;

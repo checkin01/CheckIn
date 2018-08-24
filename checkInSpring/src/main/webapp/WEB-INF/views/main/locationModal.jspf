@@ -116,7 +116,7 @@
 				<script>
 				$(function(){
 					$("#locationOkBtn").click(function(){
-						alert('click');
+						
 						ajax_recommendation();
 					})
 				})

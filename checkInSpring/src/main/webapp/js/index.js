@@ -38,10 +38,10 @@ function ajax_recommendation() {
 		success : function(result) {
 			if(result != "" && result != null){
 			var $result = $(result);
-			alert($result);
+		
 				$result.each(function(i, val) {
 					var tag;
-					var aurl = "#";
+					var aurl = "/webapp/main/room/showList?a="+val.a;
 					var aimg = val.aimg1;
 					if (i == 0)
 						tag = $('#form1');
@@ -60,7 +60,7 @@ function ajax_recommendation() {
 	
 				});
 			}else{
-				alert("결과 없음");
+				
 			}
 		},
 		error : function(e) {

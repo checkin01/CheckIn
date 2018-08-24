@@ -17,19 +17,19 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/index.css">
+	href="/webapp/css/index.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <!-- daterangepicker -->
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/js/daterangepicker.js"></script>
+	src="/webapp/js/daterangepicker.js"></script>
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/daterangepicker.css" />
+	href="/webapp/css/daterangepicker.css" />
 
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/js/filter.js"></script>
+	src="/webapp/js/filter.js"></script>
 <script type="text/javascript"
 	src="/webapp/js/index.js"></script>
 <script>

@@ -22,7 +22,7 @@
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=Ve4ILimYsUbRNnlZeSVm&submodules=geocoder"></script>
 
 <script src="/webapp/js/daterangepicker.js"></script>
-<script src="/webapp/js/showDetailAccomodation.js"></script>
+<!--  <script src="/webapp/js/showDetailAccomodation.js"></script> -->
 <link rel="stylesheet" href="/webapp/css/daterangepicker.css">
 <style>
 .historyImg {
@@ -57,7 +57,7 @@ label {
 }
 </style>
 <script>
-
+var onepage = 3;
 function whenclickbookingbtn(a,r){
 	
 var u = '${u}';
@@ -113,6 +113,102 @@ function ajax_booking(a,r,checkinout, people,u){
 		}
 	})
 	
+}
+
+//<!-- 클릭시 이미지 fa fa-caret-up 이걸로 바뀜 -->
+function whenClickReview(r) {
+	
+	var upScroll = "<strong><i class='fa fa-caret-down' style='font-size:20px'></i> 리뷰</strong>";
+	var downScroll = "<strong><i class='fa fa-caret-up' style='font-size:20px'></i> 리뷰</strong>";
+	
+	
+	if ($("#reviewStatus"+r).val() == 'up') {
+		ajax_reviewCnt(r);
+		ajax_review(r,1);
+		$("#showReview"+r).html(downScroll);
+		$("#reviewStatus"+r).val('down');
+		$("#review"+r).css("display", "block");
+
+	} else if ($("#reviewStatus"+r).val() == "down") {
+		
+		$("#showReview"+r).html(upScroll);
+		$("#reviewStatus"+r).val("up");
+		$("#review"+r).css("display", "none");
+
+	}
+}
+function ajax_reviewCnt(r){
+	var params = "r="+r;
+	$.ajax({
+		type : "get",
+		url : "/webapp/main/getReivewsCnt",
+		data : params,
+		dataType : 'json',
+		contentType : 'applicaiton/json;charset=UTF-8',
+		success : function(result) {
+			var pagination = "";
+			for(var i = 1  ;  i<=Math.ceil(result/3)  ; i++ ){
+				pagination += "<li class='page-item'><a class='page-link' href='javascript:ajax_review("+r+","+i+")'>"+i+"</a></li>"
+			}
+			
+			var resultDiv  = $("#reviewDiv"+r).find('.vpaging').html(pagination);
+		},
+		error : function(e) {
+			console.log(e.responseText);
+			alert("죄송합니다. 리뷰 불러오기에 실패 했습니다.");
+		}
+	})
+}
+
+function ajax_review(r,i){
+	var params = "r="+r+"&vcurpage="+i+"&vonepage="+onepage;
+	$.ajax({
+		type : "get",
+		url : "/webapp/main/getReivews",
+		data : params,
+		dataType : 'json',
+		contentType : 'applicaiton/json;charset=UTF-8',
+		success : function(result) {
+			var $result = $(result);
+			var resultDiv =$("#review"+r);
+			resultDiv.html('');
+			$result.each(function(i,val){
+				var grade = val.vgrade;
+				var uuid = val.uuid;
+				var writedate = val.writedate;
+				var content = val.vcontent;
+				var img1 = val.img1;
+				var html = '<div class="row" style="padding-left:20px; padding-right:20px">';
+				html +='<p class="col-sm-4 review-p border">';
+				html += '<label><i class="fa fa-thumbs-o-up"></i> 평점 : </label> <span class="grade">'+grade+'</span>';
+				html +='</p><p class="col-sm-4 review-p border">';
+				html +='<label><i class="fa fa-user"></i> 아이디 : </label><span class="uid">'+uuid+'</span>';
+				html += '</p><p class="col-sm-4 review-p border">';
+				html +='<label><i class="fa fa-calendar"></i> 날짜 : </label> <span class="writedate">'+writedate+'</span>';
+				html +='</p></div><label><i class="fa fa-comments"></i> 내용 </label><div class="row" style="padding-left:20px; padding-right:20px">';	
+				html +='<p class="col-sm-8 font1-small border review-p" class="content">'+content+'</p>';
+				html +='<p class="col-sm-4">'
+				html +='<img src="'+val.img+'"style="width: 100%; height: 150px" class="rounded vimg1"';
+				html +='</p></div><hr/>';
+				resultDiv.append(html);
+				
+			});
+		},
+		error : function(e) {
+			console.log(e.responseText);
+			alert("죄송합니다. 리뷰 불러오기에 실패 했습니다.");
+		}
+	})
+
+}
+
+function whenClickAccor(id){
+	var accor = document.getElementById(id);
+	if(accor.className.indexOf("w3-hide") != -1){ //hide일때
+		accor.className = accor.className.replace(" w3-hide"," w3-show");
+	}else{
+		accor.className = accor.className.replace(" w3-show"," w3-hide");
+	}
 }
 </script>
 
@@ -411,40 +507,27 @@ function ajax_booking(a,r,checkinout, people,u){
 					</div>
 					<!-- 정보 DIV 끝 -->
 				<c:if test ="${vo.rgrade != null and vo.rgrade != 0}">		
+					
 					<!-- 리뷰 DIV 시작 -->
-					<div style="width: 100%; padding: 10px;">
-						<input type="hidden" id="reviewStatus" value="up" />
+					<div style="width: 100%; padding: 10px;" id="reviewDiv${vo.r}">
+						<input type="hidden" id="reviewStatus${vo.r}" value="up" />
 
 						<!-- 클릭시 이미지 fa fa-caret-up 이걸로 바뀜 -->
-						<div id="showReview" class="font1-medium btn btn-info" style="width: 100%; height: 30px" onclick="whenClickReview()">
+						<div id="showReview${vo.r}" class="font1-medium btn btn-info" style="width: 100%; height: 30px" onclick="whenClickReview(${vo.r})">
 							<strong><i class='fa fa-caret-down' style='font-size: 20px'></i> 리뷰</strong>
 						</div>
-
-						<div class="container input-group" id="review" style="display: none; padding-top:10px; background:lightgrey">
-							<div class="row" style="padding-left:20px; padding-right:20px">
-								<p class="col-sm-4 review-p border">
-									<label><i class="fa fa-thumbs-o-up"></i> 평점 : </label> <span id="grade">★ ★ ★ ★ ★</span>
-								</p>
-								<p class="col-sm-4 review-p border">
-									<label><i class="fa fa-user"></i> 아이디 : </label><span id="uid">123456</span>
-								</p>
-								<p class="col-sm-4 review-p border">
-									<label><i class="fa fa-calendar"></i> 날짜 : </label> <span id="grade">2018-07-24</span>
-								</p>
-							</div>
-							<label><i class="fa fa-comments"></i> 내용 </label>
-							<div class="row" style="padding-left:20px; padding-right:20px">
-								<!-- 쓰기는 예약 내역에서 가능 있음. -->
-								<p class="col-sm-8 font1-small border review-p" id="content">여기 짱 좋아요 ~</p>
-
-								<p class="col-sm-4">
-									<img src="../img/accomodation/hotel03.PNG" style="width: 100%; height: 150px" class="rounded">
-								</p>
-							</div>
+						<!-- 결과 창 -->
+						<div class="container input-group" id="review${vo.r}" style="display: none; padding-top:10px; background:lightgrey">
+							
 						</div>
+						 <!-- 페이징 창 -->
+						 <ul class="pagination vpaging" style="text-align:center;">
+						 </ul>
+						
 					</div>
 					<!-- 리뷰 DIV 끝 -->
-					</c:if>
+					
+				</c:if>
 				</div>
 				<!--리스트 한개 끝-->
 				</c:forEach>
@@ -456,8 +539,5 @@ function ajax_booking(a,r,checkinout, people,u){
 			<%@ include file="../companyInfo.jspf"%>
 		</footer>
 	</div>
-
-	<script src="/webapp/js/showDetailAccomodation.js"></script>
-
 </body>
 </html>
