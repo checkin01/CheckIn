@@ -8,27 +8,58 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 	<mvc:interceptors>
-	<!-- 일반 회원 관련 인터셉터 -->
-		<mvc:interceptor>
+	<mvc:interceptor>
 			<mvc:mapping path="/main/mypage/*" />
-			<bean class="com.checkin.webapp.interceptor.LoginMemberInterceptor" />	
+			<bean
+				class="com.checkin.webapp.interceptor.LoginMemberInterceptor" />
+		</mvc:interceptor>
+
+		<!-- 가맹점 회원 관련 인터셉터 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/master/insertAcco" />
+			<mvc:mapping path="/master/insertOkAcco" />
+			<mvc:mapping path="/master/editAcco" />
+			<mvc:mapping path="/master/editOkAcco" />
+			<mvc:mapping path="/master/viewAcco" />
+			<mvc:mapping path="/master/showAccoList" />
+			<mvc:mapping path="/master/showChart" />
+			<mvc:mapping path="/master/deleteAcco" />
+			
+			<mvc:mapping path="/master/addGuestroomInfo" />
+			<mvc:mapping path="/master/deleteGuestroomInfo" />
+			<mvc:mapping path="/master/tryAddGuestroomInfo" />
+			<mvc:mapping path="/main/room/showList" />
+			<mvc:mapping path="/master/tryModifyGuestroomInfo" />
+			<mvc:mapping path="/master/modifyGuestroomInfo" />
+			<mvc:mapping path="/master/showMyGuestroomList" />
+			<bean class="com.checkin.webapp.interceptor.LoginMasterInterceptor" />
 		</mvc:interceptor>
 		
-	<!-- 가맹점 회원 관련 인터셉터 -->
 		<mvc:interceptor>
-			<mvc:mapping path="/master/accomodation/*" />
-			<mvc:mapping path="/master/booking/*" />
-			<mvc:mapping path="/master/room/*" />
-			<mvc:mapping path="/master/review/*" />
-			<bean class="com.checkin.webapp.interceptor.LoginMasterInterceptor" />	
+			<mvc:mapping path="/master/editAcco" />
+			<mvc:mapping path="/master/editOkAcco" />
+			<mvc:mapping path="/master/viewAcco" />
+			<mvc:mapping path="/master/showAccoList" />
+			<mvc:mapping path="/master/showChart" />
+			<mvc:mapping path="/master/deleteAcco" />
+			
+			<mvc:mapping path="/master/addGuestroomInfo" />
+			<mvc:mapping path="/master/deleteGuestroomInfo" />
+			<mvc:mapping path="/master/tryAddGuestroomInfo" />
+			<mvc:mapping path="/main/room/showList" />
+			<mvc:mapping path="/master/tryModifyGuestroomInfo" />
+			<mvc:mapping path="/master/modifyGuestroomInfo" />
+			<mvc:mapping path="/master/showMyGuestroomList" />
+			<bean class="com.checkin.webapp.interceptor.CheckRegitAccoInterceptor" />
+			
 		</mvc:interceptor>
-	
-	<!-- 웹 관리자 회원 관련 인터셉터 -->
+		
+
+		<!-- 웹 관리자 회원 관련 인터셉터 -->
 		<mvc:interceptor>
-			<mvc:mapping path="/webmaster/accomodation/*" />
-			<mvc:mapping path="/webmaster/member/*" />
-			<mvc:mapping path="/webmaster/notice/*" />
-			<bean class="com.checkin.webapp.interceptor.LoginWebmasterInterceptor" />	
+			<mvc:mapping path="/webmaster/*" />
+			<bean
+				class="com.checkin.webapp.interceptor.LoginWebmasterInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 
