@@ -6,51 +6,132 @@ public class NoticeVO {
 	private String notitle; //공지사항 제목
 	private String nostartdate; //공지를 시작한 날짜
 	private String noenddate; //공지가 끝난날짜
-	private int target; //적용대상(0:일반회원-main/index.jsp, 1:가맹회원-/master/home.jsp)
+	private String target; //적용대상(0:일반회원-main/index.jsp, 1:가맹회원-/master/home.jsp)
 	private String writedate; //공지 작성날짜
+	private String ncontent; //공지사항 내용
 	
 	
+	
+	
+	@Override
+	public String toString() {
+		return "NoticeVO [no=" + no + ", wid=" + wid + ", notitle=" + notitle + ", nostartdate=" + nostartdate
+				+ ", noenddate=" + noenddate + ", target=" + target + ", writedate=" + writedate + ", ncontent="
+				+ ncontent + "]";
+	}
+
+
+
+
 	public int getNo() {
 		return no;
 	}
+
+
+
+
 	public void setNo(int no) {
 		this.no = no;
 	}
+
+
+
+
 	public String getWid() {
 		return wid;
 	}
+
+
+
+
 	public void setWid(String wid) {
 		this.wid = wid;
 	}
+
+
+
+
 	public String getNotitle() {
 		return notitle;
 	}
+
+
+
+
 	public void setNotitle(String notitle) {
 		this.notitle = notitle;
 	}
+
+
+
+
 	public String getNostartdate() {
 		return nostartdate;
 	}
+
+
+
+
 	public void setNostartdate(String nostartdate) {
 		this.nostartdate = nostartdate;
 	}
+
+
+
+
 	public String getNoenddate() {
 		return noenddate;
 	}
+
+
+
+
 	public void setNoenddate(String noenddate) {
 		this.noenddate = noenddate;
 	}
-	public int getTarget() {
+
+
+
+
+	public String getTarget() {
 		return target;
 	}
-	public void setTarget(int target) {
+
+
+
+
+	public void setTarget(String target) {
 		this.target = target;
 	}
+
+
+
+
 	public String getWritedate() {
 		return writedate;
 	}
+
+
+
+
 	public void setWritedate(String writedate) {
 		this.writedate = writedate;
 	}
+
+
+
+
+	public String getNcontent() {
+		return ncontent;
+	}
+
+
+
+
+	public void setNcontent(String ncontent) {
+		this.ncontent = ncontent;
+	}
+	
+
 
 }

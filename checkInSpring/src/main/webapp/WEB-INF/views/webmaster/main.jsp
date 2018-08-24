@@ -33,10 +33,13 @@ body,html {
 			<hr class="w3-border-grey" style="margin:auto;width:40%">
 			<p class="w3-large w3-center"></p>
 
-			<form action="/action_page.php" method="post"  style="margin:auto;width:500px;">
-				<label for="email">ID :</label> <input type="email" class="form-control" id="email"> <label for="pwd">Password:</label> <input type="password" class="form-control" id="pwd">
+			<form action="/webapp/webmaster/webmasterLogin" method="post"  style="margin:auto;width:500px;">
+				<label for="wid">ID :</label> 
+				<input type="text" class="form-control" name="wid" id="wid"> 
+				<label for="wpwd">Password:</label> 
+				<input type="password" class="form-control" name="wpwd" id="wpwd">
 				<button type="submit" class="btn btn-primary" style="margin-top:10px;text-align:center">Submit</button>
-			</form>
+			</form>	
 		</div>
 
 	</div>

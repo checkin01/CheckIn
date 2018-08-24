@@ -5,7 +5,24 @@ public class WebmasterVO {
 	private String wid;
 	private String wpwd;
 	private String writedate;
+	private String logChk;
 	
+	@Override
+	public String toString() {
+		return "WebmasterVO [w=" + w + ", wid=" + wid + ", wpwd=" + wpwd + ", writedate=" + writedate + "]";
+	}
+	
+	
+	public String getLogChk() {
+		return logChk;
+	}
+
+
+	public void setLogChk(String logChk) {
+		this.logChk = logChk;
+	}
+
+
 	public int getW() {
 		return w;
 	}

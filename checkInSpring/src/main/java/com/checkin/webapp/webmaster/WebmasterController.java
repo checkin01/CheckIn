@@ -1,12 +1,102 @@
 package com.checkin.webapp.webmaster;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.checkin.webapp.webmaster.command.DeleteNoticeCommand;
+import com.checkin.webapp.webmaster.command.EditNoticeFormCommand;
+import com.checkin.webapp.webmaster.command.EditNoticeOkCommand;
+import com.checkin.webapp.webmaster.command.InsertNoticeFormCommand;
+import com.checkin.webapp.webmaster.command.InsertNoticeOkCommand;
+import com.checkin.webapp.webmaster.command.LoginWebmasterCommand;
+import com.checkin.webapp.webmaster.command.ShowAllNoticeListCommand;
+import com.checkin.webapp.webmaster.command.ViewOneNoticeCommand;
+import com.checkin.webapp.webmaster.command.WebmasterCommandInterface;
+import com.checkin.webapp.webmaster.model.NoticeVO;
+import com.checkin.webapp.webmaster.model.WebmasterVO;
 
 @Controller
 public class WebmasterController {
+	//웹마스터 로그인
+	// 매핑 경로 : /webmaster/webmasterLogin
+	@RequestMapping(value="/webmaster/webmasterLogin", method=RequestMethod.POST)
+	public ModelAndView loginWebmaster(HttpServletRequest request, WebmasterVO vo) {
+		LoginWebmasterCommand command = new LoginWebmasterCommand();
+		return command.execute(request, vo);
+	}
+		
+	/*//웹마스터 로그아웃
+	// 매핑 경로 : /webmaster/webmasterLogout
+	public ModelAndView logoutWebmaster(HttpServletRequest request);*/
+	
+	//공지사항게시판 이동
+	// 매핑 경로 : /webmaster/notices
+	@RequestMapping("/webmaster/notices")
+	public ModelAndView showAllNoticeList(HttpServletRequest request, WebmasterVO vo) {
+		HttpSession session = request.getSession();
+		vo.setWid((String)session.getAttribute("wid"));
+
+		ShowAllNoticeListCommand command = new ShowAllNoticeListCommand();
+		return command.execute(request, vo);
+	}
+	
+	//공지사항 글보기 페이지로 이동
+	// 매핑 경로 : /webmaster/notice
+	@RequestMapping("/webmaster/notice")
+	public ModelAndView viewOneNotice(@RequestParam("no") int no) {
+		ViewOneNoticeCommand command = new ViewOneNoticeCommand();
+		return command.execute(no);	
+	}
+		
+	//공지사항 수정폼으로 이동
+	// 매핑 경로 : /webmaster/modifyNotice
+	@RequestMapping("/webmaster/modifyNotice")
+	public ModelAndView editNoticeForm(@RequestParam("no") int no) {
+		EditNoticeFormCommand command = new EditNoticeFormCommand();
+		return command.execute(no);
+	}
+			
+	//공지사항 수정 완료/실패했을 때 이동할 페이지
+	// 매핑 경로 : /webmaster/tryModifyNotice
+	@RequestMapping(value="/webmaster/tryModifyNotice",method=RequestMethod.POST)
+	public ModelAndView editNoticeOk(HttpServletRequest request, NoticeVO vo) {
+		System.out.println("editOK Controller vo = "+vo.toString());
+		EditNoticeOkCommand command = new EditNoticeOkCommand();
+		return command.execute(request, vo);
+	}
+	
+	//공지사항 글 삭제
+	// 매핑 경로 : /webmaster/deleteNotice
+	@RequestMapping("/webmaster/deleteNotice")
+	public ModelAndView deleteNotice(@RequestParam int no) {
+		DeleteNoticeCommand command = new DeleteNoticeCommand();
+		return command.execute(no);
+	}
+	
+		
+	//공지사항 글 추가폼으로 이동
+	// 매핑 경로 : /webmaster/addNotice
+	@RequestMapping("/webmaster/addNotice")
+	public ModelAndView insertNoticeForm(HttpServletRequest request) {
+		InsertNoticeFormCommand command = new InsertNoticeFormCommand();
+		return command.execute(request);
+	}
+	
+	//공지사항 글 추가 완료/실패했을 때 이동할 페이지
+	// 매핑 경로 : /webmaster/tryAddNotice
+	@RequestMapping(value="/webmaster/tryAddNotice",method=RequestMethod.POST)
+	public ModelAndView insertNoticeOk(HttpServletRequest request, NoticeVO vo) {
+		System.out.println("글 추가 vo = "+ vo.toString());
+		InsertNoticeOkCommand command = new InsertNoticeOkCommand();
+		return command.execute(request, vo);
+	}
+	
 	/*
 	//멤버리스트 이동
 	// 매핑 경로 : /webmaster/userList
@@ -20,38 +110,5 @@ public class WebmasterController {
 	// 매핑 경로 : /webmaster/showAccoList
 	public ModelAndView showAllAccomodation(HttpServletRequest request, AccomodationVO vo);
 	
-	//공지사항게시판 이동
-	// 매핑 경로 : /webmaster/notices
-	public ModelAndView showAllNoticeList(HttpServletRequest request, NoticeVO vo);
-	
-	//공지사항 글보기 페이지로 이동
-	// 매핑 경로 : /webmaster/notice
-	public ModelAndView viewOneNotice(HttpServletRequest request, NoticeVO vo);
-	
-	//수정폼으로 이동
-	// 매핑 경로 : /webmaster/modifyNotice
-	public ModelAndView editNoticeForm(HttpServletRequest request, NoticeVO vo);
-	
-	//수정 완료/실패해을 때 이동할 페이지
-	// 매핑 경로 : /webmaster/tryModifyNotice
-	public ModelAndView editNoticeOk(HttpServletRequest request, NoticeVO vo);
-	
-	//글 삭제
-	// 매핑 경로 : /webmaster/deleteNotice
-	public ModelAndView deleteNotice(HttpServletRequest request, NoticeVO vo);
-	
-	// 매핑 경로 : /webmaster/addNotice
-	public ModelAndView insertNoticeForm(HttpServletRequest request, NoticeVO vo);
-	
-	// 매핑 경로 : /webmaster/tryAddNotice
-	public ModelAndView insertNoticeOk(HttpServletRequest request, NoticeVO vo);
-	
-	//웹마스터 로그인
-	// 매핑 경로 : /webmaster/webmasterLogin
-	public ModelAndView loginWebmaster(HttpServletRequest request, WebmasterVO vo);
-	
-	//웹마스터 로그아웃
-	// 매핑 경로 : /webmaster/webmasterLogout
-	public ModelAndView logoutWebmaster(HttpServletRequest request);
 	*/
 }
