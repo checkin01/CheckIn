@@ -4,3 +4,4 @@
 *.class
 .metadata/.lock
 .metadata/.log
+*.properties
