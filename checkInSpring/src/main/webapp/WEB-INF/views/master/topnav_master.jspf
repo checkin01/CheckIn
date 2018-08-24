@@ -111,6 +111,9 @@ myspage에서 적용할 nav-->#sideNav a, #sideNav div, #sideNav b {
 			<li class="nav-item bold"><a class="nav-link" href="/webapp/master/showMyGuestroomList">객실 관리 페이지</a></li>
 			<li class="nav-item bold"><a class="nav-link" href="#">예약 현황 페이지</a></li>
 			<li class="nav-item bold"><a class="nav-link" href="#">리뷰 관리 페이지</a></li>
+			<c:if test="${mname!=null and mname!=''}" >
+				<li class="nav-item bold"><a class="nav-link" href="/webapp/master/logout">로그아웃</a></li>
+			</c:if>
 		</ul>
 	</div>
 </nav>

@@ -1,6 +1,7 @@
 package com.checkin.webapp.master;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -64,6 +65,13 @@ public class MasterController {
 	@RequestMapping(value="/master/showChart", method = RequestMethod.GET)
 	public ModelAndView masterMain(HttpServletRequest request) {
 		return new ShowMasterChart().execute(request);
+	}
+	
+	@RequestMapping("/master/logout")
+	public String logoutMaster(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		return "main/login/login";
 	}
 	
 	/*
