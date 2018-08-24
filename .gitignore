@@ -1,7 +1,12 @@
-
+/.metadata/
 *.class
 *.class
 *.class
+<<<<<<< HEAD
 .metadata/.lock
 .metadata/.log
 *.properties
+=======
+checkInSpring/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+checkInSpring/target/m2e-wtp/web-resources/META-INF/maven/com.checkin/webapp/pom.properties
+>>>>>>> 8b83931d913943d82db22bfadb25f71ed2db8a07
