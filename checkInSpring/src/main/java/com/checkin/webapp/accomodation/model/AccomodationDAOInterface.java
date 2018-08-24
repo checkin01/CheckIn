@@ -21,4 +21,7 @@ public interface AccomodationDAOInterface {
 	
 	public int getListCnt(AccomodationVO vo);
 	
+	//master 예약리스트에서 aname구하기
+	public String getAname(String mid);
+	
 }
