@@ -28,7 +28,7 @@
 			<mvc:mapping path="/master/addGuestroomInfo" />
 			<mvc:mapping path="/master/deleteGuestroomInfo" />
 			<mvc:mapping path="/master/tryAddGuestroomInfo" />
-			<mvc:mapping path="/main/room/showList" />
+	
 			<mvc:mapping path="/master/tryModifyGuestroomInfo" />
 			<mvc:mapping path="/master/modifyGuestroomInfo" />
 			<mvc:mapping path="/master/showMyGuestroomList" />
@@ -46,7 +46,7 @@
 			<mvc:mapping path="/master/addGuestroomInfo" />
 			<mvc:mapping path="/master/deleteGuestroomInfo" />
 			<mvc:mapping path="/master/tryAddGuestroomInfo" />
-			<mvc:mapping path="/main/room/showList" />
+			
 			<mvc:mapping path="/master/tryModifyGuestroomInfo" />
 			<mvc:mapping path="/master/modifyGuestroomInfo" />
 			<mvc:mapping path="/master/showMyGuestroomList" />
