@@ -36,4 +36,10 @@
 		and to_date(#{checkout},'YY/MM/dd') )
 	and r = #{r}
 	</select>
+	
+	<select id="selectAllBookingList" resultType="com.checkin.webapp.booking.model.BookingVO">
+		select to_char(b.writedate,'YYYY-MM-dd') writedate, to_char(b.bcheckin,'YYYY-MM-dd') bcheckin, to_char(b.bcheckout,'YYYY-MM-dd') bcheckout, a.aname, r.rname, a.atel, b.bcount, a.aimg1, a.aimg2, a.aimg3
+		from member m join booking b on m.u=b.u join accomodation a on b.a=a.a join room r on b.r=r.r
+		where m.u=#{param1} 
+	</select>
 </mapper>

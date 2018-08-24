@@ -12,4 +12,20 @@
 	<select id="uidCheck" resultType="int">
 		select count(u) from member where uuid=#{param1}
 	</select>
+	
+	<select id="mypageMember" resultType="int">
+		select upoint from member where u=#{param1}
+	</select>
+	
+	<select id="checkMemberPwd" resultType="String">
+		select upwd from member where uuid=#{uuid} and upwd=#{upwd}
+	</select>
+	
+	<select id="editInfoMember" resultType="com.checkin.webapp.member.model.MemberVO">
+		select uuid,uname,utel,birth,uaddr,utheme,uemail from member where uuid=#{uuid}
+	</select>
+
+	<update id="editMember" parameterType="com.checkin.webapp.member.model.MemberVO">
+		update member set upwd=#{upwd},uaddr=#{uaddr},utel=#{utel},utheme=#{utheme} where uuid=#{uuid}
+	</update>
 </mapper>

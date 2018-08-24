@@ -14,5 +14,8 @@ public interface BookingDAOInterface {
 	public List<Integer> getRoomsBookingAvailability(CheckBookingVO vo);
 	
 	public int checkAvailBooking(CheckBookingVO vo);
+	
+	//일반회원 예약리스트 확인
+	public List<BookingVO> selectAllBookingList(int u);
 
 }

@@ -16,6 +16,15 @@ public class BookingVO {
 	private int bcurpage; //현재 페이지
 	private int bonepage; //한 페이지에 보여질 리스트 개수
 	
+	//===============예약내역확인======================
+	private String atel;//예약 숙소 연락처
+	private String aname;//예약 숙소 이름
+	private String rname;//예약 룸 이름
+	private String aimg1;//예약 숙소 img1
+	private String aimg2;//예약 숙소 img2
+	private String aimg3;//예약 숙소 img3
+	//===============================================
+	
 	
 	public int getBcurpage() {
 		return bcurpage;
@@ -95,6 +104,40 @@ public class BookingVO {
 	public void setWritedate(String writedate) {
 		this.writedate = writedate;
 	}
-	
-	
+	public String getAtel() {
+		return atel;
+	}
+	public void setAtel(String atel) {
+		this.atel = atel;
+	}
+	public String getAname() {
+		return aname;
+	}
+	public void setAname(String aname) {
+		this.aname = aname;
+	}
+	public String getRname() {
+		return rname;
+	}
+	public void setRname(String rname) {
+		this.rname = rname;
+	}
+	public String getAimg1() {
+		return aimg1;
+	}
+	public void setAimg1(String aimg1) {
+		this.aimg1 = aimg1;
+	}
+	public String getAimg2() {
+		return aimg2;
+	}
+	public void setAimg2(String aimg2) {
+		this.aimg2 = aimg2;
+	}
+	public String getAimg3() {
+		return aimg3;
+	}
+	public void setAimg3(String aimg3) {
+		this.aimg3 = aimg3;
+	}	
 }
