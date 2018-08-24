@@ -8,8 +8,6 @@ public interface BookingDAOInterface {
 	
 	public int cancelBooking(BookingVO vo);
 	
-	public List<BookingVO> selectAllBookingList(BookingVO vo);
-	
 	//해당 룸이 예약이 가능한지 아닌지를 체크
 	public List<Integer> getRoomsBookingAvailability(CheckBookingVO vo);
 	
@@ -17,5 +15,8 @@ public interface BookingDAOInterface {
 	
 	//일반회원 예약리스트 확인
 	public List<BookingVO> selectAllBookingList(int u);
+	
+	//master 예약 현황 내역
+	public List<BookingVO> selectAllBookingListMaster(String mid);
 
 }

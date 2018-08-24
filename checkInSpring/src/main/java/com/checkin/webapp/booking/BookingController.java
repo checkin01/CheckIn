@@ -9,15 +9,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.checkin.webapp.booking.command.BookingCommand;
+import com.checkin.webapp.booking.command.showAllBookingListCommand;
 import com.checkin.webapp.booking.model.BookingVO;
 
 @Controller
 public class BookingController {
-	/*
+	
 	//예약리스트 보기(관리자)
 	// 매핑 경로 : /master/showBookingList
-	public ModelAndView showAllBookingList(HttpServletRequest request, BookingVO vo) {}
-	
+	@RequestMapping(value="/master/showBookingList", method=RequestMethod.GET)
+	public ModelAndView showAllBookingList(HttpServletRequest request, BookingVO vo) {
+		System.out.println("Controller..showAllBookingList..");
+		return new showAllBookingListCommand().execute(request,vo);
+	}
+	/*
 	//예약리스트 보기(일반회원)
 	// 매핑 경로 : /main/showBookingList
 	public ModelAndView showMyBookingList(HttpServletRequest request, BookingVO vo) {}

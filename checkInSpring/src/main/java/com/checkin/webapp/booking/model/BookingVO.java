@@ -23,9 +23,11 @@ public class BookingVO {
 	private String aimg1;//예약 숙소 img1
 	private String aimg2;//예약 숙소 img2
 	private String aimg3;//예약 숙소 img3
+	
+	private String uname;
+	private String utel;	
 	//===============================================
-	
-	
+		
 	public int getBcurpage() {
 		return bcurpage;
 	}
@@ -139,5 +141,18 @@ public class BookingVO {
 	}
 	public void setAimg3(String aimg3) {
 		this.aimg3 = aimg3;
+	}
+	public String getUname() {
+		return uname;
+	}
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+	public String getUtel() {
+		return utel;
+	}
+	public void setUtel(String utel) {
+		this.utel = utel;
 	}	
+	
 }
