@@ -14,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.checkin.webapp.review.command.EditReviewCommand;
 import com.checkin.webapp.review.command.InsertReviewCommand;
+import com.checkin.webapp.review.command.SelectAllReviewMasterCommand;
+import com.checkin.webapp.review.command.SelectDetailReviewMasterCommand;
 import com.checkin.webapp.review.command.SelectListCommand;
 import com.checkin.webapp.review.command.SelectReviewAjaxCommand;
 import com.checkin.webapp.review.command.SelectReviewListAjaxCommand;
@@ -40,15 +42,23 @@ public class ReviewController {
 	 * 
 	 * //내가 작성한 리뷰 보기 // 매핑 주소 : /main/showMyReviewList public List<ReviewVO>
 	 * showMemberReviewList(HttpServletRequest request){}
-	 * 
-	 * //가맹 업자 숙소 리뷰 리스트 보기 // 매핑 주소 : /master/showAccoReviewList public
-	 * List<ReviewVO> showMasterReviewList(HttpServletRequest request){}
-	 * 
-	 * //master 숙소 리뷰 상세 보기 보기 // 리뷰 보기 시 모달 창으로 보여짐, 페이지 이동은 없고 데이터만 ajax로 처리 해줌.
-	 * // 매핑 주소 : /master/viewReview public ReviewVO
-	 * selectReviewAjaxMaster(HttpServletRequest request){}
-	 * 
 	 */
+	 //가맹 업자 숙소 리뷰 리스트 보기 // 매핑 주소 : /master/showAccoReviewList 
+	@RequestMapping(value="/master/showAccoReviewList", method=RequestMethod.GET)
+	public ModelAndView showMasterReviewList(HttpServletRequest request){
+		 return new SelectAllReviewMasterCommand().execute(request);
+	 }
+ 
+	 //master 숙소 리뷰 상세 보기 보기 // 리뷰 보기 시 모달 창으로 보여짐, 페이지 이동은 없고 데이터만 ajax로 처리 해줌.
+	 // 매핑 주소 : /master/viewReviewAjax
+	@RequestMapping(value="/master/selectReviewAjax",method=RequestMethod.GET)
+	@ResponseBody
+	public ReviewVO selectReviewAjaxMaster(HttpServletRequest request,@RequestParam("uuid") String uuid,@RequestParam("v") String v){
+		System.out.println("Controller..리뷰상세ajax..");
+		return new SelectDetailReviewMasterCommand().execute(request,uuid,v);
+	}
+	  
+	
 
 	// 일반회원 리뷰 리스트
 	// 매핑 주소 : /master/showAccoReviewList
