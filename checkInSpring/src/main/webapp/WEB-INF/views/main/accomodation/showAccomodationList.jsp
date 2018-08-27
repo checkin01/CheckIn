@@ -220,11 +220,27 @@
 					});
 				</script>
 				<div id="thema" class="sort-item" style="font-family:'Jua'">
-					<button class="btn btn-primary" data-toggle="modal" data-target="#themaModal">테마</button>
+					<button class="btn btn-primary" data-toggle="modal" data-target="#themaModal" onclick="whenclickthemebtb()">테마</button>
 					<!-- 테마에 대한 정보를 이곳에 hidden 속성으로 숨겨 둔다 -->
 				</div>
-				
-				<div class="theme-item" id="hiddenOption" style="font-family: 'Jua'; font-size: 0.9em; color: #aaa;" />${theme}</div>
+				<script>
+						//theme 모달 띄울 때
+						function whenclickthemebtb(){
+							var opts = $("#hiddenOption").text().split(' ');
+						
+							jQuery.each(opts,function(i,val){
+								if(val != ''){
+									var theme = $("."+val);
+									if (theme.hasClass('clicked-btn') == false) {
+										$(theme).css("color", "black");
+										$(theme).addClass('clicked-btn');
+									}
+								}
+							})
+						}
+					
+					</script>
+				<div class="theme-item" id="hiddenOption" style="font-family: 'Jua'; font-size: 0.9em; color: #aaa;" >${theme}</div>
 			</div>
 
 			<!-- 지도 --------------------------------------------------------->
