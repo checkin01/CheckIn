@@ -9,13 +9,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.checkin.webapp.accomodation.model.AccomodationVO;
+import com.checkin.webapp.master.model.MasterVO;
+import com.checkin.webapp.member.model.MemberVO;
+import com.checkin.webapp.webmaster.command.AccoListCommand;
 import com.checkin.webapp.webmaster.command.DeleteNoticeCommand;
 import com.checkin.webapp.webmaster.command.EditNoticeFormCommand;
 import com.checkin.webapp.webmaster.command.EditNoticeOkCommand;
 import com.checkin.webapp.webmaster.command.InsertNoticeFormCommand;
 import com.checkin.webapp.webmaster.command.InsertNoticeOkCommand;
 import com.checkin.webapp.webmaster.command.LoginWebmasterCommand;
+import com.checkin.webapp.webmaster.command.MasterListCommand;
 import com.checkin.webapp.webmaster.command.ShowAllNoticeListCommand;
+import com.checkin.webapp.webmaster.command.UserListCommand;
 import com.checkin.webapp.webmaster.command.ViewOneNoticeCommand;
 import com.checkin.webapp.webmaster.command.WebmasterCommandInterface;
 import com.checkin.webapp.webmaster.model.NoticeVO;
@@ -97,18 +103,28 @@ public class WebmasterController {
 		return command.execute(request, vo);
 	}
 	
-	/*
+	
 	//멤버리스트 이동
 	// 매핑 경로 : /webmaster/userList
-	public ModelAndView showAllMember(HttpServletRequest request, MemberVO vo);
+	@RequestMapping(value="/webmaster/userList",method=RequestMethod.GET)
+	public ModelAndView showAllMember(HttpServletRequest request, MemberVO vo) {
+		System.out.println("Controller..showMember..");
+		return new UserListCommand().execute(request);
+	};
 	
 	//숙박업소관리자리스트 이동
-	// 매핑 경로 : /webmaster/masterList
-	public ModelAndView showAllMaster(HttpServletRequest request, MasterVO vo);
+	@RequestMapping(value="/webmaster/masterList",method=RequestMethod.GET)
+	public ModelAndView showAllMaster(HttpServletRequest request, MasterVO vo) {
+		System.out.println("Controller..showMaster..");
+		return new MasterListCommand().execute(request);
+	}
 	
 	//숙박업소리스트 이동
-	// 매핑 경로 : /webmaster/showAccoList
-	public ModelAndView showAllAccomodation(HttpServletRequest request, AccomodationVO vo);
-	
-	*/
+	// 매핑 경로 : /webmaster/accoList
+	@RequestMapping(value="/webmaster/accoList",method=RequestMethod.GET)
+	public ModelAndView showAllAccomodation(HttpServletRequest request, AccomodationVO vo) {
+		System.out.println("Controller.. AccoList..");
+		return new AccoListCommand().execute(request);
+	};
+
 }

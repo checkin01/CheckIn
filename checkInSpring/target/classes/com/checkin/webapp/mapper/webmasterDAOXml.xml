@@ -4,4 +4,18 @@
 	<select id="selectWebmaster" resultType="com.checkin.webapp.webmaster.model.WebmasterVO">
 		select w, wid, wpwd, writedate from webmaster where wid=#{wid} and wpwd=#{wpwd}
 	</select>
+	
+	<select id="showMemberList" resultType="com.checkin.webapp.member.model.MemberVO">
+		select u,uuid,uname,uaddr,utel,uemail,birth,upoint,to_char(writedate,'YYYY-MM-dd') writedate from member order by u desc
+	</select>
+	
+	<select id="showMasterList" resultType="com.checkin.webapp.master.model.MasterVO">
+		select m,mid,mname,mtel,memail,to_char(writedate,'YYYY-MM-dd') writedate from master order by m desc
+	</select>
+	
+	<select id="showAccoList" resultType="com.checkin.webapp.accomodation.model.AccomodationVO">
+		select a,aname,atel,aaddr,atype,acheckin,acheckout,amaxreservedate,atheme,to_char(writedate,'YYYY-MM-dd') writedate 
+		from accomodation
+		order by a desc
+	</select>
 </mapper>
