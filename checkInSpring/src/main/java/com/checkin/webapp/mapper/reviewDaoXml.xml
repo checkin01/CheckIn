@@ -38,4 +38,17 @@
 		select v,r,u,a,mid,vgrade,vimg1,vcontent,writedate,b from review
 		where v = #{v}
 	</select>
+	
+	<select id="selectAllReview" resultType="com.checkin.webapp.review.model.ReviewVO">
+		select v.v, v.vcontent,v.vgrade, m.uname, v.writedate, m.uuid
+		from review v join member m on m.u=v.u 
+		where mid=#{mid}
+		order by v.v desc
+	</select>
+	
+	<select id="selectDetail" resultType="com.checkin.webapp.review.model.ReviewVO">
+		select v.vgrade, m.uuid, v.writedate, v.vcontent, v.vimg1
+		from review v join member m on m.u=v.u
+		where m.uuid=#{param1} and v.v=#{param2}
+	</select>
 </mapper>

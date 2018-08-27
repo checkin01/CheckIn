@@ -22,6 +22,8 @@ public class ReviewVO {
 	private String bcheckin;
 	private String bcheckout;
 	
+	private String uname;
+	
 	
 	@Override
 	public String toString() {
@@ -144,6 +146,18 @@ public class ReviewVO {
 	}
 	public void setWritedate(String writedate) {
 		this.writedate = writedate;
+	}
+
+	public String getUname() {
+		return uname;
+	}
+
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+
+	public void setU(int u) {
+		this.u = u;
 	}
 	
 	
