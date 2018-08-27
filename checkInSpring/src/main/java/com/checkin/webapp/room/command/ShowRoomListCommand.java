@@ -14,6 +14,7 @@ import com.checkin.webapp.Constants;
 import com.checkin.webapp.accomodation.model.AccomodationDAOInterface;
 import com.checkin.webapp.accomodation.model.AccomodationVO;
 import com.checkin.webapp.booking.model.BookingDAOInterface;
+import com.checkin.webapp.booking.model.BookingVO;
 import com.checkin.webapp.booking.model.CheckBookingVO;
 import com.checkin.webapp.room.model.RoomDAOInterface;
 import com.checkin.webapp.room.model.RoomVO;
@@ -72,7 +73,7 @@ public class ShowRoomListCommand implements RoomCommandInterface {
 		bookingVo.setCheckin(checkin);
 		bookingVo.setCheckout(checkout);
 		BookingDAOInterface dao3 = Constants.sqlSession.getMapper(BookingDAOInterface.class);
-		List<Integer> bookingAvailList = dao3.getRoomsBookingAvailability(bookingVo);
+		List<BookingVO> bookingAvailList = dao3.getRoomsBookingAvailability(bookingVo);
 		
 					//예약 가능 결과를 담음.
 		mav.addObject("bookingVO",bookingAvailList);

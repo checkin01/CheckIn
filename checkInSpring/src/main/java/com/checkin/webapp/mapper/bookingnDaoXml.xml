@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.checkin.webapp.booking.model.BookingDAOInterface">
-	<select id="getRoomsBookingAvailability" resultType="int" >
-		select nvl(bo.c,0) from
+	<select id="getRoomsBookingAvailability" resultType="com.checkin.webapp.booking.model.BookingVO" >
+		select nvl(bo.c,0) wasBooking ,nvl(bo.cancle,0) cancel from
 		(select r from room where a = #{a}) ro
 		left outer join
-		(select r, count(b) c 
+		(select r, count(b) c ,cancle
 			from booking
 			where bcheckin
 			between to_date(#{checkin},'YY/MM/dd') and
@@ -13,11 +13,10 @@
 			or bcheckout
 			between to_date(#{checkin},'YY/MM/dd') +1 and
 			to_date(#{checkout},'YY/MM/dd')
-			 group by r,a having a = #{a}
+			 group by r,a, cancle having a = #{a}
 			
 		) bo on ro.r = bo.r
 		order by ro.r
-		
 	</select>
 
 	<insert id="insertBooking" parameterType="com.checkin.webapp.booking.model.BookingVO">
@@ -39,7 +38,7 @@
 	
 	<select id="selectAllBookingList" resultType="com.checkin.webapp.booking.model.BookingVO">
 		select 
-		b.b, b.r, b.a, nvl(re.v,0) v, 
+		b.b, b.r, b.a, nvl(re.v,0) v, nvl(b.cancle,0) cancel, 
 		to_char(b.writedate,'YY/MM/dd') writedate, 
 		to_char(b.bcheckin,'YY/MM/dd') bcheckin, 
 		to_char(b.bcheckout,'YY/MM/dd') bcheckout, 
@@ -59,4 +58,8 @@
 		where b.mid=#{mid}
 		order by bcheckin
 	</select>
+	
+		<update id="cancelBooking">
+		update booking set cancle = 1 , cancledate = sysdate where b = #{b}
+	</update>
 </mapper>

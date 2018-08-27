@@ -105,7 +105,7 @@ function ajax_booking(a,r,checkinout, people,u){
 			if(result > 0){
 				var isClickedOk = confirm("예약 되었습니다. 예약 확인 페이지로 이동하시겠습니까?");
 				if(isClickedOk==true){
-					href.location="/webapp/main/mypage/bookingList";
+					location.href="/webapp/main/mypage/bookingList";
 				}
 				//page 이동.
 			}else{
@@ -511,16 +511,16 @@ function pageReload(a){
 							<div class="col-sm-5"></div>
 
 							<div class="col-sm-4"></div>
-					
-							<c:if test="${bookingVO[status.index]==0}">
+						
+								<c:if test="${bookingVO[status.index].wasBooking == 0 or bookingVO[status.index].cancel == 1 }">
+									<input type="button" value="예약하기" class="btn form-control col-sm-3 btn-success" onclick="whenclickbookingbtn(${vo.a},${vo.r})"/>
+								</c:if>
+	
+								<c:if test="${bookingVO[status.index].wasBooking > 0 and bookingVO[status.index].cancel != 1}">
 								
-								<input type="button" value="예약하기" class="btn form-control col-sm-3 btn-success" onclick="whenclickbookingbtn(${vo.a},${vo.r})"/>
-							</c:if>
-
-							<c:if test="${bookingVO[status.index] > 0}">
-							
-								<input type="button" value="예약 완료" class="btn form-control col-sm-3 btn-success" disabled/>
-							</c:if>
+									<input type="button" value="예약 완료" class="btn form-control col-sm-3 btn-success" disabled/>
+								</c:if>
+					
 						</div>
 						<!-- 버튼 폼 끝 -->
 					

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.checkin.webapp.booking.command.BookingCancleCommand;
 import com.checkin.webapp.booking.command.BookingCommand;
 import com.checkin.webapp.booking.command.ShowAllBookingListCommand;
 import com.checkin.webapp.booking.model.BookingVO;
@@ -44,6 +45,14 @@ public class BookingController {
 		System.out.println("BookingController.."+vo.toString());
 	
 		return new BookingCommand().executeAjax(request,vo);
+	}
+	
+
+	@RequestMapping(value="/main/mypage/trycanclebooking", method = RequestMethod.GET)
+	public ModelAndView cancelBooking(HttpServletRequest request,BookingVO vo) {
+		System.out.println("BookingController.."+vo.toString());
+	
+		return new BookingCancleCommand().execute(request,vo);
 	}
 		
 }

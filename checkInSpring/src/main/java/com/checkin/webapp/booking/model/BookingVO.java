@@ -12,6 +12,7 @@ public class BookingVO {
 	private int cancel; //취소여부 0:취소안함, 1:취소
 	private String canceldate; //취소한 날짜(sysdate)
 	private String writedate; //예약한 날짜(sysdate)
+	private int wasBooking;
 	
 	private int bcurpage; //현재 페이지
 	private int bonepage; //한 페이지에 보여질 리스트 개수
@@ -35,6 +36,12 @@ public class BookingVO {
 		this.v = v;
 	}
 	
+	public int getWasBooking() {
+		return wasBooking;
+	}
+	public void setWasBooking(int wasBooking) {
+		this.wasBooking = wasBooking;
+	}
 	public int getBcurpage() {
 		return bcurpage;
 	}
