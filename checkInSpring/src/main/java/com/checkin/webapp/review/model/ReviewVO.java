@@ -3,13 +3,14 @@ package com.checkin.webapp.review.model;
 public class ReviewVO {
 	private int v; //리뷰시퀀스
 	private int r; //룸시퀀스
-	private String uid; //사용자아이디
+	private int u; //사용자아이디
 	private int a; //숙박업소 시퀀스
+	private int b;
 	private String mid; //가맹점주인 아이디
 	private int vgrade; //룸의 평점
-	private String vimg1; //사용자가 올린 이미지
-	private String vimg2; 
-	private String vimg3;
+	private String vimg1=""; //사용자가 올린 이미지
+	private String vimg2=""; 
+	private String vimg3="";
 	private String vcontent;//리뷰내용
 	private String writedate;//작성날짜
 	
@@ -18,12 +19,52 @@ public class ReviewVO {
 	
 
 	private String uuid; //사용자아이디
+	private String bcheckin;
+	private String bcheckout;
+	
+	
+	@Override
+	public String toString() {
+		return "ReviewVO [v=" + v + ", r=" + r+ ", b=" + b  + ", bcheckin=" + bcheckin + ", bcheckout=" + bcheckout + ", u=" + u + ", a=" + a + ", mid=" + mid + ", vgrade=" + vgrade
+				+ ", vimg1=" + vimg1 + ", vimg2=" + vimg2 + ", vimg3=" + vimg3 + ", vcontent=" + vcontent
+				+ ", writedate=" + writedate + ", vcurpage=" + vcurpage + ", vonepage=" + vonepage + ", uuid=" + uuid
+				+ "]";
+	}
+	
+	public int getB() {
+		return b;
+	}
+
+
+	public void setB(int b) {
+		this.b = b;
+	}
 	
 	public String getUuid() {
 		return uuid;
 	}
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
+	}
+	
+
+	public String getBcheckin() {
+		return bcheckin;
+	}
+
+
+	public void setBcheckin(String bcheckin) {
+		this.bcheckin = bcheckin;
+	}
+
+
+	public String getBcheckout() {
+		return bcheckout;
+	}
+
+
+	public void setBcheckout(String bcheckout) {
+		this.bcheckout = bcheckout;
 	}
 	
 	public int getVcurpage() {
@@ -50,11 +91,11 @@ public class ReviewVO {
 	public void setR(int r) {
 		this.r = r;
 	}
-	public String getUid() {
-		return uid;
+	public int getU() {
+		return u;
 	}
-	public void setUid(String uid) {
-		this.uid = uid;
+	public void setUid(int u) {
+		this.u = u;
 	}
 	public int getA() {
 		return a;

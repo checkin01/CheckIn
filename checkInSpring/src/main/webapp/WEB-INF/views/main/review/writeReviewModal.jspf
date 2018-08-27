@@ -14,15 +14,23 @@
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">리뷰 등록</h4>
+          
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <!-- Modal body -->
         <div class="modal-body">
-         	<form id="reviewFrm" name="reviewFrm" method="post" action="">
-            	<div class="form-group">
+         	<form id="reviewFrm" name="reviewFrm" action="/webapp/main/mypage/tryWriteReview" method="post" enctype="multipart/form-data">
+            	
+            	<input type='hidden' value='${u}' name='u'/>
+          		<input type='hidden' class="b" value='' name='b' />
+           	 	<input type='hidden' class="a" value='' name='a' />
+            	<input type='hidden' class="r" value='' name='r' />
+            	<input type='hidden' class="checkin" value='' name='bcheckin' />
+            	<input type='hidden' class="checkout" value='' name='bcheckout' />
+           		 <div class="form-group">
             		<div class= row>
             			<label class="col-sm-2">별점</label>
-            			<select class="form-control review-item col-sm-5">
+            			<select class="form-control review-item col-sm-5" name="vgrade">
             				<option>1</option>
             				<option>2</option>
             				<option>3</option>
@@ -30,21 +38,18 @@
             				<option>5</option>
             			</select>
             		</div>
-            		<div class="row">
-            			<label class="col-sm-2">제목</label>
-            			<input type="text" class="form-control review-item" id="title" name="title"/>
-            		</div>
+            	
             		<div class="row">
             			<label class="col-sm-2">내용</label>
-            			<textarea type="text" class="form-control review-item" id="content" name="content"></textarea>
+            			<textarea class="form-control review-item" id="content" name="vcontent"></textarea>
             		</div>
             		
             		<div class="row">
 						<label class="col-sm-5"><i class="fa fa-file-image-o" style="font-size: 16px">
-							이미지 등록(최대 3개) </i></label>
-						<input type="file" id="img1" class="form-control review-item">
-						<input type="file" id="img1" class="form-control review-item">
-						<input type="file" id="img1" class="form-control review-item">
+							이미지 등록(최대 1개) </i></label>
+						<input type="file" id="file" name="file1" class="form-control review-item">
+						<!--  <input type="file" id="filename2" class="form-control review-item">
+						<input type="file" id="filename3" class="form-control review-item"> -->
 				</div>
             	</div>
             	<button type="reset">다시작성</button>

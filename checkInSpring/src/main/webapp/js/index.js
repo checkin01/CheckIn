@@ -59,8 +59,6 @@ function ajax_recommendation() {
 					$(tag).find('.atel').text(val.atel);
 	
 				});
-			}else{
-				
 			}
 		},
 		error : function(e) {

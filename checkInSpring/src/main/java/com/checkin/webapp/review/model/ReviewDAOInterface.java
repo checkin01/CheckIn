@@ -16,4 +16,6 @@ public interface ReviewDAOInterface {
 	
 	public int getReviewListCnt(ReviewVO vo);
 	
+	public int updateVRecordBooking(ReviewVO vo);
+	
 }

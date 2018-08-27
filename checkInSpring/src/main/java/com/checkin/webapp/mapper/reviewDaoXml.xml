@@ -24,4 +24,18 @@
 		 values (reviewsq.nextval,22,42,360,'master1',5,'cccc')	
 	</insert>
 	
+	<update id="updateVRecordBooking">
+		update booking set
+		v = (select v from review where r = #{r} and u = #{u} and a = #{a} and b = #{b})
+		where b = #{b} and r = #{r} and u = #{u} and a = #{a} and bcheckin = to_date(#{bcheckin}) and bcheckout = to_date(#{bcheckout})
+	</update>
+	
+	<update id="updateReview" parameterType="com.checkin.webapp.review.model.ReviewVO">
+	update review set vcontent = #{vcontent}, vgrade = #{vgrade}, writedate = sysdate , vimg1 = #{vimg1}where v=#{v}
+	</update>
+	
+	<select id ="selectOneReview" resultType="com.checkin.webapp.review.model.ReviewVO">
+		select v,r,u,a,mid,vgrade,vimg1,vcontent,writedate,b from review
+		where v = #{v}
+	</select>
 </mapper>

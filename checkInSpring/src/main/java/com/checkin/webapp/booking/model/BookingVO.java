@@ -27,7 +27,14 @@ public class BookingVO {
 	private String uname;
 	private String utel;	
 	//===============================================
-		
+	private int v; //리뷰 작성시 (리뷰 레코드 번호 ) 아닐시 0
+	public int getV() {
+		return v;
+	}
+	public void setV(int v) {
+		this.v = v;
+	}
+	
 	public int getBcurpage() {
 		return bcurpage;
 	}
@@ -153,6 +160,15 @@ public class BookingVO {
 	}
 	public void setUtel(String utel) {
 		this.utel = utel;
-	}	
+	}
+	@Override
+	public String toString() {
+		return "BookingVO [b=" + b + ", r=" + r + ", u=" + u + ", a=" + a + ", mid=" + mid + ", bcheckin=" + bcheckin
+				+ ", bcheckout=" + bcheckout + ", bcount=" + bcount + ", cancel=" + cancel + ", canceldate="
+				+ canceldate + ", writedate=" + writedate + ", bcurpage=" + bcurpage + ", bonepage=" + bonepage
+				+ ", atel=" + atel + ", aname=" + aname + ", rname=" + rname + ", aimg1=" + aimg1 + ", aimg2=" + aimg2
+				+ ", aimg3=" + aimg3 + ", uname=" + uname + ", utel=" + utel + ", v=" + v + "]";
+	}
+	
 	
 }

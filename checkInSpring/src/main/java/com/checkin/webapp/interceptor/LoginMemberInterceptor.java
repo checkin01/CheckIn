@@ -16,7 +16,7 @@ public class LoginMemberInterceptor implements HandlerInterceptor {
 		HttpSession session = request.getSession();
 		String uuid = (String) session.getAttribute("uuid");
 		if(uuid==null || "".equals(uuid)) {
-			response.sendRedirect("/main/login");
+			response.sendRedirect("/webapp/main/login");
 			return false;
 		}else {
 			return true;

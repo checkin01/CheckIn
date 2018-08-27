@@ -62,19 +62,22 @@ function whenclickbookingbtn(a,r){
 	
 var u = '${u}';
 var checkinout =  $("#acheckinout").val();
-var bcheckin = $("#checkin").val();
-var bcheckout =  $("#checkout").val();
-if(bcheckin==bcheckout){
-	alert("날짜를 지정해주세요");
-	return false;
-}
 
- if(u != null || u != ''){
+
+if(u == null || u == ''){
 	var result = confirm("로그인이 필요합니다. 로그인 페이지로 이동 하시겠습니까?",'Check in !');
 	if(result == true){
-		alert('이동');
+		location.href="/webapp/main/login";
 	}
 }else{
+	var bcheckin = $("#checkin").val();
+	var bcheckout =  $("#checkout").val();
+	
+	if(bcheckin==bcheckout){
+		alert("날짜를 지정해주세요");
+		return false;
+	}
+	 
 	var checkinout =  $("#checkin").val(); +" ~ " +  $("#checkout").val();
 	var people = $("#people").val();
 	var result = confirm(checkinout +" 날짜에  인원수 : "+ people+"\n\n 예약 하시겠습니까? 예를 누르면 예약 됩니다.");
@@ -100,7 +103,10 @@ function ajax_booking(a,r,checkinout, people,u){
 		contentType : 'applicaiton/json;charset=UTF-8',
 		success : function(result) {
 			if(result > 0){
-				var isClickedOk = confirm("예약 되었습니다. 예약 페이지로 이동합니다. 아직 구현 안함~","Check in !");
+				var isClickedOk = confirm("예약 되었습니다. 예약 확인 페이지로 이동하시겠습니까?");
+				if(isClickedOk==true){
+					href.location="/webapp/main/mypage/bookingList";
+				}
 				//page 이동.
 			}else{
 				alert("죄송합니다. 예약에 실패 했습니다. 잠시 후 다시 시도 해 주세요.");
@@ -177,7 +183,7 @@ function ajax_review(r,i){
 				var uuid = val.uuid;
 				var writedate = val.writedate;
 				var content = val.vcontent;
-				var img1 = val.img1;
+				var img1 = val.vimg1;
 				var html = '<div class="row" style="padding-left:20px; padding-right:20px">';
 				html +='<p class="col-sm-4 review-p border">';
 				html += '<label><i class="fa fa-thumbs-o-up"></i> 평점 : </label> <span class="grade">'+grade+'</span>';
@@ -209,6 +215,20 @@ function whenClickAccor(id){
 	}else{
 		accor.className = accor.className.replace(" w3-show"," w3-hide");
 	}
+}
+
+function pageReload(a){
+	var checkin = $("#checkin").val().replace(/-/gi,'/'); 
+	var checkout = $("#checkout").val().replace(/-/gi,'/');
+	
+	checkinout = checkin+'-'+checkout;
+	if(checkin==checkout){
+		alert("날짜를 지정해주세요");
+		return false;
+	}
+	alert(checkinout);
+	var url = "/webapp/main/room/showList?checkinout="+checkinout+"&a="+a;
+	location.href = url;
 }
 </script>
 
@@ -244,7 +264,7 @@ function whenClickAccor(id){
 							<i class="material-icons">call</i><span id=tel> ${accoVO.atel}</span>
 						</p>
 						<hr />
-						<form action="/action_page.php" target="_blank">
+						<div>
 							<p>
 								<i class="fa fa-calendar-check-o"> <label>체크인</label></i>
 							</p>
@@ -261,27 +281,25 @@ function whenClickAccor(id){
 							</p>
 							<input class="w3-input w3-border" type="number" value="1" name="people" id="people" min="1" max="10"> <br />
 							<p>
-								<button class="w3-button w3-block w3-green w3-left-align" type="submit">
+								<button class="w3-button w3-block w3-green w3-left-align" onclick="pageReload(${accoVO.a})">
 									<i class="fa fa-search w3-margin-right"></i> Search availability
 								</button>
 							</p>
-						</form>
+						</div>
 					</div>
 				</div>
 
 				<!-- 내가 본 상품 -->
-
+			<!-- 
 				<div class="w3-bar-block ">
 					<label>이전에 본 상품</label>
 					<div id="history" class="carousel slide" data-ride="carousel">
-						<!-- Indicators -->
+						
 						<ul class="carousel-indicators">
 							<li data-target="#history" data-slide-to="0" class="active"></li>
 							<li data-target="#history" data-slide-to="1"></li>
 							<li data-target="#history" data-slide-to="2"></li>
 						</ul>
-
-						<!-- The slide show -->
 						<div class="carousel-inner">
 							<div class="carousel-item active">
 								<img src="../img/accomodation/hotel01.PNG" class="historyImg rounded">
@@ -294,12 +312,14 @@ function whenClickAccor(id){
 							</div>
 						</div>
 
-						<!-- Left and right controls -->
+					
 						<a class="carousel-control-prev" href="#history" data-slide="prev"> <span class="carousel-control-prev-icon"></span>
 						</a> <a class="carousel-control-next" href="#history" data-slide="next"> <span class="carousel-control-next-icon"></span>
 						</a>
 					</div>
+					
 				</div>
+				 -->
 				<div class="block"></div>
 			</nav>
 		</aside>

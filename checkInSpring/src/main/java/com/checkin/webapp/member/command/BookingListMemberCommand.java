@@ -29,12 +29,12 @@ public class BookingListMemberCommand implements MemberCommandInterface {
 		//sql 작업으로 예약리스트 가져오기
 		BookingDAOInterface dao = Constants.sqlSession.getMapper(BookingDAOInterface.class);
 		List<BookingVO> lst = dao.selectAllBookingList(u);
-		System.out.println("dao완료");
+		System.out.println("BookingListMemberCommnad.... list :"+lst.toString());
 		
 		//mav 생성
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("lst",lst);
-		System.out.println("object 심기 완료");
+	
 		mav.setViewName("main/mypage/bookList");
 		return mav;
 	}

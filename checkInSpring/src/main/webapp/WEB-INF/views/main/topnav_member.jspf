@@ -150,14 +150,14 @@ myspage에서 적용할 nav-->#sideNav a, #sideNav div, #sideNav b {
 	<!---------------------------------------top navigation bar--------------------------------------->
 	<nav id="top-nav">
 		<div class="logo">
-			<a href="<%=request.getContextPath()%>/index.jsp" id="top-logo">Check In</a>
+			<a href="/webapp/" id="top-logo">Check In</a>
 		</div>
 	</nav>
 
 	<!---------------------------------------- main navigation bar ----------------------------------->
 	<nav class="navbar navbar-expand-lg" id="main-nav">
 		<div class="logo">
-			<a href="/webapp/main/index.jsp"><i class="material-icons"> home </i></a>
+			<a href="/webapp/"><i class="material-icons"> home </i></a>
 		</div>
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

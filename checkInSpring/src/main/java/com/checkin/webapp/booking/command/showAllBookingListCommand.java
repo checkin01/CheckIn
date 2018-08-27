@@ -12,7 +12,7 @@ import com.checkin.webapp.accomodation.model.AccomodationDAOInterface;
 import com.checkin.webapp.booking.model.BookingDAOInterface;
 import com.checkin.webapp.booking.model.BookingVO;
 
-public class showAllBookingListCommand {
+public class ShowAllBookingListCommand {
 	public ModelAndView execute(HttpServletRequest request, BookingVO vo) {
 		
 		//session에서 mid 가져오기		
