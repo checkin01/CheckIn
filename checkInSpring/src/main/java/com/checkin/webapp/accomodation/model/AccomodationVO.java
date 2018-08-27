@@ -36,7 +36,15 @@ public class AccomodationVO {
 	private String asearchkey;//검색조건
 	private String asearchvalue; //검색값
 	private String asortkey = "writedate";
-	
+	private int totalpage; //전체 페이지 수
+
+	public int getTotalpage() {
+		return totalpage;
+	}
+
+	public void setTotalpage(int totalpage) {
+		this.totalpage = totalpage;
+	}
 	
 	
 	public String getAgil() {

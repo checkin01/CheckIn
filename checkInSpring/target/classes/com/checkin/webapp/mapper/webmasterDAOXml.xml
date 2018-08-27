@@ -5,17 +5,80 @@
 		select w, wid, wpwd, writedate from webmaster where wid=#{wid} and wpwd=#{wpwd}
 	</select>
 	
-	<select id="showMemberList" resultType="com.checkin.webapp.member.model.MemberVO">
-		select u,uuid,uname,uaddr,utel,uemail,birth,upoint,to_char(writedate,'YYYY-MM-dd') writedate from member order by u desc
+	<select id="showMemberList" resultType="com.checkin.webapp.member.model.MemberVO">	
+	select *
+	from 
+		(select * from 
+			(select <![CDATA[ ROWNUM ]]>,u,uuid,uname,uaddr,utel,uemail,birth,upoint,to_char(writedate,'YYYY-MM-dd') writedate 
+				from member 
+				where <![CDATA[ ROWNUM <= #{curpage}*#{onepage} ]]>
+			order by u desc)
+		order by u) 
+	where 
+	<choose>
+		<when test="totalpage==curpage">
+			<![CDATA[ ROWNUM <= ((select count(*) from member) - (#{onepage}*(#{totalpage}-1)))]]>
+		</when>
+		<when test="totalpage!=curpage">
+			<![CDATA[ ROWNUM <= #{onepage}]]>
+		</when>
+	</choose>
+	order by u desc
+	
 	</select>
 	
 	<select id="showMasterList" resultType="com.checkin.webapp.master.model.MasterVO">
-		select m,mid,mname,mtel,memail,to_char(writedate,'YYYY-MM-dd') writedate from master order by m desc
+		select *
+		from 
+			(select * from 
+				(select <![CDATA[ ROWNUM ]]>,m,mid,mname,mtel,memail,to_char(writedate,'YYYY-MM-dd') writedate 
+					from master 
+					where <![CDATA[ ROWNUM <= #{curpage}*#{onepage} ]]>
+				order by m desc)
+			order by m) 
+		where
+		<choose>
+		<when test="totalpage==curpage">
+			<![CDATA[ ROWNUM <= ((select count(*) from master) - (#{onepage}*(#{totalpage}-1)))]]>
+		</when>
+		<when test="totalpage!=curpage">
+			<![CDATA[ ROWNUM <= #{onepage}]]>
+		</when>
+	</choose>
+	order by m desc
 	</select>
 	
 	<select id="showAccoList" resultType="com.checkin.webapp.accomodation.model.AccomodationVO">
-		select a,aname,atel,aaddr,atype,acheckin,acheckout,amaxreservedate,atheme,to_char(writedate,'YYYY-MM-dd') writedate 
-		from accomodation
-		order by a desc
+		select *
+		from
+		(select * from 
+			(select a,aname,atel,aaddr,atype,acheckin,acheckout,amaxreservedate,atheme,to_char(writedate,'YYYY-MM-dd') writedate 
+				from accomodation
+				where <![CDATA[ ROWNUM <= #{curpage}*#{onepage} ]]>
+			order by writedate desc)
+		order by writedate) 
+		where
+		<choose>
+			<when test="totalpage==curpage">
+				<![CDATA[ ROWNUM <= ((select count(*) from master) - (#{onepage}*(#{totalpage}-1)))]]>
+			</when>
+			<when test="totalpage!=curpage">
+				<![CDATA[ ROWNUM <= #{onepage}]]>
+			</when>
+		</choose>
+		order by writedate desc
 	</select>
+	
+	<select id ="getAllMemberListCnt" resultType="int">
+		select count(*) from member
+	</select>
+	
+	<select id ="getAllAccoListCnt" resultType="int">
+		select count(*) from accomodation
+	</select>
+	
+	<select id ="getAllMasterListCnt" resultType="int">
+		select count(*) from master
+	</select>
+	
 </mapper>

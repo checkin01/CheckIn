@@ -7,6 +7,10 @@ public class WebmasterVO {
 	private String writedate;
 	private String logChk;
 	
+	private int totalpage; //전체 페이지 수
+	private int curpage=1; //공지사항 내용
+	private int onepage=10; //공지사항 내용
+	
 	@Override
 	public String toString() {
 		return "WebmasterVO [w=" + w + ", wid=" + wid + ", wpwd=" + wpwd + ", writedate=" + writedate + "]";
@@ -20,6 +24,34 @@ public class WebmasterVO {
 
 	public void setLogChk(String logChk) {
 		this.logChk = logChk;
+	}
+	
+
+	public int getTotalpage() {
+		return totalpage;
+	}
+
+	public void setTotalpage(int totalpage) {
+		this.totalpage = totalpage;
+	}
+
+	public int getCurpage() {
+		return curpage;
+	}
+
+
+	public void setCurpage(int curpage) {
+		this.curpage = curpage;
+	}
+
+
+	public int getOnepage() {
+		return onepage;
+	}
+
+
+	public void setOnepage(int onepage) {
+		this.onepage = onepage;
 	}
 
 

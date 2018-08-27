@@ -15,6 +15,7 @@ public class MemberVO {
 	
 	private String logStatus;
 	
+	private int totalpage; //전체 페이지 수
 	@Override
 	public String toString() {
 		return "MemberVO [u=" + u + ", uuid=" + uuid + ", upwd=" + upwd + ", uname=" + uname + ", uaddr=" + uaddr
@@ -27,6 +28,14 @@ public class MemberVO {
 	private String usearchkey;//검색조건
 	private String usearchvalue; //검색값
 	
+
+	public int getTotalpage() {
+		return totalpage;
+	}
+
+	public void setTotalpage(int totalpage) {
+		this.totalpage = totalpage;
+	}
 	public int getU() {
 		return u;
 	}

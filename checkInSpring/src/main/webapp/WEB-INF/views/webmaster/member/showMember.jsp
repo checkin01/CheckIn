@@ -145,17 +145,35 @@ body {
 				</c:forEach>
 			</div>
 			<!-- listGroup -->
-			<!-- paging -->
-
+			
+			<!------------------------ paging 시작 ----------------->
+			<c:set var="curpage" value="${curpage}" />
+			<c:set var="onepage" value="${onepage}" />
+			<c:set var="totalpage" value="${totalpage}" />
 			<ul class="pagination pagination-md justify-content-center" id="pagination">
-				<li class="page-item"><a href="showMasters.jsp" class="page-link">Prev</a></li>
-				<li class="page-item"><a href="showMasters.jsp" class="page-link">1</a></li>
-				<li class="page-item"><a href="showMasters.jsp" class="page-link">2</a></li>
-				<li class="page-item"><a href="showMasters.jsp" class="page-link">3</a></li>
-				<li class="page-item"><a href="showMasters.jsp" class="page-link">4</a></li>
-				<li class="page-item"><a href="showMasters.jsp" class="page-link">5</a></li>
-				<li class="page-item"><a href="showMasters.jsp" class="page-link">Next</a></li>
+				<c:if test="${curpage!=1}" >
+					<li class="page-item"><a href="/webapp/webmaster/userList?curpage=${curpage-1}" class="page-link">Prev</a></li>
+				</c:if>
+				<!-- 5개씩 보여준다. -->
+
+				<c:forEach var = 'i' begin='${Math.floor(curpage/5)*5+1}' end='${(curpage/5)*5+4}'>
+					<c:if test = "${i <= totalpage}">
+						<c:choose>
+							<c:when test = "${i==curpage}">
+								<li class="page-item"><a href="/webapp/webmaster/userList?curpage=${i}" class="page-link"><b>${i}</b></a></li>
+							</c:when>
+							<c:when test = "${i!=curpage}">
+								<li class="page-item"><a href="/webapp/webmaster/userList?curpage=${i}" class="page-link">${i}</a></li>
+							</c:when>
+						</c:choose>
+					</c:if>
+				</c:forEach>
+				<c:if test="${curpage!=totalpage}" >
+					<li class="page-item"><a href="/webapp/webmaster/userList?curpage=${curpage+1}" class="page-link">Next</a></li>
+				</c:if>
 			</ul>
+			<!---------------------------------- paging 끝 ----------------->
+			
 			<form action="list.jsp" id="searchFrm" class="form-inline justify-content-center">
 				<div style="text-align: center">
 					<select name="searchKey" class="form-control">

@@ -16,6 +16,7 @@ public class BookingVO {
 	
 	private int bcurpage; //현재 페이지
 	private int bonepage; //한 페이지에 보여질 리스트 개수
+	private int totalpage; //전체 페이지 수
 	
 	//===============예약내역확인======================
 	private String atel;//예약 숙소 연락처
@@ -29,6 +30,18 @@ public class BookingVO {
 	private String utel;	
 	//===============================================
 	private int v; //리뷰 작성시 (리뷰 레코드 번호 ) 아닐시 0
+	
+
+	public int getTotalpage() {
+		return totalpage;
+	}
+
+	public void setTotalpage(int totalpage) {
+		this.totalpage = totalpage;
+	}
+	
+	
+	
 	public int getV() {
 		return v;
 	}

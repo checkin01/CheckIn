@@ -28,6 +28,7 @@
 
 <body>
 <%@ include file="../topnav_webmaster.jspf"%>
+
 	<div id="main" class="row main" style="position: relative; top: 80px; margin-bottom: 100px">
 		<aside class="left col-sm-1" id="left">
 		</aside>
@@ -64,18 +65,32 @@
 				</c:forEach>
 						
 			</div>
+
+			<c:set var="curpage" value="${curpage}" />
+			<c:set var="onepage" value="${onepage}" />
+			<c:set var="totalpage" value="${totalpage}" />
 			<ul class="pagination pagination-md justify-content-center" id="pagination">
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">Prev</a></li>
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">1</a></li>
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">2</a></li>
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">3</a></li>
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">4</a></li>
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">5</a></li>
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">Next</a></li>
+				<c:if test="${curpage!=1}" >
+					<li class="page-item"><a href="/webapp/webmaster/notices?ncurpage=${curpage-1}" class="page-link">Prev</a></li>
+				</c:if>
+				<!-- 5개씩 보여준다. -->
+
+				<c:forEach var = 'i' begin='${Math.floor(curpage/5)*5+1}' end='${(curpage/5)*5+4}'>
+					<c:if test = "${i <= totalpage}">
+						<c:choose>
+							<c:when test = "${i==curpage}">
+								<li class="page-item"><a href="/webapp/webmaster/notices?ncurpage=${i}" class="page-link"><b>${i}</b></a></li>
+							</c:when>
+							<c:when test = "${i!=curpage}">
+								<li class="page-item"><a href="/webapp/webmaster/notices?ncurpage=${i}" class="page-link">${i}</a></li>
+							</c:when>
+						</c:choose>
+					</c:if>
+				</c:forEach>
+				<c:if test="${curpage!=totalpage}" >
+					<li class="page-item"><a href="/webapp/webmaster/notices?ncurpage=${curpage+1}" class="page-link">Next</a></li>
+				</c:if>
 			</ul>
-
-			<!-- 여기 안에 모두 담자 -->
-
 		</div>
 		<aside class="col-sm-1 right" id="right"></aside>
 

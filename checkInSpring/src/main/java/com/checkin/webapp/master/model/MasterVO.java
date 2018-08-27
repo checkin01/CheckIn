@@ -18,6 +18,8 @@ public class MasterVO {
 	private String msearchkey;//검색조건
 	private String msearchvalue; //검색값
 	
+	private int totalpage; //전체 페이지 수
+
 
 	@Override
 	public String toString() {
@@ -26,7 +28,14 @@ public class MasterVO {
 				+ mcurpage + ", monepage=" + monepage + ", msearchkey=" + msearchkey + ", msearchvalue=" + msearchvalue
 				+ "]";
 	}
-	
+
+	public int getTotalpage() {
+		return totalpage;
+	}
+
+	public void setTotalpage(int totalpage) {
+		this.totalpage = totalpage;
+	}
 	
 	public int getA() {
 		return a;

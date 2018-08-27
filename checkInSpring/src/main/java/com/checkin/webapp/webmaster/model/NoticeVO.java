@@ -9,25 +9,50 @@ public class NoticeVO {
 	private String target; //적용대상(0:일반회원-main/index.jsp, 1:가맹회원-/master/home.jsp)
 	private String writedate; //공지 작성날짜
 	private String ncontent; //공지사항 내용
+	private int totalpage; //전체 페이지 수
 	
-	
-	
+	private int ncurpage=1; //공지사항 내용
+	private int nonepage=10; //공지사항 내용
+
 	
 	@Override
 	public String toString() {
 		return "NoticeVO [no=" + no + ", wid=" + wid + ", notitle=" + notitle + ", nostartdate=" + nostartdate
 				+ ", noenddate=" + noenddate + ", target=" + target + ", writedate=" + writedate + ", ncontent="
-				+ ncontent + "]";
+				+ ncontent + ", ncurpage=" + ncurpage + ", nonepage=" + nonepage + "]";
+	}
+	
+	
+
+	public int getTotalpage() {
+		return totalpage;
+	}
+
+	public void setTotalpage(int totalpage) {
+		this.totalpage = totalpage;
 	}
 
 
 
+	public int getNcurpage() {
+		return ncurpage;
+	}
+
+	public void setNcurpage(int ncurpage) {
+		this.ncurpage = ncurpage;
+	}
+
+	public int getNonepage() {
+		return nonepage;
+	}
+
+	public void setNonepage(int nonepage) {
+		this.nonepage = nonepage;
+	}
 
 	public int getNo() {
 		return no;
 	}
-
-
 
 
 	public void setNo(int no) {
