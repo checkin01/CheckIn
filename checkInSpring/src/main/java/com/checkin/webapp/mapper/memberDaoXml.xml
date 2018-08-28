@@ -28,4 +28,8 @@
 	<update id="editMember" parameterType="com.checkin.webapp.member.model.MemberVO">
 		update member set upwd=#{upwd},uaddr=#{uaddr},utel=#{utel},utheme=#{utheme} where uuid=#{uuid}
 	</update>
+	
+	<select id="selectMemberPwd" resultType="String">
+		select upwd from member where uuid=#{uuid}
+	</select>
 </mapper>
