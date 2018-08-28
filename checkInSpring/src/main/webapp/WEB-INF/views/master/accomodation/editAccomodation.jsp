@@ -265,6 +265,31 @@
 				<input name="atheme" id="atheme" type="hidden"/>
 					<i class="fa fa-check-square"> <label for="info"> 기타 정보</label></i>
 					<div class="form-group row" id="info">
+					
+						<div class="input-group-prepend d-inline-flex p-3">
+							<div class="input-group-text">
+								<input type="checkbox" name="movie" value="movie"> <span class="col-sm-3">무비</span>
+							</div>
+						</div>
+
+						<div class="input-group-prepend d-inline-flex p-3">
+							<div class="input-group-text">
+								<input type="checkbox" name="와이파이" value="와이파이"> <span class="col-sm-3">와이파이</span>
+							</div>
+						</div>
+
+						<div class="input-group-prepend d-inline-flex p-3">
+							<div class="input-group-text">
+								<input type="checkbox" name="주차가능" value="주차가능"> <span class="col-sm-3">주차가능</span>
+							</div>
+						</div>
+
+						<div class="input-group-prepend d-inline-flex p-3">
+							<div class="input-group-text">
+								<input type="checkbox" name="수영장" value="수영장"> <span class="col-sm-3">수영장</span>
+							</div>
+						</div>
+
 						<div class="input-group-prepend d-inline-flex p-3">
 							<div class="input-group-text">
 								<input type="checkbox" name="스파" value="스파"> <span class="col-sm-3">스파</span>
@@ -273,43 +298,25 @@
 
 						<div class="input-group-prepend d-inline-flex p-3">
 							<div class="input-group-text">
-								<input type="checkbox" name="애견" value="애견"> <span class="col-sm-3">애견</span>
-							</div>
-						</div>
-
-						<div class="input-group-prepend d-inline-flex p-3">
-							<div class="input-group-text">
-								<input type="checkbox" name="복층" value="복층"> <span class="col-sm-3">복층</span>
-							</div>
-						</div>
-
-						<div class="input-group-prepend d-inline-flex p-3">
-							<div class="input-group-text">
-								<input type="checkbox" name="바베큐" value="바베큐"> <span class="col-sm-3">바베큐</span>
-							</div>
-						</div>
-
-						<div class="input-group-prepend d-inline-flex p-3">
-							<div class="input-group-text">
-								<input type="checkbox" name="오션뷰" value="오션뷰"> <span class="col-sm-3">오션뷰</span>
+								<input type="checkbox" name="식사가능" value="식사가능"> <span class="col-sm-3">식사가능</span>
 							</div>
 						</div>
 						
 						<div class="input-group-prepend d-inline-flex p-3">
 							<div class="input-group-text">
-								<input type="checkbox" name="주차가능" value="주차가능"> <span class="col-sm-3">주차가능</span>
+								<input type="checkbox" name="흡연가능" value="흡연가능"> <span class="col-sm-3">흡연가능</span>
 							</div>
 						</div>
 						
 						<div class="input-group-prepend d-inline-flex p-3">
 							<div class="input-group-text">
-								<input type="checkbox" name="게임" value="게임"> <span class="col-sm-3">게임</span>
+								<input type="checkbox" name="금연" value="금연"> <span class="col-sm-3">금연</span>
 							</div>
 						</div>
 
 						<div class="input-group-prepend d-inline-flex p-3">
 							<div class="input-group-text">
-								<input type="checkbox" name="노천탕" value="노천탕"> <span class="col-sm-3">노천탕</span>
+								<input type="checkbox" name="베이비존" value="베이비존"> <span class="col-sm-3">베이비존</span>
 							</div>
 						</div>
 						
@@ -318,25 +325,7 @@
 								<input type="checkbox" name="노래방" value="노래방"> <span class="col-sm-3">노래방</span>
 							</div>
 						</div>
-						
-						<div class="input-group-prepend d-inline-flex p-3">
-							<div class="input-group-text">
-								<input type="checkbox" name="수영장" value="수영장"> <span class="col-sm-3">수영장</span>
-							</div>
-						</div>
-						
-						<div class="input-group-prepend d-inline-flex p-3">
-							<div class="input-group-text">
-								<input type="checkbox" name="찜질방" value="찜질방"> <span class="col-sm-3">찜질방</span>
-							</div>
-						</div>
-						
-						<div class="input-group-prepend d-inline-flex p-3">
-							<div class="input-group-text">
-								<input type="checkbox" name="사우나" value="사우나"> <span class="col-sm-3">사우나</span>
-							</div>
-						</div>
-						
+												
 					</div>
 				</div>
 				<!-- notice 주의 사항들 textfield -->
