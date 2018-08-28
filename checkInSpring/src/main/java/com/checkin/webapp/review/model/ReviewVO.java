@@ -16,7 +16,7 @@ public class ReviewVO {
 	
 	private int vcurpage=1; //현재 페이지
 	private int vonepage=10; //한 페이지에 보여질 리스트 개수
-	
+	private int totalpage;
 
 	private String uuid; //사용자아이디
 	private String bcheckin;
@@ -33,10 +33,19 @@ public class ReviewVO {
 				+ "]";
 	}
 	
+	
+	
+	public int getTotalpage() {
+		return totalpage;
+	}
+
+	public void setTotalpage(int totalpage) {
+		this.totalpage = totalpage;
+	}
+
 	public int getB() {
 		return b;
 	}
-
 
 	public void setB(int b) {
 		this.b = b;

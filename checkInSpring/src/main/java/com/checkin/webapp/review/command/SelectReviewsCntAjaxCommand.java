@@ -30,7 +30,7 @@ public class SelectReviewsCntAjaxCommand implements ReviewCommandInterface {
 		ReviewDAOInterface dao = Constants.sqlSession.getMapper(ReviewDAOInterface.class);
 		ReviewVO vo = new ReviewVO();
 		vo.setR(r);
-		result = dao.getReviewListCnt(vo);
+		result = (int)Math.ceil((double)dao.getReviewListCnt(vo));
 		
 		return result;
 	}

@@ -57,7 +57,7 @@ label {
 }
 </style>
 <script>
-var onepage = 3;
+var onepage = 1;
 function whenclickbookingbtn(a,r){
 	
 var u = '${u}';
@@ -87,14 +87,13 @@ if(u == null || u == ''){
 	}
 }
 
+//예약 시도 ajax
 function ajax_booking(a,r,checkinout, people,u){
 	var bcheckin = $("#checkin").val();
 	var bcheckout =  $("#checkout").val();
 	
 	var params = "a="+a+"&r="+r+"&bcheckin="+bcheckin+"&bcheckout="+bcheckout+"&bcount="+people+"&u="+u;
-	
-	alert(params);
-	
+
 	$.ajax({
 		type : "get",
 		url : "/webapp/main/trybooking",
@@ -122,6 +121,7 @@ function ajax_booking(a,r,checkinout, people,u){
 }
 
 //<!-- 클릭시 이미지 fa fa-caret-up 이걸로 바뀜 -->
+//리뷰 클릭시
 function whenClickReview(r) {
 	
 	var upScroll = "<strong><i class='fa fa-caret-down' style='font-size:20px'></i> 리뷰</strong>";
@@ -129,22 +129,32 @@ function whenClickReview(r) {
 	
 	
 	if ($("#reviewStatus"+r).val() == 'up') {
-		ajax_reviewCnt(r);
-		ajax_review(r,1);
+		$('#vcurpage${vo.r}').val(1);
+		ajax_totalPage(r);
+
 		$("#showReview"+r).html(downScroll);
 		$("#reviewStatus"+r).val('down');
 		$("#review"+r).css("display", "block");
-
+		
 	} else if ($("#reviewStatus"+r).val() == "down") {
 		
 		$("#showReview"+r).html(upScroll);
 		$("#reviewStatus"+r).val("up");
 		$("#review"+r).css("display", "none");
+		$("#review-more"+r).css("display", "none");
 
 	}
 }
-function ajax_reviewCnt(r){
+
+function addrcurpage(r){
+	$('#vcurpage'+r).val(Number($('#vcurpage'+r).val())+1);
+}
+
+
+//리뷰 총 개수 가져오기
+function ajax_totalPage(r){
 	var params = "r="+r;
+	var vcurpage = $('#vcurpage'+r).val();
 	$.ajax({
 		type : "get",
 		url : "/webapp/main/getReivewsCnt",
@@ -152,12 +162,14 @@ function ajax_reviewCnt(r){
 		dataType : 'json',
 		contentType : 'applicaiton/json;charset=UTF-8',
 		success : function(result) {
-			var pagination = "";
-			for(var i = 1  ;  i<=Math.ceil(result/3)  ; i++ ){
-				pagination += "<li class='page-item'><a class='page-link' href='javascript:ajax_review("+r+","+i+")'>"+i+"</a></li>"
-			}
 			
-			var resultDiv  = $("#reviewDiv"+r).find('.vpaging').html(pagination);
+			ajax_review(r,vcurpage);
+			if(result <= vcurpage){
+				$("#review-more"+r).css("display","none");
+			}else{
+				$("#review-more"+r).css("display","block");
+			}
+			addrcurpage(r);
 		},
 		error : function(e) {
 			console.log(e.responseText);
@@ -176,8 +188,10 @@ function ajax_review(r,i){
 		contentType : 'applicaiton/json;charset=UTF-8',
 		success : function(result) {
 			var $result = $(result);
-			var resultDiv =$("#review"+r);
-			resultDiv.html('');
+			var reviewDiv =$("#review"+r);
+			reviewDiv.html('');
+			
+			var totalpage;
 			$result.each(function(i,val){
 				var grade = val.vgrade;
 				var uuid = val.uuid;
@@ -196,9 +210,10 @@ function ajax_review(r,i){
 				html +='<p class="col-sm-4">'
 				html +='<img src="'+val.img+'"style="width: 100%; height: 150px" class="rounded vimg1"';
 				html +='</p></div><hr/>';
-				resultDiv.append(html);
-				
+				reviewDiv.append(html);
 			});
+			
+	
 		},
 		error : function(e) {
 			console.log(e.responseText);
@@ -289,38 +304,7 @@ function pageReload(a){
 					</div>
 				</div>
 
-				<!-- 내가 본 상품 -->
-			<!-- 
-				<div class="w3-bar-block ">
-					<label>이전에 본 상품</label>
-					<div id="history" class="carousel slide" data-ride="carousel">
-						
-						<ul class="carousel-indicators">
-							<li data-target="#history" data-slide-to="0" class="active"></li>
-							<li data-target="#history" data-slide-to="1"></li>
-							<li data-target="#history" data-slide-to="2"></li>
-						</ul>
-						<div class="carousel-inner">
-							<div class="carousel-item active">
-								<img src="../img/accomodation/hotel01.PNG" class="historyImg rounded">
-							</div>
-							<div class="carousel-item">
-								<img src="../img/accomodation/hotel02.PNG" class="historyImg rounded">
-							</div>
-							<div class="carousel-item">
-								<img src="../img/accomodation/hotel03.PNG" class="historyImg rounded">
-							</div>
-						</div>
 
-					
-						<a class="carousel-control-prev" href="#history" data-slide="prev"> <span class="carousel-control-prev-icon"></span>
-						</a> <a class="carousel-control-next" href="#history" data-slide="next"> <span class="carousel-control-next-icon"></span>
-						</a>
-					</div>
-					
-				</div>
-				 -->
-				<div class="block"></div>
 			</nav>
 		</aside>
 		<!------------------------------ 필터 끝 ---------------------------------------------->
@@ -533,7 +517,7 @@ function pageReload(a){
 						<input type="hidden" id="reviewStatus${vo.r}" value="up" />
 
 						<!-- 클릭시 이미지 fa fa-caret-up 이걸로 바뀜 -->
-						<div id="showReview${vo.r}" class="font1-medium btn btn-info" style="width: 100%; height: 30px" onclick="whenClickReview(${vo.r})">
+						<div id="showReview${vo.r}" class="font1-medium btn btn-info" style="width: 100%; height: 30px" onclick="whenClickReview(${vo.r},1)">
 							<strong><i class='fa fa-caret-down' style='font-size: 20px'></i> 리뷰</strong>
 						</div>
 						<!-- 결과 창 -->
@@ -541,8 +525,8 @@ function pageReload(a){
 							
 						</div>
 						 <!-- 페이징 창 -->
-						 <ul class="pagination vpaging" style="text-align:center;">
-						 </ul>
+						 <input type="hidden" value="1" id="vcurpage${vo.r}" />
+						 <span class='btn btn-basic' id="review-more${vo.r}" onclick='ajax_totalPage(${vo.r})' style="display:none"> 더보기 </span>
 						
 					</div>
 					<!-- 리뷰 DIV 끝 -->

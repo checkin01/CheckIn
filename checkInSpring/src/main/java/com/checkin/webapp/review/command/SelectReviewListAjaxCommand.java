@@ -27,7 +27,7 @@ public class SelectReviewListAjaxCommand implements ReviewCommandInterface {
 	
 	
 	public List<ReviewVO> executeAjax(HttpServletRequest request, ReviewVO vo) {
-		System.out.println("SelectReviewListAjaxCommand.. executeAjax.. r="+vo.getR());
+		System.out.println("SelectReviewListAjaxCommand.. executeAjax.. r="+vo.toString());
 		ReviewDAOInterface dao = Constants.sqlSession.getMapper(ReviewDAOInterface.class);
 		List<ReviewVO> list = dao.selectAllReviewList(vo);
 		System.out.println("SelectReviewListAjaxCommand.. executeAjax..list="+list.toString());

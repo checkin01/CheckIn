@@ -9,7 +9,7 @@
 		select v,r,re.u,vgrade,vimg1,vimg2,vimg3,vcontent,writedate, uuid from review re
 		,(select u,uuid from member) me
 		where re.u = me.u
-		<![CDATA[ AND (ROWNUM > (#{vcurpage}-1*#{vonepage}) AND ROWNUM <= #{vcurpage}*#{vonepage}) ]]>
+		<![CDATA[ AND ROWNUM <= #{vcurpage}*#{vonepage} ]]>
 		<choose>
 			<when test = "r!=0">
 				and r=#{r}
