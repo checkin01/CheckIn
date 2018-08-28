@@ -35,6 +35,7 @@
 <script>
 	$(function(){
 		ajax_recommendation();
+		ajax_notice();
 		$("input[name='daterange']").daterangepicker({
 			opens : 'left'
 			,locale: {
@@ -46,10 +47,12 @@
 			//location.href="/webapp/main/showAccoList";
 		});
 	});
+	
 
 </script>
 </head>
 <body>
+
 	<%@ include file="topnav_member.jspf"%>
 	<%@ include file="locationModal.jspf"%>
 	<!-- 
@@ -304,5 +307,50 @@
 		style="width: 100%; font-size: 0.8em; margin-top: 150px">
 		<%@ include file="companyInfo.jspf"%>
 	</footer>
+<!-- notice를 위한 modal.... -->	
+	<script>
+function ajax_notice(){
+	var params ='target=일반회원';
+	$.ajax({
+		type:'get',
+		url:'/webapp/main/getpagenotice',
+		dateType:'json',
+		data:params,
+		contentType:'application/json;charset=UTF-8',
+		success:function(result){
+				var tag = $("#noticeModal");
+				if(result != null){
+					var $result=$(result);
+				 	$result.each(function(i,val){
+				 		if(i==0){
+				 			$("#notice-title").text(val.notitle);
+							$("#notice-body").text(val.ncontent);
+							$(tag).modal('show');
+				 		}
+				 	});
+				}
+		},error:function(e){
+			console.log(e.responseText())
+		}
+	})
+}
+</script>
+<div class="modal" id="noticeModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h6 class="modal-title" id="notice-title"></h6>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" id="notice-body">
+
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

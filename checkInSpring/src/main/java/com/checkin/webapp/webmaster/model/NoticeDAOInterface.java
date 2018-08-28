@@ -25,4 +25,7 @@ public interface NoticeDAOInterface {
 	
 	public int getNoticeListCnt(); //가맹점회원과 관련된 공지사항이 있으면 - master/home.jsp에서 모달로 보여준다.
 	
+	public List<NoticeVO> getMemberNoticeList(NoticeVO vo);
+	
+	public List<NoticeVO> getMasterNoticeList(NoticeVO vo);
 }

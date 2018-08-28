@@ -36,4 +36,12 @@
 	<insert id="insertNotice" parameterType="com.checkin.webapp.webmaster.model.NoticeVO">
 		insert into notice values(noticesq.nextval, #{wid}, #{notitle}, to_date(#{nostartdate},'YYYY-MM-DD'), to_date(#{noenddate},'YYYY-MM-DD'), #{target}, sysdate, #{ncontent}) 
 	</insert>
+	
+	<select id="getMemberNoticeList" resultType="com.checkin.webapp.webmaster.model.NoticeVO">
+		select no,notitle,ncontent from notice where (sysdate between nostartdate and noenddate) and target=#{target} order by nostartdate
+	</select>
+	
+	<select id="getMasterNoticeList" resultType="com.checkin.webapp.webmaster.model.NoticeVO">
+		select no,notitle,ncontent from notice where (sysdate between nostartdate and noenddate) and target=#{target} order by nostartdate
+	</select>
 </mapper>

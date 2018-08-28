@@ -1,5 +1,7 @@
 package com.checkin.webapp.webmaster;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.checkin.webapp.accomodation.model.AccomodationVO;
@@ -16,6 +19,8 @@ import com.checkin.webapp.webmaster.command.AccoListCommand;
 import com.checkin.webapp.webmaster.command.DeleteNoticeCommand;
 import com.checkin.webapp.webmaster.command.EditNoticeFormCommand;
 import com.checkin.webapp.webmaster.command.EditNoticeOkCommand;
+import com.checkin.webapp.webmaster.command.GetMasterNoticeCommand;
+import com.checkin.webapp.webmaster.command.GetMemberNoticeCommand;
 import com.checkin.webapp.webmaster.command.InsertNoticeFormCommand;
 import com.checkin.webapp.webmaster.command.InsertNoticeOkCommand;
 import com.checkin.webapp.webmaster.command.LoginWebmasterCommand;
@@ -131,5 +136,18 @@ public class WebmasterController {
 		request.getSession().invalidate();
 		return "redirect:/webmaster";
 	};
+	
+	@RequestMapping("/main/getpagenotice")
+	@ResponseBody
+	public List<NoticeVO> getNoticeForMaster(HttpServletRequest request,NoticeVO vo){
+		return new GetMemberNoticeCommand().executeAjax( request, vo);
+	}
+	
+
+	@RequestMapping("/main/getmasternotice")
+	@ResponseBody
+	public List<NoticeVO> getNoticeForMember(HttpServletRequest request,NoticeVO vo){
+		return new GetMasterNoticeCommand().executeAjax( request, vo);
+	}
 
 }

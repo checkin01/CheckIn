@@ -160,7 +160,55 @@
 			<%@ include file="../companyInfo.jspf"%>
 		</footer>
 	</div>
+<!-- notice를 위한 modal.... -->	
+<script>
+$(function(){
+	ajax_notice();
+	
+})
+function ajax_notice(){
+	var params ='target=가맹점회원';
+	$.ajax({
+		type:'get',
+		url:'/webapp/main/getmasternotice',
+		dateType:'json',
+		data:params,
+		contentType:'application/json;charset=UTF-8',
+		success:function(result){
+				var tag = $("#noticeModal");
+				if(result != null){
+					var $result=$(result);
+				 	$result.each(function(i,val){
+				 		if(i==0){
+				 			$("#notice-title").text(val.notitle);
+							$("#notice-body").text(val.ncontent);
+							$(tag).modal('show');
+				 		}
+				 	});
+				}
+		},error:function(e){
+			console.log(e.responseText())
+		}
+	})
+}
+</script>
+<div class="modal" id="noticeModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h6 class="modal-title" id="notice-title"></h6>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" id="notice-body">
+
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
