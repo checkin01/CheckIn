@@ -33,7 +33,7 @@ body,html {
 			<h2 class="w3-animate-top"  style="margin:auto;width:500px;float:center;text-align:center;padding-bottom:50px">체크인 ! 웹 관리자 페이지 입니다.</h2>
 			<hr class="w3-border-grey" style="margin:auto;width:40%">
 			<p class="w3-large w3-center"></p>
-		<c:if test ="${w==null or w ==''}">
+		<c:if test ="${wid==null or wid ==''}">
 			<form action="/webapp/trywebmasterlogin" method="post"  style="margin:auto;width:500px;">
 				<label for="wid">ID :</label> 
 				<input type="text" class="form-control" name="wid" id="wid"> 

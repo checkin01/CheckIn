@@ -11,12 +11,16 @@ public class WebmasterVO {
 	private int curpage=1; //공지사항 내용
 	private int onepage=10; //공지사항 내용
 	
+
+	
+	
 	@Override
 	public String toString() {
-		return "WebmasterVO [w=" + w + ", wid=" + wid + ", wpwd=" + wpwd + ", writedate=" + writedate + "]";
+		return "WebmasterVO [w=" + w + ", wid=" + wid + ", wpwd=" + wpwd + ", writedate=" + writedate + ", logChk="
+				+ logChk + ", totalpage=" + totalpage + ", curpage=" + curpage + ", onepage=" + onepage + "]";
 	}
-	
-	
+
+
 	public String getLogChk() {
 		return logChk;
 	}

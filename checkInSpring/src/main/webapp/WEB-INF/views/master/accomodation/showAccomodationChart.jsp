@@ -33,7 +33,6 @@
 </style>
 </head>
 <body>
-	<%HttpSession Session = request.getSession(); %>
 	<%@ include file="../topnav_master.jspf"%>
 	
 	<div class="row main" id="main">
@@ -42,7 +41,7 @@
 		<div class="col-lg-9 center" id="center" style="text-align: center">
 			<div style="text-align: center">
 				<h3>
-					[<span>${aname }</span>] 현황
+					[<span><%=session.getAttribute("aname") %></span>] 현황
 				</h3>
 			</div>
 			<div class="table" style="text-align: center">

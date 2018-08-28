@@ -8,7 +8,7 @@ import com.checkin.webapp.member.model.MemberVO;
 
 public interface WebmasterDAOInterface {
 	//웹마스터 로그인
-	public WebmasterVO selectWebmaster(WebmasterVO vo);
+	public String selectWebmaster(WebmasterVO vo);
 	
 	//member 정보 확인
 	public List<MemberVO> showMemberList(WebmasterVO vo);

@@ -38,6 +38,7 @@ public class WebmasterController {
 	// 매핑 경로 : /webmaster/webmasterLogin
 	@RequestMapping(value = "/trywebmasterlogin", method = RequestMethod.POST)
 	public ModelAndView loginWebmaster(HttpServletRequest request, WebmasterVO vo) {
+		System.out.println("웹마스터 로그인 컨트롤러 vo = "+vo.toString());
 		LoginWebmasterCommand command = new LoginWebmasterCommand();
 		return command.execute(request, vo);
 	}
