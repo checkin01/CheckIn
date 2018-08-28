@@ -29,27 +29,3 @@
 		}
 	}
 	
-	function map()
-	{
-	  myCenter=new google.maps.LatLng(41.878114, -87.629798);
-	  var mapOptions= {
-	    center:myCenter,
-	    zoom:12, scrollwheel: false, draggable: false,
-	    mapTypeId:google.maps.MapTypeId.ROADMAP
-	  };
-	  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-	  var marker = new google.maps.Marker({
-	    position: myCenter,
-	  });
-	  marker.setMap(map);
-	}
-	function whenClickAccor(id){
-		var accor = document.getElementById(id);
-		if(accor.className.indexOf("w3-hide") != -1){ //hide일때
-			accor.className = accor.className.replace(" w3-hide"," w3-show");
-		}else{
-			accor.className = accor.className.replace(" w3-show"," w3-hide");
-		}
-	}
-	

@@ -85,11 +85,6 @@
 	font-family: 'Faster One', sans-serif;
 }
 
-<!--
-myspage에서 적용할 nav-->#sideNav a, #sideNav div, #sideNav b {
-	font-size: 1em;
-	font-family: 'Jua', 'Gothic A1', sans-serif;
-}
 </style>
 
 </head>

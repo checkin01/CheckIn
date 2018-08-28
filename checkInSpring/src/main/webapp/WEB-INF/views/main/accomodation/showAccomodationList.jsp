@@ -19,6 +19,7 @@
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/showAccomodationList.js"></script>
+<link rel="stylesheet" href="/webapp/css/showAccomodationList.css">
 
 <!-- daterangepicker-->
 <script src="<%=request.getContextPath()%>/js/daterangepicker.js"></script>

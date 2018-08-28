@@ -269,7 +269,7 @@ function pageReload(a){
 		alert("날짜를 지정해주세요");
 		return false;
 	}
-	alert(checkinout);
+	
 	var url = "/webapp/main/room/showList?checkinout="+checkinout+"&a="+a;
 	location.href = url;
 }

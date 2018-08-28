@@ -158,11 +158,6 @@
 
 		<aside class="left col-sm-2" id="left"></aside>
 		<div class="col-sm-8 center" id="center" style="top: 50px">
-			<!-- 이전 페이지로 이동  -->
-			<div class="font1-small" style="padding: 20px 0">
-				<a href="manageAccomodation.jsp">숙소 관리 페이지</a>
-			</div>
-
 			<!-- 
 				form  
 				숙박업소유형 : type

@@ -124,9 +124,6 @@ body {
 					<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${curpage-1}" class="page-link">Prev</a></li>
 				</c:if>
 				<!-- 5개씩 보여준다. -->
-				'${curpage}'
-				'${onepage}'
-				'${totalpage}'
 				<c:forEach var = 'i' begin='${Math.floor(curpage/5)*5+1}' end='${(curpage/5)*5+4}'>
 					<c:if test = "${i <= totalpage}">
 						<c:choose>
