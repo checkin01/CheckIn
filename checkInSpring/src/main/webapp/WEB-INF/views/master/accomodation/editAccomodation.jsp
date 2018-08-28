@@ -171,8 +171,7 @@
 					<!-- 인근 지하철 유형 -->
 				<div class="form-group row list-group-item">
 					<i class="fa fa-fort-awesome"> <label for="#subwaySelector">인근 지하철 </label></i> 
-					<select class="form-control col-sm-5" id="subwaySelector"
-						name="asubway">
+					<select class="form-control col-sm-5" id="subwaySelector" name="asubway">
 						<option name="강남/역삼/삼성/논현">강남/역삼/삼성/논현</option>
 						<option name="서초/신사/방배역">서초/신사/방배역</option>
 						<option name="동묘/신설동/청량리/회기">동묘/신설동/청량리/회기</option>

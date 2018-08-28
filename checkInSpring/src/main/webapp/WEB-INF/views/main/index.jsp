@@ -49,6 +49,59 @@
 	});
 	
 
+	// ajax로 추천 받은 파일을 가져와서 img 뿌려주기
+	function ajax_recommendation() {
+		var asubway = $("#selectedSubway").text();
+		var agu = $("#selectedGu").text();
+		var params = "";
+		if (asubway != "")
+			params = "asubway=" + asubway;
+		else if (agu != "")
+			params = "agu=" + agu;
+		
+		$.ajax({
+			type : "get",
+			url : "/webapp/main/recommend",
+			data : params,
+			dataType : 'json',
+			contentType : 'applicaiton/json;charset=UTF-8',
+			success : function(result) {
+				if(result != "" && result != null){
+				$("#reco-header").css('visibility','visible');
+				var $result = $(result);
+				
+					$result.each(function(i, val) {
+						var tag;
+						var aurl = "/webapp/main/room/showList?a="+val.a;
+						var aimg = val.aimg1;
+						if (i == 0){
+							tag = $('#form1');
+							 $('#form1').css('display','block');
+						}else if (i == 1){
+							tag = $('#form2');
+							$('#form2').css('display','block');
+						}else if (i == 2){
+							tag = $('#form3');
+							$('#form3').css('display','block');
+						}
+						// tag 값 변경하기
+						$(tag).find('.agrade').text(val.agrade);
+						$(tag).find('.aaddr').text(val.aaddr);
+						$(tag).find('.aname').text(val.aname);
+						$(tag).find('.aurl').attr('href', aurl);
+						$(tag).find('.aimg').attr('src', aimg);
+						$(tag).find('.a').text(val.a);
+						$(tag).find('.atel').text(val.atel);
+		
+					});
+				}
+			},
+			error : function(e) {
+				console.log(e.responseText);
+			}
+		})
+	}
+
 </script>
 </head>
 <body>
@@ -182,66 +235,68 @@
 		<div class="col-lg-2"></div>
 		<div id="center" class="col-lg-8 center"
 			style="position: relative; margin: 50px 0;">
-
-			<!-- 리뷰 등록 순 -->
-			<!-- First Photo Grid-->
-			<div class="w3-row-padding"
-				style="text-align: center; padding: 10px 0px; font-family: 'Jua'">
-				<h2>여기는 어떠세요?</h2>
+			<div id="reco-header" style="visibility:hidden">
+				<!-- 리뷰 등록 순 -->
+				<!-- First Photo Grid-->
+				<div class="w3-row-padding"
+					style="text-align: center; padding: 10px 0px; font-family: 'Jua'">
+					<h2>여기는 어떠세요?</h2>
+				</div>
+				<br />
+				<div class="w3-row-padding"
+					style="text-align: center; padding: 20px;">
+					<h5>
+						<button class="btn btn-light showLocModal">
+							<i class="fa fa-map-marker"></i> <span class="selectedSido">서울</span>
+							<span class="selectedGu">강남구</span> <span class="selectedSubway"></span>
+						</button>
+						에서 평점이 가장 좋은 곳 이에요.
+					</h5>
+				</div>
 			</div>
-			<br />
-			<div class="w3-row-padding"
-				style="text-align: center; padding: 20px;">
-				<h5>
-					<button class="btn btn-light showLocModal">
-						<i class="fa fa-map-marker"></i> <span class="selectedSido">서울</span>
-						<span class="selectedGu">강남구</span> <span class="selectedSubway"></span>
-					</button>
-					에서 평점이 가장 좋은 곳 이에요.
-				</h5>
-			</div>
-
+			
 			<div class="w3-row-padding">
 
 				<!-- test............ -->
-				<div class="w3-third w3-container w3-margin-bottom" id="form1">
-					<a class="aurl" href=""><img
-						src="/webapp/img/accomodation/home1.jpg" style="width: 100%"
+				<div class="w3-third w3-container w3-margin-bottom" id="form1" style="display:none">
+					<a class="aurl" href="">
+					<img
+						src="#" style="width: 100%"
 						class="w3-hover-opacity aimg"></a>
 					<div class="w3-container w3-white">
 						<p class="aname"></p>
-						<p class="aaddr">서울 특별시 강남구</p>
+						<p class="aaddr"></p>
 
 						<p class="grade">
-							평점 : <span class="agrade">4.5</span>
+							평점 : <span class="agrade"></span>
 						</p>
 					</div>
 				</div>
 				<!-- test............ -->
 
 
-				<div class="w3-third w3-container w3-margin-bottom">
+				<div class="w3-third w3-container w3-margin-bottom" id="form2" style="display:none">
 					<img src="<%=request.getContextPath()%>/img/accomodation/home1.jpg"
 						style="width: 100%" class="w3-hover-opacity">
 					<div class="w3-container w3-white" id="2">
 						<p class="name">
-							<b>리노베이션 펜션</b>
+							<b></b>
 						</p>
-						<p class="addr">서울 특별시 강남구</p>
+						<p class="addr"></p>
 
 						<p class="grade">
-							평점 : <span class="grade">4.5</span>
+							평점 : <span class="grade"></span>
 						</p>
 					</div>
 				</div>
-				<div class="w3-third w3-container">
-					<img src="/webapp/img/accomodation/home1.jpg" style="width: 100%"
+				<div class="w3-third w3-container" id="form3" style="display:none">
+					<img src="#" style="width: 100%"
 						class="w3-hover-opacity">
 					<div class="w3-container w3-white" id="3">
 						<p class="name">
-							<b>리노베이션 펜션</b>
+							<b></b>
 						</p>
-						<p class="addr">서울 특별시 강남구</p>
+						<p class="addr"></p>
 
 						<p class="grade">
 							평점 : <span class="grade">4.5</span>
@@ -251,52 +306,7 @@
 			</div>
 			<br />
 			<hr />
-			<div class="w3-row-padding"
-				style="text-align: center; padding: 20px;">
-				<h5>
-					<button class="btn btn-light showLocModal">
-						<i class="fa fa-map-marker"></i> <span class="selectedSido">서울</span>
-						<span class="selectedGu">강남구</span> <span class="selectedSubway"></span>
-					</button>
-					에서 예약 수가 가장 많은 곳 이에요.
-				</h5>
-			</div>
-			<!-- 방문자 순 -->
-			<!-- Second Photo Grid-->
-			<div class="w3-row-padding">
-				<div class="w3-third w3-container w3-margin-bottom">
-					<img src="<%=request.getContextPath()%>/img/accomodation/home2.jpg"
-						style="width: 100%" class="w3-hover-opacity">
-					<div class="w3-container w3-white">
-						<p class="name">
-							<b>리노베이션 펜션</b>
-						</p>
-						<p class="addr">서울 특별시 강남구</p>
 
-
-					</div>
-				</div>
-				<div class="w3-third w3-container w3-margin-bottom">
-					<img src="<%=request.getContextPath()%>/img/accomodation/home2.jpg"
-						style="width: 100%" class="w3-hover-opacity">
-					<div class="w3-container w3-white">
-						<p class="name">
-							<b>리노베이션 펜션</b>
-						</p>
-						<p class="addr">서울 특별시 강남구</p>
-					</div>
-				</div>
-				<div class="w3-third w3-container">
-					<img src="<%=request.getContextPath()%>/img/accomodation/home2.jpg"
-						style="width: 100%" class="w3-hover-opacity">
-					<div class="w3-container w3-white">
-						<p class="name">
-							<b>리노베이션 펜션</b>
-						</p>
-						<p class="addr">서울 특별시 강남구</p>
-					</div>
-				</div>
-			</div>
 
 		</div>
 		<div class="col-lg-2"></div>
