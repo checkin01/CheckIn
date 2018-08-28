@@ -69,7 +69,6 @@
 				if(result != "" && result != null){
 				$("#reco-header").css('visibility','visible');
 				var $result = $(result);
-				
 					$result.each(function(i, val) {
 						var tag;
 						var aurl = "/webapp/main/room/showList?a="+val.a;
@@ -101,6 +100,52 @@
 			}
 		})
 	}
+	function ajax_notice(){
+		var params ='target=일반회원';
+		$.ajax({
+			type:'get',
+			url:'/webapp/main/getpagenotice',
+			dateType:'json',
+			data:params,
+			contentType:'application/json;charset=UTF-8',
+			success:function(result){
+			
+				var $result = $(result);
+				$result.each(function(i,v){
+				
+					if(i==0){
+						//var contents = v.ncontent.split('\n');
+						//var html = "";
+						//contents.each(function(index,val){
+			
+						//	html+=val;
+						//	html+='</br>';
+						//});
+						var tag = $("#noticeModal");
+						$(tag).find(".modal-title").text(v.notitle);
+						$(tag).find(".modal-body").html(v.ncontent);
+						$(tag).modal('show');
+					}
+				})
+				
+			},error:function(e){
+				console.log(e.responseText())
+			}
+		})
+	}
+	function whenClickSearchBtn(){
+		
+		var checkinout = $('#checkinout').val().split('-');
+		var acheckin = checkinout[0].trim()+'-'+checkinout[1].trim()+'-'+checkinout[2].trim();
+		var acheckout =  checkinout[3].trim()+'-'+checkinout[4].trim()+'-'+checkinout[5].trim();
+		
+		var atype = $('#selectedItem').text().split(' ')[1].trim();
+		var agu =  $("#selectedGu").text();
+		var asubway =$("#selectedSubway").text();
+		var url = '/webapp/main/showAccoList?atype='+atype+'&checkinout='+$('#checkinout').val()+'&agu='+agu+'&asubway='+asubway;
+		location.href = url;
+	}
+
 
 </script>
 </head>
@@ -319,31 +364,6 @@
 	</footer>
 <!-- notice를 위한 modal.... -->	
 	<script>
-function ajax_notice(){
-	var params ='target=일반회원';
-	$.ajax({
-		type:'get',
-		url:'/webapp/main/getpagenotice',
-		dateType:'json',
-		data:params,
-		contentType:'application/json;charset=UTF-8',
-		success:function(result){
-				var tag = $("#noticeModal");
-				if(result != null){
-					var $result=$(result);
-				 	$result.each(function(i,val){
-				 		if(i==0){
-				 			$("#notice-title").text(val.notitle);
-							$("#notice-body").text(val.ncontent);
-							$(tag).modal('show');
-				 		}
-				 	});
-				}
-		},error:function(e){
-			console.log(e.responseText())
-		}
-	})
-}
 </script>
 <div class="modal" id="noticeModal">
   <div class="modal-dialog">
