@@ -32,6 +32,10 @@ public class CheckRegitAccoInterceptor implements HandlerInterceptor {
 		AccomodationVO vo = new AccomodationVO();
 		vo.setMid(mid);
 		AccomodationVO resultVO = dao.selectOneRecord(vo);
+		
+		//
+		session.setAttribute("aname", resultVO.getAname());
+		
 		if(resultVO!=null && resultVO.getA()!= 0) {
 			return true;
 		}else {
