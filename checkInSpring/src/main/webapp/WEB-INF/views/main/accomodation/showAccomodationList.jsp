@@ -185,9 +185,9 @@
 			<!-- ===================================필터 끝 ====================================== -->
 
 			<!-- 정렬 ----------------------------------------------------------->
-			<div class="border rounded" id="searchSort">
+			<div class="border rounded">
 		
-					<select id="searchSort" class="btn btn-light sort-item border" style="font-family:'Jua'; text-align:center">
+					<select id="searchSort" class="btn btn-light sort-item border"  id="searchSort" style="font-family:'Jua'; text-align:center">
 						<option rel="writedate" name="writedate">등록일순</option> 
 						<option rel='aminprice' name="aminprice">최저가격순</option> 
 						<option rel='agrade' name="agrade">별점순</option>
@@ -203,14 +203,14 @@
 					
 						$("#searchSort").change(function(){
 							var sorttype = $('#searchSort option:selected').attr('rel');
-						
+							alert(sorttype);
 							//change 조건으로 리스트 리로딩!
 							var checkinout = $("#acheckinout").val();
 								
 							var atype = $('#Atype').text();
 							var agu =  $("#agu").text();
 							var asubway =$("#asubway").text();
-							var url = '/webapp/main/showAccoList?atype='+atype+'&checkinout='+checkinout+'&asorttype='+sorttype+'&agu='+agu+'&asubway'+asubway;
+							var url = '/webapp/main/showAccoList?atype='+atype+'&checkinout='+checkinout+'&asortkey='+sorttype+'&agu='+agu+'&asubway'+asubway;
 						
 							location.href=url;
 													

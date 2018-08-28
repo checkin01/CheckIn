@@ -35,10 +35,10 @@ and agu like '%'|| #{agu} ||'%'
         </foreach>
         </if>
 	) acco left outer join 
-	(select a, min(rprice) aminprice, max(rprice) amaxprice from room group by a) ro  
+	(select a, nvl(min(rprice),0) aminprice, nvl(max(rprice),0) amaxprice from room group by a) ro  
 	on acco.a = ro.a 
 	left outer join 
-	(select NVL(floor(avg(vgrade)),1) agrade, a  from review group by a) re
+	(select NVL(floor(avg(vgrade)),0) agrade, a  from review group by a) re
 	on acco.a = re.a
 	<if test="asortkey=='writedate'">
 	order by writedate desc
