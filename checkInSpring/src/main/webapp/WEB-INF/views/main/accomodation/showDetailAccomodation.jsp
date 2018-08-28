@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="accmoVO" value="${accoVO}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,33 +58,31 @@ label {
 }
 </style>
 <script>
-var onepage = 1;
+//============================================booking==============================//
+
 function whenclickbookingbtn(a,r){
-	
-var u = '${u}';
-var checkinout =  $("#acheckinout").val();
-
-
-if(u == null || u == ''){
-	var result = confirm("로그인이 필요합니다. 로그인 페이지로 이동 하시겠습니까?",'Check in !');
-	if(result == true){
-		location.href="/webapp/main/login";
-	}
-}else{
-	var bcheckin = $("#checkin").val();
-	var bcheckout =  $("#checkout").val();
-	
-	if(bcheckin==bcheckout){
-		alert("날짜를 지정해주세요");
-		return false;
-	}
-	 
-	var checkinout =  $("#checkin").val(); +" ~ " +  $("#checkout").val();
-	var people = $("#people").val();
-	var result = confirm(checkinout +" 날짜에  인원수 : "+ people+"\n\n 예약 하시겠습니까? 예를 누르면 예약 됩니다.");
+	var u = '${u}';
+	//로그인 여부 검사
+	if(u == null || u == ''){
+		var result = confirm("로그인이 필요합니다. 로그인 페이지로 이동 하시겠습니까?",'Check in !');
 		if(result == true){
-			ajax_booking(a,r,checkinout,people,u);				
+			location.href="/webapp/main/login";
+		}else{
+			return false;
 		}
+	}else{
+		//날짜 검사
+		var bcheckin = $("#checkin").val();
+		var bcheckout =  $("#checkout").val();
+
+		if(compareDate()){
+			var checkinout =  $("#checkin").val(); +" ~ " +  $("#checkout").val();
+			var people = $("#people").val();
+			var result = confirm(checkinout +" 날짜에  인원수 : "+ people+"\n\n 예약 하시겠습니까? 예를 누르면 예약 됩니다.");
+				if(result == true){
+					ajax_booking(a,r,checkinout,people,u);				
+				}
+			}
 	}
 }
 
@@ -119,14 +118,42 @@ function ajax_booking(a,r,checkinout, people,u){
 	})
 	
 }
+//======================== checkinout 처리 =================================//
+function compareDate(){
+	var checkin = $("#checkin").val();
+	var checkout =  $("#checkout").val();
 
+	if(checkin==checkout){
+		alert("날짜를 지정해주세요");
+		return false;
+	}
+	var checkindate = new Date();
+	var checkoutdate = new Date();
+	checkindate.setYear(checkin.split('-')[0]);
+	checkindate.setMonth(checkin.split('-')[1]);
+	checkindate.setDate(checkin.split('-')[2]);
+	
+	checkoutdate.setYear(checkout.split('-')[0]);
+	checkoutdate.setMonth(checkout.split('-')[1]);
+	checkoutdate.setDate(checkout.split('-')[2]);
+	
+	if(checkindate.getTime() > checkoutdate.getTime()){
+		alert("체크인 시간이 체크아웃 시간보다 빠를 수 없습니다. \n 날짜를 확인해주세요");
+		$("#checkin").val('${today}');
+		$("#checkout").val('${today}');
+		return false;
+	}
+	return true;
+}
+
+//======================================= review ===========================================//
+var onepage = 1;
 //<!-- 클릭시 이미지 fa fa-caret-up 이걸로 바뀜 -->
 //리뷰 클릭시
 function whenClickReview(r) {
 	
 	var upScroll = "<strong><i class='fa fa-caret-down' style='font-size:20px'></i> 리뷰</strong>";
 	var downScroll = "<strong><i class='fa fa-caret-up' style='font-size:20px'></i> 리뷰</strong>";
-	
 	
 	if ($("#reviewStatus"+r).val() == 'up') {
 		$('#vcurpage${vo.r}').val(1);
@@ -208,7 +235,7 @@ function ajax_review(r,i){
 				html +='</p></div><label><i class="fa fa-comments"></i> 내용 </label><div class="row" style="padding-left:20px; padding-right:20px">';	
 				html +='<p class="col-sm-8 font1-small border review-p" class="content">'+content+'</p>';
 				html +='<p class="col-sm-4">'
-				html +='<img src="'+val.img+'"style="width: 100%; height: 150px" class="rounded vimg1"';
+				html +='<img src="'+val.img+'"style="width: 100%; height: 150px" class="rounded vimg1" onerror='+"this.src='/webapp/img/1.png"+' />';
 				html +='</p></div><hr/>';
 				reviewDiv.append(html);
 			});
@@ -222,7 +249,7 @@ function ajax_review(r,i){
 	})
 
 }
-
+//================= 아코디언 처리 ===========================//
 function whenClickAccor(id){
 	var accor = document.getElementById(id);
 	if(accor.className.indexOf("w3-hide") != -1){ //hide일때
@@ -232,6 +259,7 @@ function whenClickAccor(id){
 	}
 }
 
+//================= 페이지 리로딩 ==============================//
 function pageReload(a){
 	var checkin = $("#checkin").val().replace(/-/gi,'/'); 
 	var checkout = $("#checkout").val().replace(/-/gi,'/');
@@ -245,9 +273,17 @@ function pageReload(a){
 	var url = "/webapp/main/room/showList?checkinout="+checkinout+"&a="+a;
 	location.href = url;
 }
-</script>
+//=============== 페이지 시작시 ====================//
+$(function(){
+	//max 설정
+	var reserv = '${accoVO.amaxreservedate}';
+	var sleep = '${accoVO.amaxsleepdate}';
+	var today = new Date('${today}');
+	var checkinmax = today.getTime() + reserv*24*60*60*1000;
 
-<c:set var="accmoVO" value="${accoVO}" />
+})
+
+</script>
 
 </head>
 <body>
@@ -284,7 +320,7 @@ function pageReload(a){
 								<i class="fa fa-calendar-check-o"> <label>체크인</label></i>
 							</p>
 							
-							<input type="date" class="w3-input w3-border" name="checkin" id="checkin" value='${checkin}' min='${today}' /> <br />
+							<input type="date" class="w3-input w3-border" name="checkin" id="checkin" value='${checkin}' min='${today}' onchange="compareDate()" /> <br />
 							<p>
 								<i class="fa fa-calendar-check-o"> <label>체크아웃</label></i>
 							</p>
@@ -332,7 +368,7 @@ function pageReload(a){
 			<div id="map" class="border w3-show" style="width: 100%; height: 300px;">
 				<script>
 					var map1 = new naver.maps.Map('map');
-					var myaddress = ${accoVO.agil};// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
+					var myaddress = '${accoVO.agil}';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
 					naver.maps.Service
 							.geocode(
 									{
@@ -372,15 +408,7 @@ function pageReload(a){
 																marker);
 													}
 												});
-										var contentString = [
-												'<div>',
-												'    <h3 style="text-align:center">${accomVO.aname}</h3>',
-												'    <div style="text-align:center">[전화번호 : ${accomVO.atel}]</div>',
-												'    <div style="text-align:center">[별점 : ★★★★☆]</div>',
-												'    <img src="../img/accomodation/home1.jpg" width="200" height="100" style="padding:5px"/>',
-												'</div>'
-
-										].join('');
+										
 										// 마크 클릭시 인포윈도우 오픈
 										var infowindow = new naver.maps.InfoWindow(
 												{
@@ -423,13 +451,13 @@ function pageReload(a){
 						<!-- The slide show -->
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="${vo.rimg1}" class="roomsImg rounded">
+								<img src="${vo.rimg1}" class="roomsImg rounded" onerror="this.src='/webapp/img/1.png'">
 							</div>
 							<div class="carousel-item">
-								<img src="${vo.rimg2}" class="roomsImg rounded">
+								<img src="${vo.rimg2}" class="roomsImg rounded" onerror="this.src='/webapp/img/1.png'">
 							</div>
 							<div class="carousel-item">
-								<img src="${vo.rimg3}" class="roomsImg rounded">
+								<img src="${vo.rimg3}" class="roomsImg rounded" onerror="this.src='/webapp/img/1.png'">
 							</div>
 						</div>
 
@@ -472,7 +500,7 @@ function pageReload(a){
 								<c:when test ="${vo.rgrade != null and vo.rgrade != 0 }">
 									<label>평점</label>
 									<c:forEach begin = '1' end='${vo.rgrade}' step='1'>
-									<i class="fa fa-fw fa-star"></i> <i class="fa fa-fw fa-star"></i> 
+									<i class="fa fa-fw fa-star"></i>
 								</c:forEach>
 								</c:when>
 								<c:when test ="${vo.rgrade == null or vo.rgrade == 0}">

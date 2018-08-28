@@ -263,13 +263,13 @@
 						<!-- The slideshow -->
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="${item.aimg1}" class="roomsImg">
+								<img src="${item.aimg1}" class="roomsImg" onerror="this.src='/webapp/img/1.png'">
 							</div>
 							<div class="carousel-item">
-								<img src="${item.aimg2}" class="roomsImg">
+								<img src="${item.aimg2}" class="roomsImg" onerror="this.src='/webapp/img/1.png'">
 							</div>
 							<div class="carousel-item">
-								<img src="${item.aimg3}" class="roomsImg">
+								<img src="${item.aimg3}" class="roomsImg" onerror="this.src='/webapp/img/1.png'">
 							</div>
 						</div>
 
