@@ -45,8 +45,8 @@ public class ReviewController {
 	 */
 	 //가맹 업자 숙소 리뷰 리스트 보기 // 매핑 주소 : /master/showAccoReviewList 
 	@RequestMapping(value="/master/showAccoReviewList", method=RequestMethod.GET)
-	public ModelAndView showMasterReviewList(HttpServletRequest request){
-		 return new SelectAllReviewMasterCommand().execute(request);
+	public ModelAndView showMasterReviewList(HttpServletRequest request,ReviewVO vo){
+		 return new SelectAllReviewMasterCommand().execute(request,vo);
 	 }
  
 	 //master 숙소 리뷰 상세 보기 보기 // 리뷰 보기 시 모달 창으로 보여짐, 페이지 이동은 없고 데이터만 ajax로 처리 해줌.

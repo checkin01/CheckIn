@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface ReviewDAOInterface {
 	//숙박업자 리뷰리스트 모아보기
-	public List<ReviewVO> selectAllReview(String mid);
+	public List<ReviewVO> selectAllAccoReview(ReviewVO vo);
 	//숙박업자 리뷰 상세보기
 	public ReviewVO selectDetail(String uuid,String v);
 	

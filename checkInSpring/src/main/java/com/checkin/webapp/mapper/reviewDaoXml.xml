@@ -3,7 +3,15 @@
 <mapper namespace="com.checkin.webapp.review.model.ReviewDAOInterface">
 
 	<select id="getReviewListCnt" resultType="int">
-		select count(*) from review where r = #{r}
+		select count(*) from review 
+		<choose>
+			<when test="r!=0 ">
+				where r = #{r}
+			</when>
+			<when test="mid!=null and mid !=''">
+				where mid = #{mid}
+			</when>
+		</choose>
 	</select>
 	<select id="selectAllReviewList" resultType="com.checkin.webapp.review.model.ReviewVO">
 		select v,r,re.u,vgrade,vimg1,vimg2,vimg3,vcontent,writedate, uuid from review re
@@ -15,7 +23,7 @@
 				and r=#{r}
 			</when>
 		</choose>
-		order by writedate
+		order by r  desc
 		
 	</select>
 	
@@ -39,11 +47,26 @@
 		where v = #{v}
 	</select>
 	
-	<select id="selectAllReview" resultType="com.checkin.webapp.review.model.ReviewVO">
-		select v.v, v.vcontent,v.vgrade, m.uname, v.writedate, m.uuid
-		from review v join member m on m.u=v.u 
-		where mid=#{mid}
-		order by v.v desc
+	<select id="selectAllAccoReview" resultType="com.checkin.webapp.review.model.ReviewVO">
+	select *
+	from 
+		(select * from 		
+			(select v.v, v.vcontent,v.vgrade, m.uname, v.writedate, m.uuid
+				from review v join member m on m.u=v.u 
+				where mid=#{mid} 
+				and <![CDATA[ ROWNUM <= #{vcurpage}*#{vonepage} ]]>
+			order by v.v desc)
+		order by v)
+	where
+	<choose>
+		<when test="totalpage==vcurpage">
+			<![CDATA[ ROWNUM <= ((select count(*) from review where mid = #{mid}) - (#{vonepage}*(#{totalpage}-1)))]]>
+		</when>
+		<when test="totalpage!=vcurpage">
+			<![CDATA[ ROWNUM <= #{vonepage}]]>
+		</when>
+	</choose>
+	order by v desc
 	</select>
 	
 	<select id="selectDetail" resultType="com.checkin.webapp.review.model.ReviewVO">

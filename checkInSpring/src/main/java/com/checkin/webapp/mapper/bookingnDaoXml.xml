@@ -19,6 +19,15 @@
 		order by ro.r
 	</select>
 
+	<select id="getBookingListCnt" resultType="int">
+		select count(*) from booking 
+		<choose>
+			<when test="mid!=null and mid !=''">
+				where mid = #{mid}
+			</when>
+		</choose>
+	</select>
+	
 	<insert id="insertBooking" parameterType="com.checkin.webapp.booking.model.BookingVO">
 		insert into booking(b,r,u,a,mid,bcheckin,bcheckout,bcount,writedate,cancle,cancledate) 
 		values (bookingsq.nextval,#{r},#{u},#{a},(select mid from accomodation where a = #{a}) ,to_date(#{bcheckin},'YY/MM/dd'),to_date(#{bcheckout},'YY/MM/dd'),#{bcount},sysdate,0,null)
@@ -53,10 +62,25 @@
 	</select>
 	
 	<select id="selectAllBookingListMaster" resultType="com.checkin.webapp.booking.model.BookingVO">
-		select r.rname, m.uname, b.bcount, m.utel, to_char(b.bcheckin,'YYYY-MM-dd') bcheckin, to_char(b.bcheckout,'YYYY-MM-dd') bcheckout, to_char(b.writedate,'YYYY-MM_dd') writedate 
-		from booking b join member m on b.u=m.u join room r on b.r=r.r 
-		where b.mid=#{mid}
-		order by bcheckin
+	select *
+	from 
+		(select * from 
+			(select b.b , r.rname, m.uname, b.bcount, m.utel, to_char(b.bcheckin,'YYYY-MM-dd') bcheckin, to_char(b.bcheckout,'YYYY-MM-dd') bcheckout, to_char(b.writedate,'YYYY-MM_dd') writedate 
+				from booking b join member m on b.u=m.u join room r on b.r=r.r 
+				where b.mid=#{mid}
+				and <![CDATA[ ROWNUM <= #{bcurpage}*#{bonepage} ]]>
+				order by b.b desc)
+		order by b)
+	where
+	<choose>
+		<when test="totalpage==bcurpage">
+			<![CDATA[ ROWNUM <= ((select count(*) from review where mid = #{mid}) - (#{bonepage}*(#{totalpage}-1)))]]>
+		</when>
+		<when test="totalpage!=bcurpage">
+			<![CDATA[ ROWNUM <= #{bonepage}]]>
+		</when>
+	</choose>
+	order by b desc
 	</select>
 	
 		<update id="cancelBooking">

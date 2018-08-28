@@ -25,7 +25,7 @@ public class AccoListCommand {
 		
 		mav.addObject("list",list);
 		mav.addObject("curpage", vo.getCurpage());
-		mav.addObject("onepage", vo.getCurpage());
+		mav.addObject("onepage", vo.getOnepage());
 		mav.addObject("totalpage", totalpage);
 		
 		

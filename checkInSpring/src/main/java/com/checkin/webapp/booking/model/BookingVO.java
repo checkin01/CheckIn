@@ -14,9 +14,12 @@ public class BookingVO {
 	private String writedate; //예약한 날짜(sysdate)
 	private int wasBooking;
 	
-	private int bcurpage; //현재 페이지
-	private int bonepage; //한 페이지에 보여질 리스트 개수
+	private int bcurpage=1; //현재 페이지
+	private int bonepage=10; //한 페이지에 보여질 리스트 개수
 	private int totalpage; //전체 페이지 수
+	
+	private String searchkey; //현재 페이지
+	private String searchvalue; //한 페이지에 보여질 리스트 개수
 	
 	//===============예약내역확인======================
 	private String atel;//예약 숙소 연락처
@@ -31,6 +34,24 @@ public class BookingVO {
 	//===============================================
 	private int v; //리뷰 작성시 (리뷰 레코드 번호 ) 아닐시 0
 	
+
+	
+	
+	public String getSearchkey() {
+		return searchkey;
+	}
+
+	public void setSearchkey(String searchkey) {
+		this.searchkey = searchkey;
+	}
+
+	public String getSearchvalue() {
+		return searchvalue;
+	}
+
+	public void setSearchvalue(String searchvalue) {
+		this.searchvalue = searchvalue;
+	}
 
 	public int getTotalpage() {
 		return totalpage;

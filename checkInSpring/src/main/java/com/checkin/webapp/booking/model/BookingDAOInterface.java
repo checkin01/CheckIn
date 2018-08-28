@@ -17,6 +17,7 @@ public interface BookingDAOInterface {
 	public List<BookingVO> selectAllBookingList(int u);
 	
 	//master 예약 현황 내역
-	public List<BookingVO> selectAllBookingListMaster(String mid);
-
+	public List<BookingVO> selectAllBookingListMaster(BookingVO vo);
+	
+	public int getBookingListCnt(BookingVO vo);
 }

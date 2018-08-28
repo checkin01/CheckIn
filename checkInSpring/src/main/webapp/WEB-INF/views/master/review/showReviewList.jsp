@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page trimDirectiveWhitespaces="true"%>
 
 <!DOCTYPE html>
@@ -69,7 +70,7 @@ function ajax_reviewModal(userid,v){
 		<aside class="left col-sm-1" id="left"></aside>
 		<div class="col-sm-10 center" id="center">
 			
-			<div class="font1-small" style="padding:20px 0;">
+			<div style="padding:20px 0;">
 				리뷰 게시판
 			</div>
 			<div class="list-group">
@@ -88,7 +89,7 @@ function ajax_reviewModal(userid,v){
 						<div class="row">
 							<div class="col-sm-1 ct v" >${vo.v }</div>						
 							<div class="col-sm-5 ct rtitle" onclick='view(${vo.v})'>${vo.vcontent }</div>
-							<div class="col-sm-2 ct">${vo.uname }</div>
+							<div class="col-sm-2 ct">${vo.uuid }</div>
 							<div class="col-sm-3 ct">${vo.writedate }</div>
 							<input type="hidden" id="uuid" name="uuid" value="${vo.uuid }"/>
 							<input type="hidden" id="vgrade" name="vgrade" value="${vo.vgrade }"/>
@@ -108,16 +109,33 @@ function ajax_reviewModal(userid,v){
 					</div>
 				</form>
 				<!-- 검색 end -->
+			<!------------------------ paging 시작 ----------------->
+			<c:set var="curpage" value="${curpage}" />
+			<c:set var="onepage" value="${onepage}" />
+			<c:set var="totalpage" value="${totalpage}" />
+			<ul class="pagination pagination-md justify-content-center" id="pagination">
+				<c:if test="${curpage!=1}" >
+					<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${curpage-1}" class="page-link">Prev</a></li>
+				</c:if>
+				<!-- 5개씩 보여준다. -->
 
-				<ul class="pagination pagination-md justify-content-center form-inline" style="margin-top: 20px" id="pagination">
-					<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">Prev</a></li>
-					<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">1</a></li>
-					<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">2</a></li>
-					<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">3</a></li>
-					<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">4</a></li>
-					<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">5</a></li>
-					<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">Next</a></li>
-				</ul>
+				<c:forEach var = 'i' begin='${Math.floor(curpage/5)*5+1}' end='${(curpage/5)*5+4}'>
+					<c:if test = "${i <= totalpage}">
+						<c:choose>
+							<c:when test = "${i==curpage}">
+								<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${i}" class="page-link"><b>${i}</b></a></li>
+							</c:when>
+							<c:when test = "${i!=curpage}">
+								<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${i}" class="page-link">${i}</a></li>
+							</c:when>
+						</c:choose>
+					</c:if>
+				</c:forEach>
+				<c:if test="${curpage!=totalpage}" >
+					<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${curpage+1}" class="page-link">Next</a></li>
+				</c:if>
+			</ul>
+			<!---------------------------------- paging 끝 ----------------->
 			</div>
 		</div>
 	</div>
