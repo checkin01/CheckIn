@@ -39,7 +39,6 @@
 		
 		//subway 처리
 		var subway = '${vo.asubway}';
-		alert(subway);
 		if(subway!=null && subway != ''){
 			$(document).find('option[class="'+subway+'"]').attr('selected','selected');
 		}
