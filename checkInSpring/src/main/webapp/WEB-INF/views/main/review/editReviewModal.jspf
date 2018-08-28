@@ -3,7 +3,8 @@
 <html>
 <head>
 <style>		
-	#revieweditFrm .review-item{margin:20px;} 
+	#revieweditFrm .review-item{margin:20px;}
+	#revieweditFrm label{font-size:0.7em}
 </style>
 <script>
 $(function(){
@@ -38,11 +39,11 @@ $(function(){
         <div class="modal-body">
          	<form id="revieweditFrm" name="reviewFrm" method="post" action="/webapp/main/mypage/tryEditReview" enctype="multipart/form-data">
             	<input type='hidden' class="v" value='' name='v' />
-            	<div class="form-group">
+            	<div class="form-group" style="margin:20px">
             		<div class= row>
             			<label class="col-sm-2">별점</label>
             				<div style="visibility:hidden" id="selectorDiv">
-	            			<select class="form-control review-item col-sm-5 gradeselector"  name="vgrade">
+	            			<select class="form-control review-item col-sm-5 gradeselector" name="vgrade">
 	            				<option name="1">1</option>
 	            				<option name="2">2</option>
 	            				<option name="3">3</option>
@@ -52,7 +53,7 @@ $(function(){
             				</div>
             			<span class="view grade"></span>
             		</div>
-            	
+            		<hr/>
             		<div class="row">
             			<label class="col-sm-2">내용</label>
             			<textarea class="form-control review-item edit content" style="display:none" id="content" name="vcontent"></textarea>
@@ -60,19 +61,23 @@ $(function(){
             		</div>
             		
             		<div class="row edit" style="display:none">
-						<label class="col-sm-5"><i class="fa fa-file-image-o" style="font-size: 16px"> 이미지 등록(최대 1개) </i></label>
-						<span class="imgname"><span class="img1"></span><span id="editimgbtn" style="color:blue;border-bottom:solid 1px;">이미지 수정</span></span>
-						<input type="file" id="file1" class="form-control review-item filename" name="file1" style="display:none" style="margin:20px">
+						<label class="col-sm-5"><i class="fa fa-file-image-o" style="font-size: 16px"> 이미지 (최대 1개) </i></label>
+						<div class="imgname input-group"><span class="img1"></span> <span id="editimgbtn" style="color:blue;cursor:pointer"> &nbsp&nbsp&nbsp 이미지 수정</span></div>
+						<input type="file" id="file1" class="form-control review-item filename" name="file1" style="display:none;width:300px">
 					</div>
-					<div>
-						<img src="#" id="eimg1"/>
+					<hr/>
+					<div style="position:relative; float:right">
+						<img src="#" id="eimg1" class="view rounded"onerror='this.src="/webapp/img/1.png"' style="width:200px;height:200px"/>
 					</div>
             	</div>
             	
             	<input type="submit" class="edit btn btn-primary" value="등록"  style="display:none"/>
             </form>
-            <button class="btn view" id="editbtn">수정</button>    
+           
         </div>  
+        <div class="modal-footer">
+        	 <button class="btn view" id="editbtn">수정하기</button>    
+        </div>
       </div>
     </div>
   </div>

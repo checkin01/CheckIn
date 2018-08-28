@@ -64,7 +64,7 @@
 						<!-- 쓰기는 예약 내역에서 가능 있음.-->
 						<p class="col-sm-8 font1-small border review-p" id="content"></p>
 						<p class="col-sm-4">
-							<img src="#" style="width: 100%; height: 150px" class="rounded" id="img1">
+							<img src="#" style="width: 100%; height: 150px" class="rounded" id="img1" this.src='/webapp/img/1.png'>
 						</p>
 					</div>
 				</div>

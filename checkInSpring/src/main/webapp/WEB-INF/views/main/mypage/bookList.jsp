@@ -55,7 +55,8 @@
 		$(".view").css("display","block");
 		$(".edit").css("display","none");
 		$("#editimgbtn").css("display","block");
-		
+		$("#selectorDiv").css("visibility","hidden");
+	
 		var params = "v="+v;
 		$.ajax({
 			type:"get",
@@ -68,12 +69,21 @@
 				$("#revieweditFrm .v").val(v);
 				$("#revieweditFrm .content").text(result.vcontent);
 				var grade = result.vgrade;
-				$("#revieweditFrm .grade").text(grade);
+				var gradeHtml = "";
+				var star = '<i class="fa fa-fw fa-star"></i>';
+				for(var i = 1 ; i<=grade  ; i++ ){
+					gradeHtml +=star;
+				}
+				
+				$("#revieweditFrm .grade").html(gradeHtml);
+				
+				
+				
 				if(grade!=null && grade != 0)
 					$(document).find('option[name='+grade+']').attr('selected','selected');
 				
 				var img1 = result.vimg1;
-				img1 = img1.split('/')[3];
+				//img1 = img1.split('/')[3];
 				$("#revieweditFrm .img1").text(img1);
 				$("#reviewModal_edit").modal('show');
 				$("#revieweditFrm #eimg1").attr('src',result.vimg1);
