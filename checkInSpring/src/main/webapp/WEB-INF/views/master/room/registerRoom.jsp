@@ -118,45 +118,64 @@ function getAtheme(){
 					<i class="fa fa-check-square"> <label> 기타 정보</label></i>
 					<input type="hidden" name="rtheme" id="rtheme" />
 					<div class="form-group row">
+					
 						<div class="input-group-prepend d-inline-flex p-3">
 							<div class="input-group-text">
-								<input type="checkbox" value="스파"> <span class="col-sm-3">스파</span>
+								<input type="checkbox" value="movie"> <span class="col-sm-3">무비</span>
 							</div>
 						</div>
 
 						<div class="input-group-prepend d-inline-flex p-3">
 							<div class="input-group-text">
-								<input type="checkbox" value="애견"> <span class="col-sm-3">애견</span>
-							</div>
-						</div>
-
-						<div class="input-group-prepend d-inline-flex p-3">
-							<div class="input-group-text">
-								<input type="checkbox" value="바베큐"> <span class="col-sm-3">바베큐</span>
-							</div>
-						</div>
-
-						<div class="input-group-prepend d-inline-flex p-3">
-							<div class="input-group-text">
-								<input type="checkbox" value="오션뷰"> <span class="col-sm-3">오션뷰</span>
+								<input type="checkbox" value="와이파이"> <span class="col-sm-3">와이파이</span>
 							</div>
 						</div>
 						
 						<div class="input-group-prepend d-inline-flex p-3">
 							<div class="input-group-text">
-								<input type="checkbox" value="트윈베드"> <span class="col-sm-3">트윈베드</span>
+								<input type="checkbox" value="주차가능"> <span class="col-sm-3">주차가능</span>
+							</div>
+						</div>
+
+						<div class="input-group-prepend d-inline-flex p-3">
+							<div class="input-group-text">
+								<input type="checkbox" value="수영장"> <span class="col-sm-3">수영장</span>
+							</div>
+						</div>
+
+						<div class="input-group-prepend d-inline-flex p-3">
+							<div class="input-group-text">
+								<input type="checkbox" value="스파"> <span class="col-sm-3">스파</span>
+							</div>
+						</div>
+						
+						<div class="input-group-prepend d-inline-flex p-3">
+							<div class="input-group-text">
+								<input type="checkbox" value="식사가능"> <span class="col-sm-3">식사가능</span>
+							</div>
+						</div>
+						
+						<div class="input-group-prepend d-inline-flex p-3">
+							<div class="input-group-text">
+								<input type="checkbox" value="흡연가능"> <span class="col-sm-3">흡연가능</span>
+							</div>
+						</div>
+						
+						<div class="input-group-prepend d-inline-flex p-3">
+							<div class="input-group-text">
+								<input type="checkbox" value="금연"> <span class="col-sm-3">금연</span>
+							</div>
+						</div>
+						
+						<div class="input-group-prepend d-inline-flex p-3">
+							<div class="input-group-text">
+								<input type="checkbox" value="베이비존"> <span class="col-sm-3">베이비존</span>
 							</div>
 						</div>
 						
 						<div class="input-group-prepend d-inline-flex p-3">
 							<div class="input-group-text">
 								<input type="checkbox" value="노래방"> <span class="col-sm-3">노래방</span>
-							</div>
-						</div>
-						
-						<div class="input-group-prepend d-inline-flex p-3">
-							<div class="input-group-text">
-								<input type="checkbox" value="사우나"> <span class="col-sm-3">사우나</span>
 							</div>
 						</div>
 					</div>
