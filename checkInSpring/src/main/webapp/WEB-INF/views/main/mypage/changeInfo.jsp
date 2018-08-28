@@ -117,8 +117,8 @@ function checkUpwd(){
 	}
 	
 	if(data== null || data ==""){
-		msg = "필수 정보 입니다.";
-		result = false;
+		msg="";
+		result = true;
 	}
 	
 	if(reg.test(data)) result=true;
@@ -131,7 +131,7 @@ function checkUpwd2(){
 	var upwd = $("#upwd").val();
 	var upwd2 = $("#upwd2").val();
 	
-	if (upwd!=upwd2 || upwd == "") {
+	if (upwd!=upwd2) {
 		$("#upwd2Msg").html("비밀번호가 일치하지 않습니다.");
 		return false;
 	}

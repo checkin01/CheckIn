@@ -29,5 +29,8 @@ public interface MemberDAOInterface {
 	
 	//회원정보 수정
 	public int editMember(MemberVO vo);
+	
+	//회원정보 수정시 비밀번호 미변경시 현 비밀번호 가져오기
+	public String selectMemberPwd(MemberVO vo);
 		
 }
