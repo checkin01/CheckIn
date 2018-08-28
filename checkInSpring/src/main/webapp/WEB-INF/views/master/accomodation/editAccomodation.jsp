@@ -35,12 +35,13 @@
 		var options = $(document).find('option');
 		var type = '${vo.atype}';
 		if(type!=null && type != '')
-			$(document).find('option[name='+type+']').attr('selected','selected');
+			$(document).find('option[name="'+type+'"]').attr('selected','selected');
 		
 		//subway 처리
 		var subway = '${vo.asubway}';
+		alert(subway);
 		if(subway!=null && subway != ''){
-			$(document).find('option[name='+subway+']').attr('selected','selected');
+			$(document).find('option[class="'+subway+'"]').attr('selected','selected');
 		}
 		
 		var theme ='${vo.atheme}';
@@ -96,6 +97,66 @@
 			getAtheme();
 			return true;
 		}
+	}
+	
+	function goJusoPopup() {
+		var pop = window.open("/webapp/master/jusoPopup", "pop",
+				"width=570,height=420, scrollbars=yes, resizable=yes");
+	}
+
+	function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail,
+			roadAddrPart2, engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn,
+			detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn,
+			buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo) {
+		// 2017년 2월 제공항목이 추가되었습니다. 원하시는 항목을 추가하여 사용하시면 됩니다.
+		var sireg = /^[가-힣]+[시]{1}$/;
+		var gureg = /^[가-힣]+[구]{1}$/;
+		var gilreg = /^[가-힣]+[로]{1}([0-9]+[가-힣]?[길]{1}){0,1}$/;
+		var dongreg = /^[\(]{1}[가-힣0-9]+[동]{1}[\)]{1}$/;
+		var gunmul = /^[0-9]{0,3}([-]{1}[0-9]+){0,1}$/;
+		var aaddr = roadAddrPart1.split(' ');
+		console.log(aaddr[0] + " " + aaddr[1] + " " + aaddr[2] + " " + aaddr[3]
+				+ aaddr[4]);
+
+		if (aaddr[0] != '서울특별시') {
+			alert('죄송합니다. 현재 서비스는 서울 숙박 업소만 지원 됩니다.');
+		} else {
+			$("#roadFullAddr").val(roadFullAddr);
+			$("#roadAddrPart1").val(roadAddrPart1);
+			$("#addrDetail").val(addrDetail);
+			$("#a").val(zipNo.trim());
+			$("#adong").val(roadAddrPart2);
+			//alert($("#a").val());
+			$.each(aaddr, function(i, l) {
+				
+				if (l.match(sireg) != null) {
+					console.log(l.match(sireg));
+					$("#asi").val(l.match(sireg));
+				}
+
+				if (l.match(gureg) != null) {
+					console.log(l.match(gureg));
+					$("#agu").val(l.match(gureg));
+				}
+
+				if (l.match(gilreg) != null) {
+					console.log(l.match(gilreg));
+					$("#agil").val(l.match(gilreg)[0]);
+				}
+
+				//동 처리
+				if (l.match(dongreg) != null) {
+					console.log(l.match(dongreg));
+
+				}
+				//동 처리
+				if (l.match(gunmul) != null) {
+					console.log(l.match(dongreg));
+					$("#agunmul").val(l.match(gunmul));
+				}
+			});
+		}
+
 	}
 </script>
 <body>
@@ -163,7 +224,7 @@
 					<i class="fa fa-address-card-o"> <label>숙박 업소 도로명 주소</label></i>
 					<div class="input-group">
 						<input type="text" id="addr" name="aaddr" class="form-control col-sm-8" value="${vo.aaddr}" readonly />
-						<button type="button" id="searchAddr" name="searchAddr" class="form-control btn btn-success col-sm-2">주소 검색</button>
+						<button type="button" id="searchAddr" name="searchAddr"onclick="goJusoPopup()" class="form-control btn btn-success col-sm-2">주소 검색</button>
 						<span class="error-text-box" id="addrMsg"></span>
 					</div>
 				</div>
@@ -172,26 +233,26 @@
 				<div class="form-group row list-group-item">
 					<i class="fa fa-fort-awesome"> <label for="#subwaySelector">인근 지하철 </label></i> 
 					<select class="form-control col-sm-5" id="subwaySelector" name="asubway">
-						<option name="강남/역삼/삼성/논현">강남/역삼/삼성/논현</option>
-						<option name="서초/신사/방배역">서초/신사/방배역</option>
-						<option name="동묘/신설동/청량리/회기">동묘/신설동/청량리/회기</option>
-						<option name="장안동/답십리">장안동/답십리</option>
-						<option name="신림/서울대/사당/금천/동작">신림/서울대/사당/금천/동작</option>
-						<option name="신촌/홍대/합정">신촌/홍대/합정</option>
-						<option name="강서/화곡/까치산/양천">강서/화곡/까치산/양천</option>
-						<option name="수유/미아">수유/미아</option>
-						<option name="잠실/신천">잠실/신천</option>
-						<option name="신촌/홍대/합정">신촌/홍대/합정</option>
-						<option name="동묘/신설동/청량리/회기">동묘/신설동/청량리/회기</option>
-						<option name="연신내/불광/응암">연신내/불광/응암</option>
-						<option name="상봉/중랑/면목">상봉/중랑/면목</option>
-						<option name="태릉/노원/도봉/창동">태릉/노원/도봉/창동</option>
-						<option name="종로(3,5가)/혜화">종로(3,5가)/혜화</option>
-						<option name="동대문/충무로/신당/약수/금호">동대문/충무로/신당/약수/금호</option>
-						<option name="성신여대/성북/월곡">성신여대/성북/월곡</option>
-						<option name="왕십리/성수/강변">왕십리/성수/강변</option>
-						<option name="건대/군자/구의">건대/군자/구의</option>
-						<option name="이태원/삼각지/용산/서울/명동/회현">이태원/삼각지/용산/서울/명동/회현</option>
+						<option class="강남/역삼/삼성/논현">강남/역삼/삼성/논현</option>
+						<option class="서초/신사/방배역">서초/신사/방배역</option>
+						<option class="동묘/신설동/청량리/회기">동묘/신설동/청량리/회기</option>
+						<option class="장안동/답십리">장안동/답십리</option>
+						<option class="신림/서울대/사당/금천/동작">신림/서울대/사당/금천/동작</option>
+						<option class="신촌/홍대/합정">신촌/홍대/합정</option>
+						<option class="강서/화곡/까치산/양천">강서/화곡/까치산/양천</option>
+						<option class="수유/미아">수유/미아</option>
+						<option class="잠실/신천">잠실/신천</option>
+						<option class="신촌/홍대/합정">신촌/홍대/합정</option>
+						<option class="동묘/신설동/청량리/회기">동묘/신설동/청량리/회기</option>
+						<option class="연신내/불광/응암">연신내/불광/응암</option>
+						<option class="상봉/중랑/면목">상봉/중랑/면목</option>
+						<option class="태릉/노원/도봉/창동">태릉/노원/도봉/창동</option>
+						<option class="종로(3,5가)/혜화">종로(3,5가)/혜화</option>
+						<option class="동대문/충무로/신당/약수/금호">동대문/충무로/신당/약수/금호</option>
+						<option class="성신여대/성북/월곡">성신여대/성북/월곡</option>
+						<option class="왕십리/성수/강변">왕십리/성수/강변</option>
+						<option class="건대/군자/구의">건대/군자/구의</option>
+						<option class="이태원/삼각지/용산/서울/명동/회현">이태원/삼각지/용산/서울/명동/회현</option>
 					</select>
 				</div>
 

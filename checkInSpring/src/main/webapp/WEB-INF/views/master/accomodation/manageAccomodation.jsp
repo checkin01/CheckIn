@@ -133,6 +133,10 @@
 						</div>
 						<hr/>
 						<div class="row info">
+							<div class="col-lg-12">인근 지하철 : <span class="row-text">${vo.asubway}</span></div>
+						</div>
+						<hr/>
+						<div class="row info">
 							<div class="col-lg-12">연락처 : <span class="row-text">${vo.atel}</span></div>
 						</div>
 						<hr/>

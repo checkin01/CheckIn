@@ -79,7 +79,7 @@ and agu like '%'|| #{agu} ||'%'
 	</if>
 </select>
 <select id="selectOneRecord" resultType="com.checkin.webapp.accomodation.model.AccomodationVO">
-	select a, atype,mid,aname, atel , aaddr, acheckin, acheckout, agil, amaxreservedate, amaxsleepdate, anotice, aimg1,aimg2,aimg3, atheme
+	select a, atype,mid,aname, atel , aaddr, acheckin, acheckout, agil, amaxreservedate, amaxsleepdate, anotice, aimg1,aimg2,aimg3, atheme, asubway
 	from accomodation
 	<choose>
 		<when test = "mid != null">
@@ -133,6 +133,9 @@ and agu like '%'|| #{agu} ||'%'
 	</if>
 	<if test="#{anotice !=null and anotice!= ''}">
 	, anotice  = #{anotice}
+	</if>
+	<if test="#{asubway !=null and asubway!= ''}">
+	, asubway  = #{asubway}
 	</if>
 	where a = #{a}
 </update>
