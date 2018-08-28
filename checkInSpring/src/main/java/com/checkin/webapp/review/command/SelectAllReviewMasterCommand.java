@@ -11,18 +11,38 @@ import com.checkin.webapp.Constants;
 import com.checkin.webapp.review.model.ReviewDAOInterface;
 import com.checkin.webapp.review.model.ReviewVO;
 
-public class SelectAllReviewMasterCommand {
-	public ModelAndView execute(HttpServletRequest request) {
+public class SelectAllReviewMasterCommand implements ReviewCommandInterface{
+	public ModelAndView execute(HttpServletRequest request,ReviewVO vo) {
+		ModelAndView mav = new ModelAndView();
 		
 		HttpSession session = request.getSession();
 		String mid = (String)session.getAttribute("mid");
 		
 		ReviewDAOInterface dao = Constants.sqlSession.getMapper(ReviewDAOInterface.class);		
-		List<ReviewVO> list = dao.selectAllReview(mid);
+		vo.setMid(mid);
 		
-		ModelAndView mav = new ModelAndView();
+		int reviewTotalPage = dao.getReviewListCnt(vo);
+		
+		int totalpage = reviewTotalPage/vo.getVonepage();
+		if(reviewTotalPage % vo.getVonepage() != 0 )totalpage++;
+		System.out.println(reviewTotalPage);
+		
+		vo.setTotalpage(totalpage);
+		List<ReviewVO> list = dao.selectAllAccoReview(vo);
+	
+		
 		mav.addObject("list",list);
+		mav.addObject("curpage", vo.getVcurpage());
+		mav.addObject("onepage", vo.getVonepage());
+		mav.addObject("totalpage", totalpage);
+		
 		mav.setViewName("/master/review/showReviewList");
 		return mav;
+	}
+
+	@Override
+	public ModelAndView execute(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

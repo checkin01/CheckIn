@@ -87,9 +87,6 @@ body {
 			<div class="row" style="margin-left: 1px">
 				<h2>[${aname }] 실시간 예약 현황</h2>
 			</div>
-			<div class="row" style="margin-left: 1px">
-				<p>홈>${aname }>예약현황</p>
-			</div>
 
 			<!-- Team 끝 -->
 			<!-- style ="속성:속성값 ; 속성:속성값 " -->
@@ -147,15 +144,34 @@ body {
 			<!-- listGroup -->
 			<!-- paging -->
 
+			
+			<!------------------------ paging 시작 ----------------->
+			<c:set var="curpage" value="${curpage}" />
+			<c:set var="onepage" value="${onepage}" />
+			<c:set var="totalpage" value="${totalpage}" />
 			<ul class="pagination pagination-md justify-content-center" id="pagination">
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">Prev</a></li>
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">1</a></li>
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">2</a></li>
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">3</a></li>
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">4</a></li>
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">5</a></li>
-				<li class="page-item"><a href="manageBookingInfo.jsp" class="page-link">Next</a></li>
+				<c:if test="${curpage!=1}" >
+					<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${curpage-1}" class="page-link">Prev</a></li>
+				</c:if>
+				<!-- 5개씩 보여준다. -->
+
+				<c:forEach var = 'i' begin='${Math.floor(curpage/5)*5+1}' end='${(curpage/5)*5+4}'>
+					<c:if test = "${i <= totalpage}">
+						<c:choose>
+							<c:when test = "${i==curpage}">
+								<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${i}" class="page-link"><b>${i}</b></a></li>
+							</c:when>
+							<c:when test = "${i!=curpage}">
+								<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${i}" class="page-link">${i}</a></li>
+							</c:when>
+						</c:choose>
+					</c:if>
+				</c:forEach>
+				<c:if test="${curpage!=totalpage}" >
+					<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${curpage+1}" class="page-link">Next</a></li>
+				</c:if>
 			</ul>
+			<!---------------------------------- paging 끝 ----------------->
 		</div>
 		<!-- 여기 안에 모두 담자 -->
 
