@@ -106,7 +106,7 @@
 				<button class="thema-btn unselected-btn 커플pc">
 					<i class="material-icons">computer</i>커플pc
 				</button>
-				<button class="thema-btn unselected-btn">
+				<button class="thema-btn unselected-btn 3DTV">
 					<i class="material-icons">desktop_windows</i>3DTV
 				</button>
 			</div>
