@@ -130,7 +130,7 @@
 		<div>
 		<!-- 예약 현황 1 시작 -->
 		<div class="input-group">
-			<div class="input-group-item col-lg-3 border">
+			<div class="input-group-item col-lg-3 border" style="height:200px">
 				<c:if test="${list.aimg1 != null}">
 				<img src='${list.aimg1}' style="width:100%;height:100%"/>
 				</c:if>

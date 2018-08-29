@@ -318,13 +318,13 @@
 						<!-- The slideshow -->
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="#" class="roomsImg" onerror="this.src='/webapp/img/1.png'">
+								<img src="${item.aimg1}" class="roomsImg" onerror="this.src='/webapp/img/1.png'" style="height:300px">
 							</div>
 							<div class="carousel-item">
-								<img src="#" class="roomsImg" onerror="this.src='/webapp/img/1.png'">
+								<img src="${item.aimg2}" class="roomsImg" onerror="this.src='/webapp/img/1.png'"  style="height:300px">
 							</div>
 							<div class="carousel-item">
-								<img src="#" class="roomsImg" onerror="this.src='/webapp/img/1.png'">
+								<img src="${item.aimg3}" class="roomsImg" onerror="this.src='/webapp/img/1.png'"  style="height:300px">
 							</div>
 						</div>
 
