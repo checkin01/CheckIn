@@ -118,11 +118,13 @@ function ajax_booking(a,r,checkinout, people,u){
 	})
 	
 }
+
+
 //======================== checkinout 처리 =================================//
 function compareDate(){
 	var checkin = $("#checkin").val();
 	var checkout =  $("#checkout").val();
-
+	
 	if(checkin==checkout){
 		alert("날짜를 지정해주세요");
 		return false;
@@ -144,9 +146,6 @@ function compareDate(){
 		return false;
 	}
 	
-	if(checkin){
-		alert("");
-	}
 	return true;
 }
 
