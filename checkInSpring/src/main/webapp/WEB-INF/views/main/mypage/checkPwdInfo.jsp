@@ -57,9 +57,10 @@ body {
 <script>
 	$(function() {
 		$("#cancle").click(function() {
-			history.back();
+			location.replace("/webapp/main/mypage/myInfo");
 		});
 	});
+
 </script>
 </head>
 <body>
