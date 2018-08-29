@@ -154,15 +154,6 @@ body {
 				</c:if>
 			</ul>
 			<!---------------------------------- paging 끝 ----------------->
-			<form action="list.jsp" id="searchFrm" class="form-inline justify-content-center">
-				<div style="text-align: center">
-					<select name="searchKey" class="form-control">
-						<option value="subject">연번</option>
-						<option value="content">숙박업소명</option>
-						<option value="writer">업태</option>
-					</select> <input type="text" id="searchWord" name="searchWord" class="form-control" /> <input type="submit" value="Search" class="form-control" />
-				</div>
-			</form>
 		</div>
 		<!-- 여기 안에 모두 담자 -->
 

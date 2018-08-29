@@ -91,24 +91,7 @@ body {
 			<!-- Team 끝 -->
 			<!-- style ="속성:속성값 ; 속성:속성값 " -->
 			<!-- Room 시작 -->
-			<div class="row" style="margin-left: 1px">
-				<div class="col-md-2 w3-panel" style="margin: 0px; padding: 0px; text-align: center">
-					<label><i class="fa fa-calendar-o"></i> 날짜</label> <input class="w3-input w3-border" type="text" name="checkinout" placeholder="DD MM YYYY" style="text-align: center" />
-				</div>
-				<div class="col-md-1" style="padding: 10px 0px 10px 15px">
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" class="custom-control-input" id="customRadio1" name="customRadio"> <label class="custom-control-label" for="customRadio1">Check-In</label>
-					</div>
-				</div>
-				<div class="col-md-1" style="padding: 10px 0px 10px 15px">
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" class="custom-control-input" id="customRadio2" name="customRadio"> <label class="custom-control-label" for="customRadio2">Check-Out</label>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<button class="fa fa-search w3-button w3-green rounded" style="margin: 0px; width: 100%; height: 50%; font-size: 0.7em">Search</button>
-				</div>
-			</div>
+
 			<div class="list-group" style="margin-top: 20px; font-size: 0.9em" id="bookingList">
 				<div class="list-group-item w3-indigo" id="bookListTop" style="text-align: center">
 					<div class="row">

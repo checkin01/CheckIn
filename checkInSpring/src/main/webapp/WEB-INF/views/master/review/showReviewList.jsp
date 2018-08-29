@@ -98,22 +98,12 @@ function ajax_reviewModal(userid,v){
 				</div>
 				</c:forEach>
 				
-				<!-- 검색 start -->
-				<form action="list.jsp" id="searchFrm" class="form-inline">
-					<div class="list-group-item list-group-item-action" style="text-align: center">
-						<select name="searchKey" class="form-control">
-							<option value="subject">제목</option>
-							<option value="content">글내용</option>
-							<option value="writer">작성자</option>
-						</select> <input type="text" id="searchWord" name="searchWord" class="form-control" /> <input type="submit" value="Search" class="form-control" />
-					</div>
-				</form>
-				<!-- 검색 end -->
+
 			<!------------------------ paging 시작 ----------------->
 			<c:set var="curpage" value="${curpage}" />
 			<c:set var="onepage" value="${onepage}" />
 			<c:set var="totalpage" value="${totalpage}" />
-			<ul class="pagination pagination-md justify-content-center" id="pagination">
+			<ul class="pagination pagination-md justify-content-center" id="pagination" style="margin-top:10px">
 				<c:if test="${curpage!=1}" >
 					<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${curpage-1}" class="page-link">Prev</a></li>
 				</c:if>

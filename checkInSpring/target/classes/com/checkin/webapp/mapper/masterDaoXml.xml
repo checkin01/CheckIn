@@ -46,9 +46,9 @@
 	</select>
 	<select id="getBookingCountEachRoom" resultType="com.checkin.webapp.master.model.MasterChartVO">
 		select nvl(table2.booking_count,0) bcount from (select month, r from calendar cross join
-        (select r from room group by r, mid having mid = 'master1') ) table1 
+        (select r from room group by r, mid having mid = #{mid}) ) table1 
 		left outer join
-    	(select r, count(b) booking_count, to_char(writedate,'MM') mm from booking group by r,mid,to_char(writedate,'MM') having mid='master1') table2
+    	(select r, count(b) booking_count, to_char(writedate,'MM') mm from booking group by r,mid,to_char(writedate,'MM') having mid=#{mid}) table2
 		on table1.r = table2.r and table1.month = table2.mm
 		order by month, table1.r
 	</select>
