@@ -28,14 +28,17 @@
 <!-- navermap api -->
 <script type="text/javascript"
 	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=Ve4ILimYsUbRNnlZeSVm&submodules=geocoder"></script>
+
 <script type="text/javascript" src="/webapp/js/filter.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<style>
-
-</style>
+<c:set var = "accoList" value="${list}"/>
 <script>
+
+
+	
 	$(function() {
+		
+		
 		//datetimepicker
 		$('input[name="acheckinout"]').daterangepicker({
 			opens : 'bottom auto',
@@ -122,6 +125,53 @@
 		
 		var url = "/webapp/main/room/showList?checkinout="+checkinout+"&a="+a;
 		location.href = url;
+		
+	}
+	
+
+	function addMarker(agil,aname){
+			navermap(agil,aname);
+	
+	}
+	
+	function navermap(myaddress,aname){
+		naver.maps.Service.geocode(
+		{
+			address : myaddress
+		},
+		function(status, response) {
+			if (status !== naver.maps.Service.Status.OK) {
+					return alert(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
+			}
+			var result = response.result;
+			// 검색 결과 갯수: result.total
+			// 첫번째 결과 결과 주소: result.items[0].address
+			// 첫번째 검색 결과 좌표: result.items[0].point.y,
+			// result.items[0].point.x
+			var myaddr = new naver.maps.Point(
+					result.items[0].point.x,
+					result.items[0].point.y);
+			map.setCenter(myaddr); // 검색된 좌표로 지도 이동
+			// 마커 표시
+			var marker = new naver.maps.Marker({
+				position : myaddr,
+				map : map
+			});
+							// 마커 클릭 이벤트 처리
+			naver.maps.Event.addListener(marker, "click", function(e) {
+			if (infowindow.getMap()) {
+					infowindow.close();
+			} else {
+					infowindow.open(map, marker);
+			}
+			});
+			// 마크 클릭시 인포윈도우 오픈
+			var infowindow = new naver.maps.InfoWindow(
+			{
+				content : '<h6 style="padding:5px">'+aname+'</h6>'
+			});
+			
+		});
 		
 	}
 </script>
@@ -249,8 +299,12 @@
 				style="margin-top: 30px; height: 300px; border: 1px solid black; z-index: 1;">
 				<div id="map" class="container" style="width: 100%; height: 280px;">
 				</div>
-
 			</div>
+			<script>
+				var map = new naver.maps.Map('map',{
+					 zoom: 7
+				});
+			</script>
 			
 			<!-- ----------------------------------- 리스트-------------------------------------------- -->
 			<div>
@@ -264,13 +318,13 @@
 						<!-- The slideshow -->
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="${item.aimg1}" class="roomsImg" onerror="this.src='/webapp/img/1.png'">
+								<img src="#" class="roomsImg" onerror="this.src='/webapp/img/1.png'">
 							</div>
 							<div class="carousel-item">
-								<img src="${item.aimg2}" class="roomsImg" onerror="this.src='/webapp/img/1.png'">
+								<img src="#" class="roomsImg" onerror="this.src='/webapp/img/1.png'">
 							</div>
 							<div class="carousel-item">
-								<img src="${item.aimg3}" class="roomsImg" onerror="this.src='/webapp/img/1.png'">
+								<img src="#" class="roomsImg" onerror="this.src='/webapp/img/1.png'">
 							</div>
 						</div>
 
@@ -308,6 +362,9 @@
 				</div>
 			
 			</div>
+			<script>
+					addMarker('${item.agil}','${item.aname}');
+			</script>
 			</c:forEach>
 		</div>
 		<!-- 리스트 끝 -->
@@ -325,47 +382,5 @@
 	<%@ include file="themeModal.jspf"%>
 	</div>
 </body>
-<script>
-	//--------------------------------------- naver map --------------------------------------/
-	var map = new naver.maps.Map('map');
-	var myaddress = '광양9길';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
-	naver.maps.Service
-			.geocode(
-					{
-						address : myaddress
-					},
-					function(status, response) {
-						if (status !== naver.maps.Service.Status.OK) {
-							return alert(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
-						}
-						var result = response.result;
-						// 검색 결과 갯수: result.total
-						// 첫번째 결과 결과 주소: result.items[0].address
-						// 첫번째 검색 결과 좌표: result.items[0].point.y,
-						// result.items[0].point.x
-						var myaddr = new naver.maps.Point(
-								result.items[0].point.x,
-								result.items[0].point.y);
-						map.setCenter(myaddr); // 검색된 좌표로 지도 이동
-						// 마커 표시
-						var marker = new naver.maps.Marker({
-							position : myaddr,
-							map : map
-						});
-						// 마커 클릭 이벤트 처리
-						naver.maps.Event.addListener(marker, "click", function(
-								e) {
-							if (infowindow.getMap()) {
-								infowindow.close();
-							} else {
-								infowindow.open(map, marker);
-							}
-						});
-						// 마크 클릭시 인포윈도우 오픈
-						var infowindow = new naver.maps.InfoWindow(
-								{
-									content : '<h4> [업소이름]</h4>[평점 : ★★★★★]<br/>[전화번호 : 02-1111-1111]<br/> <img src="../img/accomodation/home1.jpg"></a>'
-								});
-					});
-</script>
+
 </html>

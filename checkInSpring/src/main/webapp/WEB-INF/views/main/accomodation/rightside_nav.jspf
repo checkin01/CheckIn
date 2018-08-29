@@ -88,19 +88,19 @@ function showHistoryInfo(){
 
 		<div class="history-item list-group-item" >
 	
-				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;" class="rounded">
+				<img src="#" style="width:100px;height:80px;" class="rounded">
 		
 		</div>
 
 		<div class="history-item list-group-item"  >
 		
-				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;"  class="rounded">
+				<img src="#" style="width:100px;height:80px;"  class="rounded">
 		
 		</div>
 	
 		<div class="history-item list-group-item">
 	
-				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;"  class="rounded">
+				<img src="#" style="width:100px;height:80px;"  class="rounded">
 		</div>
 </div>
 
@@ -112,18 +112,18 @@ function showHistoryInfo(){
 
 		<div class="history-item list-group-item" >
 	
-				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;" class="rounded">
+				<img src="#" style="width:100px;height:80px;" class="rounded">
 		
 		</div>
 
 		<div class="history-item list-group-item"  >
 		
-				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;"  class="rounded">
+				<img src="#" style="width:100px;height:80px;"  class="rounded">
 		
 		</div>
 	
 		<div class="history-item list-group-item">
 	
-				<img src="<%=request.getContextPath()%>/img/accomodation/hotel01.PNG" style="width:100px;height:80px;"  class="rounded">
+				<img src="#" style="width:100px;height:80px;"  class="rounded">
 		</div>
 </div>

@@ -19,7 +19,7 @@ and agu like '%'|| #{agu} ||'%'
 </select>
 
 <select id="selectAllList" resultType="com.checkin.webapp.accomodation.model.AccomodationVO">
-	select acco.a a, acco.mid a, aname,atel,aaddr,atype,acheckin, acheckout,aimg1,aimg2,aimg3,atheme, agrade , amaxprice , aminprice 
+	select acco.a a, acco.mid a, aname,atel,aaddr,atype,acheckin, acheckout,aimg1,aimg2,aimg3,atheme, agrade , amaxprice , aminprice , agil, asubway
 	from (
 		select * from accomodation where atype= #{atype}
 		<if test="asubway != null and !(asubway.equals(''))">
