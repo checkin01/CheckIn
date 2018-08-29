@@ -29,9 +29,10 @@
 }
 </style>
 <script>
+var blankMsg = "필수 정보입니다.";
+var wrongMsg = "잘못 입력하셨습니다.";
 	$(function(){
-		var blankMsg = "필수 정보입니다.";
-		var wrongMsg = "잘못 입력하셨습니다.";
+		
 		var options = $(document).find('option');
 		var type = '${vo.atype}';
 		if(type!=null && type != '')
@@ -82,7 +83,7 @@
 	}
 
 	function whenClickSubmitBtn(){
-		console.log("submit 이벤트 발생 ....");
+		
 		var result = true;
 		result &= checkAname();
 		result &= checkTel();
@@ -91,7 +92,10 @@
 		result &= checkMaxreservedate();
 		result &= checkCheckIn();
 		result &= checkCheckOut();
-		if(result==0)return false;
+		if(result==0){
+			alert('입력값이 유효하지 않습니다. 확인해주세요');
+			return false;
+		}
 		else {
 			getAtheme();
 			return true;
