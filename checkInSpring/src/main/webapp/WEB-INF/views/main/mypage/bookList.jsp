@@ -48,6 +48,7 @@
 		$(".checkout").val(checkout);
 		$("#content").val('');
 		$("#file").val('');
+		alert(b+' '+a+' '+r+' '+checkin+' '+checkout);
 		
 	}
 	

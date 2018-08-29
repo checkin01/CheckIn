@@ -29,7 +29,7 @@
 	
 	<insert id="insertReview" parameterType="com.checkin.webapp.review.model.ReviewVO">
 		insert into review(v,r,u,a,mid,vgrade,vcontent)
-		 values (reviewsq.nextval,22,42,360,'master1',5,'cccc')	
+		 values (reviewsq.nextval,#{r},#{u},#{a},(select mid from accomodation where a = #{a}),#{vgrade},#{vcontent})	
 	</insert>
 	
 	<update id="updateVRecordBooking">

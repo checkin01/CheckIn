@@ -44,8 +44,7 @@ public class InsertReviewCommand implements ReviewCommandInterface {
 		int result = dao.insertReview(vo);
 		if(result > 0) {
 			//updateVRecordBooking
-			//dao.updateVRecordBooking(vo);
-			
+			dao.updateVRecordBooking(vo);
 			mav.setViewName("redirect:/master/mypage/bookList");
 		}else {
 			if(folder!=null && newFileName!= null) {
