@@ -143,6 +143,10 @@ function compareDate(){
 		$("#checkout").val('${today}');
 		return false;
 	}
+	
+	if(checkin){
+		alert("");
+	}
 	return true;
 }
 

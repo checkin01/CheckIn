@@ -59,6 +59,9 @@
 		else if (agu != "")
 			params = "agu=" + agu;
 		
+		$('#form1').css('display','none');
+		$('#form2').css('display','none');
+		$('#form3').css('display','none');
 		$.ajax({
 			type : "get",
 			url : "/webapp/main/recommend",
@@ -321,30 +324,34 @@
 
 
 				<div class="w3-third w3-container w3-margin-bottom" id="form2" style="display:none">
-					<img src="<%=request.getContextPath()%>/img/accomodation/home1.jpg"
-						style="width: 100%" class="w3-hover-opacity">
-					<div class="w3-container w3-white" id="2">
-						<p class="name">
+					<a class="aurl" href="">
+					<img src="#"
+						style="width: 100%" class="w3-hover-opacity aimg">
+					</a>
+					<div class="w3-container w3-white">
+						<p class="aname">
 							<b></b>
 						</p>
-						<p class="addr"></p>
+						<p class="aaddr"></p>
 
 						<p class="grade">
-							평점 : <span class="grade"></span>
+							평점 : <span class="agrade"></span>
 						</p>
 					</div>
 				</div>
 				<div class="w3-third w3-container" id="form3" style="display:none">
+				<a class="aurl" href="">
 					<img src="#" style="width: 100%"
-						class="w3-hover-opacity">
-					<div class="w3-container w3-white" id="3">
-						<p class="name">
+						class="w3-hover-opacity aimg">
+					</a>
+					<div class="w3-container w3-white" >
+						<p class="aname">
 							<b></b>
 						</p>
-						<p class="addr"></p>
+						<p class="aaddr"></p>
 
 						<p class="grade">
-							평점 : <span class="grade">4.5</span>
+							평점 : <span class="agrade">4.5</span>
 						</p>
 					</div>
 				</div>

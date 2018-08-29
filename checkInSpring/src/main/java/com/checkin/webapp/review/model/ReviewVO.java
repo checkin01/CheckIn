@@ -7,11 +7,11 @@ public class ReviewVO {
 	private int a; //숙박업소 시퀀스
 	private int b;
 	private String mid; //가맹점주인 아이디
-	private int vgrade; //룸의 평점
+	private int vgrade=0; //룸의 평점
 	private String vimg1=""; //사용자가 올린 이미지
 	private String vimg2=""; 
 	private String vimg3="";
-	private String vcontent;//리뷰내용
+	private String vcontent="";//리뷰내용
 	private String writedate;//작성날짜
 	
 	private int vcurpage=1; //현재 페이지
