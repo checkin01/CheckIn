@@ -254,7 +254,7 @@
 					
 						$("#searchSort").change(function(){
 							var sorttype = $('#searchSort option:selected').attr('rel');
-							alert(sorttype);
+							
 							//change 조건으로 리스트 리로딩!
 							var checkinout = $("#acheckinout").val();
 								
