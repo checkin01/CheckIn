@@ -238,7 +238,7 @@ function ajax_review(r,i){
 				html +='</p></div><label><i class="fa fa-comments"></i> 내용 </label><div class="row" style="padding-left:20px; padding-right:20px">';	
 				html +='<p class="col-sm-8 font1-small border review-p" class="content">'+content+'</p>';
 				html +='<p class="col-sm-4">'
-				html +='<img src="'+val.img+'"style="width: 100%; height: 150px" class="rounded vimg1" onerror='+"this.src='/webapp/img/1.png"+' />';
+				html +='<img src="'+img1+'"style="width: 100%; height: 150px" class="rounded vimg1" onerror='+"this.src='/webapp/img/1.png"+' />';
 				html +='</p></div><hr/>';
 				reviewDiv.append(html);
 			});
