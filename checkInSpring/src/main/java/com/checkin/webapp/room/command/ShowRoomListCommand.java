@@ -35,6 +35,11 @@ public class ShowRoomListCommand implements RoomCommandInterface {
 		Date currentTime = new Date ();
 		String today = mSimpleDateFormat.format ( currentTime ).toString();
 		int a = 0;
+		int count = 1;
+		if(request.getParameter("count") != null) {
+			count = Integer.parseInt(request.getParameter("count"));
+			System.out.println("count="+count);
+		}
 		if(aStr != null && aStr != "") a = Integer.parseInt(aStr);
 		String checkinout = request.getParameter("checkinout");
 		
@@ -88,7 +93,7 @@ public class ShowRoomListCommand implements RoomCommandInterface {
 		session.setAttribute("checkin", checkin.replaceAll("/", "-"));
 		session.setAttribute("checkout", checkout.replaceAll("/", "-"));
 		session.setAttribute("today", today.replaceAll("/", "-"));
-		
+		session.setAttribute("count", count);
 		
 		//=========================================================//
 		
