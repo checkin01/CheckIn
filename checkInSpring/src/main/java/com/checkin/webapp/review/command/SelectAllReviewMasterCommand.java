@@ -25,7 +25,7 @@ public class SelectAllReviewMasterCommand implements ReviewCommandInterface{
 		
 		int totalpage = reviewTotalPage/vo.getVonepage();
 		if(reviewTotalPage % vo.getVonepage() != 0 )totalpage++;
-		System.out.println(reviewTotalPage);
+		System.out.println(totalpage);
 		
 		vo.setTotalpage(totalpage);
 		List<ReviewVO> list = dao.selectAllAccoReview(vo);

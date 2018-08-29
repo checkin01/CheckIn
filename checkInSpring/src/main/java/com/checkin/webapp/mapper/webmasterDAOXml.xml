@@ -52,11 +52,11 @@
 		select *
 		from
 		(select * from 
-			(select a,aname,atel,aaddr,atype,acheckin,acheckout,amaxreservedate,atheme,to_char(writedate,'YYYY-MM-dd') writedate 
+			(select <![CDATA[ ROWNUM ]]>,a,aname,atel,aaddr,atype,acheckin,acheckout,amaxreservedate,atheme,to_char(writedate,'YYYY-MM-dd') writedate 
 				from accomodation
 				where <![CDATA[ ROWNUM <= #{curpage}*#{onepage} ]]>
-			order by writedate desc)
-		order by writedate) 
+			order by a desc)
+		order by a) 
 		where
 		<choose>
 			<when test="totalpage==curpage">
@@ -66,7 +66,7 @@
 				<![CDATA[ ROWNUM <= #{onepage}]]>
 			</when>
 		</choose>
-		order by writedate desc
+		order by a desc
 	</select>
 	
 	<select id ="getAllMemberListCnt" resultType="int">

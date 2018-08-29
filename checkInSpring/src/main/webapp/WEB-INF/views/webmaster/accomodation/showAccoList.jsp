@@ -119,6 +119,7 @@ body {
 			<c:set var="curpage" value="${curpage}" />
 			<c:set var="onepage" value="${onepage}" />
 			<c:set var="totalpage" value="${totalpage}" />
+			${onepage}/${curpage}/${totalpage}
 			<ul class="pagination pagination-md justify-content-center" id="pagination">
 				<c:if test="${curpage!=1}" >
 					<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${curpage-1}" class="page-link">Prev</a></li>

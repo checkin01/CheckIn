@@ -103,9 +103,10 @@ function ajax_reviewModal(userid,v){
 			<c:set var="curpage" value="${curpage}" />
 			<c:set var="onepage" value="${onepage}" />
 			<c:set var="totalpage" value="${totalpage}" />
+			
 			<ul class="pagination pagination-md justify-content-center" id="pagination" style="margin-top:10px">
 				<c:if test="${curpage!=1}" >
-					<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${curpage-1}" class="page-link">Prev</a></li>
+					<li class="page-item"><a href="/webapp/master/showAccoReviewList?vcurpage=${curpage-1}" class="page-link">Prev</a></li>
 				</c:if>
 				<!-- 5개씩 보여준다. -->
 
@@ -113,16 +114,16 @@ function ajax_reviewModal(userid,v){
 					<c:if test = "${i <= totalpage}">
 						<c:choose>
 							<c:when test = "${i==curpage}">
-								<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${i}" class="page-link"><b>${i}</b></a></li>
+								<li class="page-item"><a href="/webapp/master/showAccoReviewList?vcurpage=${i}" class="page-link"><b>${i}</b></a></li>
 							</c:when>
 							<c:when test = "${i!=curpage}">
-								<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${i}" class="page-link">${i}</a></li>
+								<li class="page-item"><a href="/webapp/master/showAccoReviewList?vcurpage=${i}" class="page-link">${i}</a></li>
 							</c:when>
 						</c:choose>
 					</c:if>
 				</c:forEach>
 				<c:if test="${curpage!=totalpage}" >
-					<li class="page-item"><a href="/webapp/webmaster/accoList?curpage=${curpage+1}" class="page-link">Next</a></li>
+					<li class="page-item"><a href="/webapp/master/showAccoReviewList?curpage=${curpage+1}" class="page-link">Next</a></li>
 				</c:if>
 			</ul>
 			<!---------------------------------- paging 끝 ----------------->

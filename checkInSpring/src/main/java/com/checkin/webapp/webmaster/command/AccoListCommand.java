@@ -21,6 +21,7 @@ public class AccoListCommand {
 		if(accoListTotalCnt%vo.getOnepage() != 0 )totalpage++;
 		vo.setTotalpage(totalpage);
 		
+		System.out.println("AccoListCommand.."+accoListTotalCnt+" "+totalpage);
 		List<AccomodationVO> list = dao.showAccoList(vo);
 		
 		mav.addObject("list",list);
