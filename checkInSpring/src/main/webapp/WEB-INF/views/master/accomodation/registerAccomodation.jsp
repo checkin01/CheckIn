@@ -105,6 +105,9 @@
 			alert('죄송합니다. 현재 서비스는 서울 숙박 업소만 지원 됩니다.');
 		} else {
 			$("#roadFullAddr").val(roadFullAddr);
+			if($("#roadFullAddr").val() != '' && $("#roadFullAddr").val() != null){
+				$("#addrMsg").html('');
+			}
 			$("#roadAddrPart1").val(roadAddrPart1);
 			$("#addrDetail").val(addrDetail);
 			$("#a").val(zipNo.trim());
@@ -145,7 +148,7 @@
 	function checkAddr(){
 		var msg = "";
 		var result = true;
-		var data =$("#addr").val();
+		var data =$("#roadFullAddr").val();
 
 		if(data == "" || data == null){
 			msg = blankMsg;
@@ -226,7 +229,7 @@
 				<div class="form-group row list-group-item">
 					<i class="fa fa-address-card-o"> <label>숙박 업소 도로명 주소</label></i>
 					<div class="input-group">
-						<input type="text" id="roadFullAddr" name="aaddr" id ="addr"
+						<input type="text" id="roadFullAddr" name="aaddr"  onchange="checkAddr()"
 							class="form-control col-sm-8" readonly>
 						<button type="button" name="searchAddr"
 							class="form-control btn btn-success col-sm-2"

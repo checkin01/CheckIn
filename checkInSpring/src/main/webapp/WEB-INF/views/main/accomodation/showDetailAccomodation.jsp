@@ -266,25 +266,26 @@ function whenClickAccor(id){
 function pageReload(a){
 	var checkin = $("#checkin").val().replace(/-/gi,'/'); 
 	var checkout = $("#checkout").val().replace(/-/gi,'/');
-	
+	var count = $("#people").val();
+
 	checkinout = checkin+'-'+checkout;
 	if(checkin==checkout){
 		alert("날짜를 지정해주세요");
 		return false;
 	}
 	
-	var url = "/webapp/main/room/showList?checkinout="+checkinout+"&a="+a;
+	var url = "/webapp/main/room/showList?checkinout="+checkinout+"&a="+a+"&count="+count;
 	location.href = url;
 }
 //=============== 페이지 시작시 ====================//
-$(function(){
+/*$(function(){
 	//max 설정
 	var reserv = '${accoVO.amaxreservedate}';
 	var sleep = '${accoVO.amaxsleepdate}';
 	var today = new Date('${today}');
 	var checkinmax = today.getTime() + reserv*24*60*60*1000;
 
-})
+})*/
 
 </script>
 
@@ -333,7 +334,7 @@ $(function(){
 							<p>
 								<i class="fa fa-male"> <label>인원수</label></i>
 							</p>
-							<input class="w3-input w3-border" type="number" value="1" name="people" id="people" min="1" max="10"> <br />
+							<input class="w3-input w3-border" type="number" value="${count}" name="people" id="people" min="1" max="10"> <br />
 							<p>
 								<button class="w3-button w3-block w3-green w3-left-align" onclick="pageReload(${accoVO.a})">
 									<i class="fa fa-search w3-margin-right"></i> Search availability
