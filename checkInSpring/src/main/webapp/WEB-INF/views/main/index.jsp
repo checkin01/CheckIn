@@ -309,7 +309,7 @@
 				<div class="w3-third w3-container w3-margin-bottom" id="form1" style="display:none">
 					<a class="aurl" href="">
 					<img
-						src="#" style="width: 100%"
+						src="#" style="width: 100%; height:200px"
 						class="w3-hover-opacity aimg"></a>
 					<div class="w3-container w3-white">
 						<p class="aname"></p>
@@ -326,7 +326,7 @@
 				<div class="w3-third w3-container w3-margin-bottom" id="form2" style="display:none">
 					<a class="aurl" href="">
 					<img src="#"
-						style="width: 100%" class="w3-hover-opacity aimg">
+						style="width: 100%; height:200px" class="w3-hover-opacity aimg">
 					</a>
 					<div class="w3-container w3-white">
 						<p class="aname">
@@ -341,7 +341,7 @@
 				</div>
 				<div class="w3-third w3-container" id="form3" style="display:none">
 				<a class="aurl" href="">
-					<img src="#" style="width: 100%"
+					<img src="#" style="width: 100%; height:200px"
 						class="w3-hover-opacity aimg">
 					</a>
 					<div class="w3-container w3-white" >
