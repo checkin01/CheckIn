@@ -16,7 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/default.css">
+<link rel="stylesheet" href="/webapp/css/default.css">
 <style>
 #main .row {
 	margin-right: 2px;
