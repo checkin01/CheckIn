@@ -65,18 +65,6 @@ function checkAname(){
 	return result;
 }
 
-function checkAddr(){
-	var msg = "";
-	var result = true;
-	var data =$("#addr").val();
-	if(data == ""){
-		msg = blankMsg;
-		result= false;
-	}
-	$("#addrMsg").html(msg);
-	return result;
-}
-
 
 function checkTel(){
 	var msg = "";

@@ -53,7 +53,7 @@
 			checkTheme += $(this).val() + " ";
 		});
 		$("#atheme").val(checkTheme);
-		console($("#atheme").val());
+	
 	}
 
 	function whenClickSubmitBtn() {
@@ -141,6 +141,21 @@
 		}
 
 	}
+	
+	function checkAddr(){
+		var msg = "";
+		var result = true;
+		var data =$("#addr").val();
+
+		if(data == "" || data == null){
+			msg = blankMsg;
+			result= false;
+		}
+		$("#addrMsg").html(msg);
+		return result;
+	}
+
+
 </script>
 <style>
 .error-text-box {
@@ -175,7 +190,7 @@
 				<input type="hidden" value="${mid}" id="mid" name="mid" />
 				<!-- 주소 관련 hidden form -->
 
-				<input type="hidden" id="a" name="a" /> 
+			
 				<input type="hidden" id="asi" name="asi" /> 
 					<input type="hidden" id="agu" name="agu" />
 				<input type="hidden" id="agil" name="agil" /> 
@@ -211,8 +226,8 @@
 				<div class="form-group row list-group-item">
 					<i class="fa fa-address-card-o"> <label>숙박 업소 도로명 주소</label></i>
 					<div class="input-group">
-						<input type="text" id="roadFullAddr" name="aaddr"
-							class="form-control col-sm-8" readonly />
+						<input type="text" id="roadFullAddr" name="aaddr" id ="addr"
+							class="form-control col-sm-8" readonly>
 						<button type="button" name="searchAddr"
 							class="form-control btn btn-success col-sm-2"
 							onclick="goJusoPopup()">주소 검색</button>
