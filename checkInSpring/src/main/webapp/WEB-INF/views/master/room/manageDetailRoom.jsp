@@ -142,12 +142,6 @@
 							<div class="col-sm-1"></div>
 							<a href="/webapp/master/modifyGuestroomInfo?r=${vo.r }"><input type="button" value="수정하기" class="btn  btn-success" id="editBtn" /></a>
 							<div class="col-sm-1"></div>
-							<c:choose>
-								<c:when test ="${vo.rgrade != null and vo.rgrade != 0 }">
-									<a href="<%=request.getContextPath()%>/master/review/showReviewList.jsp"><input type="button" value="리뷰 보기" class="btn  btn-success" /></a>
-								</c:when>
-								
-							</c:choose>
 							
 							<div class="col-sm-1"></div>
 						</div>
