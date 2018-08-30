@@ -119,7 +119,7 @@
 								<c:when test ="${vo.rgrade != null and vo.rgrade != 0 }">
 									<label>평점</label>
 									<c:forEach begin = '1' end='${vo.rgrade}' step='1'>
-									<i class="fa fa-fw fa-star"></i> <i class="fa fa-fw fa-star"></i> 
+									<i class="fa fa-fw fa-star"></i>
 								</c:forEach>
 								</c:when>
 								<c:when test ="${vo.rgrade == null or vo.rgrade == 0}">
