@@ -74,15 +74,19 @@ function whenclickbookingbtn(a,r){
 		//날짜 검사
 		var bcheckin = $("#checkin").val();
 		var bcheckout =  $("#checkout").val();
-
-		if(compareDate()){
+		if(!checkpeople()){
+			return false;
+		}
+		
+		if(compareInOutdate() ){
+			
 			var checkinout =  $("#checkin").val(); +" ~ " +  $("#checkout").val();
 			var people = $("#people").val();
 			var result = confirm(checkinout +" 날짜에  인원수 : "+ people+"\n\n 예약 하시겠습니까? 예를 누르면 예약 됩니다.");
-				if(result == true){
-					ajax_booking(a,r,checkinout,people,u);				
-				}
+			if(result == true){
+				ajax_booking(a,r,checkinout,people,u);				
 			}
+		}
 	}
 }
 
@@ -116,29 +120,48 @@ function ajax_booking(a,r,checkinout, people,u){
 			alert("죄송합니다. 예약에 실패 했습니다. 잠시 후 다시 시도 해 주세요.");
 		}
 	})
-	
 }
 
-
 //======================== checkinout 처리 =================================//
-function compareDate(){
+function compareInOutdate(){
 	var checkin = $("#checkin").val();
 	var checkout =  $("#checkout").val();
-	
+
 	if(checkin==checkout){
 		alert("날짜를 지정해주세요");
 		return false;
 	}
-	var checkindate = new Date();
-	var checkoutdate = new Date();
-	checkindate.setYear(checkin.split('-')[0]);
-	checkindate.setMonth(checkin.split('-')[1]);
-	checkindate.setDate(checkin.split('-')[2]);
+	return true;
+}
+
+function checkpeople(){
+	var count = $("#people").val();
 	
-	checkoutdate.setYear(checkout.split('-')[0]);
-	checkoutdate.setMonth(checkout.split('-')[1]);
-	checkoutdate.setDate(checkout.split('-')[2]);
+	if( count != null && count !='' && count !=0 ){
+		return true;
+	}
+	alert('인원수가 잘못 입력 되었습니다. 다시 확인해주세요. ');
+	return false;
+}
+
+function whenchangecheckin(){
+	var checkin = $("#checkin").val();
+	var checkout =  $("#checkout").val();
+	var checkindate = new Date(checkin.split('-')[0],checkin.split('-')[1],checkin.split('-')[2]);
+	var checkoutdate = new Date(checkout.split('-')[0],checkout.split('-')[1],checkout.split('-')[2]);
+	if(checkindate.getTime() > checkoutdate.getTime()){
+		$("#checkout").val(checkin);
+	}
 	
+}
+
+function compareDate(){
+	var checkin = $("#checkin").val();
+	var checkout =  $("#checkout").val();
+	
+	var checkindate = new Date(checkin.split('-')[0],checkin.split('-')[1],checkin.split('-')[2]);
+	var checkoutdate = new Date(checkout.split('-')[0],checkout.split('-')[1],checkout.split('-')[2]);
+
 	if(checkindate.getTime() > checkoutdate.getTime()){
 		alert("체크인 시간이 체크아웃 시간보다 빠를 수 없습니다. \n 날짜를 확인해주세요");
 		$("#checkin").val('${today}');
@@ -150,7 +173,7 @@ function compareDate(){
 }
 
 //======================================= review ===========================================//
-var onepage = 1;
+var onepage = 3;
 //<!-- 클릭시 이미지 fa fa-caret-up 이걸로 바뀜 -->
 //리뷰 클릭시
 function whenClickReview(r) {
@@ -266,7 +289,11 @@ function whenClickAccor(id){
 function pageReload(a){
 	var checkin = $("#checkin").val().replace(/-/gi,'/'); 
 	var checkout = $("#checkout").val().replace(/-/gi,'/');
-	var count = $("#people").val();
+	var count = 1;
+	if($("#people").val() != null && $("#people").val() !='' && $("#people").val() !=0 ){
+		count = $("#people").val();
+	}
+		
 
 	checkinout = checkin+'-'+checkout;
 	if(checkin==checkout){
@@ -277,15 +304,7 @@ function pageReload(a){
 	var url = "/webapp/main/room/showList?checkinout="+checkinout+"&a="+a+"&count="+count;
 	location.href = url;
 }
-//=============== 페이지 시작시 ====================//
-/*$(function(){
-	//max 설정
-	var reserv = '${accoVO.amaxreservedate}';
-	var sleep = '${accoVO.amaxsleepdate}';
-	var today = new Date('${today}');
-	var checkinmax = today.getTime() + reserv*24*60*60*1000;
 
-})*/
 
 </script>
 
@@ -324,17 +343,17 @@ function pageReload(a){
 								<i class="fa fa-calendar-check-o"> <label>체크인</label></i>
 							</p>
 							
-							<input type="date" class="w3-input w3-border" name="checkin" id="checkin" value='${checkin}' min='${today}' onchange="compareDate()" /> <br />
+							<input type="date" class="w3-input w3-border" name="checkin" id="checkin" value='${checkin}' min='${today}' max='2018-12-31' onchange="whenchangecheckin()" /> <br />
 							<p>
 								<i class="fa fa-calendar-check-o"> <label>체크아웃</label></i>
 							</p>
 							
 							
-							<input type="date" class="w3-input w3-border" name="checkout" id="checkout" value='${checkout}' min ='${today}' /> <br />
+							<input type="date" class="w3-input w3-border" name="checkout" id="checkout" value='${checkout}' min ='${today}' max='2018-12-31' onchange='compareDate()' /> <br />
 							<p>
 								<i class="fa fa-male"> <label>인원수</label></i>
 							</p>
-							<input class="w3-input w3-border" type="number" value="${count}" name="people" id="people" min="1" max="10"> <br />
+							<input class="w3-input w3-border" type="number" value="${count}" name="people" id="people" min="1" max="10" required> <br />
 							<p>
 								<button class="w3-button w3-block w3-green w3-left-align" onclick="pageReload(${accoVO.a})">
 									<i class="fa fa-search w3-margin-right"></i> Search availability
