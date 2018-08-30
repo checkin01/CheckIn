@@ -19,7 +19,6 @@ function view(v) {
 	//javascript
 	var v = v;
 	var userid = $("#uuid").val();
-	alert(userid+", "+v);	
 	
 	ajax_reviewModal(userid,v);
 		
@@ -45,7 +44,7 @@ function ajax_reviewModal(userid,v){
 			}
 		},
 		error:function(e){
-			alert(e.responseText)
+		
 		}
 	});
 	
