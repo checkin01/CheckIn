@@ -400,8 +400,8 @@ function pageReload(a){
 									function(status, response) {
 
 										if (status !== naver.maps.Service.Status.OK) {
-											return alert(myaddress
-													+ '의 검색 결과가 없거나 기타 네트워크 에러');
+											console.log(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
+											return false;
 										}
 
 										var result = response.result;
