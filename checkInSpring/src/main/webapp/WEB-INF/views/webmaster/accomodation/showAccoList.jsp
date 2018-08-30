@@ -8,24 +8,16 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Check In! 예약 관리</title>
+<title>Check In! 숙박업소 관리</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/default.css">
-<!-- 구글 차트 -->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="<%=request.getContextPath()%>/js/gchart_combo.js"></script>
-<script src="<%=request.getContextPath()%>/js/gchart_cal.js"></script>
+<link rel="stylesheet" href="/webapp/css/default.css">
+
 <!-- body 구성에 적용 되는 스타일 시트 -->
-<!-- daterangepicker-->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/daterangepicker.js"></script>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/daterangepicker.css">
 <style>
 body {
 	font-size: 1em;
@@ -41,33 +33,7 @@ body {
 	text-overflow: ellipsis;
 }
 </style>
-<script>
-	$(function() {
-		//datetimepicker
-		$('input[name="checkinout"]').daterangepicker(
-				{
-					opens : 'left'
-				},
-				function(start, end, label) {
-					console.log("A new date selection was made: "
-							+ start.format('YYYY-MM-DD') + ' to '
-							+ end.format('YYYY-MM-DD'));
-				});
-		$('.enter').click(function() {
-			var html = $(this).html().trim();
-			if (html == '미입실') {
-				$(this).removeClass('w3-light-blue').addClass('w3-grey');
-				html = '입실';
-			} else {
-				$(this).addClass('w3-light-blue').removeClass('w3-grey');
-				html = '미입실';
-			}
-			alert(html + " 상태로 바뀌었습니다.");
-			$(this).html(html);
 
-		});
-	});
-</script>
 </head>
 <body>
 <%@ include file="../topnav_webmaster.jspf"%>

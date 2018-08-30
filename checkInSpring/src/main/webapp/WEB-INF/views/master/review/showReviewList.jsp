@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page trimDirectiveWhitespaces="true"%>
 
 <!DOCTYPE html>
@@ -13,7 +12,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/default.css">
+<link rel="stylesheet" href="/webapp/css/default.css">
 <!-- body 구성에 적용 되는 스타일 시트 -->
 <script>	
 function view(v) {
@@ -88,11 +87,11 @@ function ajax_reviewModal(userid,v){
 					<div class="list-group-item">
 						<div class="row">
 							<div class="col-sm-1 ct v" >${vo.v }</div>						
-							<div class="col-sm-5 ct rtitle" onclick='view(${vo.v})'>${vo.vcontent }</div>
+							<div class="col-sm-5 ct rtitle" onclick='view(${vo.v})'>${vo.vcontent}</div>
 							<div class="col-sm-2 ct">${vo.uuid }</div>
 							<div class="col-sm-3 ct">${vo.writedate }</div>
-							<input type="hidden" id="uuid" name="uuid" value="${vo.uuid }"/>
-							<input type="hidden" id="vgrade" name="vgrade" value="${vo.vgrade }"/>
+							<input type="hidden" id="uuid" name="uuid" value="${vo.uuid}"/>
+							<input type="hidden" id="vgrade" name="vgrade" value="${vo.vgrade}"/>
 						</div>
 					</div>
 				</div>
