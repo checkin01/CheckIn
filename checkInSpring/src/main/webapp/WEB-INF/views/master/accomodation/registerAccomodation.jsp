@@ -144,7 +144,7 @@
 		}
 
 	}
-	
+
 	function checkAddr(){
 		var msg = "";
 		var result = true;
@@ -157,6 +157,7 @@
 		$("#addrMsg").html(msg);
 		return result;
 	}
+
 
 
 </script>

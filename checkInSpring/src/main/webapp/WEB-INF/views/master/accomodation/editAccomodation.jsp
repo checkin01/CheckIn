@@ -79,7 +79,7 @@ var wrongMsg = "잘못 입력하셨습니다.";
 	 		checkTheme += $(this).val()+" ";
 		});
 		$("#atheme").val(checkTheme);
-		console($("#atheme").val());
+		
 	}
 
 	function whenClickSubmitBtn(){
@@ -159,8 +159,22 @@ var wrongMsg = "잘못 입력하셨습니다.";
 				}
 			});
 		}
-
 	}
+
+	function checkAddr(){
+		var msg = "";
+		var result = true;
+		var data =$("#roadFullAddr").val();
+
+		if(data == "" || data == null){
+			msg = blankMsg;
+			result= false;
+		}
+		$("#addrMsg").html(msg);
+		return result;
+	}
+
+
 </script>
 <body>
 
@@ -226,7 +240,7 @@ var wrongMsg = "잘못 입력하셨습니다.";
 				<div class="form-group row list-group-item">
 					<i class="fa fa-address-card-o"> <label>숙박 업소 도로명 주소</label></i>
 					<div class="input-group">
-						<input type="text" id="addr" name="aaddr" class="form-control col-sm-8" value="${vo.aaddr}" readonly />
+						<input type="text" id="roadFullAddr" name="aaddr" class="form-control col-sm-8" value="${vo.aaddr}" readonly />
 						<button type="button" id="searchAddr" name="searchAddr"onclick="goJusoPopup()" class="form-control btn btn-success col-sm-2">주소 검색</button>
 						<span class="error-text-box" id="addrMsg"></span>
 					</div>
@@ -413,6 +427,7 @@ var wrongMsg = "잘못 입력하셨습니다.";
 		<aside class="col-sm-2 right" id="right"></aside>
 		
 	</div>
+	
 	
 </body>
 </html>
