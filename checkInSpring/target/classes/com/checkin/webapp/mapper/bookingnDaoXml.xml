@@ -58,7 +58,7 @@
 		join accomodation a on b.a=a.a 
 		join room r on b.r=r.r
 		left outer join review re on b.b = re.b
-		where m.u=#{param1} order by b.writedate
+		where m.u=#{param1} order by b.writedate desc
 	</select>
 	
 	<select id="selectAllBookingListMaster" resultType="com.checkin.webapp.booking.model.BookingVO">
