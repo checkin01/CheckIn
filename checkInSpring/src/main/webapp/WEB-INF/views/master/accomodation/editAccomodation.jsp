@@ -420,7 +420,7 @@ var wrongMsg = "잘못 입력하셨습니다.";
 				<!-- 등록 버튼 -->
 				<div class="list-group-item row">
 					<input type="reset" value="다시 쓰기" class="btn btn-success form-control col-sm-3" />
-					 <input type="reset" value="취소" class="btn btn-success form-control col-sm-3" /> 
+					 <a href="/webapp/master/viewAcco"><input type="button" value="취소" class="btn btn-success form-control col-sm-3" /> </a>
 					 <input type="submit" value="수정" class="btn btn-success form-control col-sm-3" />
 				</div>
 			</form>
