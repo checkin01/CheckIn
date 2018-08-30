@@ -53,7 +53,7 @@ public class ViewAccoCommand implements AccomodationCommandInterface {
 		vo.setMid(mid);
 	
 		AccomodationDAOInterface dao = Constants.sqlSession.getMapper(AccomodationDAOInterface.class);
-		System.out.println("ViewAccomodationDAO..excuteDAO.."+vo.toString());
+		
 		return dao.selectOneRecord(vo);
 
 	}

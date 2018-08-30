@@ -127,7 +127,6 @@ var wrongMsg = "잘못 입력하셨습니다.";
 			$("#roadFullAddr").val(roadFullAddr);
 			$("#roadAddrPart1").val(roadAddrPart1);
 			$("#addrDetail").val(addrDetail);
-			$("#a").val(zipNo.trim());
 			$("#adong").val(roadAddrPart2);
 			//alert($("#a").val());
 			$.each(aaddr, function(i, l) {
@@ -217,6 +216,13 @@ var wrongMsg = "잘못 입력하셨습니다.";
 			<form id="dataform" class="form-horizontal font1-medium w3-card-4 w3-bar" style="margin-top:50px; padding:20px" method="post" onsubmit="return whenClickSubmitBtn()" action="/webapp/master/editOkAcco" enctype="multipart/form-data">
 				<input type="hidden" value="${vo.mid}" id="mid" name="mid" />
 				<input type="hidden" value="${vo.a}" id="a" name="a" />
+							
+				<input type="hidden" id="asi" name="asi"  value="${vo.asi}"/> 
+				<input type="hidden" id="agu" name="agu" value="${vo.agu}"/>
+				<input type="hidden" id="agil" name="agil" value="${vo.agil}"/> 
+				<input type="hidden" id="adong" name="adong" value="${vo.adong}"/> 
+				<input type="hidden" id="agunmul" name="agunmul" value="${vo.agunmul}"/>
+				
 				<!-- 숙박 업소 유형 -->
 				<div class="form-group row list-group-item">
 					<i class="fa fa-fort-awesome"> <label for="typeSelector">숙박 업소 유형</label></i> 
@@ -240,7 +246,7 @@ var wrongMsg = "잘못 입력하셨습니다.";
 				<div class="form-group row list-group-item">
 					<i class="fa fa-address-card-o"> <label>숙박 업소 도로명 주소</label></i>
 					<div class="input-group">
-						<input type="text" id="roadFullAddr" name="aaddr" class="form-control col-sm-8" value="${vo.aaddr}" readonly />
+						<input type="text" id="roadFullAddr" name="aaddr" class="form-control col-sm-8" value="${vo.aaddr}" onchange="checkAddr()" readonly />
 						<button type="button" id="searchAddr" name="searchAddr"onclick="goJusoPopup()" class="form-control btn btn-success col-sm-2">주소 검색</button>
 						<span class="error-text-box" id="addrMsg"></span>
 					</div>

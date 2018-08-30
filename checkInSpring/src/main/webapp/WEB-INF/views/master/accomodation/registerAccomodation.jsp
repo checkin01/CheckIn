@@ -196,12 +196,10 @@
 
 			
 				<input type="hidden" id="asi" name="asi" /> 
-					<input type="hidden" id="agu" name="agu" />
+				<input type="hidden" id="agu" name="agu" />
 				<input type="hidden" id="agil" name="agil" /> 
-				<input type="hidden"
-					id="adong" name="adong" /> 
-					<input type="hidden" id="agunmul"
-					name="agunmul" />
+				<input type="hidden" id="adong" name="adong" /> 
+				<input type="hidden" id="agunmul" name="agunmul" />
 
 				<!-- 숙박 업소 유형 -->
 				<div class="form-group row list-group-item">

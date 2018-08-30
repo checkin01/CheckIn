@@ -45,9 +45,10 @@ public class EditAccoCommand implements AccomodationCommandInterface {
 		/* dao 작얻 */
 		System.out.println("EditAccoCommand..before executing dao" + vo.toString());
 		System.out.println("EditAccoCommand.. dao.. execute...");
+		System.out.println("EditAccoCommand.." + vo.toString());
 		AccomodationDAOInterface dao = Constants.sqlSession.getMapper(AccomodationDAOInterface.class);
 		int result = dao.updateAccomodation(vo);
-		System.out.println("EditAccoCommand.." + vo.toString());
+		
 
 		if (result > 0) {
 			mav.setViewName("redirect:/master/viewAcco");

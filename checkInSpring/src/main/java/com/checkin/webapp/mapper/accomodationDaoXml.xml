@@ -79,7 +79,7 @@ and agu like '%'|| #{agu} ||'%'
 	</if>
 </select>
 <select id="selectOneRecord" resultType="com.checkin.webapp.accomodation.model.AccomodationVO">
-	select a, atype,mid,aname, atel , aaddr, acheckin, acheckout, agil, amaxreservedate, amaxsleepdate, anotice, aimg1,aimg2,aimg3, atheme, asubway
+	select a, atype,mid,aname, atel , aaddr, acheckin, acheckout, agil, amaxreservedate, amaxsleepdate, anotice, aimg1,aimg2,aimg3, atheme, asubway, asi,agu,agunmul,agil,adong
 	from accomodation
 	<choose>
 		<when test = "mid != null">
@@ -137,7 +137,23 @@ and agu like '%'|| #{agu} ||'%'
 	<if test="#{asubway !=null and asubway!= ''}">
 	, asubway  = #{asubway}
 	</if>
-	where a = #{a}
+	<if test="#{asi !=null and asi!= ''}">
+	, asi  = #{asi}
+	</if>
+	<if test="#{agu !=null and agu!= ''}">
+	, agu  = #{agu}
+	</if>
+	<if test="#{agil !=null and agil!= ''}">
+	, agil  = #{agil}
+	</if>
+	<if test="#{adong !=null and adong!= ''}">
+	, adong  = #{adong}
+	</if>
+	<if test="#{agunmul !=null and agunmul!= ''}">
+	, agunmul  = #{agunmul}
+	</if>
+	where 
+	mid = #{mid}
 </update>
 
 <insert id="insertAccomodation">
